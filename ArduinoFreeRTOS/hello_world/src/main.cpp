@@ -257,13 +257,13 @@ void task_serial(void *pVParameters) // This is a task.
       if (isMessageBufferSemaphoreTaken) {
         if (!isMessageBufferEmpty) {
           /* Serial.println("Sesso."); */
-          Serial.print("received_bytes: ");
-          /* received_bytes = xMessageBufferReceive(xMessageBuffer, received_data, */
-          /*                                        sizeof(received_data), 0); */
-          /* for (size_t ii = 0; ii < received_bytes; ii++) { */
-          /*   Serial.print((char)received_data[ii]); */
-          /* } */
-          /* Serial.print("\n"); */
+          /* Serial.print("received_bytes: "); */
+          received_bytes = xMessageBufferReceive(xMessageBuffer, received_data,
+                                                 sizeof(received_data), 0);
+          for (size_t ii = 0; ii < received_bytes -1; ii++) {
+            Serial.print((char)received_data[ii]);
+          }
+          Serial.print("\n");
           /* xMessageBufferReset(xMessageBuffer); */
         }
         xSemaphoreGive(xSemaphoreMessageBuffer);
