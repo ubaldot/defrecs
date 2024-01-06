@@ -264,7 +264,7 @@ void task_serial(void *pVParameters) // This is a task.
             Serial.print((char)received_data[ii]);
           }
           Serial.print("\n");
-          /* xMessageBufferReset(xMessageBuffer); */
+          xMessageBufferReset(xMessageBuffer);
         }
         xSemaphoreGive(xSemaphoreMessageBuffer);
         /* Serial.println("(serial) Semaphore MessageBuffer released."); */
