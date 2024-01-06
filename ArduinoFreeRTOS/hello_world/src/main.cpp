@@ -1,11 +1,6 @@
 
-#include "FreeRTOSVariant.h"
-#include "HardwareSerial.h"
-#include "portable.h"
-#include "projdefs.h"
-#include <Arduino.h>
 #include <Arduino_FreeRTOS.h>
-/* #include <cstdint> */
+#include <Arduino.h>
 #include <message_buffer.h>
 #include <semphr.h>
 
@@ -24,13 +19,13 @@ union Message {
 //
 // Global variables: semaphore and message buffer
 /* Create a message buffer to send data to the serial*/
-const int MESSAGE_SIZE = 100;
+const size_t MESSAGE_SIZE = 100;
 MessageBufferHandle_t xMessageBuffer = xMessageBufferCreate(MESSAGE_SIZE);
 
 /* Create a semaphore to control access to the message buffer */
 // TODO: CHECK if the semaphore is created.
-static SemaphoreHandle_t xSemaphoreMessageBuffer = xSemaphoreCreateBinary();
-static SemaphoreHandle_t xSemaphoreSerialPort = xSemaphoreCreateMutex();
+SemaphoreHandle_t xSemaphoreMessageBuffer = xSemaphoreCreateBinary();
+SemaphoreHandle_t xSemaphoreSerialPort = xSemaphoreCreateMutex();
 
 // Task functions prototypes
 void task_blink(void *pVParameters);
@@ -45,7 +40,7 @@ void get_serial_message(union Message * /*message*/);
 void setup() {
 
   // initialize serial communication at 9600 bits per second:
-  const unsigned int BAUDRATE = 9600;
+  const uint16_t BAUDRATE = 9600;
   Serial.begin(BAUDRATE);
 
   // TODO: needed?
@@ -60,8 +55,8 @@ void setup() {
   /* Serial.println("--- FreeRTOS semaphore example ---"); */
 
   // Task: Blink
-  const int STACK_SIZE_BLINK = 128;
-  const int PRIORITY_BLINK = 2;
+  const size_t STACK_SIZE_BLINK = 128;
+  const uint8_t PRIORITY_BLINK = 2;
   BaseType_t xReturnedBlink;
   TaskHandle_t xTaskHandleBlink;
 
@@ -108,12 +103,12 @@ void loop() {}
 void task_blink(void *pVParameters) // This is a task.
 {
   (void)pVParameters;
-  const int TASK_PERIOD = 1000;
+  const uint16_t TASK_PERIOD = 1000;
 
   // initialize digital LED_BUILTIN on pin 13 as an output.
   pinMode(LED_BUILTIN, OUTPUT);
-  static unsigned int counter = 0;
-  const unsigned int MAX_COUNT = 2;
+  static uint8_t counter = 0;
+  const uint8_t MAX_COUNT = 2;
 
   // Condition for sending a message over the serial port
   boolean isMessageBufferSemaphoreTaken;
@@ -135,8 +130,8 @@ void task_blink(void *pVParameters) // This is a task.
     if (counter == MAX_COUNT) {
 
       // Debug
-      /* Serial.print("Available space in message buffer: "); */
-      /* Serial.println(xMessageBufferSpacesAvailable((xMessageBuffer))); */
+      Serial.print("Available space in message buffer: ");
+      Serial.println(xMessageBufferSpacesAvailable((xMessageBuffer)));
 
       // Check if you can send a message
       isMessageBufferSemaphoreTaken =
@@ -213,7 +208,7 @@ void task_blink(void *pVParameters) // This is a task.
 void task_serial(void *pVParameters) // This is a task.
 {
   (void)pVParameters;
-  const int TASK_PERIOD = 200;
+  const uint8_t TASK_PERIOD = 200;
   uint8_t received_data[MESSAGE_SIZE];
   size_t received_bytes ;
   received_bytes = 0;
@@ -222,7 +217,6 @@ void task_serial(void *pVParameters) // This is a task.
   boolean isSerialSemaphoreTaken;
   boolean isMessageBufferEmpty;
 
-  /* Serial.println("xXx"); */
   while (true) {
     // Conditions for writing on the serial
 
@@ -235,31 +229,34 @@ void task_serial(void *pVParameters) // This is a task.
     isMessageBufferEmpty = xMessageBufferIsEmpty(xMessageBuffer) == pdTRUE;
 
     // Debug
-    /* Serial.print("(Serial) isSerialSemaphoreTaken :"); */
-    /* Serial.println(static_cast<int>(isSerialSemaphoreTaken)); */
-    /* Serial.print("(Serial) isMessageBufferSemaphoreTaken :"); */
-    /* Serial.println(static_cast<int>(isMessageBufferSemaphoreTaken)); */
-    /* Serial.print("(Serial) isMessageBufferEmpty: "); */
-    /* Serial.println(static_cast<int>(isMessageBufferEmpty)); */
+    Serial.print("(Serial) isSerialSemaphoreTaken :");
+    Serial.println(static_cast<int>(isSerialSemaphoreTaken));
+    Serial.print("(Serial) isMessageBufferSemaphoreTaken :");
+    Serial.println(static_cast<int>(isMessageBufferSemaphoreTaken));
+    Serial.print("(Serial) isMessageBufferEmpty: ");
+    Serial.println(static_cast<int>(isMessageBufferEmpty));
 
     if (isSerialSemaphoreTaken) {
       if (isMessageBufferSemaphoreTaken) {
         if (!isMessageBufferEmpty) {
           /* Serial.println("Sesso."); */
           /* Serial.print("received_bytes: "); */
-          received_bytes = xMessageBufferReceive(
-              xMessageBuffer, received_data, sizeof(received_data), 0);
-          Serial.println(received_bytes);
-          /*   for (size_t ii = 0; ii < received_bytes; ii++) { */
-          /*     Serial.print((char)received_data[ii]); */
-          /*   } */
-          /*   Serial.print("\n"); */
-          /*   xMessageBufferReset(xMessageBuffer); */
+          /* received_bytes = xMessageBufferReceive( */
+          /*     xMessageBuffer, received_data, sizeof(received_data), 0); */
+          Serial.println("STOCAZZO");
+            /* for (size_t ii = 0; ii < received_bytes; ii++) { */
+            /*   Serial.print((char)received_data[ii]); */
+            /* } */
+            /* Serial.print("\n"); */
+            xMessageBufferReset(xMessageBuffer);
+            /* isMessageBufferEmpty = true; */
         }
         xSemaphoreGive(xSemaphoreMessageBuffer);
+        /* isMessageBufferSemaphoreTaken = false; */
         /* Serial.println("(serial) Semaphore MessageBuffer released."); */
       }
       xSemaphoreGive(xSemaphoreSerialPort);
+        /* isSerialSemaphoreTaken = false; */
       /* Serial.println("(serial) Semaphore serial port released."); */
     }
 
