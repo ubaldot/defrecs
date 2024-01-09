@@ -1,6 +1,7 @@
 
 #include "serial_port.h"
 #include <semphr.h>
+#include "hw_config.h"
 
 static SemaphoreHandle_t mutex_SerialPortQueue;
 static QueueHandle_t xSerialPortQueue;
@@ -8,6 +9,10 @@ static QueueHandle_t xSerialPortQueue;
 // Use myQueue in functions as needed
 void serial_port_init() {
 
+  Serial.begin(BAUDRATE);
+  while (!Serial) {
+    ;
+  };
   // Create Serial queue and associated mutex
   xSerialPortQueue = xQueueCreate(QUEUE_LENGTH, MESSAGE_SIZE_MAX);
   mutex_SerialPortQueue = xSemaphoreCreateMutex();

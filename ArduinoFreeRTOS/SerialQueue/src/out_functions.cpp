@@ -8,4 +8,4 @@ void out_builtin_led() {
   digitalWrite(LED_BUILTIN, led_state);
 }
 
-/* void out_fan1(pwm) { analogWrite(FAN1, pwm); } */
+void out_fan1(uint8_t pwm) { analogWrite(FAN1, pwm); }

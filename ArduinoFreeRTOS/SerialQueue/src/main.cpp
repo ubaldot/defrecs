@@ -9,19 +9,18 @@
 #include <queue.h>
 #include <task.h>
 
+// TODO: adjust these two here
 TaskHandle_t xTaskHandle_1000ms;
 TaskHandle_t xTaskHandle_200ms;
 
 void setup() {
 
-  // Hardware init
-  hw_digital_pins_config();
-  hw_serial_port_config();
-  hw_analog_out_pins_config();
-
+  // TODO REMOVE ME
+  pinMode(LED_BUILTIN, OUTPUT);
   // Task: 1000ms
   // Initialize all the activities that will end up in this task
-  blink_main_init();
+  blink_main_init(); // Initialize initial condition of the component, mutex,
+                     // etc.
   // Initialize the task itself.
   BaseType_t xReturned1000ms;
   xReturned1000ms = xTaskCreate(task_1000ms, NAME_1000MS, STACK_SIZE_1000MS,

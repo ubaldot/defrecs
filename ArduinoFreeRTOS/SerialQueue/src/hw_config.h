@@ -1,3 +1,11 @@
-void hw_digital_pins_config(void);
-void hw_serial_port_config(void);
-void hw_analog_out_pins_config(void);
+#include <Arduino.h>
+
+// Analog out
+const uint8_t FAN1 = 5; // pin 5 is connected to fan1
+
+// Digital out
+// TODO: hpw to fix it?
+/* pinMode(LED_BUILTIN, OUTPUT); */
+
+// Serial port
+const uint16_t BAUDRATE = 9600;
