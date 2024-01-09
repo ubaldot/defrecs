@@ -36,10 +36,12 @@ void serial_port_main() {
   if (uxQueueMessagesWaiting(xSerialPortQueue) != 0U) {
     BaseType_t isReceived;
     isReceived = xQueueReceive(xSerialPortQueue, &received_data,
-                               1000 / portTICK_PERIOD_MS);
-    /* Serial.println(*received_data); */
+                               100 / portTICK_PERIOD_MS);
     if (isReceived == pdPASS) {
-      Serial.println(*received_data);
+      for (size_t ii = 0; ii < strlen(received_data) - 1; ii++) {
+        Serial.print((char)received_data[ii]);
+      }
+      Serial.print("\n");
     }
   }
 }

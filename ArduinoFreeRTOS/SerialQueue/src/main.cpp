@@ -19,24 +19,28 @@ void setup() {
   SerialPort_init();
 
   // Task: 1000ms
+  // Initialize all the activities that will end up in this task
+  blink_main_init();
+  // Initialize the task itself.
   BaseType_t xReturned1000ms;
   xReturned1000ms = xTaskCreate(task_1000ms, NAME_1000MS, STACK_SIZE_1000MS,
                                 (void *)&TASK_PARAMS_1000MS, PRIORITY_1000MS,
                                 &xTaskHandle_1000ms);
   // TODO: THIS TEST SUCKS!!!!
-  /* if (xReturned1000ms != pdPASS) { */
-  /*   char msg[] = "I cannot instantiate the Blink task."; */
-  /*   serial_port_send(msg); */
-  /* } */
+  if (xReturned1000ms != pdPASS) {
+    char msg[] = "I cannot instantiate the Blink task.";
+    serial_port_send(msg);
+  }
 
   // Task: 200ms
-  /* BaseType_t xReturned200ms; */
-  /* xReturned200ms = xTaskCreate(task_200ms, NAME_200MS, STACK_SIZE_200MS, */
-  /*                              (void *)&TASK_PARAMS_200MS, PRIORITY_200MS, */
-  /*                              &xTaskHandle_200ms); */
-  /* if (xReturned200ms != pdPASS) { */
-  /*   Serial.println("I cannot instantiate the Serial task."); */
-  /* } */
+  serial_port_init();
+  BaseType_t xReturned200ms;
+  xReturned200ms = xTaskCreate(task_200ms, NAME_200MS, STACK_SIZE_200MS,
+                               (void *)&TASK_PARAMS_200MS, PRIORITY_200MS,
+                               &xTaskHandle_200ms);
+  if (xReturned200ms != pdPASS) {
+    Serial.println("I cannot instantiate the Serial task.");
+  }
 }
 
 // Skip loop. OBS! IdleTask cannot be used!
@@ -48,12 +52,11 @@ void task_1000ms(void *pVParameters) // This is a task.
   TaskParamsBlink *params = (TaskParamsBlink *)pVParameters;
 
   // Init all the components running in this task.
-  /* blink_main_init(); */
-
   while (true) {
-    /* blink_main(); // This only produces signals */
-    Serial.println("cazzo");
-    /* out_builtin_led(); */
+    blink_main(); // This only produces signals
+    out_builtin_led();
+    char msg[] = "testing...";
+    serial_port_send(msg);
 
     // Debug
     /* static uint8_t counter = 0; */
@@ -76,7 +79,6 @@ void task_1000ms(void *pVParameters) // This is a task.
 void task_200ms(void *pVParameters) // This is a task.
 {
   TaskParamsSerialPort *params = (TaskParamsSerialPort *)pVParameters;
-  serial_port_init();
 
   while (true) {
     serial_port_main();

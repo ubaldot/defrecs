@@ -6,19 +6,21 @@
 // Produced signals
 // OBS! Each signals needs a mutex!
 static uint8_t blink_led_state;
-static SemaphoreHandle_t mutex_blink_led_state;
+SemaphoreHandle_t mutex_blink_led_state;
 
 // Init
 void blink_main_init(void) {
-  Serial.println("zozza");
   mutex_blink_led_state = xSemaphoreCreateMutex();
   blink_led_state = 0;
+  /* xSemaphoreGive(mutex_blink_led_state); */
 }
 
 // Set
 void set_led_state(uint8_t val) {
-  if (xSemaphoreTake(mutex_blink_led_state, 100 / portTICK_PERIOD_MS) ==
-      pdTRUE) {
+  bool isSemaphoreTaken;
+  isSemaphoreTaken =
+      xSemaphoreTake(mutex_blink_led_state, 100 / portTICK_PERIOD_MS) == pdTRUE;
+  if (isSemaphoreTaken) {
     blink_led_state = val;
     xSemaphoreGive(mutex_blink_led_state);
   }
@@ -39,7 +41,7 @@ uint8_t get_led_state() {
 void blink_main() {
   // send something every MAX_COUNT*TASK_PERIOD seconds.
 
-  uint8_t led_state = 0;
+  static uint8_t led_state = 0;
   if (led_state == 0) {
     led_state = 1;
   } else {
@@ -47,6 +49,4 @@ void blink_main() {
   }
 
   set_led_state(led_state);
-  /* serial_port_send("pippo"); */
-  Serial.println("Sto nel blink");
 }
