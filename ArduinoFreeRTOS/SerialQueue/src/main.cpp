@@ -39,6 +39,8 @@ void get_serial_message(union Message * /*message*/);
 // the setup function runs once when you press reset or power the board
 void setup() {
 
+  // initialize digital LED_BUILTIN on pin 13 as an output.
+  pinMode(LED_BUILTIN, OUTPUT);
   // SERIAL: initialize serial communication at 9600 bits per second:
   const uint16_t BAUDRATE = 9600;
   Serial.begin(BAUDRATE);
@@ -96,10 +98,6 @@ void task_blink(void *pVParameters) // This is a task.
 {
   TaskParamsBlink *params = (TaskParamsBlink *)pVParameters;
 
-  // initialize digital LED_BUILTIN on pin 13 as an output.
-  pinMode(LED_BUILTIN, OUTPUT);
-  static uint8_t counter = 0;
-  const size_t MAX_COUNT = 2;
 
   while (true) {
     blink_main();
@@ -108,6 +106,8 @@ void task_blink(void *pVParameters) // This is a task.
     led_state = get_led_state();
     digitalWrite(LED_BUILTIN, led_state);
 
+    static uint8_t counter = 0;
+    const size_t MAX_COUNT = 2;
     uint8_t message;
     message = uxTaskGetStackHighWaterMark(xTaskHandleBlink);
     /* Serial.println(message); */
