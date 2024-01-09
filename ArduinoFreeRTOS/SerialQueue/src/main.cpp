@@ -15,8 +15,9 @@ TaskHandle_t xTaskHandle_200ms;
 void setup() {
 
   // Hardware init
-  hw_digital_pins_init();
-  hw_serial_port_init();
+  hw_digital_pins_config();
+  hw_serial_port_config();
+  hw_analog_out_pins_config();
 
   // Task: 1000ms
   // Initialize all the activities that will end up in this task
