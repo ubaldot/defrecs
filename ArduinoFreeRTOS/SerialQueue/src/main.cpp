@@ -15,8 +15,8 @@ TaskHandle_t xTaskHandle_200ms;
 void setup() {
 
   // Hardware init
-  GPIO_init();
-  SerialPort_init();
+  hw_digital_pins_init();
+  hw_serial_port_init();
 
   // Task: 1000ms
   // Initialize all the activities that will end up in this task
@@ -26,7 +26,6 @@ void setup() {
   xReturned1000ms = xTaskCreate(task_1000ms, NAME_1000MS, STACK_SIZE_1000MS,
                                 (void *)&TASK_PARAMS_1000MS, PRIORITY_1000MS,
                                 &xTaskHandle_1000ms);
-  // TODO: THIS TEST SUCKS!!!!
   if (xReturned1000ms != pdPASS) {
     char msg[] = "I cannot instantiate the Blink task.";
     serial_port_send(msg);

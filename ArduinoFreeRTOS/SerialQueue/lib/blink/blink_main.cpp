@@ -12,11 +12,10 @@ SemaphoreHandle_t mutex_blink_led_state;
 void blink_main_init(void) {
   mutex_blink_led_state = xSemaphoreCreateMutex();
   blink_led_state = 0;
-  /* xSemaphoreGive(mutex_blink_led_state); */
 }
 
 // Set
-void set_led_state(uint8_t val) {
+void set_blink_led_state(uint8_t val) {
   bool isSemaphoreTaken;
   isSemaphoreTaken =
       xSemaphoreTake(mutex_blink_led_state, 100 / portTICK_PERIOD_MS) == pdTRUE;
@@ -27,7 +26,7 @@ void set_led_state(uint8_t val) {
 }
 
 // Get
-uint8_t get_led_state() {
+uint8_t get_blink_led_state() {
   uint8_t led_state = 0;
   if (xSemaphoreTake(mutex_blink_led_state, 100 / portTICK_PERIOD_MS) ==
       pdTRUE) {
@@ -48,5 +47,5 @@ void blink_main() {
     led_state = 0;
   }
 
-  set_led_state(led_state);
+  set_blink_led_state(led_state);
 }
