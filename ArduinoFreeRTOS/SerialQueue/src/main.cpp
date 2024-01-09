@@ -1,4 +1,5 @@
 
+#include "blink_main.h"
 #include "tasks_setup.h"
 #include <Arduino.h>
 #include <Arduino_FreeRTOS.h>
@@ -78,10 +79,10 @@ void setup() {
 
   // Task: Serial
   BaseType_t xReturnedSerial;
-
-  xReturnedSerial = xTaskCreate(
-      task_serial, NAME_SERIAL_PORT, STACK_SIZE_SERIAL_PORT,
-      (void *)&TASK_PARAMS_SERIAL_PORT, PRIORITY_SERIAL_PORT, &xTaskHandleSerial);
+  xReturnedSerial =
+      xTaskCreate(task_serial, NAME_SERIAL_PORT, STACK_SIZE_SERIAL_PORT,
+                  (void *)&TASK_PARAMS_SERIAL_PORT, PRIORITY_SERIAL_PORT,
+                  &xTaskHandleSerial);
 
   if (xReturnedSerial != pdPASS) {
     Serial.println("I cannot instantiate the Serial task.");
@@ -93,8 +94,7 @@ void loop() {}
 // Task implementation
 void task_blink(void *pVParameters) // This is a task.
 {
-  (void)pVParameters;
-  const int TASK_PERIOD = 1000;
+  TaskParamsBlink *params = (TaskParamsBlink *)pVParameters;
 
   // initialize digital LED_BUILTIN on pin 13 as an output.
   pinMode(LED_BUILTIN, OUTPUT);
@@ -102,16 +102,11 @@ void task_blink(void *pVParameters) // This is a task.
   const size_t MAX_COUNT = 2;
 
   while (true) {
-    static bool led_state = false;
-    // send something every MAX_COUNT*TASK_PERIOD seconds.
+    blink_main();
 
-    if (!led_state) {
-      digitalWrite(LED_BUILTIN, HIGH);
-      led_state = true;
-    } else {
-      digitalWrite(LED_BUILTIN, LOW);
-      led_state = false;
-    }
+    uint8_t led_state;
+    led_state = get_led_state();
+    digitalWrite(LED_BUILTIN, led_state);
 
     uint8_t message;
     message = uxTaskGetStackHighWaterMark(xTaskHandleBlink);
@@ -125,7 +120,7 @@ void task_blink(void *pVParameters) // This is a task.
     }
 
     // Task Schedule
-    const TickType_t X_DELAY = TASK_PERIOD / portTICK_PERIOD_MS;
+    const TickType_t X_DELAY = params->PERIOD / portTICK_PERIOD_MS;
     vTaskDelay(X_DELAY); // one tick delay (15ms)
   }
 }
