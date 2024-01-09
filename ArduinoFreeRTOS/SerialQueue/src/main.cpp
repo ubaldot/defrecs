@@ -98,14 +98,17 @@ void task_blink(void *pVParameters) // This is a task.
 {
   TaskParamsBlink *params = (TaskParamsBlink *)pVParameters;
 
+  // Init all the components running in this task.
+  blink_main_init();
 
   while (true) {
-    blink_main();
+    blink_main(); // This only produces signals
 
     uint8_t led_state;
     led_state = get_led_state();
     digitalWrite(LED_BUILTIN, led_state);
 
+    // Debug
     static uint8_t counter = 0;
     const size_t MAX_COUNT = 2;
     uint8_t message;
@@ -171,7 +174,7 @@ void task_blink(void *pVParameters) // This is a task.
 void task_serial(void *pVParameters) // This is a task.
 {
   (void)pVParameters;
-  const uint8_t TASK_PERIOD = 200;
+  TaskParamsSerialPort *params = (TaskParamsSerialPort *)pVParameters;
   char received_data[MESSAGE_MAX_SIZE];
 
   while (true) {
@@ -187,7 +190,7 @@ void task_serial(void *pVParameters) // This is a task.
     }
 
     // TODO: Task Schedule
-    const TickType_t X_DELAY = TASK_PERIOD / portTICK_PERIOD_MS;
+    const TickType_t X_DELAY = params->PERIOD / portTICK_PERIOD_MS;
     vTaskDelay(X_DELAY); // one tick delay (15ms)
   }
 }
