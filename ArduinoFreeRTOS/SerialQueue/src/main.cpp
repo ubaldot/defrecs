@@ -1,4 +1,5 @@
 
+#include "tasks_setup.h"
 #include <Arduino.h>
 #include <Arduino_FreeRTOS.h>
 #include <queue.h>
@@ -33,9 +34,6 @@ void task_serial(void *pVParameters);
 // Aux functions
 void set_pid_gains(float * /*Kp*/, float * /*Ki*/, float * /*Kd*/);
 void get_serial_message(union Message * /*message*/);
-void send_message_to_serial(
-    const char * /*pMessage*/); // If you declare as const you don't
-                                // need to pass the length
 
 // the setup function runs once when you press reset or power the board
 void setup() {
@@ -53,12 +51,10 @@ void setup() {
   xSerialQueue = xQueueCreate(QUEUE_MAX_LENGTH, MESSAGE_MAX_SIZE);
 
   // Task: Blink
-  const size_t STACK_SIZE_BLINK = 128;
-  const uint8_t PRIORITY_BLINK = 2;
   BaseType_t xReturnedBlink;
-
-  xReturnedBlink = xTaskCreate(task_blink, "Blink", STACK_SIZE_BLINK, NULL,
-                               PRIORITY_BLINK, &xTaskHandleBlink);
+  xReturnedBlink = xTaskCreate(task_blink, NAME_BLINK, STACK_SIZE_BLINK,
+                               (void *)&TASK_PARAMS_BLINK, PRIORITY_BLINK,
+                               &xTaskHandleBlink);
   // TODO:
   if (xReturnedBlink != pdPASS) {
     char msg[] = "I cannot instantiate the Blink task.";
@@ -81,12 +77,11 @@ void setup() {
   /* } */
 
   // Task: Serial
-  const int STACK_SIZE_SERIAL = 512;
-  const int PRIORITY_SERIAL = 2;
   BaseType_t xReturnedSerial;
 
-  xReturnedSerial = xTaskCreate(task_serial, "Serial", STACK_SIZE_SERIAL, NULL,
-                                PRIORITY_SERIAL, &xTaskHandleSerial);
+  xReturnedSerial = xTaskCreate(
+      task_serial, NAME_SERIAL_PORT, STACK_SIZE_SERIAL_PORT,
+      (void *)&TASK_PARAMS_SERIAL_PORT, PRIORITY_SERIAL_PORT, &xTaskHandleSerial);
 
   if (xReturnedSerial != pdPASS) {
     Serial.println("I cannot instantiate the Serial task.");
@@ -188,8 +183,8 @@ void task_serial(void *pVParameters) // This is a task.
     // Conditions for writing on the serial
     if (uxQueueMessagesWaiting(xSerialQueue) != 0U) {
       BaseType_t isReceived;
-      isReceived =
-          xQueueReceive(xSerialQueue, &received_data, 1000 / portTICK_PERIOD_MS);
+      isReceived = xQueueReceive(xSerialQueue, &received_data,
+                                 1000 / portTICK_PERIOD_MS);
       /* Serial.println(*received_data); */
       if (isReceived == pdPASS) {
         Serial.println(*received_data);
