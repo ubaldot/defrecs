@@ -17,7 +17,6 @@
 //===----------------------------------------------------------------------===//
 
 #include "pinout_functions_arduino.h"
-#include "serial_port.h"
 #include <Arduino.h>
 #include <Arduino_FreeRTOS.h>
 #include <semphr.h>

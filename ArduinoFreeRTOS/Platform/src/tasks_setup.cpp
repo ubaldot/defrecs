@@ -1,5 +1,6 @@
 #include "tasks_setup.h"
 #include "blink_main.h"
+#include "debug_main.h"
 #include "pinout_functions_arduino.h"
 #include "serial_port.h"
 #include <Arduino.h>
@@ -15,8 +16,9 @@ static void task_1000ms(void * /*pVParameters*/);
 
 static void components_init() {
   // List all the components used. Initializes queues, mutex, etc.
-  serial_port_init();
   blink_init(); // Initialize initial condition of the component, mutex,
+  debug_init(); // Initialize initial condition of the component, mutex,
+  serial_port_init();
 }
 
 void tasks_setup() {
@@ -49,24 +51,12 @@ void tasks_setup() {
 
 static void task_1000ms(void *pVParameters) // This is a task.
 {
-  TaskParamsBlink *params = (TaskParamsBlink *)pVParameters;
+  const TaskParamsBlink *params = (TaskParamsBlink *)pVParameters;
 
-  // Init all the components running in this task.
   while (true) {
-    blink_main(); // This only produces signals
-
-    // TODO
-    // Debug
-    /* static uint8_t counter = 0; */
-    /* const size_t MAX_COUNT = 2; */
-    /* uint8_t message; */
-    /* message = uxTaskGetStackHighWaterMark(xTaskHandleBlink); */
-    /* if (counter == MAX_COUNT) { */
-    /*   xQueueSend(xSerialQueue, &message, 1000 / portTICK_PERIOD_MS); */
-    /*   counter = 0; */
-    /* } else { */
-    /*   counter++; */
-    /* } */
+    // Run activities
+    blink_main();
+    debug_main();
 
     // Task Schedule
     const TickType_t X_DELAY = params->PERIOD / portTICK_PERIOD_MS;
@@ -76,7 +66,7 @@ static void task_1000ms(void *pVParameters) // This is a task.
 
 static void task_200ms(void *pVParameters) // This is a task.
 {
-  TaskParamsSerialPort *params = (TaskParamsSerialPort *)pVParameters;
+  const TaskParamsSerialPort *params = (TaskParamsSerialPort *)pVParameters;
 
   while (true) {
     serial_port_main();

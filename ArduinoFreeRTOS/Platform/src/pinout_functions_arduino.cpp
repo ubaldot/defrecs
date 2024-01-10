@@ -1,4 +1,3 @@
-#include "blink_main.h"
 #include "hw_config_arduino.h"
 #include "serial_port.h"
 #include <Arduino.h>

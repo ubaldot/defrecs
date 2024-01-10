@@ -1,6 +1,6 @@
 # CREATED BY VIM-PIO
 all:
-	platformio -f -c vim run
+	platformio -f -c vim run --verbose
 
 upload:
 	platformio -f -c vim run --target upload

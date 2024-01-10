@@ -210,33 +210,45 @@
         "output": ".pio/build/uno/lib629/LibPrintf/LibPrintf.cpp.o"
     },
     {
-        "command": "/Users/ubaldot/.platformio/packages/toolchain-atmelavr/bin/avr-g++ -o .pio/build/uno/lib491/serial_port/serial_port.cpp.o -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 --target=avr -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60112 -DARDUINO_AVR_UNO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -Ilib/serial_port -I.pio/libdeps/uno/FreeRTOS/src -Ilib -Isrc -I/Users/ubaldot/.platformio/packages/framework-arduino-avr/cores/arduino -I/Users/ubaldot/.platformio/packages/framework-arduino-avr/variants/standard lib/serial_port/serial_port.cpp",
+        "command": "/Users/ubaldot/.platformio/packages/toolchain-atmelavr/bin/avr-g++ -o .pio/build/uno/lib491/serial_port/serial_port.cpp.o -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 --target=avr -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60112 -DARDUINO_AVR_UNO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -Ilib/serial_port -Ilib/blink -Ilib -Isrc -I/Users/ubaldot/.platformio/packages/framework-arduino-avr/cores/arduino -I/Users/ubaldot/.platformio/packages/framework-arduino-avr/variants/standard lib/serial_port/serial_port.cpp",
         "directory": "/Users/ubaldot/Documents/embedded/ArduinoFreeRTOS/Platform",
         "file": "lib/serial_port/serial_port.cpp",
         "output": ".pio/build/uno/lib491/serial_port/serial_port.cpp.o"
     },
     {
-        "command": "/Users/ubaldot/.platformio/packages/toolchain-atmelavr/bin/avr-g++ -o .pio/build/uno/liba76/blink/blink_main.cpp.o -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 --target=avr -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60112 -DARDUINO_AVR_UNO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -Ilib/blink -Ilib/serial_port -I.pio/libdeps/uno/FreeRTOS/src -Ilib -Isrc -I/Users/ubaldot/.platformio/packages/framework-arduino-avr/cores/arduino -I/Users/ubaldot/.platformio/packages/framework-arduino-avr/variants/standard lib/blink/blink_main.cpp",
+        "command": "/Users/ubaldot/.platformio/packages/toolchain-atmelavr/bin/avr-g++ -o .pio/build/uno/liba76/blink/blink_main.cpp.o -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 --target=avr -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60112 -DARDUINO_AVR_UNO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -I.pio/libdeps/uno/FreeRTOS/src -Ilib/serial_port -Ilib/blink -Ilib -Isrc -I/Users/ubaldot/.platformio/packages/framework-arduino-avr/cores/arduino -I/Users/ubaldot/.platformio/packages/framework-arduino-avr/variants/standard lib/blink/blink_main.cpp",
         "directory": "/Users/ubaldot/Documents/embedded/ArduinoFreeRTOS/Platform",
         "file": "lib/blink/blink_main.cpp",
         "output": ".pio/build/uno/liba76/blink/blink_main.cpp.o"
     },
     {
-        "command": "/Users/ubaldot/.platformio/packages/toolchain-atmelavr/bin/avr-g++ -o .pio/build/uno/src/hw_config_arduino.cpp.o -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 --target=avr -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60112 -DARDUINO_AVR_UNO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -Iinclude -Ilib/blink -Ilib/serial_port -I.pio/libdeps/uno/LibPrintf/src -I.pio/libdeps/uno/FreeRTOS/src -Ilib -Isrc -I/Users/ubaldot/.platformio/packages/framework-arduino-avr/cores/arduino -I/Users/ubaldot/.platformio/packages/framework-arduino-avr/variants/standard src/hw_config_arduino.cpp",
+        "command": "/Users/ubaldot/.platformio/packages/toolchain-atmelavr/bin/avr-g++ -o .pio/build/uno/lib125/debug/debug_main.cpp.o -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 --target=avr -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60112 -DARDUINO_AVR_UNO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -Ilib/debug -I.pio/libdeps/uno/FreeRTOS/src -Ilib -Isrc -I/Users/ubaldot/.platformio/packages/framework-arduino-avr/cores/arduino -I/Users/ubaldot/.platformio/packages/framework-arduino-avr/variants/standard lib/debug/debug_main.cpp",
+        "directory": "/Users/ubaldot/Documents/embedded/ArduinoFreeRTOS/Platform",
+        "file": "lib/debug/debug_main.cpp",
+        "output": ".pio/build/uno/lib125/debug/debug_main.cpp.o"
+    },
+    {
+        "command": "/Users/ubaldot/.platformio/packages/toolchain-atmelavr/bin/avr-g++ -o .pio/build/uno/src/hw_config_arduino.cpp.o -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 --target=avr -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60112 -DARDUINO_AVR_UNO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -Iinclude -Ilib/debug -Ilib/serial_port -Ilib/blink -I.pio/libdeps/uno/LibPrintf/src -I.pio/libdeps/uno/FreeRTOS/src -Ilib -Isrc -I/Users/ubaldot/.platformio/packages/framework-arduino-avr/cores/arduino -I/Users/ubaldot/.platformio/packages/framework-arduino-avr/variants/standard src/hw_config_arduino.cpp",
         "directory": "/Users/ubaldot/Documents/embedded/ArduinoFreeRTOS/Platform",
         "file": "src/hw_config_arduino.cpp",
         "output": ".pio/build/uno/src/hw_config_arduino.cpp.o"
     },
     {
-        "command": "/Users/ubaldot/.platformio/packages/toolchain-atmelavr/bin/avr-g++ -o .pio/build/uno/src/main.cpp.o -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 --target=avr -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60112 -DARDUINO_AVR_UNO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -Iinclude -Ilib/blink -Ilib/serial_port -I.pio/libdeps/uno/LibPrintf/src -I.pio/libdeps/uno/FreeRTOS/src -Ilib -Isrc -I/Users/ubaldot/.platformio/packages/framework-arduino-avr/cores/arduino -I/Users/ubaldot/.platformio/packages/framework-arduino-avr/variants/standard src/main.cpp",
+        "command": "/Users/ubaldot/.platformio/packages/toolchain-atmelavr/bin/avr-g++ -o .pio/build/uno/src/main.cpp.o -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 --target=avr -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60112 -DARDUINO_AVR_UNO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -Iinclude -Ilib/debug -Ilib/serial_port -Ilib/blink -I.pio/libdeps/uno/LibPrintf/src -I.pio/libdeps/uno/FreeRTOS/src -Ilib -Isrc -I/Users/ubaldot/.platformio/packages/framework-arduino-avr/cores/arduino -I/Users/ubaldot/.platformio/packages/framework-arduino-avr/variants/standard src/main.cpp",
         "directory": "/Users/ubaldot/Documents/embedded/ArduinoFreeRTOS/Platform",
         "file": "src/main.cpp",
         "output": ".pio/build/uno/src/main.cpp.o"
     },
     {
-        "command": "/Users/ubaldot/.platformio/packages/toolchain-atmelavr/bin/avr-g++ -o .pio/build/uno/src/out_functions_arduino.cpp.o -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 --target=avr -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60112 -DARDUINO_AVR_UNO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -Iinclude -Ilib/blink -Ilib/serial_port -I.pio/libdeps/uno/LibPrintf/src -I.pio/libdeps/uno/FreeRTOS/src -Ilib -Isrc -I/Users/ubaldot/.platformio/packages/framework-arduino-avr/cores/arduino -I/Users/ubaldot/.platformio/packages/framework-arduino-avr/variants/standard src/out_functions_arduino.cpp",
+        "command": "/Users/ubaldot/.platformio/packages/toolchain-atmelavr/bin/avr-g++ -o .pio/build/uno/src/pinout_functions_arduino.cpp.o -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 --target=avr -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60112 -DARDUINO_AVR_UNO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -Iinclude -Ilib/debug -Ilib/serial_port -Ilib/blink -I.pio/libdeps/uno/LibPrintf/src -I.pio/libdeps/uno/FreeRTOS/src -Ilib -Isrc -I/Users/ubaldot/.platformio/packages/framework-arduino-avr/cores/arduino -I/Users/ubaldot/.platformio/packages/framework-arduino-avr/variants/standard src/pinout_functions_arduino.cpp",
         "directory": "/Users/ubaldot/Documents/embedded/ArduinoFreeRTOS/Platform",
-        "file": "src/out_functions_arduino.cpp",
-        "output": ".pio/build/uno/src/out_functions_arduino.cpp.o"
+        "file": "src/pinout_functions_arduino.cpp",
+        "output": ".pio/build/uno/src/pinout_functions_arduino.cpp.o"
+    },
+    {
+        "command": "/Users/ubaldot/.platformio/packages/toolchain-atmelavr/bin/avr-g++ -o .pio/build/uno/src/tasks_setup.cpp.o -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 --target=avr -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60112 -DARDUINO_AVR_UNO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -Iinclude -Ilib/debug -Ilib/serial_port -Ilib/blink -I.pio/libdeps/uno/LibPrintf/src -I.pio/libdeps/uno/FreeRTOS/src -Ilib -Isrc -I/Users/ubaldot/.platformio/packages/framework-arduino-avr/cores/arduino -I/Users/ubaldot/.platformio/packages/framework-arduino-avr/variants/standard src/tasks_setup.cpp",
+        "directory": "/Users/ubaldot/Documents/embedded/ArduinoFreeRTOS/Platform",
+        "file": "src/tasks_setup.cpp",
+        "output": ".pio/build/uno/src/tasks_setup.cpp.o"
     }
 ]
