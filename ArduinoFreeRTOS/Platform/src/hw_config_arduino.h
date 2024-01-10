@@ -1,7 +1,9 @@
 //===-- hw_config_arduino.h - HW config for Arduino boards-------*- C++ -*-===//
+//
 // This is used for initializing Arduino boards hardware.
 // Unfortunately, some config require some function call and this is the
 // reason why we use hw_config_arduino_init().
+//
 //===----------------------------------------------------------------------===//
 
 #ifndef HW_CONFIG_ARDUINO_H

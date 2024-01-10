@@ -30,8 +30,8 @@ void tasks_setup() {
                                 (void **)&TASK_PARAMS_1000MS, PRIORITY_1000MS,
                                 &xTaskHandle_1000ms);
   if (xReturned1000ms != pdPASS) {
-    char msg[] = "I cannot instantiate the 1000ms task.";
-    serial_port_send(msg);
+    const char msg[] = "I cannot instantiate the 1000ms task.";
+    /* serial_port_send(msg); */
   }
 
   // Create task
@@ -41,8 +41,9 @@ void tasks_setup() {
                                &xTaskHandle_200ms);
   if (xReturned200ms != pdPASS) {
     // To do: change!
-    char msg[] = "I cannot instantiate the 200ms task.";
-    serial_port_send(msg);
+    const char msg[] = "I cannot instantiate the 200ms task.";
+    // TODO
+    /* serial_port_send(msg); */
   }
 }
 
@@ -78,7 +79,6 @@ static void task_200ms(void *pVParameters) // This is a task.
   TaskParamsSerialPort *params = (TaskParamsSerialPort *)pVParameters;
 
   while (true) {
-    /* serial_port_send("stamkinkia"); */
     serial_port_main();
 
     // Task Schedule

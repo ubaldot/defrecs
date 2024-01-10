@@ -36,8 +36,8 @@ static void set_blink_led_state(const uint8_t *pLedState) {
 }
 
 // Get
-void get_blink_led_state(char *pMessage) {
-  // TODO This shall be READ ONLY!
+void get_blink_led_state(uint8_t *pMessage) {
+  // Returns a copy of the output
   if (xSemaphoreTake(mutex_blink_led_state, 100 / portTICK_PERIOD_MS) ==
       pdTRUE) {
     memcpy(&pMessage, &blink_led_state, 1);
@@ -60,7 +60,5 @@ void blink_main() {
 
   // OUTPUT
   set_blink_led_state(&led_state);
-  char msg[] = "testing...";
-  serial_port_send(msg);
   pinout_builtin_led(led_state);
 }
