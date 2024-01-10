@@ -14,12 +14,12 @@ static char serial_data[MESSAGE_SIZE_MAX];
 static SemaphoreHandle_t mutex_serial_data;
 
 // Set
-static void serial_set_data(const char *pVal) {
+static void serial_set_data(const char *pMessage) {
   bool isSemaphoreTaken;
   isSemaphoreTaken =
       xSemaphoreTake(mutex_serial_data, 100 / portTICK_PERIOD_MS) == pdTRUE;
   if (isSemaphoreTaken) {
-    strcpy(serial_data, pVal);
+    strcpy(serial_data, pMessage);
     xSemaphoreGive(mutex_serial_data);
   }
 }
@@ -47,28 +47,28 @@ void serial_port_init() {
 // This function can be used by anyone in any task to send stuff to the serial
 // port.
 void serial_port_send(const char *pMessage) {
-
-  Serial.println(strlen(pMessage));
+  // push messages to the queue
   boolean isSerialPortQueueAvailable;
-  /* isSerialPortQueueAvailable = */
-  /*     xSemaphoreTake(mutex_SerialPortQueue, 100 / portTICK_PERIOD_MS) ==
-   * pdTRUE; */
+  isSerialPortQueueAvailable =
+      xSemaphoreTake(mutex_SerialPortQueue, 100 / portTICK_PERIOD_MS) == pdTRUE;
 
-  /* if (isSerialPortQueueAvailable) { */
-  /*   if (uxQueueSpacesAvailable(xSerialPortQueue) > 0) { */
-  /*     xQueueSend(xSerialPortQueue, pMessage, 100 / portTICK_PERIOD_MS); */
-  /*   } */
-  /*   xSemaphoreGive(mutex_SerialPortQueue); */
-  /* } */
+  if (isSerialPortQueueAvailable) {
+    if (uxQueueSpacesAvailable(xSerialPortQueue) > 0) {
+      xQueueSend(xSerialPortQueue, pMessage, 100 / portTICK_PERIOD_MS);
+    }
+    xSemaphoreGive(mutex_SerialPortQueue);
+  }
 }
 
 // This function is the main. If there is anything in the queue it just send
 // it to the serial port.
 void serial_port_main() {
+  // pop messages from the queue (if any) and set component's output
   char received_data[MESSAGE_SIZE_MAX];
   // If any message available
-  if (uxQueueMessagesWaiting(xSerialPortQueue) != 0U) {
+  if (uxQueueMessagesWaiting(xSerialPortQueue) > 0) {
     // Lock the Serial Queue to extract data
+
     boolean isSerialPortQueueTaken;
     isSerialPortQueueTaken = xSemaphoreTake(mutex_SerialPortQueue,
                                             100 / portTICK_PERIOD_MS) == pdTRUE;

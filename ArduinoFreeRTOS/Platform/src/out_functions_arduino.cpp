@@ -17,10 +17,11 @@ void out_fan1(void) {
 }
 
 void out_serial_port(void) {
-  char *msg;
-  msg = serial_get_data();
-  for (size_t ii = 0; msg[ii] != '\0'; ii++) {
-    Serial.print(msg[ii]);
-  }
-  Serial.print("\n");
+  char *msg = serial_get_data();
+  /* msg = serial_get_data(); */
+  /* Serial.println(msg); */
+  /* for (size_t ii = 0; msg[ii] != '\0'; ii++) { */
+  /*   Serial.print(msg[ii]); */
+  /* } */
+  /* Serial.print("\n"); */
 }

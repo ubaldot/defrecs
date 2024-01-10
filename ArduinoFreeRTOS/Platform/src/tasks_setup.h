@@ -6,7 +6,7 @@
 
 // Task 1000ms
 const char NAME_1000MS[] = "Task_1000ms";
-const size_t STACK_SIZE_1000MS = 512;
+const size_t STACK_SIZE_1000MS = 256;
 const uint8_t PRIORITY_1000MS = 2;
 const struct TaskParamsBlink {
   TickType_t PERIOD = 1000;

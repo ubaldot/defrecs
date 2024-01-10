@@ -6,7 +6,7 @@
 
 void setup() {
 
-  hw_config_arduino_init(); // OK
+  hw_config_arduino_init();
   tasks_setup();
 }
 
