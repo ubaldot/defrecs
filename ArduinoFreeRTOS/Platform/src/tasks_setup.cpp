@@ -1,6 +1,6 @@
 #include "tasks_setup.h"
 #include "blink_main.h"
-#include "out_functions_arduino.h"
+#include "pinout_functions_arduino.h"
 #include "serial_port.h"
 #include <Arduino.h>
 #include <Arduino_FreeRTOS.h>
@@ -16,7 +16,7 @@ static void task_1000ms(void * /*pVParameters*/);
 static void components_init() {
   // List all the components used. Initializes queues, mutex, etc.
   serial_port_init();
-  blink_main_init(); // Initialize initial condition of the component, mutex,
+  blink_init(); // Initialize initial condition of the component, mutex,
 }
 
 void tasks_setup() {
@@ -53,10 +53,8 @@ static void task_1000ms(void *pVParameters) // This is a task.
   // Init all the components running in this task.
   while (true) {
     blink_main(); // This only produces signals
-    out_builtin_led();
-    char msg[] = "testing...";
-    serial_port_send(msg);
 
+    // TODO
     // Debug
     /* static uint8_t counter = 0; */
     /* const size_t MAX_COUNT = 2; */
@@ -80,9 +78,8 @@ static void task_200ms(void *pVParameters) // This is a task.
   TaskParamsSerialPort *params = (TaskParamsSerialPort *)pVParameters;
 
   while (true) {
+    /* serial_port_send("stamkinkia"); */
     serial_port_main();
-    Serial.println("cazzo");
-    /* out_serial_port(); */
 
     // Task Schedule
     const TickType_t X_DELAY = params->PERIOD / portTICK_PERIOD_MS;

@@ -3,8 +3,8 @@
 
 #include <Arduino.h>
 
-void out_builtin_led(void);
-void out_fan1(void);
-void out_serial_port(void);
+void pinout_builtin_led(uint8_t);
+void pinout_fan1(uint8_t);
+void pinout_serial_port(const char*);
 
 #endif /* OUT_FUNCTIONS_H */
