@@ -30,28 +30,31 @@ static SemaphoreHandle_t mutex_blink_led_state;
 static void set_blink_led_state(const uint8_t *pLedState) {
   if (xSemaphoreTake(mutex_blink_led_state, 100 / portTICK_PERIOD_MS) ==
       pdTRUE) {
-    memcpy(&blink_led_state, &pLedState, 1);
+    memcpy(&blink_led_state, pLedState, 1);
     xSemaphoreGive(mutex_blink_led_state);
   }
 }
 
 // Get
-void get_blink_led_state(uint8_t *pMessage) {
+void get_blink_led_state(uint8_t *pLedState) {
   // Returns a copy of the output
   if (xSemaphoreTake(mutex_blink_led_state, 100 / portTICK_PERIOD_MS) ==
       pdTRUE) {
-    memcpy(&pMessage, &blink_led_state, 1);
+    memcpy(pLedState, &blink_led_state, 1);
     xSemaphoreGive(mutex_blink_led_state);
   }
 }
 
 // Init
-void blink_init(void) { blink_led_state = 0; }
+void blink_init(void) {
+  blink_led_state = 0;
+  mutex_blink_led_state = xSemaphoreCreateMutex();
+}
 
 // ------- Actual function starts here! -------------
 void blink_main() {
   // send something every MAX_COUNT*TASK_PERIOD seconds.
-  static uint8_t led_state = 0;
+  static uint8_t led_state = 1;
   if (led_state == 0) {
     led_state = 1;
   } else {

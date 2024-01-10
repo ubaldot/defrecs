@@ -29,22 +29,22 @@ void tasks_setup() {
   xReturned1000ms = xTaskCreate(task_1000ms, NAME_1000MS, STACK_SIZE_1000MS,
                                 (void **)&TASK_PARAMS_1000MS, PRIORITY_1000MS,
                                 &xTaskHandle_1000ms);
-  if (xReturned1000ms != pdPASS) {
-    const char msg[] = "I cannot instantiate the 1000ms task.";
-    /* serial_port_send(msg); */
-  }
+  /* if (xReturned1000ms != pdPASS) { */
+  /*   const char msg[] = "I cannot instantiate the 1000ms task."; */
+  /*   serial_port_send(msg); */
+  /* } */
 
   // Create task
   BaseType_t xReturned200ms;
   xReturned200ms = xTaskCreate(task_200ms, NAME_200MS, STACK_SIZE_200MS,
                                (void *)&TASK_PARAMS_200MS, PRIORITY_200MS,
                                &xTaskHandle_200ms);
-  if (xReturned200ms != pdPASS) {
-    // To do: change!
-    const char msg[] = "I cannot instantiate the 200ms task.";
-    // TODO
-    /* serial_port_send(msg); */
-  }
+  /* if (xReturned200ms != pdPASS) { */
+  /*   // To do: change! */
+  /*   const char msg[] = "I cannot instantiate the 200ms task."; */
+  /*   // TODO */
+  /*   /1* serial_port_send(msg); *1/ */
+  /* } */
 }
 
 static void task_1000ms(void *pVParameters) // This is a task.
