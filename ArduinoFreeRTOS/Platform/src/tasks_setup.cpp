@@ -29,7 +29,7 @@ void tasks_setup() {
   // Create task
   BaseType_t xReturned1000ms;
   xReturned1000ms = xTaskCreate(task_1000ms, NAME_1000MS, STACK_SIZE_1000MS,
-                                (void **)&TASK_PARAMS_1000MS, PRIORITY_1000MS,
+                                (void *)&TASK_PARAMS_1000MS, PRIORITY_1000MS,
                                 &xTaskHandle_1000ms);
   /* if (xReturned1000ms != pdPASS) { */
   /*   const char msg[] = "I cannot instantiate the 1000ms task."; */
