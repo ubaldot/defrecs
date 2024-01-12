@@ -5,7 +5,7 @@
 //  2. Mutex for setting/getting must contain the same name of the associated
 //     output, e.g. blink_led_state -> mutex_blink_led_state
 //  3. Setters and getters shape is the same for all the components and must
-//     have the form set_<output_name>, e.g. set_blink_set_state()
+//     have the form seto_<output_name>, e.g. seto_blink_seto_state()
 //  4. The function to be placed in the scheduling must have suffix _main
 //  5. Outputs shall be initialized in the <prefix>_init() function.
 //===----------------------------------------------------------------------===//
@@ -16,7 +16,7 @@
 // OUTPUTS: blink_led_state
 //===----------------------------------------------------------------------===//
 
-#include "pinout_functions_arduino.h"
+#include "pinout_arduino.h"
 #include <Arduino.h>
 #include <Arduino_FreeRTOS.h>
 #include <semphr.h>
@@ -26,7 +26,7 @@ static uint8_t blink_led_state;
 static SemaphoreHandle_t mutex_blink_led_state;
 
 // Set
-static void set_blink_led_state(const uint8_t *pLedState) {
+static void seto_blink_led_state(const uint8_t *pLedState) {
   if (xSemaphoreTake(mutex_blink_led_state, 100 / portTICK_PERIOD_MS) ==
       pdTRUE) {
     memcpy(&blink_led_state, pLedState, 1);
@@ -35,7 +35,7 @@ static void set_blink_led_state(const uint8_t *pLedState) {
 }
 
 // Get
-void get_blink_led_state(uint8_t *pLedState) {
+void geto_blink_led_state(uint8_t *pLedState) {
   // Returns a copy of the output
   if (xSemaphoreTake(mutex_blink_led_state, 100 / portTICK_PERIOD_MS) ==
       pdTRUE) {
@@ -61,6 +61,6 @@ void blink_main() {
   }
 
   // OUTPUT
-  set_blink_led_state(&led_state);
+  seto_blink_led_state(&led_state);
   pinout_builtin_led(led_state);
 }

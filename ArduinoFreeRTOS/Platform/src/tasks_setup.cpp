@@ -1,7 +1,9 @@
 #include "tasks_setup.h"
 #include "blink_main.h"
 #include "debug_main.h"
-#include "pinout_functions_arduino.h"
+#include "tempsens_main.h"
+#include "pinout_arduino.h"
+#include "pv_main.h"
 #include "serial_port.h"
 #include <Arduino.h>
 #include <Arduino_FreeRTOS.h>
@@ -19,6 +21,8 @@ static void components_init() {
   blink_init(); // Initialize initial condition of the component, mutex,
   debug_init(); // Initialize initial condition of the component, mutex,
   serial_port_init();
+  pv_init();
+  tempsens_init();
 }
 
 void tasks_setup() {
@@ -57,6 +61,7 @@ static void task_1000ms(void *pVParameters) // This is a task.
     // Run activities
     blink_main();
     debug_main();
+    tempsens_main();
 
     // Task Schedule
     const TickType_t X_DELAY = params->PERIOD / portTICK_PERIOD_MS;
@@ -70,6 +75,7 @@ static void task_200ms(void *pVParameters) // This is a task.
 
   while (true) {
     serial_port_main();
+    pv_main();
 
     // Task Schedule
     const TickType_t X_DELAY = params->PERIOD / portTICK_PERIOD_MS;

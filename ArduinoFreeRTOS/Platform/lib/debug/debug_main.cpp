@@ -23,7 +23,7 @@ static size_t debug_task200ms_watermark;
 static SemaphoreHandle_t mutex_debug_task200ms_watermark;
 
 // Set
-static void set_debug_task_1000ms_watermark(const size_t *pWatermark) {
+static void seto_debug_task_1000ms_watermark(const size_t *pWatermark) {
   if (xSemaphoreTake(mutex_debug_task1000ms_watermark,
                      100 / portTICK_PERIOD_MS) == pdTRUE) {
     memcpy(&debug_task1000ms_watermark, pWatermark, 1);
@@ -31,7 +31,7 @@ static void set_debug_task_1000ms_watermark(const size_t *pWatermark) {
   }
 }
 
-static void set_debug_task_200ms_watermark(const size_t *pWatermark) {
+static void seto_debug_task_200ms_watermark(const size_t *pWatermark) {
   if (xSemaphoreTake(mutex_debug_task1000ms_watermark,
                      100 / portTICK_PERIOD_MS) == pdTRUE) {
     memcpy(&debug_task200ms_watermark, pWatermark, 1);
@@ -40,7 +40,7 @@ static void set_debug_task_200ms_watermark(const size_t *pWatermark) {
 }
 
 // Get
-void get_debug_task_1000ms_watermark(size_t *pWatermark) {
+void geto_debug_task_1000ms_watermark(size_t *pWatermark) {
   // Returns a copy of the output
   if (xSemaphoreTake(mutex_debug_task1000ms_watermark,
                      100 / portTICK_PERIOD_MS) == pdTRUE) {
@@ -50,7 +50,7 @@ void get_debug_task_1000ms_watermark(size_t *pWatermark) {
 }
 
 // Get
-void get_debug_task_200ms_watermark(size_t *pWatermark) {
+void geto_debug_task_200ms_watermark(size_t *pWatermark) {
   // Returns a copy of the output
   if (xSemaphoreTake(mutex_debug_task200ms_watermark,
                      100 / portTICK_PERIOD_MS) == pdTRUE) {
@@ -76,6 +76,6 @@ void debug_main() {
   task_1000ms_watermark = uxTaskGetStackHighWaterMark(xTaskHandle_1000ms);
 
   // OUTPUT
-  set_debug_task_1000ms_watermark(&task_1000ms_watermark);
-  set_debug_task_200ms_watermark(&task_200ms_watermark);
+  seto_debug_task_1000ms_watermark(&task_1000ms_watermark);
+  seto_debug_task_200ms_watermark(&task_200ms_watermark);
 }
