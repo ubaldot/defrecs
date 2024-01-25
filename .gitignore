@@ -5,6 +5,13 @@ build/
 .clang_complete
 .gcc-flags.json
 .ccls
+.project
+.cproject
+.mxproject
+compile_commands.json
+Debug/
+Release/
+.vscode
 
 # Prerequisites
 *.d

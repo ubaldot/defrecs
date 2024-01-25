@@ -1,4 +1,0 @@
-../components/debug/debug_main.c:43:6:geto_debug_task_1000ms_watermark	2
-../components/debug/debug_main.c:53:6:geto_debug_task_200ms_watermark	2
-../components/debug/debug_main.c:63:6:debug_init	1
-../components/debug/debug_main.c:71:6:debug_main	3

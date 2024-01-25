@@ -1,3 +1,0 @@
-../components/photovoltaic/pv_standard_main.c:32:6:geto_pv_voltage	2
-../components/photovoltaic/pv_standard_main.c:41:6:pv_init	1
-../components/photovoltaic/pv_standard_main.c:47:6:pv_main	2

@@ -1,0 +1,81 @@
+TODO:
+-----
+[X] Investigate why watermarks give strange numbers
+[] Wrapper around dtostrf() (which is valid only for Arduino)
+[] Serial get stuff (receive values and store in serial_port.cpp output)
+[] Vimspector and platformio
+[] Library with LPF, PRBS generator, etc.
+[X] Setup a github private repo
+[] SPI and LCD display
+[] Voltage limiters
+[] Change curve characteristics
+
+- DOCS
+    - Graphs, dependencies, etc.
+    - hw_config first, what is that
+    - List of each components: first <component>_init(), then
+      <component>_main().
+    - prefix_ for component signals
+    - Guideline to add a new component (don't forget to schedule it!)
+    - How to search to who produce and who consumes all the outputs (:vimgrep
+      /{seto_, geto}/ **/*.cpp)
+    - Doxgen?
+    - copy .clang_tidy from somewhere
+
+STM32 specific:
+    - Plaformio copies the "always the same files" (Middleware, Drivers, etc)
+      in .platformio/somewhere. Hence, you only have to copy the Core files
+      that are specific to your project - typically just main.c and main.h. However, not that the
+      Middleware/Drivers from platformio may be old.
+    - For this reason, it might be better to use their IDE or generate the
+      project files and import them in VSCode.
+    - Or, you edit the files with Vim while working into workspace/your
+      project, so you are sure that all the files are there (but what about
+      the compile_commands.json?)
+    - STM32 and Freertos how to: https://hesimsek.com/blog/2022/10/26/stm32-freertos-config-without-cmsis/
+
+    ... or alternatively:
+
+    CMSIS-RTOS API is just wrapped around the FreeRTOS API.
+    Here is what I did: I enabled FreeRTOS in CubeMX, then I simply included the FreeRTOS header files and used its functions.
+    This has a bit of compilation overhead (useless source code gets compiled anyway), but it works.
+
+Guidelines
+----------
+Create a new component:
+    - Copy blink example and edit it.
+    - in the .h file you only have have *_init(), *_main() and all the geto_*.
+	- The *_init() and the *_main() must be added to tasks_config.cpp.
+	- the geto_* are used by all the components that consume such output.
+	- OBS! check the sizeof() thing in the seto_ geto_ methods!
+
+Monitoring:
+    - I use a tool named "serialplot" that I compiled by myself for macos.
+
+Memory management with Arduino:
+https://docs.arduino.cc/learn/programming/memory-guide
+
+Troubleshooting:
+----------------
+Q: clangd won't find stuff
+A1: platformio.ini must contain
+
+  build_flags = --target=avr
+
+when building the compile_commands.json file. Then, you have to remove it.
+
+A2: check that the geto_ and seto_ methods have exactly the same name
+everywhere. Copy
+and search that copied value to check if you forgot any underscore, etc.
+
+Q:
+
+Q: Linker misses references:
+A: check that the geto_ and seto_ methods have exactly the same name
+everywhere. Copy
+and search that copied value to check if you forgot any underscore, etc.
+
+Q: Arduino RAM is too little.
+A: use Flash instead of SRAM. How?
+  - Wrap strings to be sent to Serial.print with F()
+  - Use "const PROGMEM int pippo;" (AVR), or "static const int pippo" (for ARM).

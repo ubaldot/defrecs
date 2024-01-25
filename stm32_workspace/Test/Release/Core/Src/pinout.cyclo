@@ -1,3 +1,0 @@
-../Core/Src/pinout.c:5:6:pinout_builtin_led	1
-../Core/Src/pinout.c:9:6:pinout_fan1	1
-../Core/Src/pinout.c:11:6:pinout_serial_port	1
