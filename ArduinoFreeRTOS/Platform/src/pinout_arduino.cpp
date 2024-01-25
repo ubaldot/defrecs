@@ -1,5 +1,5 @@
-#include "hw_config_arduino.h"
 #include "pinout_arduino.h"
+#include "hw_config_arduino.h"
 #include "serial_port.h"
 #include <Arduino.h>
 
@@ -13,5 +13,8 @@ void pinout_serial_port(const char *pMessage) {
   for (size_t ii = 0; pMessage[ii] != '\0'; ii++) {
     Serial.print(pMessage[ii]);
   }
+  // Wrapping the String Something with the F() wrapper will move the Strings to
+  // Flash memory only rather than to use SRAM space. E.g. Serial.print(F("Sto
+  // cazzo"))
   Serial.print("\n");
 }
