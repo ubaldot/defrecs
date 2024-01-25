@@ -1,0 +1,12 @@
+/Users/ubaldot/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c:87:19:HAL_RCCEx_PeriphCLKConfig	51
+/Users/ubaldot/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c:489:6:HAL_RCCEx_GetPeriphCLKConfig	1
+/Users/ubaldot/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c:569:10:HAL_RCCEx_GetPeriphCLKFreq	27
+/Users/ubaldot/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c:2790:6:HAL_RCCEx_SelectLSEMode	2
+/Users/ubaldot/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c:2827:19:HAL_RCCEx_EnablePLLI2S	5
+/Users/ubaldot/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c:2910:19:HAL_RCCEx_DisablePLLI2S	3
+/Users/ubaldot/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c:2940:19:HAL_RCCEx_EnablePLLSAI	5
+/Users/ubaldot/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c:3014:19:HAL_RCCEx_DisablePLLSAI	3
+/Users/ubaldot/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c:3075:10:HAL_RCC_GetSysClockFreq	5
+/Users/ubaldot/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c:3167:19:HAL_RCC_DeInit	13
+/Users/ubaldot/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c:3357:19:HAL_RCC_OscConfig	65
+/Users/ubaldot/STM32Cube/Repository/STM32Cube_FW_F4_V1.28.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c:3727:6:HAL_RCC_GetOscConfig	3

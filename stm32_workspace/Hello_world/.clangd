@@ -1,0 +1,6 @@
+CompileFlags: # Tweak the parse settings
+Add: [
+-I/Users/ubaldot/Documents/embedded/stm32_workspace/Hello_world/Core/Inc,
+-I/Users/ubaldot/Documents/embedded/stm32_workspace/Hello_world/Drivers/STM32F4xx_HAL_Driver/Inc,
+-I/Users/ubaldot/Documents/embedded/stm32_workspace/Hello_world/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy
+]

@@ -1,0 +1,4 @@
+../components/temperature_sensor/tempsens_LM35_main.c:23:13:seto_tempsens_value	2
+../components/temperature_sensor/tempsens_LM35_main.c:32:6:geto_tempsens_value	2
+../components/temperature_sensor/tempsens_LM35_main.c:42:6:tempsens_init	1
+../components/temperature_sensor/tempsens_LM35_main.c:48:6:tempsens_main	1

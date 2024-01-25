@@ -1,0 +1,3 @@
+../Core/Src/tasks_setup.c:88:13:task_200ms	1
+../Core/Src/tasks_setup.c:72:13:task_1000ms	1
+../Core/Src/tasks_setup.c:44:6:tasks_setup	1
