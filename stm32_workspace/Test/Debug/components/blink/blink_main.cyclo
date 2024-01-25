@@ -1,4 +1,0 @@
-../components/blink/blink_main.c:29:13:seto_blink_led_state	2
-../components/blink/blink_main.c:38:6:geto_blink_led_state	2
-../components/blink/blink_main.c:48:6:blink_init	1
-../components/blink/blink_main.c:54:6:blink_main	2

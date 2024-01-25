@@ -1,5 +1,0 @@
-#ifndef TASK_SETUP_H
-#define TASK_SETUP_H
-
-void tasks_setup();
-#endif /* TASK_SETUP_H */

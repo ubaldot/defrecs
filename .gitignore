@@ -11,7 +11,9 @@ build/
 compile_commands.json
 Debug/
 Release/
-.vscode
+
+# ignore all . folders but include . files
+.*/
 
 # Prerequisites
 *.d

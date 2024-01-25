@@ -1,4 +1,0 @@
-../Core/Src/tasks_setup.c:34:13:components_init	1
-../Core/Src/tasks_setup.c:43:6:tasks_setup	1
-../Core/Src/tasks_setup.c:71:13:task_1000ms	1
-../Core/Src/tasks_setup.c:87:13:task_200ms	1
