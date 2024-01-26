@@ -1,4 +1,4 @@
-//===-------------------- blink_main.cpp ------------------------*- C++ -*-===//
+//===-------------------- blink_main.c ------------------------*- C -*-===//
 //  Each component has a prefix, to be easily searched.
 //
 //  1. Output must start with the prefix, e.g. blink_led_state

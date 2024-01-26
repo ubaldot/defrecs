@@ -3,6 +3,7 @@
 
 
 #include <stdint.h>
+uint16_t pinin_temp_sens(void);
 uint16_t pinin_pv(void);
 uint16_t pinin_pv1(void);
 

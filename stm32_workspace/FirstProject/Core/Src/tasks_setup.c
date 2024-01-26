@@ -35,9 +35,9 @@ static void components_init() {
   // List all the components used. Initializes queues, mutex, etc.
   blink_init(); // Initialize initial condition of the component, mutex,
   debug_init(); // Initialize initial condition of the component, mutex,
-  serial_port_init();
-  pv_init();
-  tempsens_init();
+  /* serial_port_init(); */
+  /* pv_init(); */
+  /* tempsens_init(); */
 }
 
 void tasks_setup() {
@@ -76,7 +76,7 @@ static void task_1000ms(void *pVParameters) // This is a task.
     // Run activities
     blink_main();
     debug_main();
-    tempsens_main();
+    /* tempsens_main(); */
 
     // Task Schedule
     const TickType_t X_DELAY = params->PERIOD / portTICK_PERIOD_MS;
@@ -89,8 +89,8 @@ static void task_200ms(void *pVParameters) // This is a task.
   const struct TaskParams *params = (struct TaskParams *)pVParameters;
 
   while (1) {
-    serial_port_main();
-    pv_main();
+    /* serial_port_main(); */
+    /* pv_main(); */
 
     // Task Schedule
     const TickType_t X_DELAY = params->PERIOD / portTICK_PERIOD_MS;
