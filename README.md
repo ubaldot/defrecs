@@ -1,2 +1,0 @@
-# embedded
-For embedded work

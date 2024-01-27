@@ -9,8 +9,7 @@ build/
 .cproject
 .mxproject
 compile_commands.json
-Debug/
-Release/
+stm32_workspace/
 
 # ignore all . folders but include . files
 .*/
