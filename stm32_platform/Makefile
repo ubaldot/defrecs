@@ -18,10 +18,14 @@ TARGET = Fifth
 ######################################
 # Programmer and compiler paths
 ######################################
-SERIAL_PORT = /dev/cu.usbmodem103
-PROGRAMMER_PATH = /Applications/STMicroelectronics/STM32CubeProgrammer.app/Contents/MacOs/bin
-PROGRAMMER = $(PROGRAMMER_PATH)/STM32_Programmer_CLI
-GCC_PATH = /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools/bin
+ifeq ($(OS),Windows_NT)
+    echo "TBD"
+else
+	SERIAL_PORT = /dev/cu.usbmodem103
+	PROGRAMMER_PATH = /Applications/STMicroelectronics/STM32CubeProgrammer.app/Contents/MacOs/bin
+	PROGRAMMER = $(PROGRAMMER_PATH)/STM32_Programmer_CLI
+	GCC_PATH = /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools/bin
+endif
 
 ######################################
 # building variables
