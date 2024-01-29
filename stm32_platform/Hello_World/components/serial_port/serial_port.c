@@ -2,7 +2,7 @@
 #include "blink/blink_main.h"
 #include "debug/debug_main.h"
 #include "photovoltaic/pv_main.h"
-#include "pinout.h"
+#include "pinout/pinout.h"
 #include "temperature_sensor/tempsens_main.h"
 #include <stdio.h>
 #include <stddef.h>

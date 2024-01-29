@@ -1,6 +1,6 @@
 #include "pinout.h"
-#include <stddef.h>
 #include "main.h"
+#include <stddef.h>
 
 void pinout_builtin_led(uint8_t led_state) {
   HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, led_state);

@@ -16,7 +16,7 @@
 // OUTPUTS: blink_led_state
 //===----------------------------------------------------------------------===//
 
-#include "pinout.h"
+#include "pinout/pinout.h"
 #include <FreeRTOS.h>
 #include <semphr.h>
 #include <string.h>
@@ -59,6 +59,11 @@ void blink_main() {
   } else {
     led_state = 0;
   }
+  /* static uint32_t stocazzo = 69; */
+  /* stocazzo++; */
+
+  /* uint32_t stafregna = 0; */
+  /* stafregna++; */
 
   // OUTPUT
   seto_blink_led_state(&led_state);

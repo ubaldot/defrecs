@@ -1,9 +1,9 @@
-#include "FreeRTOS.h"
 #include "blink/blink_main.h"
 #include "debug/debug_main.h"
 #include "photovoltaic/pv_main.h"
 #include "serial_port/serial_port.h"
 #include "temperature_sensor/tempsens_main.h"
+#include "FreeRTOS.h"
 #include <portmacro.h>
 #include <task.h>
 

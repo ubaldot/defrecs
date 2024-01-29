@@ -13,7 +13,7 @@
 #include <FreeRTOS.h>
 #include <semphr.h>
 #include <string.h>
-#include <pinin.h>
+#include "pinin/pinin.h"
 
 // OUTPUTS AS EXAMPLES OF SETTER AND GETTER METHODS
 static float tempsens_value;
