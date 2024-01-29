@@ -9,8 +9,8 @@
 //===----------------------------------------------------------------------===//
 
 #include "FreeRTOS.h"
-#include <string.h>
 #include <semphr.h>
+#include <string.h>
 
 extern TaskHandle_t xTaskHandle_200ms;
 extern TaskHandle_t xTaskHandle_1000ms;
@@ -32,7 +32,7 @@ static void seto_debug_task_1000ms_watermark(const size_t *pWatermark) {
 }
 
 static void seto_debug_task_200ms_watermark(const size_t *pWatermark) {
-  if (xSemaphoreTake(mutex_debug_task1000ms_watermark,
+  if (xSemaphoreTake(mutex_debug_task200ms_watermark,
                      100 / portTICK_PERIOD_MS) == pdTRUE) {
     memcpy(&debug_task200ms_watermark, pWatermark, 1);
     xSemaphoreGive(mutex_debug_task200ms_watermark);

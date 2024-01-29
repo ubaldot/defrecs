@@ -4,8 +4,8 @@
 #include "photovoltaic/pv_main.h"
 #include "pinout/pinout.h"
 #include "temperature_sensor/tempsens_main.h"
-#include <stdio.h>
 #include <stddef.h>
+#include <stdio.h>
 
 const size_t MESSAGE_SIZE_MAX = 100;
 
@@ -22,29 +22,29 @@ void serial_port_main() {
   size_t task200ms_watermark;
   geto_debug_task_200ms_watermark(&task200ms_watermark);
 
-  float pv_voltage;
-  geto_pv_voltage(&pv_voltage);
+  /* float pv_voltage; */
+  /* geto_pv_voltage(&pv_voltage); */
 
-  float tempsens_value;
-  geto_tempsens_value(&tempsens_value);
+  /* float tempsens_value; */
+  /* geto_tempsens_value(&tempsens_value); */
 
   // Assemble message to be sent
-  /* char message[MESSAGE_SIZE_MAX]; */
-  /* (void)snprintf( */
-  /*     message, MESSAGE_SIZE_MAX, */
-  /*     "led state: %d\ntask 1000ms watermark: %d\ntask 200ms watermark: %d\n",
-   */
-  /*     led_state, task1000ms_watermark, task200ms_watermark); */
+  char message[MESSAGE_SIZE_MAX];
+  (void)snprintf(message, MESSAGE_SIZE_MAX,
+                 "led state: %d\r\ntask 1000ms watermark: %d\r\ntask 200ms "
+                 "watermark: %d\r\n\n",
+                 led_state, task1000ms_watermark, task200ms_watermark);
 
   // Cast float readings into string. TODO OBS! dtostrf applies only to Arduino,
-  const uint8_t MIN_WIDTH = 5;
-
-  char pv_voltage_string[MIN_WIDTH];
+  /* const uint8_t MIN_WIDTH = 5; */
+  /* char pv_voltage_string[MIN_WIDTH]; */
   /* dtostrf(pv_voltage, MIN_WIDTH, 2, pv_voltage_string); */
-  char pv_readings[MESSAGE_SIZE_MAX];
-  (void)snprintf(pv_readings, MESSAGE_SIZE_MAX, "Photovoltaic reading: %s V",
-                 pv_voltage_string);
-  pinout_serial_port(pv_readings);
+  /* char pv_readings[MESSAGE_SIZE_MAX]; */
+  /* (void)snprintf(pv_readings, MESSAGE_SIZE_MAX, "Photovoltaic reading: %s V",
+   */
+  /*                pv_voltage_string); */
+
+  pinout_serial_port(message);
 
   // Temperature
   /* char tempsens_value_string[MIN_WIDTH]; */

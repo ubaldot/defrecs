@@ -223,7 +223,7 @@ $(BUILD_DIR):
 # clean up
 #######################################
 build_flash:
-	make clean && make -j9 all && make upload
+	make -j9 all && make upload
 
 clean:
 	-rm -fR $(BUILD_DIR)
@@ -233,10 +233,9 @@ compiledb:
 
 upload:
 	$(PROGRAMMER) --connect port=SWD mode=UR reset=HWrst -d ./build/$(TARGET).elf 0x08000000  --verify -g
-
 monitor:
-	$(PROGRAMMER) --connect port=$(SERIAL_PORT)
-
+	# $(PROGRAMMER) --connect port=$(SERIAL_PORT) P=NONE
+	screen /dev/cu.usbmodem103 115200,cs8,-parenb,-cstopb
 # Set default target
 .DEFAULT_GOAL := build_flash
   
