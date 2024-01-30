@@ -19,13 +19,18 @@ TARGET = Hello_World
 # Programmer and compiler paths
 ######################################
 ifeq ($(OS),Windows_NT)
-    echo "TBD"
+	SERIAL_PORT = "TBD"
+	ARM_NONE_EABI_PATH = "C:\ST\STM32CubeIDE_1.14.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235\tools"
+	GCC_PATH = $(ARM_NONE_EABI_PATH)\\bin
+	PROGRAMMER_PATH = "C:\ST\STM32CubeIDE_1.14.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.win32_2.1.100.202311100844\tools\bin"
+	PROGRAMMER = $(PROGRAMMER_PATH)\\STM32_Programmer_CLI
+
 else
 	SERIAL_PORT = /dev/cu.usbmodem103
-	PROGRAMMER_PATH = /Applications/STMicroelectronics/STM32CubeProgrammer.app/Contents/MacOs/bin
-	PROGRAMMER = $(PROGRAMMER_PATH)/STM32_Programmer_CLI
 	ARM_NONE_EABI_PATH =/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools/
 	GCC_PATH = $(ARM_NONE_EABI_PATH)/bin
+	PROGRAMMER_PATH = /Applications/STMicroelectronics/STM32CubeProgrammer.app/Contents/MacOs/bin
+	PROGRAMMER = $(PROGRAMMER_PATH)/STM32_Programmer_CLI
 endif
 
 ######################################
@@ -104,10 +109,14 @@ AS = $(GCC_PATH)/$(PREFIX)gcc -x assembler-with-cpp
 CP = $(GCC_PATH)/$(PREFIX)objcopy
 SZ = $(GCC_PATH)/$(PREFIX)size
 else
-CC = $(PREFIX)gcc
-AS = $(PREFIX)gcc -x assembler-with-cpp
-CP = $(PREFIX)objcopy
-SZ = $(PREFIX)size
+# CC = $(PREFIX)gcc
+# AS = $(PREFIX)gcc -x assembler-with-cpp
+# CP = $(PREFIX)objcopy
+# SZ = $(PREFIX)size
+CC = $(PREFIX)gcc.exe
+AS = $(PREFIX)gcc -x assembler-with-cpp.exe
+CP = $(PREFIX)objcopy.exe
+SZ = $(PREFIX)size.exe
 endif
 HEX = $(CP) -O ihex
 BIN = $(CP) -O binary -S
