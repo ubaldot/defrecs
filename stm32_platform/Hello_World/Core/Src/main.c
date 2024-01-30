@@ -52,7 +52,7 @@
 void SystemClock_Config(void);
 void MX_FREERTOS_Init(void);
 /* USER CODE BEGIN PFP */
-void tasks_setup();
+void tasks_setup(void);
 
 /* USER CODE END PFP */
 
