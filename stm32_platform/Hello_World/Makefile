@@ -89,7 +89,8 @@ Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c \
 Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c  
 
 # Ubaldo
-C_SOURCES += $(wildcard components/**/*.c)
+C_SOURCES += $(wildcard platform/**/*.c)
+C_SOURCES += $(wildcard application/**/*.c)
 
 # ASM sources
 ASM_SOURCES =  \
@@ -160,7 +161,8 @@ C_INCLUDES =  \
 
 # Ubaldo
 C_INCLUDES += -I$(ARM_NONE_EABI_PATH)/arm-none-eabi/include
-C_INCLUDES += -Icomponents
+C_INCLUDES += -Iplatform
+C_INCLUDES += -Iapplication
 
 
 # compile gcc flags
