@@ -20,10 +20,10 @@ TARGET = Hello_World
 ######################################
 ifeq ($(OS),Windows_NT)
 	SERIAL_PORT = "TBD"
-	ARM_NONE_EABI_PATH = "C:\ST\STM32CubeIDE_1.14.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235\tools"
-	GCC_PATH = $(ARM_NONE_EABI_PATH)\\bin
-	PROGRAMMER_PATH = "C:\ST\STM32CubeIDE_1.14.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.win32_2.1.100.202311100844\tools\bin"
-	PROGRAMMER = $(PROGRAMMER_PATH)\\STM32_Programmer_CLI
+	ARM_NONE_EABI_PATH = "C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools"
+	GCC_PATH = $(ARM_NONE_EABI_PATH)/bin
+	PROGRAMMER_PATH = "C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.win32_2.1.100.202311100844/tools/bin"
+	PROGRAMMER = $(PROGRAMMER_PATH)/STM32_Programmer_CLI
 
 else
 	SERIAL_PORT = /dev/cu.usbmodem103
@@ -109,14 +109,10 @@ AS = $(GCC_PATH)/$(PREFIX)gcc -x assembler-with-cpp
 CP = $(GCC_PATH)/$(PREFIX)objcopy
 SZ = $(GCC_PATH)/$(PREFIX)size
 else
-# CC = $(PREFIX)gcc
-# AS = $(PREFIX)gcc -x assembler-with-cpp
-# CP = $(PREFIX)objcopy
-# SZ = $(PREFIX)size
-CC = $(PREFIX)gcc.exe
-AS = $(PREFIX)gcc -x assembler-with-cpp.exe
-CP = $(PREFIX)objcopy.exe
-SZ = $(PREFIX)size.exe
+CC = $(PREFIX)gcc
+AS = $(PREFIX)gcc -x assembler-with-cpp
+CP = $(PREFIX)objcopy
+SZ = $(PREFIX)size
 endif
 HEX = $(CP) -O ihex
 BIN = $(CP) -O binary -S
@@ -159,11 +155,12 @@ C_INCLUDES =  \
 -IMiddlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 \
 -IMiddlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F \
 -IDrivers/CMSIS/Device/ST/STM32F4xx/Include \
--IDrivers/CMSIS/Include \
--Icomponents \
--I$(ARM_NONE_EABI_PATH)/arm-none-eabi/include
+-IDrivers/CMSIS/Include
+
+
 # Ubaldo
-# -Icomponents
+C_INCLUDES += -I$(ARM_NONE_EABI_PATH)/arm-none-eabi/include
+C_INCLUDES += -Icomponents
 
 
 # compile gcc flags

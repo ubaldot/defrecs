@@ -5,6 +5,6 @@
 
 void pinout_builtin_led(uint8_t);
 void pinout_fan1(uint8_t);
-void pinout_serial_port(const char*);
+void pinout_serial_port(const char *);
 
 #endif /* OUT_FUNCTIONS_H */
