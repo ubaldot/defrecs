@@ -89,7 +89,8 @@ Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c \
 Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c  
 
 # Ubaldo
-C_SOURCES += $(wildcard platform/**/*.c)
+C_SOURCES += application/application_setup.c
+C_SOURCES += $(wildcard platform/src/*.c)
 C_SOURCES += $(wildcard application/**/*.c)
 
 # ASM sources
@@ -160,8 +161,11 @@ C_INCLUDES =  \
 
 
 # Ubaldo
+# OBS! You may need other include hidden somewhere in ARM_NONE_EABI_PATH
 C_INCLUDES += -I$(ARM_NONE_EABI_PATH)/arm-none-eabi/include
-C_INCLUDES += -Iplatform
+C_INCLUDES += -I$(ARM_NONE_EABI_PATH)/arm-none-eabi/include/newlib-nano
+C_INCLUDES += -I$(ARM_NONE_EABI_PATH)/lib/gcc/arm-none-eabi/11.3.1/include
+C_INCLUDES += -Iplatform/inc
 C_INCLUDES += -Iapplication
 
 
@@ -195,7 +199,7 @@ all: $(BUILD_DIR)/$(TARGET).elf $(BUILD_DIR)/$(TARGET).hex $(BUILD_DIR)/$(TARGET
 
 
 #######################################
-# build the application
+# build the ../application
 #######################################
 # list of objects
 OBJECTS = $(addprefix $(BUILD_DIR)/,$(notdir $(C_SOURCES:.c=.o)))

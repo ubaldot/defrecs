@@ -52,7 +52,7 @@
 void SystemClock_Config(void);
 void MX_FREERTOS_Init(void);
 /* USER CODE BEGIN PFP */
-void tasks_setup();
+void application_setup(void);
 
 /* USER CODE END PFP */
 
@@ -92,7 +92,7 @@ int main(void) {
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
 
-  tasks_setup();
+  application_setup();
   /* USER CODE END 2 */
 
   /* Init scheduler */
