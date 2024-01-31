@@ -160,7 +160,9 @@ static void task_1000ms(void *pVParameters) // This is a task.
 {
   const struct TaskParams *params = (struct TaskParams *)pVParameters;
   TickType_t xLastWakeTime;
+  // Get t0. After that, the task is scheduled at t[k] = t0+k*PERIOD
   xLastWakeTime = xTaskGetTickCount();
+  BaseType_t xMissedDeadline;
 
   while (1) {
     // Run activities
@@ -169,8 +171,8 @@ static void task_1000ms(void *pVParameters) // This is a task.
     serial_port_main();
     /* tempsens_main(); */
 
-    // TODO Replace vTaskDelayUntil with xTaskDelayUntil
-    vTaskDelayUntil(&xLastWakeTime, pdMS_TO_TICKS(params->PERIOD));
+    xMissedDeadline =
+        xTaskDelayUntil(&xLastWakeTime, pdMS_TO_TICKS(params->PERIOD));
   }
 }
 
@@ -179,12 +181,14 @@ static void task_200ms(void *pVParameters) // This is a task.
   const struct TaskParams *params = (struct TaskParams *)pVParameters;
   TickType_t xLastWakeTime;
   xLastWakeTime = xTaskGetTickCount();
+  BaseType_t xMissedDeadline;
 
   while (1) {
     /* pv_main(); */
 
     // Task Schedule
-    vTaskDelayUntil(&xLastWakeTime, pdMS_TO_TICKS(params->PERIOD));
+    xMissedDeadline =
+        xTaskDelayUntil(&xLastWakeTime, pdMS_TO_TICKS(params->PERIOD));
   }
 }
 >>>>>>> 86a10cc (Temp)
