@@ -1,6 +1,5 @@
 #include "serial_port.h"
 #include "blink/blink_main.h"
-#include "debug/debug_main.h"
 #include "photovoltaic/pv_main.h"
 #include "pinout.h"
 #include "temperature_sensor/tempsens_main.h"
@@ -16,12 +15,6 @@ void serial_port_main() {
   uint8_t led_state;
   geto_blink_led_state(&led_state);
 
-  size_t task1000ms_watermark;
-  geto_debug_task_1000ms_watermark(&task1000ms_watermark);
-
-  size_t task200ms_watermark;
-  geto_debug_task_200ms_watermark(&task200ms_watermark);
-
   /* float pv_voltage; */
   /* geto_pv_voltage(&pv_voltage); */
 
@@ -30,10 +23,7 @@ void serial_port_main() {
 
   // Assemble message to be sent
   char message[MESSAGE_SIZE_MAX];
-  (void)snprintf(message, MESSAGE_SIZE_MAX,
-                 "led state: %d\r\ntask 1000ms watermark: %d\r\ntask 200ms "
-                 "watermark: %d\r\n\n",
-                 led_state, task1000ms_watermark, task200ms_watermark);
+  (void)snprintf(message, MESSAGE_SIZE_MAX, "led state: %d\r\n", led_state);
 
   // Cast float readings into string. TODO OBS! dtostrf applies only to Arduino,
   /* const uint8_t MIN_WIDTH = 5; */

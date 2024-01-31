@@ -33,24 +33,22 @@ static void task_1000ms(void * /*pVParameters*/);
 
 static void components_init() {
   // List all the components used. Initializes queues, mutex, etc.
-  blink_init(); // Initialize initial condition of the component, mutex,
-  debug_init(); // Initialize initial condition of the component, mutex,
+  blink_init();
+  debug_init();
   serial_port_init();
   /* pv_init(); */
   /* tempsens_init(); */
 }
 
 void application_setup() {
-  // Initialize all the included components.
+  // Initialize all the components needed for this app.
   components_init();
 
-  // From now on it is all the same. Copied and pasted.
-  // Create task
+  // Create tasks
   xTaskCreate(task_1000ms, NAME_1000MS, STACK_SIZE_1000MS,
               (void *)&TASK_PARAMS_1000MS, PRIORITY_1000MS,
               &xTaskHandle_1000ms);
 
-  // Create task
   xTaskCreate(task_200ms, NAME_200MS, STACK_SIZE_200MS,
               (void *)&TASK_PARAMS_200MS, PRIORITY_200MS, &xTaskHandle_200ms);
 }
@@ -58,6 +56,8 @@ void application_setup() {
 static void task_1000ms(void *pVParameters) // This is a task.
 {
   const struct TaskParams *params = (struct TaskParams *)pVParameters;
+  TickType_t xLastWakeTime;
+  xLastWakeTime = xTaskGetTickCount();
 
   while (1) {
     // Run activities
@@ -66,21 +66,21 @@ static void task_1000ms(void *pVParameters) // This is a task.
     serial_port_main();
     /* tempsens_main(); */
 
-    // Task Schedule
-    const TickType_t X_DELAY = params->PERIOD / portTICK_PERIOD_MS;
-    vTaskDelay(X_DELAY); // one tick delay (15ms)
+    // TODO Replace vTaskDelayUntil with xTaskDelayUntil
+    vTaskDelayUntil(&xLastWakeTime, pdMS_TO_TICKS(params->PERIOD));
   }
 }
 
 static void task_200ms(void *pVParameters) // This is a task.
 {
   const struct TaskParams *params = (struct TaskParams *)pVParameters;
+  TickType_t xLastWakeTime;
+  xLastWakeTime = xTaskGetTickCount();
 
   while (1) {
     /* pv_main(); */
 
     // Task Schedule
-    const TickType_t X_DELAY = params->PERIOD / portTICK_PERIOD_MS;
-    vTaskDelay(X_DELAY); // one tick delay (15ms)
+    vTaskDelayUntil(&xLastWakeTime, pdMS_TO_TICKS(params->PERIOD));
   }
 }
