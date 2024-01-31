@@ -52,12 +52,10 @@ void application_setup() {
   xTaskCreate(task_200ms, NAME_200MS, STACK_SIZE_200MS,
               (void *)&TASK_PARAMS_200MS, PRIORITY_200MS, &xTaskHandle_200ms);
 
-
   // Start scheduler
   // TODO: Add the idle task
-    xPortStartScheduler();
+  xPortStartScheduler();
 }
-
 
 static void task_1000ms(void *pVParameters) // This is a task.
 {
