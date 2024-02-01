@@ -69,3 +69,23 @@ void blink_main() {
   seto_blink_led_state(&led_state);
   pinout_builtin_led(led_state);
 }
+
+// ---------- Interrupt --------------------------
+/* void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) { */
+/*   uint8_t led_state; */
+/*   geto_blink_led_state(&led_state); */
+/*   if (led_state == 0) { */
+/*     led_state = 1; */
+/*   } else { */
+/*     led_state = 0; */
+/*   } */
+/*   /1* static uint32_t stocazzo = 69; *1/ */
+/*   /1* stocazzo++; *1/ */
+
+/*   /1* uint32_t stafregna = 0; *1/ */
+/*   /1* stafregna++; *1/ */
+
+/*   // OUTPUT */
+/*   seto_blink_led_state(&led_state); */
+/*   pinout_builtin_led(led_state); */
+/* } */
