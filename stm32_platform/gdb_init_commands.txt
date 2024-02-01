@@ -1,3 +1,5 @@
 target extended-remote localhost:3333
+source ../svd_tools/gdb-svd.py
+svd ../cmsis-svd/data/STMicro/STM32F7x9.svd
 monitor reset init
 monitor reset halt
