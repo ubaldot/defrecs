@@ -8,4 +8,4 @@ probe="stlink.cfg"
 boards_path=$openocd_scripts_path/target
 board="stm32f4x.cfg"
 
-openocd -f "$probes_path/$probe" -f "$boards_path/$board"
+openocd -f "$probes_path/$probe" -f "$boards_path/$board" -

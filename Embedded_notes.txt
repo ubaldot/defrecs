@@ -3,12 +3,16 @@ TODO:
 [X] Investigate why watermarks give strange numbers
 [] Wrapper around dtostrf() (which is valid only for Arduino)
 [] Serial get stuff (receive values and store in serial_port.cpp output)
-[] Vimspector and platformio
+[X] Vimspector and platformio
 [] Library with LPF, PRBS generator, etc.
 [X] Setup a github private repo
 [] SPI and LCD display
 [] Voltage limiters
 [] Change curve characteristics
+[] Reentrant libraries
+[] C-files docs
+[] Interrupt example
+[] UART interrupt example
 
 - DOCS
     - Graphs, dependencies, etc.
@@ -43,6 +47,7 @@ STM32 HOW TO:
         tweak
     - Edit the main.c file to remove the default task, add void
       tasks_setup(void) prototype and to call it in the main.
+    - If you want to use vanilla FreeRTOS, then read below.
 
     *** UPDATE CUBE PROJECT ***
     Copy the Makefile from an existing project and use a diff tool! Basically
@@ -54,26 +59,37 @@ STM32 HOW TO:
     =====================
     What to do in the generated Makefile from MX.
     - Add
-        ######################################
-        # Programmer and compiler paths
-        ######################################
-        PROGRAMMER_PATH = /Applications/STMicroelectronics/STM32CubeProgrammer.app/Contents/MacOs/bin
-        PROGRAMMER = $(PROGRAMMER_PATH)/STM32_Programmer_CLI
-        GCC_PATH = /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools/bin
+        ifeq ($(OS),Windows_NT)
+        	SERIAL_PORT = "TBD"
+        	ARM_NONE_EABI_PATH = "C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools"
+        	GCC_PATH = $(ARM_NONE_EABI_PATH)/bin
+        	PROGRAMMER_PATH = "C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.win32_2.1.100.202311100844/tools/bin"
+        	PROGRAMMER = $(PROGRAMMER_PATH)/STM32_Programmer_CLI
+
+        else
+        	SERIAL_PORT = /dev/cu.usbmodem103
+        	ARM_NONE_EABI_PATH =/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools/
+        	GCC_PATH = $(ARM_NONE_EABI_PATH)/bin
+        	PROGRAMMER_PATH = /Applications/STMicroelectronics/STM32CubeProgrammer.app/Contents/MacOs/bin
+        	PROGRAMMER = $(PROGRAMMER_PATH)/STM32_Programmer_CLI
+        endif
 
 
         # Source code files
         # Ubaldo
-        C_SOURCES += Core/src/pinout.c
-        C_SOURCES += Core/src/pinin.c
-        C_SOURCES += Core/src/tasks_setup.c
-        C_SOURCES += $(wildcard components/**/*.c)
+        C_SOURCES += application/application_setup.c
+        C_SOURCES += $(wildcard platform/src/*.c)
+        C_SOURCES += $(wildcard application/**/*.c)
 
         # Includes files (don't forget the \ at the end of the line before -Icomponents
 
-        C_INCLUDES =
-        ...
-        -Icomponents
+        # Ubaldo
+        # OBS! You may need other include hidden somewhere in ARM_NONE_EABI_PATH
+        C_INCLUDES += -I$(ARM_NONE_EABI_PATH)/arm-none-eabi/include
+        C_INCLUDES += -I$(ARM_NONE_EABI_PATH)/arm-none-eabi/include/newlib-nano
+        C_INCLUDES += -I$(ARM_NONE_EABI_PATH)/lib/gcc/arm-none-eabi/11.3.1/include
+        C_INCLUDES += -Iplatform/inc
+        C_INCLUDES += -Iapplication
 
         # Add the following targets
         #######################################
@@ -115,15 +131,25 @@ STM32 HOW TO:
       The above will setup the openocd server.
 
       Next, we have to connect with a client (gdb through Termdebug in Vim).
+      Note that we need arm-wabi-none-gdb!!!
       To use Termdebug you must run with Termdebug <filename>.elf and once
       started you always have to run
 
          (gdb)target extended-remote localhost:3333
+         (gdb)monitor stm32f4x.cpu configure -rtos auto
          (gdb)monitor reset init
          (gdb)monitor reset
 
+     "monitor" send the commands directly to openocd so the syntax is monitor
+     <openocd_command>.
      But these are included in a gdb_init_commands.txt file that is called
-     upon aperture of Termdebug
+     upon aperture of Termdebug.
+     To find out the target (in the above case is stm32f4xx.cpu), run "monitor
+     targets" and read the output.
+
+     OBS! Due to a bug in Termdebug it is not possible to display the output
+     of openocd in vim. For that, you must open arm-eabi-none-gdb in a new
+     terminal window.
 
      Here is a tool: https://github.com/1udo6arre/svd-tools that is nice to use
      I prepared a Vim function such that automate all of the above.
@@ -145,6 +171,35 @@ STM32 HOW TO:
     ==================
     I am using screen.
     To close it <c-a>k.
+
+    ====================
+    = Vanilla FreeRTOS =
+    ====================
+    You can, but it is messy! All the steps below are automatically handled by
+    Cube.
+    1. Copy FreeRTOS/Source distribution folder in your local project folder
+    2. You must select only what is needed:
+      - In portable/ remove everything but GCC and MemMang
+        - portable/GCC/<your target> (remove all the rest)
+        - MemMang: you can carry everything but you pick only what you want
+    3. If any, remove Src/sysmem.c
+    4. Some interrupts are handled by FreeRTOS, so we must disable them from
+    CubeMX
+        - Do not use Subpriorities
+        - Set the Priority to a value > 0 (this value must be higher than what
+          you have in configMAX_SYSCALL_INTERRUPT...
+        - Disable the following interrupts
+          1. System service call via SWI instruction
+          2. Pendable request for system service
+          3. System tick timer
+        Note that you cannot disable the Call HAL handler of System tick
+        handler, hence, you must add the following to the configFreeRTOS.h
+        file:
+            #define xPortSysTickHandler SysTick_Handler
+        - Then, if you have a vApplicationGetIdleTaskMemory() error,
+          #define configSUPPORT_STATIC_ALLOCATION 0 or
+          configKERNEL_PROVIDED_STATIC_MEMORY to 1.
+    5. Put the configFreeRTOS.h file in Core/Inc
 
 Guidelines
 ----------

@@ -20,18 +20,30 @@ void debug_init(void) {}
 void debug_main() {
 
   TaskStatus_t xTaskDetails_1000ms;
-
   /* Check the handle is not NULL. */
   configASSERT(xTaskHandle_1000ms);
-
   /* Use the handle to obtain further information about the task. */
   vTaskGetInfo(xTaskHandle_1000ms, &xTaskDetails_1000ms, pdTRUE, eInvalid);
 
-  volatile UBaseType_t number = xTaskDetails_1000ms.xTaskNumber;
-  volatile eTaskState state = xTaskDetails_1000ms.eCurrentState;
-  volatile configSTACK_DEPTH_TYPE watermark =
+  volatile UBaseType_t number_1000ms = xTaskDetails_1000ms.xTaskNumber;
+  volatile eTaskState state_1000ms = xTaskDetails_1000ms.eCurrentState;
+  volatile configSTACK_DEPTH_TYPE watermark_1000ms =
       xTaskDetails_1000ms.usStackHighWaterMark;
-  volatile UBaseType_t priority = xTaskDetails_1000ms.uxCurrentPriority;
+  volatile UBaseType_t priority_1000ms = xTaskDetails_1000ms.uxCurrentPriority;
+
+  NOOP;
+
+  TaskStatus_t xTaskDetails_200ms;
+  /* Check the handle is not NULL. */
+  configASSERT(xTaskHandle_200ms);
+  /* Use the handle to obtain further information about the task. */
+  vTaskGetInfo(xTaskHandle_200ms, &xTaskDetails_200ms, pdTRUE, eInvalid);
+
+  volatile UBaseType_t number_200ms = xTaskDetails_200ms.xTaskNumber;
+  volatile eTaskState state_200ms = xTaskDetails_200ms.eCurrentState;
+  volatile configSTACK_DEPTH_TYPE watermark_200ms =
+      xTaskDetails_200ms.usStackHighWaterMark;
+  volatile UBaseType_t priority_200ms = xTaskDetails_200ms.uxCurrentPriority;
 
   NOOP;
   /* volatile size_t task_200ms_watermark; */
