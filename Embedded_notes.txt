@@ -125,6 +125,7 @@ STM32 HOW TO:
      But these are included in a gdb_init_commands.txt file that is called
      upon aperture of Termdebug
 
+     Here is a tool: https://github.com/1udo6arre/svd-tools that is nice to use
      I prepared a Vim function such that automate all of the above.
      The openocd server is run inside Vim. It is automatically shutoff when
      Termdebug is closed thanks to an autocommand.
