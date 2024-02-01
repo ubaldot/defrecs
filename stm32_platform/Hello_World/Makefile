@@ -77,16 +77,27 @@ Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c \
 Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c \
 Core/Src/system_stm32f4xx.c \
 Core/Src/freertos.c \
-Middlewares/Third_Party/FreeRTOS/Source/croutine.c \
-Middlewares/Third_Party/FreeRTOS/Source/event_groups.c \
-Middlewares/Third_Party/FreeRTOS/Source/list.c \
-Middlewares/Third_Party/FreeRTOS/Source/queue.c \
-Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c \
-Middlewares/Third_Party/FreeRTOS/Source/tasks.c \
-Middlewares/Third_Party/FreeRTOS/Source/timers.c \
-Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c \
-Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c \
-Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c
+freertos/croutine.c \
+freertos/event_groups.c \
+freertos/list.c \
+freertos/queue.c \
+freertos/stream_buffer.c \
+freertos/tasks.c \
+freertos/timers.c \
+freertos/CMSIS_RTOS_V2/cmsis_os2.c \
+freertos/portable/MemMang/heap_4.c \
+freertos/portable/GCC/ARM_CM4F/port.c
+
+# Middlewares/Third_Party/FreeRTOS/Source/croutine.c \
+# Middlewares/Third_Party/FreeRTOS/Source/event_groups.c \
+# Middlewares/Third_Party/FreeRTOS/Source/list.c \
+# Middlewares/Third_Party/FreeRTOS/Source/queue.c \
+# Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c \
+# Middlewares/Third_Party/FreeRTOS/Source/tasks.c \
+# Middlewares/Third_Party/FreeRTOS/Source/timers.c \
+# Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c \
+# Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c \
+# Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c
 
 # Ubaldo
 C_SOURCES += application/application_setup.c
@@ -155,9 +166,12 @@ C_INCLUDES =  \
 -IDrivers/STM32F4xx_HAL_Driver/Inc/Legacy \
 -IDrivers/CMSIS/Device/ST/STM32F4xx/Include \
 -IDrivers/CMSIS/Include \
--IMiddlewares/Third_Party/FreeRTOS/Source/include \
--IMiddlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 \
--IMiddlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F
+-Ifreertos/include \
+-Ifreertos/CMSIS_RTOS_V2 \
+-Ifreertos/portable/GCC/ARM_CM4F
+# -IMiddlewares/Third_Party/FreeRTOS/Source/include \
+# -IMiddlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 \
+# -IMiddlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F
 
 
 # Ubaldo
