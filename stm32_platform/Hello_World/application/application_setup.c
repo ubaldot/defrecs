@@ -1,6 +1,7 @@
 #include "FreeRTOS.h"
 #include "blink/blink_main.h"
 #include "debug/debug_main.h"
+#include "gpio.h"
 #include "photovoltaic/pv_main.h"
 #include "serial_port/serial_port.h"
 #include "temperature_sensor/tempsens_main.h"
@@ -52,9 +53,6 @@ void application_setup() {
   xTaskCreate(task_200ms, NAME_200MS, STACK_SIZE_200MS,
               (void *)&TASK_PARAMS_200MS, PRIORITY_200MS, &xTaskHandle_200ms);
 
-  // Start scheduler
-  // TODO: Add the idle task
-  xPortStartScheduler();
 }
 
 static void task_1000ms(void *pVParameters) // This is a task.
@@ -63,17 +61,19 @@ static void task_1000ms(void *pVParameters) // This is a task.
   TickType_t xLastWakeTime;
   // Get t0. After that, the task is scheduled at t[k] = t0+k*PERIOD
   xLastWakeTime = xTaskGetTickCount();
-  BaseType_t xMissedDeadline;
+  /* volatile BaseType_t xMissedDeadline; */
 
   while (1) {
     // Run activities
     blink_main();
     debug_main();
-    serial_port_main();
+    /* serial_port_main(); */
     /* tempsens_main(); */
 
-    xMissedDeadline =
-        xTaskDelayUntil(&xLastWakeTime, pdMS_TO_TICKS(params->PERIOD));
+    // Task Schedule
+    // TODO: Use xTaskDelayUntil, available from new FreeRTOS.
+    /* xMissedDeadline = */
+    vTaskDelayUntil(&xLastWakeTime, pdMS_TO_TICKS(params->PERIOD));
   }
 }
 
@@ -82,13 +82,14 @@ static void task_200ms(void *pVParameters) // This is a task.
   const struct TaskParams *params = (struct TaskParams *)pVParameters;
   TickType_t xLastWakeTime;
   xLastWakeTime = xTaskGetTickCount();
-  BaseType_t xMissedDeadline;
+  /* volatile BaseType_t xMissedDeadline; */
 
   while (1) {
     /* pv_main(); */
 
     // Task Schedule
-    xMissedDeadline =
-        xTaskDelayUntil(&xLastWakeTime, pdMS_TO_TICKS(params->PERIOD));
+    /* xMissedDeadline = */
+    /*     xTaskDelayUntil(&xLastWakeTime, pdMS_TO_TICKS(params->PERIOD)); */
+    vTaskDelayUntil(&xLastWakeTime, pdMS_TO_TICKS(params->PERIOD));
   }
 }
