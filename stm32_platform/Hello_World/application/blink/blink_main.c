@@ -51,7 +51,7 @@ void blink_init(void) {
 }
 
 // ------- Actual function starts here! -------------
-void blink_main(void *pIRQparams) {
+void blink_main() {
   // send something every MAX_COUNT*TASK_PERIOD seconds.
   static uint8_t led_state = 1;
   if (led_state == 0) {
@@ -59,6 +59,11 @@ void blink_main(void *pIRQparams) {
   } else {
     led_state = 0;
   }
+  /* static uint32_t stocazzo = 69; */
+  /* stocazzo++; */
+
+  /* uint32_t stafregna = 0; */
+  /* stafregna++; */
 
   // OUTPUT
   seto_blink_led_state(&led_state);
