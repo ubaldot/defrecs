@@ -70,7 +70,7 @@ static void task_1000ms(void *pVParameters) // This is a task.
     // Run activities
     blink_main();
     debug_main();
-    /* serial_port_main(); */
+    serial_port_main(NULL);
     /* tempsens_main(); */
 
     // Task Schedule

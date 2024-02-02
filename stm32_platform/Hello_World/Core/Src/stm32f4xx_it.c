@@ -208,7 +208,7 @@ void IRQTaskSerialPort(void *pVParameters) {
 
   for (;;) {
     while (xSemaphoreTake(xSemaphoreSerialPort, portMAX_DELAY) == pdTRUE) {
-      char MESSAGE[] = "The button is pressed.";
+      char MESSAGE[] = "Leccami il cazzo.\n\r";
       serial_port_main(MESSAGE);
     }
   }

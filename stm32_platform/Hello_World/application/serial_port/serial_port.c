@@ -20,7 +20,7 @@ void serial_port_main(void *pIRQparams) {
   if (pIRQparams != NULL) {
     const char *msg = (const char *)pIRQparams;
     strncpy(message, msg, MESSAGE_SIZE_MAX - 1);
-    message[sizeof(MESSAGE_SIZE_MAX) - 1] = '\0';
+    message[MESSAGE_SIZE_MAX - 1] = '\0';
 
   } else {
     /* float pv_voltage; */
