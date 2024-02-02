@@ -5,6 +5,7 @@
 #include "gpio.h"
 #include "photovoltaic/pv_main.h"
 #include "serial_port/serial_port.h"
+#include "stm32f4xx_it.h"
 #include "temperature_sensor/tempsens_main.h"
 #include <portmacro.h>
 #include <task.h>
@@ -45,6 +46,7 @@ static void components_init() {
 }
 
 void application_setup() {
+    interrupts_init();
   // Initialize all the components needed for this app.
   components_init();
 
@@ -67,9 +69,9 @@ static void task_1000ms(void *pVParameters) // This is a task.
 
   while (1) {
     // Run activities
-    blink_main();
+    blink_main(NULL);
     debug_main();
-    /* serial_port_main(); */
+    /* serial_port_main(NULL); */
     /* tempsens_main(); */
 
     // Task Schedule

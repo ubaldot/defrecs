@@ -9,7 +9,7 @@ uint16_t pinin_pv(void) {
       pin_voltage / (float)(1 << ADC_RESOLUTION_BITS); // [mV]
 
   /* size_t analog_read = readAnalog(PV); */
-  float voltage;
+  float voltage = 0.0;
   /* voltage = ANALOG_IN_RESOLUTION * analog_read; */
 
   return voltage;
