@@ -18,7 +18,12 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+<<<<<<< HEAD
 #include "cmsis_os.h"
+=======
+#include "FreeRTOS.h"
+#include "gpio.h"
+>>>>>>> 4c9307f (Added vanilla Freertos)
 #include "usart.h"
 #include "gpio.h"
 
@@ -50,7 +55,6 @@
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
-void MX_FREERTOS_Init(void);
 /* USER CODE BEGIN PFP */
 void application_setup(void);
 <<<<<<< HEAD
@@ -100,17 +104,12 @@ int main(void)
 =======
 
   application_setup();
+<<<<<<< HEAD
 >>>>>>> a20501b (new structure)
+=======
+  xPortStartScheduler();
+>>>>>>> 4c9307f (Added vanilla Freertos)
   /* USER CODE END 2 */
-
-  /* Init scheduler */
-  osKernelInitialize();
-
-  /* Call init function for freertos objects (in freertos.c) */
-  MX_FREERTOS_Init();
-
-  /* Start scheduler */
-  osKernelStart();
 
   /* We should never get here as control is now taken by the scheduler */
   /* Infinite loop */

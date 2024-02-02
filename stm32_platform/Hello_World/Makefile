@@ -76,6 +76,7 @@ Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c \
 Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c \
 Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c \
 Core/Src/system_stm32f4xx.c \
+<<<<<<< HEAD
 contrib/rtos-helpers/FreeRTOS-openocd.c \
 Middlewares/Third_Party/FreeRTOS/Source/croutine.c \
 Middlewares/Third_Party/FreeRTOS/Source/event_groups.c \
@@ -98,6 +99,17 @@ Core/Src/freertos.c
 # freertos/portable/MemMang/heap_4.c \
 # freertos/portable/GCC/ARM_CM4F/port.c
 
+=======
+freertos/croutine.c \
+freertos/event_groups.c \
+freertos/list.c \
+freertos/queue.c \
+freertos/stream_buffer.c \
+freertos/tasks.c \
+freertos/timers.c \
+freertos/portable/MemMang/heap_4.c \
+freertos/portable/GCC/ARM_CM4F/port.c  
+>>>>>>> 4c9307f (Added vanilla Freertos)
 
 # Ubaldo
 C_SOURCES += application/application_setup.c
@@ -164,9 +176,8 @@ C_INCLUDES =  \
 -ICore/Inc \
 -IDrivers/STM32F4xx_HAL_Driver/Inc \
 -IDrivers/STM32F4xx_HAL_Driver/Inc/Legacy \
--IMiddlewares/Third_Party/FreeRTOS/Source/include \
--IMiddlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 \
--IMiddlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F \
+-Ifreertos/include \
+-Ifreertos/portable/GCC/ARM_CM4F \
 -IDrivers/CMSIS/Device/ST/STM32F4xx/Include \
 -IDrivers/CMSIS/Include
 
