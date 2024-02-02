@@ -53,6 +53,10 @@ void SystemClock_Config(void);
 void MX_FREERTOS_Init(void);
 /* USER CODE BEGIN PFP */
 void application_setup(void);
+<<<<<<< HEAD
+=======
+
+>>>>>>> a20501b (new structure)
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -90,8 +94,13 @@ int main(void)
   MX_GPIO_Init();
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
+<<<<<<< HEAD
   application_setup();
   /* vTaskStartScheduler(); */
+=======
+
+  application_setup();
+>>>>>>> a20501b (new structure)
   /* USER CODE END 2 */
 
   /* Init scheduler */
