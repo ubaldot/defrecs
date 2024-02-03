@@ -45,8 +45,10 @@
 
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN PV */
-TaskHandle_t xTaskSerialPort;
-SemaphoreHandle_t xSemaphoreSerialPort;
+TaskHandle_t xTaskUsart2TxDeferred;
+SemaphoreHandle_t xSemaphoreUsart2Tx;
+TaskHandle_t xTaskUsart2RxDeferred;
+SemaphoreHandle_t xSemaphoreUsart2Rx;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -173,12 +175,19 @@ void TIM1_UP_TIM10_IRQHandler(void) {
  */
 void USART2_IRQHandler(void) {
   /* USER CODE BEGIN USART2_IRQn 0 */
+  /* Data reception. */
+  if (__HAL_UART_GET_FLAG(&huart2, UART_FLAG_RXNE)) {
 
-  /* USER CODE END USART2_IRQn 0 */
-  HAL_UART_IRQHandler(&huart2);
-  /* USER CODE BEGIN USART2_IRQn 1 */
+    /* USER CODE END USART2_IRQn 0 */
+    HAL_UART_IRQHandler(&huart2);
+    /* USER CODE BEGIN USART2_IRQn 1 */
 
-  /* USER CODE END USART2_IRQn 1 */
+    // Signal the semaphore to notify the task of data reception
+    BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+    xSemaphoreGiveFromISR(xSemaphoreUsart2Rx, &xHigherPriorityTaskWoken);
+    portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
+    /* USER CODE END USART2_IRQn 1 */
+  }
 }
 
 /**
@@ -186,32 +195,54 @@ void USART2_IRQHandler(void) {
  */
 void EXTI15_10_IRQHandler(void) {
   /* USER CODE BEGIN EXTI15_10_IRQn 0 */
-
   /* USER CODE END EXTI15_10_IRQn 0 */
   HAL_GPIO_EXTI_IRQHandler(B1_Pin);
   /* USER CODE BEGIN EXTI15_10_IRQn 1 */
   /* The following is always the same */
   BaseType_t xHigherPriorityTaskWoken = pdFALSE;
-  xSemaphoreGiveFromISR(xSemaphoreSerialPort, &xHigherPriorityTaskWoken);
+  xSemaphoreGiveFromISR(xSemaphoreUsart2Tx, &xHigherPriorityTaskWoken);
   portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
   /* USER CODE END EXTI15_10_IRQn 1 */
 }
 
 /* USER CODE BEGIN 1 */
 void interrupts_init() {
-  xSemaphoreSerialPort = xSemaphoreCreateCounting(5, 0);
-  xTaskCreate(IRQTaskSerialPort, "IRQSerialPort", 128, NULL,
-              configLIBRARY_MAX_SYSCALL_INTERRUPT_PRIORITY, &xTaskSerialPort);
+  /* Transmit upon button press */
+  xSemaphoreUsart2Tx = xSemaphoreCreateCounting(5, 0);
+  xTaskCreate(Usart2TxDeferred, "Usart2Tx", 128, NULL,
+              configLIBRARY_MAX_SYSCALL_INTERRUPT_PRIORITY,
+              &xTaskUsart2TxDeferred);
+
+  /* Receive data */
+  xSemaphoreUsart2Rx = xSemaphoreCreateBinary();
+  xTaskCreate(Usart2RxDeferred, "Usart2Rx", 128, NULL,
+              configLIBRARY_MAX_SYSCALL_INTERRUPT_PRIORITY,
+              &xTaskUsart2RxDeferred);
 }
 
-void IRQTaskSerialPort(void *pVParameters) {
+/* void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) { */
+/*   if (GPIO_Pin == B1_Pin) { */
+/*     char MESSAGE[] = "Leccami il cazzo.\n\r"; */
+/*     serial_port_main(MESSAGE); */
+/*   } */
+/* } */
+
+void Usart2TxDeferred(void *pVParameters) {
 
   for (;;) {
-    while (xSemaphoreTake(xSemaphoreSerialPort, portMAX_DELAY) == pdTRUE) {
+    while (xSemaphoreTake(xSemaphoreUsart2Tx, portMAX_DELAY) == pdTRUE) {
       char MESSAGE[] = "Leccami il cazzo.\n\r";
       serial_port_main(MESSAGE);
     }
   }
 }
 
+void Usart2RxDeferred(void *pVParameters) {
+
+  for (;;) {
+    while (xSemaphoreTake(xSemaphoreUsart2Rx, portMAX_DELAY) == pdTRUE) {
+      serial_port_main();
+    }
+  }
+}
 /* USER CODE END 1 */
