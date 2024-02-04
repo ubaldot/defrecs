@@ -17,9 +17,13 @@ char tx_message[MESSAGE_SIZE_MAX];
 char rx_message[MESSAGE_SIZE_MAX];
 
 static SemaphoreHandle_t mutex_serial_pinout;
-static SemaphoreHandle_t mutex_serial_pinin;
+/* static SemaphoreHandle_t mutex_serial_pinin; */
+/* static volatile uint8_t UsartReady; */
 
-void serial_port_init() { mutex_serial_pinout = xSemaphoreCreateMutex(); }
+void serial_port_init() {
+  mutex_serial_pinout = xSemaphoreCreateMutex();
+  pinin_usart(rx_message); // Initialize for reception
+}
 
 void serial_port_main(enum WhoIsCalling caller) {
   // INPUTS
@@ -35,12 +39,15 @@ void serial_port_main(enum WhoIsCalling caller) {
     strncpy(msg, "Ciao fata.\r\n", MESSAGE_SIZE_MAX - 1);
     break;
   case IRQ_SERIAL_RX:
-    if (xSemaphoreTake(mutex_serial_pinin, 100 / portTICK_PERIOD_MS) ==
-        pdTRUE) {
-      pinin_usart(rx_message);
-      strncpy(msg, "Message received.\r\n", MESSAGE_SIZE_MAX - 1);
-      xSemaphoreGive(mutex_serial_pinout);
-    }
+    /* if (xSemaphoreTake(mutex_serial_pinin, 100 / portTICK_PERIOD_MS) == */
+    /*     pdTRUE) { */
+    // Process the received message and place it in the right SO.
+    /* UsartReady = 1; */
+    strncpy(msg, rx_message, MESSAGE_SIZE_MAX - 1);
+    /* UsartReady = 0; */
+    pinin_usart(rx_message);
+    /* xSemaphoreGive(mutex_serial_pinout); */
+    /* } */
     break;
   default:
     strncpy(msg, "Ciao stocazzo.\r\n", MESSAGE_SIZE_MAX - 1);

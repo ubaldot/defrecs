@@ -22,7 +22,8 @@ uint16_t pinin_pv1(void) { return 1; }
 
 void pinin_usart(char *pMessage) {
   HAL_StatusTypeDef status;
-  status = HAL_UART_Receive(&huart2, (uint8_t *)pMessage, 4, portMAX_DELAY);
+  // TODO: Adjust this character length thing
+  status = HAL_UART_Receive_IT(&huart2, (uint8_t *)pMessage, 6);
   if (status != HAL_OK) {
     // If something goes wrong something
   }

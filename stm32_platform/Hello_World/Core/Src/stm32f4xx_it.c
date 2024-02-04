@@ -26,6 +26,7 @@
 #include "FreeRTOS.h"
 #include "semphr.h"
 #include "serial_port/serial_port.h"
+#include <string.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -183,9 +184,9 @@ void USART2_IRQHandler(void) {
   /* USER CODE BEGIN USART2_IRQn 1 */
 
   // Signal the semaphore to notify the task of data reception
-  /* BaseType_t xHigherPriorityTaskWoken = pdFALSE; */
-  /* xSemaphoreGiveFromISR(xSemaphoreUsart2Rx, &xHigherPriorityTaskWoken); */
-  /* portYIELD_FROM_ISR(xHigherPriorityTaskWoken); */
+  BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+  xSemaphoreGiveFromISR(xSemaphoreUsart2Rx, &xHigherPriorityTaskWoken);
+  portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
   /* USER CODE END USART2_IRQn 1 */
   /* } */
 }
@@ -214,10 +215,10 @@ void interrupts_init() {
               &xTaskUsart2TxDeferred);
 
   /* Receive data */
-  /* xSemaphoreUsart2Rx = xSemaphoreCreateBinary(); */
-  /* xTaskCreate(Usart2RxDeferred, "Usart2Rx", 128, NULL, */
-  /*             configLIBRARY_MAX_SYSCALL_INTERRUPT_PRIORITY, */
-  /*             &xTaskUsart2RxDeferred); */
+  xSemaphoreUsart2Rx = xSemaphoreCreateCounting(5, 0);
+  xTaskCreate(Usart2RxDeferred, "Usart2Rx", 128, NULL,
+              configLIBRARY_MAX_SYSCALL_INTERRUPT_PRIORITY,
+              &xTaskUsart2RxDeferred);
 }
 
 void Usart2TxDeferred(void *pVParameters) {
@@ -229,13 +230,14 @@ void Usart2TxDeferred(void *pVParameters) {
   }
 }
 
-/* void Usart2RxDeferred(void *pVParameters) { */
+void Usart2RxDeferred(void *pVParameters) {
+  (void)pVParameters;
 
-/*   for (;;) { */
-/*     while (xSemaphoreTake(xSemaphoreUsart2Rx, portMAX_DELAY) == pdTRUE) { */
-/*       // TODO Many calls of serial_port_main() if */
-/*       serial_port_main(); */
-/*     } */
-/*   } */
-/* } */
+  for (;;) {
+    while (xSemaphoreTake(xSemaphoreUsart2Rx, portMAX_DELAY) == pdTRUE) {
+      // TODO Many calls of serial_port_main() if
+      serial_port_main(IRQ_SERIAL_RX);
+    }
+  }
+}
 /* USER CODE END 1 */

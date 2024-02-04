@@ -46,9 +46,9 @@ static void components_init() {
 }
 
 void application_setup() {
-  interrupts_init();
   // Initialize all the components needed for this app.
   components_init();
+  interrupts_init();
 
   // Create tasks
   xTaskCreate(task_1000ms, NAME_1000MS, STACK_SIZE_1000MS,
