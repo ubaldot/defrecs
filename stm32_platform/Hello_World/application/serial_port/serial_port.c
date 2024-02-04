@@ -1,17 +1,23 @@
 #include "serial_port.h"
 #include "blink/blink_main.h"
 #include "photovoltaic/pv_main.h"
+#include "pinin.h"
 #include "pinout.h"
 #include "temperature_sensor/tempsens_main.h"
+#include <FreeRTOS.h>
+#include <semphr.h>
 #include <stddef.h>
 #include <stdio.h>
 #include <string.h>
+#include <task.h>
 
 #define MESSAGE_SIZE_MAX 100
 char tx_message[MESSAGE_SIZE_MAX];
 char rx_message[MESSAGE_SIZE_MAX];
 
-void serial_port_init() {}
+static SemaphoreHandle_t mutex_serial_pinout;
+
+void serial_port_init() { mutex_serial_pinout = xSemaphoreCreateMutex(); }
 
 void serial_port_main(void *pIRQparams) {
   // INPUTS
@@ -20,10 +26,15 @@ void serial_port_main(void *pIRQparams) {
 
   if (pIRQparams != NULL) {
     const char *msg = (const char *)pIRQparams;
+    // TODO:
+    /* if (TX == 1) { */
     strncpy(tx_message, msg, MESSAGE_SIZE_MAX - 1);
-    tx_message[MESSAGE_SIZE_MAX - 1] = '\0';
+    /*   tx_message[MESSAGE_SIZE_MAX - 1] = '\0'; */
+    /* } else { */
+    /*   pinin_usart(rx_message); */
+    /* } */
 
-  } else {
+    /* } else { */
     /* float pv_voltage; */
     /* geto_pv_voltage(&pv_voltage); */
 
@@ -31,7 +42,8 @@ void serial_port_main(void *pIRQparams) {
     /* geto_tempsens_value(&tempsens_value); */
 
     // Assemble tx_message to be sent
-    (void)snprintf(tx_message, MESSAGE_SIZE_MAX, "led state: %d\r\n", led_state);
+    (void)snprintf(tx_message, MESSAGE_SIZE_MAX, "led state: %d\r\n",
+                   led_state);
 
     // Cast float readings into string. TODO OBS! dtostrf applies only to
     // Arduino,
@@ -45,7 +57,19 @@ void serial_port_main(void *pIRQparams) {
     /*                pv_voltage_string); */
   }
 
-  pinout_serial_port(tx_message);
+  if (xSemaphoreTake(mutex_serial_pinout, 100 / portTICK_PERIOD_MS) == pdTRUE) {
+    /* TaskHandle_t current_task; */
+    /* current_task = xTaskGetCurrentTaskHandle(); */
+    /* BaseType_t current_task_prio = xTaskPriorityGet(current_task); */
+    /* xTaskPrioritySet(current_task, configMAX_PRIORITIES); */
+
+    /* xTaskPriorityInherit(); */
+    /* Shared resource */
+    pinout_serial_port(tx_message);
+
+    xSemaphoreGive(mutex_serial_pinout);
+    /* xTaskPrioritySet(current_task, current_task_prio); */
+  }
 
   // Temperature
   /* char tempsens_value_string[MIN_WIDTH]; */

@@ -176,18 +176,18 @@ void TIM1_UP_TIM10_IRQHandler(void) {
 void USART2_IRQHandler(void) {
   /* USER CODE BEGIN USART2_IRQn 0 */
   /* Data reception. */
-  if (__HAL_UART_GET_FLAG(&huart2, UART_FLAG_RXNE)) {
+  /* if (__HAL_UART_GET_FLAG(&huart2, UART_FLAG_RXNE)) { */
 
-    /* USER CODE END USART2_IRQn 0 */
-    HAL_UART_IRQHandler(&huart2);
-    /* USER CODE BEGIN USART2_IRQn 1 */
+  /* USER CODE END USART2_IRQn 0 */
+  HAL_UART_IRQHandler(&huart2);
+  /* USER CODE BEGIN USART2_IRQn 1 */
 
-    // Signal the semaphore to notify the task of data reception
-    BaseType_t xHigherPriorityTaskWoken = pdFALSE;
-    xSemaphoreGiveFromISR(xSemaphoreUsart2Rx, &xHigherPriorityTaskWoken);
-    portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
-    /* USER CODE END USART2_IRQn 1 */
-  }
+  // Signal the semaphore to notify the task of data reception
+  /* BaseType_t xHigherPriorityTaskWoken = pdFALSE; */
+  /* xSemaphoreGiveFromISR(xSemaphoreUsart2Rx, &xHigherPriorityTaskWoken); */
+  /* portYIELD_FROM_ISR(xHigherPriorityTaskWoken); */
+  /* USER CODE END USART2_IRQn 1 */
+  /* } */
 }
 
 /**
@@ -214,18 +214,11 @@ void interrupts_init() {
               &xTaskUsart2TxDeferred);
 
   /* Receive data */
-  xSemaphoreUsart2Rx = xSemaphoreCreateBinary();
-  xTaskCreate(Usart2RxDeferred, "Usart2Rx", 128, NULL,
-              configLIBRARY_MAX_SYSCALL_INTERRUPT_PRIORITY,
-              &xTaskUsart2RxDeferred);
+  /* xSemaphoreUsart2Rx = xSemaphoreCreateBinary(); */
+  /* xTaskCreate(Usart2RxDeferred, "Usart2Rx", 128, NULL, */
+  /*             configLIBRARY_MAX_SYSCALL_INTERRUPT_PRIORITY, */
+  /*             &xTaskUsart2RxDeferred); */
 }
-
-/* void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) { */
-/*   if (GPIO_Pin == B1_Pin) { */
-/*     char MESSAGE[] = "Leccami il cazzo.\n\r"; */
-/*     serial_port_main(MESSAGE); */
-/*   } */
-/* } */
 
 void Usart2TxDeferred(void *pVParameters) {
 
@@ -237,12 +230,13 @@ void Usart2TxDeferred(void *pVParameters) {
   }
 }
 
-void Usart2RxDeferred(void *pVParameters) {
+/* void Usart2RxDeferred(void *pVParameters) { */
 
-  for (;;) {
-    while (xSemaphoreTake(xSemaphoreUsart2Rx, portMAX_DELAY) == pdTRUE) {
-      serial_port_main();
-    }
-  }
-}
+/*   for (;;) { */
+/*     while (xSemaphoreTake(xSemaphoreUsart2Rx, portMAX_DELAY) == pdTRUE) { */
+/*       // TODO Many calls of serial_port_main() if */
+/*       serial_port_main(); */
+/*     } */
+/*   } */
+/* } */
 /* USER CODE END 1 */
