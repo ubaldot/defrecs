@@ -1,4 +1,5 @@
 #include "serial_port.h"
+#include "application_setup.h"
 #include "blink/blink_main.h"
 #include "photovoltaic/pv_main.h"
 #include "pinin.h"
@@ -16,59 +17,63 @@ char tx_message[MESSAGE_SIZE_MAX];
 char rx_message[MESSAGE_SIZE_MAX];
 
 static SemaphoreHandle_t mutex_serial_pinout;
+static SemaphoreHandle_t mutex_serial_pinin;
 
 void serial_port_init() { mutex_serial_pinout = xSemaphoreCreateMutex(); }
 
-void serial_port_main(void *pIRQparams) {
+void serial_port_main(enum WhoIsCalling caller) {
   // INPUTS
   uint8_t led_state;
   geto_blink_led_state(&led_state);
 
-  if (pIRQparams != NULL) {
-    const char *msg = (const char *)pIRQparams;
-    // TODO:
-    /* if (TX == 1) { */
-    strncpy(tx_message, msg, MESSAGE_SIZE_MAX - 1);
-    /*   tx_message[MESSAGE_SIZE_MAX - 1] = '\0'; */
-    /* } else { */
-    /*   pinin_usart(rx_message); */
-    /* } */
-
-    /* } else { */
-    /* float pv_voltage; */
-    /* geto_pv_voltage(&pv_voltage); */
-
-    /* float tempsens_value; */
-    /* geto_tempsens_value(&tempsens_value); */
-
-    // Assemble tx_message to be sent
-    (void)snprintf(tx_message, MESSAGE_SIZE_MAX, "led state: %d\r\n",
-                   led_state);
-
-    // Cast float readings into string. TODO OBS! dtostrf applies only to
-    // Arduino,
-    /* const uint8_t MIN_WIDTH = 5; */
-    /* char pv_voltage_string[MIN_WIDTH]; */
-    /* dtostrf(pv_voltage, MIN_WIDTH, 2, pv_voltage_string); */
-    /* char pv_readings[MESSAGE_SIZE_MAX]; */
-    /* (void)snprintf(pv_readings, MESSAGE_SIZE_MAX, "Photovoltaic reading: %s
-     * V",
-     */
-    /*                pv_voltage_string); */
+  char msg[MESSAGE_SIZE_MAX];
+  switch (caller) {
+  case PERIODIC_TASK:
+    strncpy(msg, "Ciao amore.\r\n", MESSAGE_SIZE_MAX - 1);
+    break;
+  case IRQ_BUILTIN_BUTTON:
+    strncpy(msg, "Ciao fata.\r\n", MESSAGE_SIZE_MAX - 1);
+    break;
+  case IRQ_SERIAL_RX:
+    if (xSemaphoreTake(mutex_serial_pinin, 100 / portTICK_PERIOD_MS) ==
+        pdTRUE) {
+      pinin_usart(rx_message);
+      strncpy(msg, "Message received.\r\n", MESSAGE_SIZE_MAX - 1);
+      xSemaphoreGive(mutex_serial_pinout);
+    }
+    break;
+  default:
+    strncpy(msg, "Ciao stocazzo.\r\n", MESSAGE_SIZE_MAX - 1);
+    break;
   }
 
+  /* float pv_voltage; */
+  /* geto_pv_voltage(&pv_voltage); */
+
+  /* float tempsens_value; */
+  /* geto_tempsens_value(&tempsens_value); */
+
+  // Assemble tx_message to be sent
+  /* (void)snprintf(tx_message, MESSAGE_SIZE_MAX, "led state: %d\r\n",
+   * led_state); */
+
+  // Cast float readings into string. TODO OBS! dtostrf applies only to
+  // Arduino,
+  /* const uint8_t MIN_WIDTH = 5; */
+  /* char pv_voltage_string[MIN_WIDTH]; */
+  /* dtostrf(pv_voltage, MIN_WIDTH, 2, pv_voltage_string); */
+  /* char pv_readings[MESSAGE_SIZE_MAX]; */
+  /* (void)snprintf(pv_readings, MESSAGE_SIZE_MAX, "Photovoltaic reading: %s
+   * V",
+   */
+  /*                pv_voltage_string); */
+  /* } */
+
   if (xSemaphoreTake(mutex_serial_pinout, 100 / portTICK_PERIOD_MS) == pdTRUE) {
-    /* TaskHandle_t current_task; */
-    /* current_task = xTaskGetCurrentTaskHandle(); */
-    /* BaseType_t current_task_prio = xTaskPriorityGet(current_task); */
-    /* xTaskPrioritySet(current_task, configMAX_PRIORITIES); */
-
-    /* xTaskPriorityInherit(); */
-    /* Shared resource */
+    strncpy(tx_message, msg, MESSAGE_SIZE_MAX - 1);
+    msg[MESSAGE_SIZE_MAX - 1] = '\0'; // Ensure null-termination
     pinout_serial_port(tx_message);
-
     xSemaphoreGive(mutex_serial_pinout);
-    /* xTaskPrioritySet(current_task, current_task_prio); */
   }
 
   // Temperature

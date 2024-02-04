@@ -57,8 +57,8 @@ void USART2_IRQHandler(void);
 void EXTI15_10_IRQHandler(void);
 /* USER CODE BEGIN EFP */
 void interrupts_init(void);
-void Usart2TxDeferred(void *);
-void Usart2RxDeferred(void *);
+void Usart2TxDeferred(void*);
+void Usart2RxDeferred(void*);
 
 /* USER CODE END EFP */
 

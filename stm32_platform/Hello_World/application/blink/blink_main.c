@@ -16,6 +16,7 @@
 // OUTPUTS: blink_led_state
 //===----------------------------------------------------------------------===//
 
+#include "application_setup.h"
 #include "pinout.h"
 #include <FreeRTOS.h>
 #include <semphr.h>
@@ -51,7 +52,8 @@ void blink_init(void) {
 }
 
 // ------- Actual function starts here! -------------
-void blink_main() {
+void blink_main(enum WhoIsCalling caller) {
+  (void)caller;
   // send something every MAX_COUNT*TASK_PERIOD seconds.
   static uint8_t led_state = 1;
   if (led_state == 0) {

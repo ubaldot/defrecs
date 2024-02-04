@@ -1,3 +1,4 @@
+#include "application_setup.h"
 #include "FreeRTOS.h"
 #include "blink/blink_main.h"
 #include "debug/debug_main.h"
@@ -68,9 +69,9 @@ static void task_1000ms(void *pVParameters) // This is a task.
 
   while (1) {
     // Run activities
-    blink_main();
-    debug_main();
-    serial_port_main(NULL);
+    blink_main(PERIODIC_TASK);
+    debug_main(PERIODIC_TASK);
+    serial_port_main(PERIODIC_TASK);
     /* tempsens_main(); */
 
     // Task Schedule
@@ -89,7 +90,7 @@ static void task_200ms(void *pVParameters) // This is a task.
 
   while (1) {
     /* pv_main(); */
-    debug_main();
+    debug_main(PERIODIC_TASK);
 
     // Task Schedule
     /* xMissedDeadline = */

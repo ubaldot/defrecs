@@ -221,11 +221,10 @@ void interrupts_init() {
 }
 
 void Usart2TxDeferred(void *pVParameters) {
-
+  (void)pVParameters;
   for (;;) {
     while (xSemaphoreTake(xSemaphoreUsart2Tx, portMAX_DELAY) == pdTRUE) {
-      char MESSAGE[] = "Leccami il cazzo.\n\r";
-      serial_port_main(MESSAGE);
+      serial_port_main(IRQ_BUILTIN_BUTTON);
     }
   }
 }

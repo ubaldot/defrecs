@@ -15,6 +15,7 @@
 #include <semphr.h>
 #include <string.h>
 #include "pinin.h"
+#include "application_setup.h"
 
 // OUTPUTS AS EXAMPLES OF SETTER AND GETTER METHODS
 static float pv_voltage;
@@ -44,7 +45,8 @@ void pv_init(void) {
 }
 
 // ------- Actual function starts here! -------------
-void pv_main() {
+void pv_main(enum WhoIsCalling caller) {
+    (void)caller;
   float voltage;
   geto_pv_voltage(&voltage);
 

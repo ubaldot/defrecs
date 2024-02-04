@@ -8,6 +8,7 @@
 #include "FreeRTOS.h"
 #include <semphr.h>
 #include <string.h>
+#include "application_setup.h"
 
 #define NOOP ({ ; })
 extern TaskHandle_t xTaskHandle_200ms;
@@ -17,7 +18,8 @@ extern TaskHandle_t xTaskHandle_1000ms;
 void debug_init(void) {}
 
 // ------- Actual function starts here! -------------
-void debug_main() {
+void debug_main(enum WhoIsCalling caller) {
+    (void)caller;
 
   TaskStatus_t xTaskDetails_1000ms;
   /* Check the handle is not NULL. */
