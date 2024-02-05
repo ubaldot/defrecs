@@ -209,13 +209,13 @@ void EXTI15_10_IRQHandler(void) {
 /* USER CODE BEGIN 1 */
 void interrupts_init() {
   /* Transmit upon button press */
-  xSemaphoreUsart2Tx = xSemaphoreCreateCounting(5, 0);
+  xSemaphoreUsart2Tx = xSemaphoreCreateBinary();
   xTaskCreate(Usart2TxDeferred, "Usart2Tx", 128, NULL,
               configLIBRARY_MAX_SYSCALL_INTERRUPT_PRIORITY,
               &xTaskUsart2TxDeferred);
 
   /* Receive data */
-  xSemaphoreUsart2Rx = xSemaphoreCreateCounting(5, 0);
+  xSemaphoreUsart2Rx = xSemaphoreCreateBinary();
   xTaskCreate(Usart2RxDeferred, "Usart2Rx", 128, NULL,
               configLIBRARY_MAX_SYSCALL_INTERRUPT_PRIORITY,
               &xTaskUsart2RxDeferred);

@@ -16,14 +16,19 @@
 char tx_message[MESSAGE_SIZE_MAX];
 char rx_message[MESSAGE_SIZE_MAX];
 
-static SemaphoreHandle_t mutex_serial_pinout;
+static SemaphoreHandle_t mutex_tx_message;
+static SemaphoreHandle_t mutex_rx_message;
 /* static SemaphoreHandle_t mutex_serial_pinin; */
 /* static volatile uint8_t UsartReady; */
 
 void serial_port_init() {
-  mutex_serial_pinout = xSemaphoreCreateMutex();
+  mutex_tx_message = xSemaphoreCreateMutex();
+  mutex_rx_message = xSemaphoreCreateMutex();
   pinin_usart(rx_message); // Initialize for reception
 }
+
+/* void process_rx_char(char c) { strncpy(msg, rx_message, MESSAGE_SIZE_MAX -
+ * 1); } */
 
 void serial_port_main(enum WhoIsCalling caller) {
   // INPUTS
@@ -35,19 +40,18 @@ void serial_port_main(enum WhoIsCalling caller) {
   case PERIODIC_TASK:
     strncpy(msg, "Ciao amore.\r\n", MESSAGE_SIZE_MAX - 1);
     break;
+    /* What starts with IRQ are callbacks! */
   case IRQ_BUILTIN_BUTTON:
     strncpy(msg, "Ciao fata.\r\n", MESSAGE_SIZE_MAX - 1);
     break;
   case IRQ_SERIAL_RX:
-    /* if (xSemaphoreTake(mutex_serial_pinin, 100 / portTICK_PERIOD_MS) == */
-    /*     pdTRUE) { */
     // Process the received message and place it in the right SO.
-    /* UsartReady = 1; */
-    strncpy(msg, rx_message, MESSAGE_SIZE_MAX - 1);
-    /* UsartReady = 0; */
+    if (xSemaphoreTake(mutex_rx_message, 100 / portTICK_PERIOD_MS) == pdTRUE) {
+      strncpy(msg, rx_message, MESSAGE_SIZE_MAX - 1);
+      /* process_rx_char(rx_message); */
+      xSemaphoreGive(mutex_rx_message);
+    }
     pinin_usart(rx_message);
-    /* xSemaphoreGive(mutex_serial_pinout); */
-    /* } */
     break;
   default:
     strncpy(msg, "Ciao stocazzo.\r\n", MESSAGE_SIZE_MAX - 1);
@@ -76,12 +80,14 @@ void serial_port_main(enum WhoIsCalling caller) {
   /*                pv_voltage_string); */
   /* } */
 
-  if (xSemaphoreTake(mutex_serial_pinout, 100 / portTICK_PERIOD_MS) == pdTRUE) {
+  if (xSemaphoreTake(mutex_tx_message, 100 / portTICK_PERIOD_MS) == pdTRUE) {
     strncpy(tx_message, msg, MESSAGE_SIZE_MAX - 1);
     msg[MESSAGE_SIZE_MAX - 1] = '\0'; // Ensure null-termination
-    pinout_serial_port(tx_message);
-    xSemaphoreGive(mutex_serial_pinout);
+    xSemaphoreGive(mutex_tx_message);
   }
+
+  /* HAL_UART_Transmit is blocking, so we don't need a semaphore*/
+  pinout_serial_port(tx_message);
 
   // Temperature
   /* char tempsens_value_string[MIN_WIDTH]; */
