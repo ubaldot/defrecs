@@ -42,9 +42,12 @@ This implies that the header files only contain the declaration of init function
 
 In this way it is easy to resemble "block diagrams" that are widely used in tools like Simulink.
 
-Components can be called by
-1. Periodic tasks (periodic execution)
-2. Interrupts (aperiodic execution)
+### Components instantiation:
+Components can be called:
+1. Periodically,
+2. On events.
+
+Periodic execution is performed through periodic tasks, whereas event-based execution is achieved by interrupts. 
 
 To allow a bit of flexibility, the step function takes an argument to keep track of the component caller. 
 This because when running in periodic more we may want the component to behave in a certain way, but when called from 
