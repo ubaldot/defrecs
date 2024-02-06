@@ -8,5 +8,5 @@
 #define RX_MSG_LENGTH_MAX 6
 
 void serial_port_init(void);
-void serial_port_main(enum WhoIsCalling);
+void serial_port_step(enum WhoIsCalling);
 #endif /* SERIAL_PORT_H */

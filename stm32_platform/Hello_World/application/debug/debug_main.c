@@ -1,4 +1,4 @@
-//===-------------------- debug_main.c ------------------------*- C -*-===//
+//===-------------------- debug_step.c ------------------------*- C -*-===//
 // Used for debugging.
 //
 // prefix: debug_
@@ -18,7 +18,7 @@ extern TaskHandle_t xTaskHandle_1000ms;
 void debug_init(void) {}
 
 // ------- Actual function starts here! -------------
-void debug_main(enum WhoIsCalling caller) {
+void debug_step(enum WhoIsCalling caller) {
     (void)caller;
 
   TaskStatus_t xTaskDetails_1000ms;

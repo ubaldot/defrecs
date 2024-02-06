@@ -29,7 +29,7 @@ void serial_port_init() {
 /* void process_rx_char(char c) { strncpy(msg, rx_message, TX_MSG_LENGTH_MAX -
  * 1); } */
 
-void serial_port_main(enum WhoIsCalling caller) {
+void serial_port_step(enum WhoIsCalling caller) {
   // INPUTS
   uint8_t led_state;
   subscribe_blink_led_state(&led_state);

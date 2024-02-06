@@ -3,7 +3,7 @@
 
 //
 void tempsens_init(void);
-void tempsens_main(void);
+void tempsens_step(void);
 void subscribe_tempsens_value(float *);
 
 #endif /* LM35_MAIN_H */

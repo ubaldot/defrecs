@@ -225,7 +225,7 @@ void Usart2TxDeferred(void *pVParameters) {
   (void)pVParameters;
   for (;;) {
     while (xSemaphoreTake(xSemaphoreUsart2Tx, portMAX_DELAY) == pdTRUE) {
-      serial_port_main(IRQ_BUILTIN_BUTTON);
+      serial_port_step(IRQ_BUILTIN_BUTTON);
     }
   }
 }
@@ -236,7 +236,7 @@ void Usart2RxDeferred(void *pVParameters) {
   for (;;) {
     while (xSemaphoreTake(xSemaphoreUsart2Rx, portMAX_DELAY) == pdTRUE) {
       // TODO Many calls of serial_port_main() if
-      serial_port_main(IRQ_SERIAL_RX);
+      serial_port_step(IRQ_SERIAL_RX);
     }
   }
 }

@@ -1,4 +1,4 @@
-//===-------------------- tempsens_LM35_main.cpp --------------*- C++ //-*-===//
+//===-------------------- tempsens_LM35_step.cpp --------------*- C++ //-*-===//
 // Photovoltaic panel reading component.
 //  OBS! This depends on LM35 specific sensor!
 //
@@ -45,7 +45,7 @@ void tempsens_init(void) {
 }
 
 // ------- Actual function starts here! -------------
-void tempsens_main() {
+void tempsens_step() {
   // Get a copy of the output
   /* float voltage_reading; */
   /* subscribe_tempsens_value(&voltage_reading); */

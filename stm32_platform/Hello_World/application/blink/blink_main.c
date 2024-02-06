@@ -1,4 +1,4 @@
-//===-------------------- blink_main.c ------------------------*- C -*-===//
+//===-------------------- blink_step.c ------------------------*- C -*-===//
 //  Each component has a prefix, to be easily searched.
 //
 //  1. Output must start with the prefix, e.g. blink_led_state
@@ -6,7 +6,7 @@
 //     output, e.g. blink_led_state -> mutex_blink_led_state
 //  3. Setters and getters shape is the same for all the components and must
 //     have the form publish_<output_name>, e.g. publish_blink_publish_state()
-//  4. The function to be placed in the scheduling must have suffix _main
+//  4. The function to be placed in the scheduling must have suffix _step
 //  5. Outputs shall be initialized in the <prefix>_init() function.
 //===----------------------------------------------------------------------===//
 // blink led component.
@@ -27,7 +27,7 @@
 static uint8_t blink_led_state;
 static SemaphoreHandle_t mutex_blink_led_state;
 
-// Set
+// Publish
 static void publish_blink_led_state(const uint8_t *pLedState) {
   if (xSemaphoreTake(mutex_blink_led_state, 100 / portTICK_PERIOD_MS) ==
       pdTRUE) {
@@ -36,7 +36,7 @@ static void publish_blink_led_state(const uint8_t *pLedState) {
   }
 }
 
-// Get
+// Subscribe (for the others)
 void subscribe_blink_led_state(uint8_t *pLedState) {
   // Returns a copy of the output
   if (xSemaphoreTake(mutex_blink_led_state, 100 / portTICK_PERIOD_MS) ==
@@ -53,7 +53,7 @@ void blink_init(void) {
 }
 
 // ------- Actual function starts here! -------------
-void blink_main(enum WhoIsCalling caller) {
+void blink_step(enum WhoIsCalling caller) {
   (void)caller;
   // send something every MAX_COUNT*TASK_PERIOD seconds.
   static uint8_t led_state = 1;

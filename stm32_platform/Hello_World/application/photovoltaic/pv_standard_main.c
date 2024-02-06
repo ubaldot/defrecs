@@ -1,4 +1,4 @@
-//===-------------------- pv_standard_main.cpp --------------*- C++ //-*-===//
+//===-------------------- pv_standard_step.cpp --------------*- C++ //-*-===//
 // Photovoltaic panel reading component.
 //  OBS! This depends on the voltage meter used! In this case we assume a
 //  standard voltage meter such that the max reading is 25V.
@@ -45,7 +45,7 @@ void pv_init(void) {
 }
 
 // ------- Actual function starts here! -------------
-void pv_main(enum WhoIsCalling caller) {
+void pv_step(enum WhoIsCalling caller) {
     (void)caller;
   float voltage;
   subscribe_pv_voltage(&voltage);
