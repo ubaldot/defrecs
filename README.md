@@ -11,7 +11,7 @@ The architecture is depcited below.
 The idea is to abstract the application to allow its re-utilization on different platforms with as less pain as possible. 
 The OS used is FreeRTOS. 
 
-FIGURE
+![Architecture](Architecture.svg)
 
 The description of each layer is top-down.
 ## Components
