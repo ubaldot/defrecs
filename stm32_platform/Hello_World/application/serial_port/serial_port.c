@@ -23,7 +23,7 @@ static SemaphoreHandle_t mutex_rx_message;
 void serial_port_init() {
   mutex_tx_message = xSemaphoreCreateMutex();
   mutex_rx_message = xSemaphoreCreateMutex();
-  pinin_usart(rx_message); // Initialize for reception
+  pinin_usart(rx_message, INTERRUPT); // Initialize for reception
 }
 
 /* void process_rx_char(char c) { strncpy(msg, rx_message, TX_MSG_LENGTH_MAX -
@@ -46,11 +46,12 @@ void serial_port_main(enum WhoIsCalling caller) {
   case IRQ_SERIAL_RX:
     // Process the received message and place it in the right SO.
     if (xSemaphoreTake(mutex_rx_message, 100 / portTICK_PERIOD_MS) == pdTRUE) {
-      strncpy(msg, rx_message, RX_MSG_LENGTH_MAX - 1);
+      /* strncpy(msg, rx_message, RX_MSG_LENGTH_MAX - 1); */
+      pinin_usart(rx_message, POLLING);
+      pinin_usart(rx_message, INTERRUPT);
       /* process_rx_char(rx_message); */
       xSemaphoreGive(mutex_rx_message);
     }
-    pinin_usart(rx_message);
     break;
   default:
     strncpy(msg, "Ciao stocazzo.\r\n", TX_MSG_LENGTH_MAX - 1);

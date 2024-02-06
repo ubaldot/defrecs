@@ -2,9 +2,10 @@
 #define IN_FUNCTIONS_H
 
 #include <stdint.h>
+#include "application_setup.h"
 uint16_t pinin_temp_sens(void);
 uint16_t pinin_pv(void);
 uint16_t pinin_pv1(void);
-void pinin_usart(char *);
+void pinin_usart(char *, enum HAL_Function_Mode);
 
 #endif /* IN_FUNCTIONS_H */

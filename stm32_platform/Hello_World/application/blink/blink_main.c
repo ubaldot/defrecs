@@ -16,6 +16,7 @@
 // OUTPUTS: blink_led_state
 //===----------------------------------------------------------------------===//
 
+/* #include "application_setup.h" */
 #include "application_setup.h"
 #include "pinout.h"
 #include <FreeRTOS.h>

@@ -1,8 +1,8 @@
 [
  {
-  "directory": "/Users/ubaldot/Documents/embedded/stm32_platform/Hello_World",
+  "directory": "C:\\Users\\yt75534\\Documents\\embedded\\stm32_platform\\Hello_World",
   "arguments": [
-   "/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//bin/arm-none-eabi-gcc",
+   "C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/arm-none-eabi-gcc",
    "-c",
    "-mcpu=cortex-m4",
    "-mthumb",
@@ -18,9 +18,9 @@
    "-IMiddlewares/Third_Party/FreeRTOS/Source/include",
    "-IMiddlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2",
    "-IMiddlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//arm-none-eabi/include",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//arm-none-eabi/include/newlib-nano",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//lib/gcc/arm-none-eabi/11.3.1/include",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/arm-none-eabi/include",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/arm-none-eabi/include/newlib-nano",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/lib/gcc/arm-none-eabi/11.3.1/include",
    "-Iplatform/inc",
    "-Iapplication",
    "-Og",
@@ -40,9 +40,9 @@
   "file": "Core/Src/main.c"
  },
  {
-  "directory": "/Users/ubaldot/Documents/embedded/stm32_platform/Hello_World",
+  "directory": "C:\\Users\\yt75534\\Documents\\embedded\\stm32_platform\\Hello_World",
   "arguments": [
-   "/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//bin/arm-none-eabi-gcc",
+   "C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/arm-none-eabi-gcc",
    "-c",
    "-mcpu=cortex-m4",
    "-mthumb",
@@ -58,9 +58,9 @@
    "-IMiddlewares/Third_Party/FreeRTOS/Source/include",
    "-IMiddlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2",
    "-IMiddlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//arm-none-eabi/include",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//arm-none-eabi/include/newlib-nano",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//lib/gcc/arm-none-eabi/11.3.1/include",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/arm-none-eabi/include",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/arm-none-eabi/include/newlib-nano",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/lib/gcc/arm-none-eabi/11.3.1/include",
    "-Iplatform/inc",
    "-Iapplication",
    "-Og",
@@ -80,9 +80,9 @@
   "file": "Core/Src/gpio.c"
  },
  {
-  "directory": "/Users/ubaldot/Documents/embedded/stm32_platform/Hello_World",
+  "directory": "C:\\Users\\yt75534\\Documents\\embedded\\stm32_platform\\Hello_World",
   "arguments": [
-   "/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//bin/arm-none-eabi-gcc",
+   "C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/arm-none-eabi-gcc",
    "-c",
    "-mcpu=cortex-m4",
    "-mthumb",
@@ -98,9 +98,9 @@
    "-IMiddlewares/Third_Party/FreeRTOS/Source/include",
    "-IMiddlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2",
    "-IMiddlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//arm-none-eabi/include",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//arm-none-eabi/include/newlib-nano",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//lib/gcc/arm-none-eabi/11.3.1/include",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/arm-none-eabi/include",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/arm-none-eabi/include/newlib-nano",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/lib/gcc/arm-none-eabi/11.3.1/include",
    "-Iplatform/inc",
    "-Iapplication",
    "-Og",
@@ -120,9 +120,9 @@
   "file": "Core/Src/usart.c"
  },
  {
-  "directory": "/Users/ubaldot/Documents/embedded/stm32_platform/Hello_World",
+  "directory": "C:\\Users\\yt75534\\Documents\\embedded\\stm32_platform\\Hello_World",
   "arguments": [
-   "/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//bin/arm-none-eabi-gcc",
+   "C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/arm-none-eabi-gcc",
    "-c",
    "-mcpu=cortex-m4",
    "-mthumb",
@@ -138,9 +138,9 @@
    "-IMiddlewares/Third_Party/FreeRTOS/Source/include",
    "-IMiddlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2",
    "-IMiddlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//arm-none-eabi/include",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//arm-none-eabi/include/newlib-nano",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//lib/gcc/arm-none-eabi/11.3.1/include",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/arm-none-eabi/include",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/arm-none-eabi/include/newlib-nano",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/lib/gcc/arm-none-eabi/11.3.1/include",
    "-Iplatform/inc",
    "-Iapplication",
    "-Og",
@@ -160,9 +160,9 @@
   "file": "Core/Src/stm32f4xx_it.c"
  },
  {
-  "directory": "/Users/ubaldot/Documents/embedded/stm32_platform/Hello_World",
+  "directory": "C:\\Users\\yt75534\\Documents\\embedded\\stm32_platform\\Hello_World",
   "arguments": [
-   "/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//bin/arm-none-eabi-gcc",
+   "C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/arm-none-eabi-gcc",
    "-c",
    "-mcpu=cortex-m4",
    "-mthumb",
@@ -178,9 +178,9 @@
    "-IMiddlewares/Third_Party/FreeRTOS/Source/include",
    "-IMiddlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2",
    "-IMiddlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//arm-none-eabi/include",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//arm-none-eabi/include/newlib-nano",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//lib/gcc/arm-none-eabi/11.3.1/include",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/arm-none-eabi/include",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/arm-none-eabi/include/newlib-nano",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/lib/gcc/arm-none-eabi/11.3.1/include",
    "-Iplatform/inc",
    "-Iapplication",
    "-Og",
@@ -200,9 +200,9 @@
   "file": "Core/Src/stm32f4xx_hal_msp.c"
  },
  {
-  "directory": "/Users/ubaldot/Documents/embedded/stm32_platform/Hello_World",
+  "directory": "C:\\Users\\yt75534\\Documents\\embedded\\stm32_platform\\Hello_World",
   "arguments": [
-   "/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//bin/arm-none-eabi-gcc",
+   "C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/arm-none-eabi-gcc",
    "-c",
    "-mcpu=cortex-m4",
    "-mthumb",
@@ -218,9 +218,9 @@
    "-IMiddlewares/Third_Party/FreeRTOS/Source/include",
    "-IMiddlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2",
    "-IMiddlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//arm-none-eabi/include",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//arm-none-eabi/include/newlib-nano",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//lib/gcc/arm-none-eabi/11.3.1/include",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/arm-none-eabi/include",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/arm-none-eabi/include/newlib-nano",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/lib/gcc/arm-none-eabi/11.3.1/include",
    "-Iplatform/inc",
    "-Iapplication",
    "-Og",
@@ -240,9 +240,9 @@
   "file": "Core/Src/stm32f4xx_hal_timebase_tim.c"
  },
  {
-  "directory": "/Users/ubaldot/Documents/embedded/stm32_platform/Hello_World",
+  "directory": "C:\\Users\\yt75534\\Documents\\embedded\\stm32_platform\\Hello_World",
   "arguments": [
-   "/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//bin/arm-none-eabi-gcc",
+   "C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/arm-none-eabi-gcc",
    "-c",
    "-mcpu=cortex-m4",
    "-mthumb",
@@ -258,9 +258,9 @@
    "-IMiddlewares/Third_Party/FreeRTOS/Source/include",
    "-IMiddlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2",
    "-IMiddlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//arm-none-eabi/include",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//arm-none-eabi/include/newlib-nano",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//lib/gcc/arm-none-eabi/11.3.1/include",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/arm-none-eabi/include",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/arm-none-eabi/include/newlib-nano",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/lib/gcc/arm-none-eabi/11.3.1/include",
    "-Iplatform/inc",
    "-Iapplication",
    "-Og",
@@ -280,9 +280,9 @@
   "file": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c"
  },
  {
-  "directory": "/Users/ubaldot/Documents/embedded/stm32_platform/Hello_World",
+  "directory": "C:\\Users\\yt75534\\Documents\\embedded\\stm32_platform\\Hello_World",
   "arguments": [
-   "/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//bin/arm-none-eabi-gcc",
+   "C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/arm-none-eabi-gcc",
    "-c",
    "-mcpu=cortex-m4",
    "-mthumb",
@@ -298,9 +298,9 @@
    "-IMiddlewares/Third_Party/FreeRTOS/Source/include",
    "-IMiddlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2",
    "-IMiddlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//arm-none-eabi/include",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//arm-none-eabi/include/newlib-nano",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//lib/gcc/arm-none-eabi/11.3.1/include",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/arm-none-eabi/include",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/arm-none-eabi/include/newlib-nano",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/lib/gcc/arm-none-eabi/11.3.1/include",
    "-Iplatform/inc",
    "-Iapplication",
    "-Og",
@@ -320,9 +320,9 @@
   "file": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c"
  },
  {
-  "directory": "/Users/ubaldot/Documents/embedded/stm32_platform/Hello_World",
+  "directory": "C:\\Users\\yt75534\\Documents\\embedded\\stm32_platform\\Hello_World",
   "arguments": [
-   "/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//bin/arm-none-eabi-gcc",
+   "C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/arm-none-eabi-gcc",
    "-c",
    "-mcpu=cortex-m4",
    "-mthumb",
@@ -338,9 +338,9 @@
    "-IMiddlewares/Third_Party/FreeRTOS/Source/include",
    "-IMiddlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2",
    "-IMiddlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//arm-none-eabi/include",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//arm-none-eabi/include/newlib-nano",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//lib/gcc/arm-none-eabi/11.3.1/include",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/arm-none-eabi/include",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/arm-none-eabi/include/newlib-nano",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/lib/gcc/arm-none-eabi/11.3.1/include",
    "-Iplatform/inc",
    "-Iapplication",
    "-Og",
@@ -360,9 +360,9 @@
   "file": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c"
  },
  {
-  "directory": "/Users/ubaldot/Documents/embedded/stm32_platform/Hello_World",
+  "directory": "C:\\Users\\yt75534\\Documents\\embedded\\stm32_platform\\Hello_World",
   "arguments": [
-   "/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//bin/arm-none-eabi-gcc",
+   "C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/arm-none-eabi-gcc",
    "-c",
    "-mcpu=cortex-m4",
    "-mthumb",
@@ -378,9 +378,9 @@
    "-IMiddlewares/Third_Party/FreeRTOS/Source/include",
    "-IMiddlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2",
    "-IMiddlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//arm-none-eabi/include",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//arm-none-eabi/include/newlib-nano",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//lib/gcc/arm-none-eabi/11.3.1/include",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/arm-none-eabi/include",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/arm-none-eabi/include/newlib-nano",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/lib/gcc/arm-none-eabi/11.3.1/include",
    "-Iplatform/inc",
    "-Iapplication",
    "-Og",
@@ -400,9 +400,9 @@
   "file": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c"
  },
  {
-  "directory": "/Users/ubaldot/Documents/embedded/stm32_platform/Hello_World",
+  "directory": "C:\\Users\\yt75534\\Documents\\embedded\\stm32_platform\\Hello_World",
   "arguments": [
-   "/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//bin/arm-none-eabi-gcc",
+   "C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/arm-none-eabi-gcc",
    "-c",
    "-mcpu=cortex-m4",
    "-mthumb",
@@ -418,9 +418,9 @@
    "-IMiddlewares/Third_Party/FreeRTOS/Source/include",
    "-IMiddlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2",
    "-IMiddlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//arm-none-eabi/include",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//arm-none-eabi/include/newlib-nano",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//lib/gcc/arm-none-eabi/11.3.1/include",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/arm-none-eabi/include",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/arm-none-eabi/include/newlib-nano",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/lib/gcc/arm-none-eabi/11.3.1/include",
    "-Iplatform/inc",
    "-Iapplication",
    "-Og",
@@ -440,9 +440,9 @@
   "file": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c"
  },
  {
-  "directory": "/Users/ubaldot/Documents/embedded/stm32_platform/Hello_World",
+  "directory": "C:\\Users\\yt75534\\Documents\\embedded\\stm32_platform\\Hello_World",
   "arguments": [
-   "/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//bin/arm-none-eabi-gcc",
+   "C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/arm-none-eabi-gcc",
    "-c",
    "-mcpu=cortex-m4",
    "-mthumb",
@@ -458,9 +458,9 @@
    "-IMiddlewares/Third_Party/FreeRTOS/Source/include",
    "-IMiddlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2",
    "-IMiddlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//arm-none-eabi/include",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//arm-none-eabi/include/newlib-nano",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//lib/gcc/arm-none-eabi/11.3.1/include",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/arm-none-eabi/include",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/arm-none-eabi/include/newlib-nano",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/lib/gcc/arm-none-eabi/11.3.1/include",
    "-Iplatform/inc",
    "-Iapplication",
    "-Og",
@@ -480,9 +480,9 @@
   "file": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c"
  },
  {
-  "directory": "/Users/ubaldot/Documents/embedded/stm32_platform/Hello_World",
+  "directory": "C:\\Users\\yt75534\\Documents\\embedded\\stm32_platform\\Hello_World",
   "arguments": [
-   "/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//bin/arm-none-eabi-gcc",
+   "C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/arm-none-eabi-gcc",
    "-c",
    "-mcpu=cortex-m4",
    "-mthumb",
@@ -498,9 +498,9 @@
    "-IMiddlewares/Third_Party/FreeRTOS/Source/include",
    "-IMiddlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2",
    "-IMiddlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//arm-none-eabi/include",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//arm-none-eabi/include/newlib-nano",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//lib/gcc/arm-none-eabi/11.3.1/include",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/arm-none-eabi/include",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/arm-none-eabi/include/newlib-nano",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/lib/gcc/arm-none-eabi/11.3.1/include",
    "-Iplatform/inc",
    "-Iapplication",
    "-Og",
@@ -520,9 +520,9 @@
   "file": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c"
  },
  {
-  "directory": "/Users/ubaldot/Documents/embedded/stm32_platform/Hello_World",
+  "directory": "C:\\Users\\yt75534\\Documents\\embedded\\stm32_platform\\Hello_World",
   "arguments": [
-   "/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//bin/arm-none-eabi-gcc",
+   "C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/arm-none-eabi-gcc",
    "-c",
    "-mcpu=cortex-m4",
    "-mthumb",
@@ -538,9 +538,9 @@
    "-IMiddlewares/Third_Party/FreeRTOS/Source/include",
    "-IMiddlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2",
    "-IMiddlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//arm-none-eabi/include",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//arm-none-eabi/include/newlib-nano",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//lib/gcc/arm-none-eabi/11.3.1/include",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/arm-none-eabi/include",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/arm-none-eabi/include/newlib-nano",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/lib/gcc/arm-none-eabi/11.3.1/include",
    "-Iplatform/inc",
    "-Iapplication",
    "-Og",
@@ -560,9 +560,9 @@
   "file": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c"
  },
  {
-  "directory": "/Users/ubaldot/Documents/embedded/stm32_platform/Hello_World",
+  "directory": "C:\\Users\\yt75534\\Documents\\embedded\\stm32_platform\\Hello_World",
   "arguments": [
-   "/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//bin/arm-none-eabi-gcc",
+   "C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/arm-none-eabi-gcc",
    "-c",
    "-mcpu=cortex-m4",
    "-mthumb",
@@ -578,9 +578,9 @@
    "-IMiddlewares/Third_Party/FreeRTOS/Source/include",
    "-IMiddlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2",
    "-IMiddlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//arm-none-eabi/include",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//arm-none-eabi/include/newlib-nano",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//lib/gcc/arm-none-eabi/11.3.1/include",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/arm-none-eabi/include",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/arm-none-eabi/include/newlib-nano",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/lib/gcc/arm-none-eabi/11.3.1/include",
    "-Iplatform/inc",
    "-Iapplication",
    "-Og",
@@ -600,9 +600,9 @@
   "file": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c"
  },
  {
-  "directory": "/Users/ubaldot/Documents/embedded/stm32_platform/Hello_World",
+  "directory": "C:\\Users\\yt75534\\Documents\\embedded\\stm32_platform\\Hello_World",
   "arguments": [
-   "/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//bin/arm-none-eabi-gcc",
+   "C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/arm-none-eabi-gcc",
    "-c",
    "-mcpu=cortex-m4",
    "-mthumb",
@@ -618,9 +618,9 @@
    "-IMiddlewares/Third_Party/FreeRTOS/Source/include",
    "-IMiddlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2",
    "-IMiddlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//arm-none-eabi/include",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//arm-none-eabi/include/newlib-nano",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//lib/gcc/arm-none-eabi/11.3.1/include",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/arm-none-eabi/include",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/arm-none-eabi/include/newlib-nano",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/lib/gcc/arm-none-eabi/11.3.1/include",
    "-Iplatform/inc",
    "-Iapplication",
    "-Og",
@@ -640,9 +640,9 @@
   "file": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c"
  },
  {
-  "directory": "/Users/ubaldot/Documents/embedded/stm32_platform/Hello_World",
+  "directory": "C:\\Users\\yt75534\\Documents\\embedded\\stm32_platform\\Hello_World",
   "arguments": [
-   "/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//bin/arm-none-eabi-gcc",
+   "C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/arm-none-eabi-gcc",
    "-c",
    "-mcpu=cortex-m4",
    "-mthumb",
@@ -658,9 +658,9 @@
    "-IMiddlewares/Third_Party/FreeRTOS/Source/include",
    "-IMiddlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2",
    "-IMiddlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//arm-none-eabi/include",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//arm-none-eabi/include/newlib-nano",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//lib/gcc/arm-none-eabi/11.3.1/include",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/arm-none-eabi/include",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/arm-none-eabi/include/newlib-nano",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/lib/gcc/arm-none-eabi/11.3.1/include",
    "-Iplatform/inc",
    "-Iapplication",
    "-Og",
@@ -680,9 +680,9 @@
   "file": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c"
  },
  {
-  "directory": "/Users/ubaldot/Documents/embedded/stm32_platform/Hello_World",
+  "directory": "C:\\Users\\yt75534\\Documents\\embedded\\stm32_platform\\Hello_World",
   "arguments": [
-   "/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//bin/arm-none-eabi-gcc",
+   "C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/arm-none-eabi-gcc",
    "-c",
    "-mcpu=cortex-m4",
    "-mthumb",
@@ -698,9 +698,9 @@
    "-IMiddlewares/Third_Party/FreeRTOS/Source/include",
    "-IMiddlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2",
    "-IMiddlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//arm-none-eabi/include",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//arm-none-eabi/include/newlib-nano",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//lib/gcc/arm-none-eabi/11.3.1/include",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/arm-none-eabi/include",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/arm-none-eabi/include/newlib-nano",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/lib/gcc/arm-none-eabi/11.3.1/include",
    "-Iplatform/inc",
    "-Iapplication",
    "-Og",
@@ -720,9 +720,9 @@
   "file": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c"
  },
  {
-  "directory": "/Users/ubaldot/Documents/embedded/stm32_platform/Hello_World",
+  "directory": "C:\\Users\\yt75534\\Documents\\embedded\\stm32_platform\\Hello_World",
   "arguments": [
-   "/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//bin/arm-none-eabi-gcc",
+   "C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/arm-none-eabi-gcc",
    "-c",
    "-mcpu=cortex-m4",
    "-mthumb",
@@ -738,9 +738,9 @@
    "-IMiddlewares/Third_Party/FreeRTOS/Source/include",
    "-IMiddlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2",
    "-IMiddlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//arm-none-eabi/include",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//arm-none-eabi/include/newlib-nano",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//lib/gcc/arm-none-eabi/11.3.1/include",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/arm-none-eabi/include",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/arm-none-eabi/include/newlib-nano",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/lib/gcc/arm-none-eabi/11.3.1/include",
    "-Iplatform/inc",
    "-Iapplication",
    "-Og",
@@ -760,9 +760,9 @@
   "file": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c"
  },
  {
-  "directory": "/Users/ubaldot/Documents/embedded/stm32_platform/Hello_World",
+  "directory": "C:\\Users\\yt75534\\Documents\\embedded\\stm32_platform\\Hello_World",
   "arguments": [
-   "/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//bin/arm-none-eabi-gcc",
+   "C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/arm-none-eabi-gcc",
    "-c",
    "-mcpu=cortex-m4",
    "-mthumb",
@@ -778,9 +778,9 @@
    "-IMiddlewares/Third_Party/FreeRTOS/Source/include",
    "-IMiddlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2",
    "-IMiddlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//arm-none-eabi/include",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//arm-none-eabi/include/newlib-nano",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//lib/gcc/arm-none-eabi/11.3.1/include",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/arm-none-eabi/include",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/arm-none-eabi/include/newlib-nano",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/lib/gcc/arm-none-eabi/11.3.1/include",
    "-Iplatform/inc",
    "-Iapplication",
    "-Og",
@@ -800,9 +800,9 @@
   "file": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c"
  },
  {
-  "directory": "/Users/ubaldot/Documents/embedded/stm32_platform/Hello_World",
+  "directory": "C:\\Users\\yt75534\\Documents\\embedded\\stm32_platform\\Hello_World",
   "arguments": [
-   "/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//bin/arm-none-eabi-gcc",
+   "C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/arm-none-eabi-gcc",
    "-c",
    "-mcpu=cortex-m4",
    "-mthumb",
@@ -818,9 +818,9 @@
    "-IMiddlewares/Third_Party/FreeRTOS/Source/include",
    "-IMiddlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2",
    "-IMiddlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//arm-none-eabi/include",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//arm-none-eabi/include/newlib-nano",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//lib/gcc/arm-none-eabi/11.3.1/include",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/arm-none-eabi/include",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/arm-none-eabi/include/newlib-nano",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/lib/gcc/arm-none-eabi/11.3.1/include",
    "-Iplatform/inc",
    "-Iapplication",
    "-Og",
@@ -840,9 +840,9 @@
   "file": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c"
  },
  {
-  "directory": "/Users/ubaldot/Documents/embedded/stm32_platform/Hello_World",
+  "directory": "C:\\Users\\yt75534\\Documents\\embedded\\stm32_platform\\Hello_World",
   "arguments": [
-   "/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//bin/arm-none-eabi-gcc",
+   "C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/arm-none-eabi-gcc",
    "-c",
    "-mcpu=cortex-m4",
    "-mthumb",
@@ -858,9 +858,9 @@
    "-IMiddlewares/Third_Party/FreeRTOS/Source/include",
    "-IMiddlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2",
    "-IMiddlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//arm-none-eabi/include",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//arm-none-eabi/include/newlib-nano",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//lib/gcc/arm-none-eabi/11.3.1/include",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/arm-none-eabi/include",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/arm-none-eabi/include/newlib-nano",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/lib/gcc/arm-none-eabi/11.3.1/include",
    "-Iplatform/inc",
    "-Iapplication",
    "-Og",
@@ -880,9 +880,9 @@
   "file": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c"
  },
  {
-  "directory": "/Users/ubaldot/Documents/embedded/stm32_platform/Hello_World",
+  "directory": "C:\\Users\\yt75534\\Documents\\embedded\\stm32_platform\\Hello_World",
   "arguments": [
-   "/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//bin/arm-none-eabi-gcc",
+   "C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/arm-none-eabi-gcc",
    "-c",
    "-mcpu=cortex-m4",
    "-mthumb",
@@ -898,9 +898,9 @@
    "-IMiddlewares/Third_Party/FreeRTOS/Source/include",
    "-IMiddlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2",
    "-IMiddlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//arm-none-eabi/include",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//arm-none-eabi/include/newlib-nano",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//lib/gcc/arm-none-eabi/11.3.1/include",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/arm-none-eabi/include",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/arm-none-eabi/include/newlib-nano",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/lib/gcc/arm-none-eabi/11.3.1/include",
    "-Iplatform/inc",
    "-Iapplication",
    "-Og",
@@ -920,9 +920,9 @@
   "file": "Core/Src/system_stm32f4xx.c"
  },
  {
-  "directory": "/Users/ubaldot/Documents/embedded/stm32_platform/Hello_World",
+  "directory": "C:\\Users\\yt75534\\Documents\\embedded\\stm32_platform\\Hello_World",
   "arguments": [
-   "/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//bin/arm-none-eabi-gcc",
+   "C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/arm-none-eabi-gcc",
    "-c",
    "-mcpu=cortex-m4",
    "-mthumb",
@@ -938,9 +938,9 @@
    "-IMiddlewares/Third_Party/FreeRTOS/Source/include",
    "-IMiddlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2",
    "-IMiddlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//arm-none-eabi/include",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//arm-none-eabi/include/newlib-nano",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//lib/gcc/arm-none-eabi/11.3.1/include",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/arm-none-eabi/include",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/arm-none-eabi/include/newlib-nano",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/lib/gcc/arm-none-eabi/11.3.1/include",
    "-Iplatform/inc",
    "-Iapplication",
    "-Og",
@@ -960,9 +960,9 @@
   "file": "contrib/rtos-helpers/FreeRTOS-openocd.c"
  },
  {
-  "directory": "/Users/ubaldot/Documents/embedded/stm32_platform/Hello_World",
+  "directory": "C:\\Users\\yt75534\\Documents\\embedded\\stm32_platform\\Hello_World",
   "arguments": [
-   "/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//bin/arm-none-eabi-gcc",
+   "C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/arm-none-eabi-gcc",
    "-c",
    "-mcpu=cortex-m4",
    "-mthumb",
@@ -978,9 +978,9 @@
    "-IMiddlewares/Third_Party/FreeRTOS/Source/include",
    "-IMiddlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2",
    "-IMiddlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//arm-none-eabi/include",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//arm-none-eabi/include/newlib-nano",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//lib/gcc/arm-none-eabi/11.3.1/include",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/arm-none-eabi/include",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/arm-none-eabi/include/newlib-nano",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/lib/gcc/arm-none-eabi/11.3.1/include",
    "-Iplatform/inc",
    "-Iapplication",
    "-Og",
@@ -1000,9 +1000,9 @@
   "file": "Middlewares/Third_Party/FreeRTOS/Source/croutine.c"
  },
  {
-  "directory": "/Users/ubaldot/Documents/embedded/stm32_platform/Hello_World",
+  "directory": "C:\\Users\\yt75534\\Documents\\embedded\\stm32_platform\\Hello_World",
   "arguments": [
-   "/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//bin/arm-none-eabi-gcc",
+   "C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/arm-none-eabi-gcc",
    "-c",
    "-mcpu=cortex-m4",
    "-mthumb",
@@ -1018,9 +1018,9 @@
    "-IMiddlewares/Third_Party/FreeRTOS/Source/include",
    "-IMiddlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2",
    "-IMiddlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//arm-none-eabi/include",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//arm-none-eabi/include/newlib-nano",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//lib/gcc/arm-none-eabi/11.3.1/include",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/arm-none-eabi/include",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/arm-none-eabi/include/newlib-nano",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/lib/gcc/arm-none-eabi/11.3.1/include",
    "-Iplatform/inc",
    "-Iapplication",
    "-Og",
@@ -1040,9 +1040,9 @@
   "file": "Middlewares/Third_Party/FreeRTOS/Source/event_groups.c"
  },
  {
-  "directory": "/Users/ubaldot/Documents/embedded/stm32_platform/Hello_World",
+  "directory": "C:\\Users\\yt75534\\Documents\\embedded\\stm32_platform\\Hello_World",
   "arguments": [
-   "/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//bin/arm-none-eabi-gcc",
+   "C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/arm-none-eabi-gcc",
    "-c",
    "-mcpu=cortex-m4",
    "-mthumb",
@@ -1058,9 +1058,9 @@
    "-IMiddlewares/Third_Party/FreeRTOS/Source/include",
    "-IMiddlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2",
    "-IMiddlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//arm-none-eabi/include",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//arm-none-eabi/include/newlib-nano",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//lib/gcc/arm-none-eabi/11.3.1/include",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/arm-none-eabi/include",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/arm-none-eabi/include/newlib-nano",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/lib/gcc/arm-none-eabi/11.3.1/include",
    "-Iplatform/inc",
    "-Iapplication",
    "-Og",
@@ -1080,9 +1080,9 @@
   "file": "Middlewares/Third_Party/FreeRTOS/Source/list.c"
  },
  {
-  "directory": "/Users/ubaldot/Documents/embedded/stm32_platform/Hello_World",
+  "directory": "C:\\Users\\yt75534\\Documents\\embedded\\stm32_platform\\Hello_World",
   "arguments": [
-   "/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//bin/arm-none-eabi-gcc",
+   "C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/arm-none-eabi-gcc",
    "-c",
    "-mcpu=cortex-m4",
    "-mthumb",
@@ -1098,9 +1098,9 @@
    "-IMiddlewares/Third_Party/FreeRTOS/Source/include",
    "-IMiddlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2",
    "-IMiddlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//arm-none-eabi/include",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//arm-none-eabi/include/newlib-nano",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//lib/gcc/arm-none-eabi/11.3.1/include",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/arm-none-eabi/include",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/arm-none-eabi/include/newlib-nano",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/lib/gcc/arm-none-eabi/11.3.1/include",
    "-Iplatform/inc",
    "-Iapplication",
    "-Og",
@@ -1120,9 +1120,9 @@
   "file": "Middlewares/Third_Party/FreeRTOS/Source/queue.c"
  },
  {
-  "directory": "/Users/ubaldot/Documents/embedded/stm32_platform/Hello_World",
+  "directory": "C:\\Users\\yt75534\\Documents\\embedded\\stm32_platform\\Hello_World",
   "arguments": [
-   "/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//bin/arm-none-eabi-gcc",
+   "C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/arm-none-eabi-gcc",
    "-c",
    "-mcpu=cortex-m4",
    "-mthumb",
@@ -1138,9 +1138,9 @@
    "-IMiddlewares/Third_Party/FreeRTOS/Source/include",
    "-IMiddlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2",
    "-IMiddlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//arm-none-eabi/include",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//arm-none-eabi/include/newlib-nano",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//lib/gcc/arm-none-eabi/11.3.1/include",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/arm-none-eabi/include",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/arm-none-eabi/include/newlib-nano",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/lib/gcc/arm-none-eabi/11.3.1/include",
    "-Iplatform/inc",
    "-Iapplication",
    "-Og",
@@ -1160,9 +1160,9 @@
   "file": "Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c"
  },
  {
-  "directory": "/Users/ubaldot/Documents/embedded/stm32_platform/Hello_World",
+  "directory": "C:\\Users\\yt75534\\Documents\\embedded\\stm32_platform\\Hello_World",
   "arguments": [
-   "/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//bin/arm-none-eabi-gcc",
+   "C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/arm-none-eabi-gcc",
    "-c",
    "-mcpu=cortex-m4",
    "-mthumb",
@@ -1178,9 +1178,9 @@
    "-IMiddlewares/Third_Party/FreeRTOS/Source/include",
    "-IMiddlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2",
    "-IMiddlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//arm-none-eabi/include",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//arm-none-eabi/include/newlib-nano",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//lib/gcc/arm-none-eabi/11.3.1/include",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/arm-none-eabi/include",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/arm-none-eabi/include/newlib-nano",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/lib/gcc/arm-none-eabi/11.3.1/include",
    "-Iplatform/inc",
    "-Iapplication",
    "-Og",
@@ -1200,9 +1200,9 @@
   "file": "Middlewares/Third_Party/FreeRTOS/Source/tasks.c"
  },
  {
-  "directory": "/Users/ubaldot/Documents/embedded/stm32_platform/Hello_World",
+  "directory": "C:\\Users\\yt75534\\Documents\\embedded\\stm32_platform\\Hello_World",
   "arguments": [
-   "/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//bin/arm-none-eabi-gcc",
+   "C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/arm-none-eabi-gcc",
    "-c",
    "-mcpu=cortex-m4",
    "-mthumb",
@@ -1218,9 +1218,9 @@
    "-IMiddlewares/Third_Party/FreeRTOS/Source/include",
    "-IMiddlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2",
    "-IMiddlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//arm-none-eabi/include",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//arm-none-eabi/include/newlib-nano",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//lib/gcc/arm-none-eabi/11.3.1/include",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/arm-none-eabi/include",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/arm-none-eabi/include/newlib-nano",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/lib/gcc/arm-none-eabi/11.3.1/include",
    "-Iplatform/inc",
    "-Iapplication",
    "-Og",
@@ -1240,9 +1240,9 @@
   "file": "Middlewares/Third_Party/FreeRTOS/Source/timers.c"
  },
  {
-  "directory": "/Users/ubaldot/Documents/embedded/stm32_platform/Hello_World",
+  "directory": "C:\\Users\\yt75534\\Documents\\embedded\\stm32_platform\\Hello_World",
   "arguments": [
-   "/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//bin/arm-none-eabi-gcc",
+   "C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/arm-none-eabi-gcc",
    "-c",
    "-mcpu=cortex-m4",
    "-mthumb",
@@ -1258,9 +1258,9 @@
    "-IMiddlewares/Third_Party/FreeRTOS/Source/include",
    "-IMiddlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2",
    "-IMiddlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//arm-none-eabi/include",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//arm-none-eabi/include/newlib-nano",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//lib/gcc/arm-none-eabi/11.3.1/include",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/arm-none-eabi/include",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/arm-none-eabi/include/newlib-nano",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/lib/gcc/arm-none-eabi/11.3.1/include",
    "-Iplatform/inc",
    "-Iapplication",
    "-Og",
@@ -1280,9 +1280,9 @@
   "file": "Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c"
  },
  {
-  "directory": "/Users/ubaldot/Documents/embedded/stm32_platform/Hello_World",
+  "directory": "C:\\Users\\yt75534\\Documents\\embedded\\stm32_platform\\Hello_World",
   "arguments": [
-   "/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//bin/arm-none-eabi-gcc",
+   "C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/arm-none-eabi-gcc",
    "-c",
    "-mcpu=cortex-m4",
    "-mthumb",
@@ -1298,9 +1298,9 @@
    "-IMiddlewares/Third_Party/FreeRTOS/Source/include",
    "-IMiddlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2",
    "-IMiddlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//arm-none-eabi/include",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//arm-none-eabi/include/newlib-nano",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//lib/gcc/arm-none-eabi/11.3.1/include",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/arm-none-eabi/include",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/arm-none-eabi/include/newlib-nano",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/lib/gcc/arm-none-eabi/11.3.1/include",
    "-Iplatform/inc",
    "-Iapplication",
    "-Og",
@@ -1320,9 +1320,9 @@
   "file": "Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c"
  },
  {
-  "directory": "/Users/ubaldot/Documents/embedded/stm32_platform/Hello_World",
+  "directory": "C:\\Users\\yt75534\\Documents\\embedded\\stm32_platform\\Hello_World",
   "arguments": [
-   "/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//bin/arm-none-eabi-gcc",
+   "C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/arm-none-eabi-gcc",
    "-c",
    "-mcpu=cortex-m4",
    "-mthumb",
@@ -1338,9 +1338,9 @@
    "-IMiddlewares/Third_Party/FreeRTOS/Source/include",
    "-IMiddlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2",
    "-IMiddlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//arm-none-eabi/include",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//arm-none-eabi/include/newlib-nano",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//lib/gcc/arm-none-eabi/11.3.1/include",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/arm-none-eabi/include",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/arm-none-eabi/include/newlib-nano",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/lib/gcc/arm-none-eabi/11.3.1/include",
    "-Iplatform/inc",
    "-Iapplication",
    "-Og",
@@ -1360,9 +1360,9 @@
   "file": "Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c"
  },
  {
-  "directory": "/Users/ubaldot/Documents/embedded/stm32_platform/Hello_World",
+  "directory": "C:\\Users\\yt75534\\Documents\\embedded\\stm32_platform\\Hello_World",
   "arguments": [
-   "/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//bin/arm-none-eabi-gcc",
+   "C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/arm-none-eabi-gcc",
    "-c",
    "-mcpu=cortex-m4",
    "-mthumb",
@@ -1378,9 +1378,9 @@
    "-IMiddlewares/Third_Party/FreeRTOS/Source/include",
    "-IMiddlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2",
    "-IMiddlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//arm-none-eabi/include",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//arm-none-eabi/include/newlib-nano",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//lib/gcc/arm-none-eabi/11.3.1/include",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/arm-none-eabi/include",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/arm-none-eabi/include/newlib-nano",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/lib/gcc/arm-none-eabi/11.3.1/include",
    "-Iplatform/inc",
    "-Iapplication",
    "-Og",
@@ -1400,9 +1400,9 @@
   "file": "Core/Src/freertos.c"
  },
  {
-  "directory": "/Users/ubaldot/Documents/embedded/stm32_platform/Hello_World",
+  "directory": "C:\\Users\\yt75534\\Documents\\embedded\\stm32_platform\\Hello_World",
   "arguments": [
-   "/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//bin/arm-none-eabi-gcc",
+   "C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/arm-none-eabi-gcc",
    "-c",
    "-mcpu=cortex-m4",
    "-mthumb",
@@ -1418,9 +1418,9 @@
    "-IMiddlewares/Third_Party/FreeRTOS/Source/include",
    "-IMiddlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2",
    "-IMiddlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//arm-none-eabi/include",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//arm-none-eabi/include/newlib-nano",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//lib/gcc/arm-none-eabi/11.3.1/include",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/arm-none-eabi/include",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/arm-none-eabi/include/newlib-nano",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/lib/gcc/arm-none-eabi/11.3.1/include",
    "-Iplatform/inc",
    "-Iapplication",
    "-Og",
@@ -1440,9 +1440,9 @@
   "file": "application/application_setup.c"
  },
  {
-  "directory": "/Users/ubaldot/Documents/embedded/stm32_platform/Hello_World",
+  "directory": "C:\\Users\\yt75534\\Documents\\embedded\\stm32_platform\\Hello_World",
   "arguments": [
-   "/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//bin/arm-none-eabi-gcc",
+   "C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/arm-none-eabi-gcc",
    "-c",
    "-mcpu=cortex-m4",
    "-mthumb",
@@ -1458,9 +1458,9 @@
    "-IMiddlewares/Third_Party/FreeRTOS/Source/include",
    "-IMiddlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2",
    "-IMiddlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//arm-none-eabi/include",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//arm-none-eabi/include/newlib-nano",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//lib/gcc/arm-none-eabi/11.3.1/include",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/arm-none-eabi/include",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/arm-none-eabi/include/newlib-nano",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/lib/gcc/arm-none-eabi/11.3.1/include",
    "-Iplatform/inc",
    "-Iapplication",
    "-Og",
@@ -1480,9 +1480,9 @@
   "file": "platform/src/pinin.c"
  },
  {
-  "directory": "/Users/ubaldot/Documents/embedded/stm32_platform/Hello_World",
+  "directory": "C:\\Users\\yt75534\\Documents\\embedded\\stm32_platform\\Hello_World",
   "arguments": [
-   "/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//bin/arm-none-eabi-gcc",
+   "C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/arm-none-eabi-gcc",
    "-c",
    "-mcpu=cortex-m4",
    "-mthumb",
@@ -1498,9 +1498,9 @@
    "-IMiddlewares/Third_Party/FreeRTOS/Source/include",
    "-IMiddlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2",
    "-IMiddlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//arm-none-eabi/include",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//arm-none-eabi/include/newlib-nano",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//lib/gcc/arm-none-eabi/11.3.1/include",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/arm-none-eabi/include",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/arm-none-eabi/include/newlib-nano",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/lib/gcc/arm-none-eabi/11.3.1/include",
    "-Iplatform/inc",
    "-Iapplication",
    "-Og",
@@ -1520,9 +1520,9 @@
   "file": "platform/src/pinout.c"
  },
  {
-  "directory": "/Users/ubaldot/Documents/embedded/stm32_platform/Hello_World",
+  "directory": "C:\\Users\\yt75534\\Documents\\embedded\\stm32_platform\\Hello_World",
   "arguments": [
-   "/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//bin/arm-none-eabi-gcc",
+   "C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/arm-none-eabi-gcc",
    "-c",
    "-mcpu=cortex-m4",
    "-mthumb",
@@ -1538,9 +1538,9 @@
    "-IMiddlewares/Third_Party/FreeRTOS/Source/include",
    "-IMiddlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2",
    "-IMiddlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//arm-none-eabi/include",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//arm-none-eabi/include/newlib-nano",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//lib/gcc/arm-none-eabi/11.3.1/include",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/arm-none-eabi/include",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/arm-none-eabi/include/newlib-nano",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/lib/gcc/arm-none-eabi/11.3.1/include",
    "-Iplatform/inc",
    "-Iapplication",
    "-Og",
@@ -1560,9 +1560,9 @@
   "file": "application/blink/blink_main.c"
  },
  {
-  "directory": "/Users/ubaldot/Documents/embedded/stm32_platform/Hello_World",
+  "directory": "C:\\Users\\yt75534\\Documents\\embedded\\stm32_platform\\Hello_World",
   "arguments": [
-   "/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//bin/arm-none-eabi-gcc",
+   "C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/arm-none-eabi-gcc",
    "-c",
    "-mcpu=cortex-m4",
    "-mthumb",
@@ -1578,9 +1578,9 @@
    "-IMiddlewares/Third_Party/FreeRTOS/Source/include",
    "-IMiddlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2",
    "-IMiddlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//arm-none-eabi/include",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//arm-none-eabi/include/newlib-nano",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//lib/gcc/arm-none-eabi/11.3.1/include",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/arm-none-eabi/include",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/arm-none-eabi/include/newlib-nano",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/lib/gcc/arm-none-eabi/11.3.1/include",
    "-Iplatform/inc",
    "-Iapplication",
    "-Og",
@@ -1600,9 +1600,9 @@
   "file": "application/debug/debug_main.c"
  },
  {
-  "directory": "/Users/ubaldot/Documents/embedded/stm32_platform/Hello_World",
+  "directory": "C:\\Users\\yt75534\\Documents\\embedded\\stm32_platform\\Hello_World",
   "arguments": [
-   "/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//bin/arm-none-eabi-gcc",
+   "C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/arm-none-eabi-gcc",
    "-c",
    "-mcpu=cortex-m4",
    "-mthumb",
@@ -1618,9 +1618,9 @@
    "-IMiddlewares/Third_Party/FreeRTOS/Source/include",
    "-IMiddlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2",
    "-IMiddlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//arm-none-eabi/include",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//arm-none-eabi/include/newlib-nano",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//lib/gcc/arm-none-eabi/11.3.1/include",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/arm-none-eabi/include",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/arm-none-eabi/include/newlib-nano",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/lib/gcc/arm-none-eabi/11.3.1/include",
    "-Iplatform/inc",
    "-Iapplication",
    "-Og",
@@ -1640,9 +1640,9 @@
   "file": "application/photovoltaic/pv_standard_main.c"
  },
  {
-  "directory": "/Users/ubaldot/Documents/embedded/stm32_platform/Hello_World",
+  "directory": "C:\\Users\\yt75534\\Documents\\embedded\\stm32_platform\\Hello_World",
   "arguments": [
-   "/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//bin/arm-none-eabi-gcc",
+   "C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/arm-none-eabi-gcc",
    "-c",
    "-mcpu=cortex-m4",
    "-mthumb",
@@ -1658,9 +1658,9 @@
    "-IMiddlewares/Third_Party/FreeRTOS/Source/include",
    "-IMiddlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2",
    "-IMiddlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//arm-none-eabi/include",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//arm-none-eabi/include/newlib-nano",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//lib/gcc/arm-none-eabi/11.3.1/include",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/arm-none-eabi/include",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/arm-none-eabi/include/newlib-nano",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/lib/gcc/arm-none-eabi/11.3.1/include",
    "-Iplatform/inc",
    "-Iapplication",
    "-Og",
@@ -1680,9 +1680,9 @@
   "file": "application/serial_port/serial_port.c"
  },
  {
-  "directory": "/Users/ubaldot/Documents/embedded/stm32_platform/Hello_World",
+  "directory": "C:\\Users\\yt75534\\Documents\\embedded\\stm32_platform\\Hello_World",
   "arguments": [
-   "/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//bin/arm-none-eabi-gcc",
+   "C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/arm-none-eabi-gcc",
    "-c",
    "-mcpu=cortex-m4",
    "-mthumb",
@@ -1698,9 +1698,9 @@
    "-IMiddlewares/Third_Party/FreeRTOS/Source/include",
    "-IMiddlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2",
    "-IMiddlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//arm-none-eabi/include",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//arm-none-eabi/include/newlib-nano",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//lib/gcc/arm-none-eabi/11.3.1/include",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/arm-none-eabi/include",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/arm-none-eabi/include/newlib-nano",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/lib/gcc/arm-none-eabi/11.3.1/include",
    "-Iplatform/inc",
    "-Iapplication",
    "-Og",
@@ -1720,9 +1720,9 @@
   "file": "application/temperature_sensor/tempsens_LM35_main.c"
  },
  {
-  "directory": "/Users/ubaldot/Documents/embedded/stm32_platform/Hello_World",
+  "directory": "C:\\Users\\yt75534\\Documents\\embedded\\stm32_platform\\Hello_World",
   "arguments": [
-   "/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//bin/arm-none-eabi-gcc",
+   "C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/arm-none-eabi-gcc",
    "-x",
    "assembler-with-cpp",
    "-c",
@@ -1740,9 +1740,9 @@
    "-IMiddlewares/Third_Party/FreeRTOS/Source/include",
    "-IMiddlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2",
    "-IMiddlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//arm-none-eabi/include",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//arm-none-eabi/include/newlib-nano",
-   "-I/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools//lib/gcc/arm-none-eabi/11.3.1/include",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/arm-none-eabi/include",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/arm-none-eabi/include/newlib-nano",
+   "-IC:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/lib/gcc/arm-none-eabi/11.3.1/include",
    "-Iplatform/inc",
    "-Iapplication",
    "-Og",
@@ -1760,4 +1760,4 @@
   ],
   "file": "startup_stm32f446xx.s"
  }
-]
+]

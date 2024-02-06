@@ -1,6 +1,7 @@
 
 #include "pinin.h"
 #include "FreeRTOS.h"
+#include "application_setup.h"
 #include "serial_port/serial_port.h"
 #include "usart.h"
 
@@ -20,10 +21,18 @@ uint16_t pinin_pv(void) {
 
 uint16_t pinin_pv1(void) { return 1; }
 
-void pinin_usart(char *pMessage) {
-  HAL_StatusTypeDef status;
-  // TODO: Adjust this character length thing
-  status = HAL_UART_Receive_IT(&huart2, (uint8_t *)pMessage, RX_MSG_LENGTH_MAX);
+void pinin_usart(char *pMessage, enum HAL_Function_Mode mode) {
+  HAL_StatusTypeDef status = HAL_OK;
+  switch (mode) {
+  case POLLING:
+    // AT 9600 Baud we have 1 bytes/ms transfer rate. We add 5ms spare.
+    status = HAL_UART_Receive(&huart2, (uint8_t *)pMessage, RX_MSG_LENGTH_MAX,
+                              pdMS_TO_TICKS(RX_MSG_LENGTH_MAX + 5));
+  case INTERRUPT:
+    status =
+        HAL_UART_Receive_IT(&huart2, (uint8_t *)pMessage, RX_MSG_LENGTH_MAX);
+  case DMA:;
+  }
   if (status != HAL_OK) {
     // If something goes wrong something
   }
