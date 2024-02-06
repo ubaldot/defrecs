@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="1920"
+   height="1080"
+   viewBox="0 0 1920 1080"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2 (dc2aedaf03, 2022-05-15)"
+   sodipodi:docname="Acrhitecture.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="px"
+     showgrid="false"
+     units="px"
+     inkscape:showpageshadow="2"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.63958333"
+     inkscape:cx="861.49837"
+     inkscape:cy="539.41368"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2">
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect4586"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect2915"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect4586-5"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#df2f2f;fill-opacity:1;stroke:#808080;stroke-width:0.944883"
+       id="rect181"
+       width="528.46912"
+       height="92.247559"
+       x="616.02606"
+       y="317.39417"
+       ry="21.311014" />
+    <rect
+       style="fill:#7e7d7d;fill-opacity:1;stroke:#808080;stroke-width:0.944883"
+       id="rect181-6"
+       width="656.67755"
+       height="92.247559"
+       x="603.51788"
+       y="724.69049"
+       ry="21.311014" />
+    <rect
+       style="fill:#dfd729;fill-opacity:1;stroke:#808080;stroke-width:0.944883"
+       id="rect181-6-6"
+       width="656.67755"
+       height="92.247559"
+       x="606.6449"
+       y="518.30615"
+       ry="21.311014" />
+    <rect
+       style="fill:#7e7d7d;fill-opacity:1;stroke:#808080;stroke-width:0.944883"
+       id="rect181-6-0"
+       width="651.98706"
+       height="92.247559"
+       x="608.20844"
+       y="621.49835"
+       ry="21.311014" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:64px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke:none"
+       x="673.87622"
+       y="384.62543"
+       id="text950"><tspan
+         sodipodi:role="line"
+         id="tspan948"
+         x="673.87622"
+         y="384.62543">Components</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:64px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke:none"
+       x="777.18408"
+       y="789.62781"
+       id="text950-7"><tspan
+         sodipodi:role="line"
+         id="tspan948-9"
+         x="777.18408"
+         y="789.62781">Hardware</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:64px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke:none"
+       x="792.82098"
+       y="582.00391"
+       id="text950-7-5"><tspan
+         sodipodi:role="line"
+         id="tspan1326"
+         x="792.82098"
+         y="582.00391">Platform</tspan></text>
+    <path
+       id="rect1004-8"
+       style="fill:#48cb2e;fill-opacity:1;stroke:#808080;stroke-width:0.944882"
+       d="M 1169.7578 315.83008 C 1160.9595 315.83008 1153.877 322.91457 1153.877 331.71289 L 1153.877 416.67773 L 619.44727 416.67773 C 615.3865 416.67773 612.11719 419.94705 612.11719 424.00781 L 612.11719 493.77734 C 612.11719 497.83811 615.3865 501.10742 619.44727 501.10742 L 1252.084 501.10742 C 1256.1447 501.10742 1259.4141 497.83811 1259.4141 493.77734 L 1259.4141 424.00781 C 1259.4141 422.85882 1259.1001 421.80791 1258.6328 420.8418 L 1258.6328 331.71289 C 1258.6328 322.91457 1251.5483 315.83008 1242.75 315.83008 L 1169.7578 315.83008 z " />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:64px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke:none"
+       x="761.74048"
+       y="482.09512"
+       id="text950-7-5-6"><tspan
+         sodipodi:role="line"
+         id="tspan1326-2"
+         x="761.74048"
+         y="482.09512">FreeRTOS</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:42.6667px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke:none"
+       x="634.9057"
+       y="680.50568"
+       id="text950-7-8"><tspan
+         sodipodi:role="line"
+         id="tspan1273"
+         x="634.9057"
+         y="680.50568">Hardware Abstraction Layer</tspan><tspan
+         sodipodi:role="line"
+         id="tspan1275"
+         x="634.9057"
+         y="733.83905"></tspan></text>
+    <path
+       style="fill:none;stroke:#dcd8d8;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       d="m 586.31921,318.95765 c 0,95.3756 0,190.75019 0,286.12378"
+       id="path4584"
+       inkscape:path-effect="#path-effect4586"
+       inkscape:original-d="m 586.31921,318.95765 c 10e-4,95.3756 10e-4,190.75019 0,286.12378" />
+    <path
+       style="fill:none;stroke:#dcd8d8;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       d="m 584.7557,624.62542 c 0,62.54137 0,125.08209 0,187.62215"
+       id="path4584-2"
+       inkscape:path-effect="#path-effect4586-5"
+       inkscape:original-d="m 584.7557,624.62542 c 6.6e-4,62.54137 6.6e-4,125.08209 0,187.62215" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none"
+       x="412.76871"
+       y="703.58307"
+       id="text4626"><tspan
+         sodipodi:role="line"
+         id="tspan4624"
+         x="412.76871"
+         y="703.58307">Vendor</tspan><tspan
+         sodipodi:role="line"
+         x="412.76871"
+         y="753.58307"
+         id="tspan4628">specific</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;-inkscape-font-specification:'sans-serif, Normal';font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+       x="351.92728"
+       y="452.10016"
+       id="text4626-7"><tspan
+         sodipodi:role="line"
+         id="tspan4666">     This</tspan><tspan
+         sodipodi:role="line"
+         id="tspan4668">framework</tspan></text>
+  </g>
+</svg>
