@@ -12,9 +12,8 @@
 #include <string.h>
 #include <task.h>
 
-#define MESSAGE_SIZE_MAX 100
-char tx_message[MESSAGE_SIZE_MAX];
-char rx_message[MESSAGE_SIZE_MAX];
+char tx_message[TX_MSG_LENGTH_MAX];
+char rx_message[RX_MSG_LENGTH_MAX];
 
 static SemaphoreHandle_t mutex_tx_message;
 static SemaphoreHandle_t mutex_rx_message;
@@ -27,7 +26,7 @@ void serial_port_init() {
   pinin_usart(rx_message); // Initialize for reception
 }
 
-/* void process_rx_char(char c) { strncpy(msg, rx_message, MESSAGE_SIZE_MAX -
+/* void process_rx_char(char c) { strncpy(msg, rx_message, TX_MSG_LENGTH_MAX -
  * 1); } */
 
 void serial_port_main(enum WhoIsCalling caller) {
@@ -35,26 +34,26 @@ void serial_port_main(enum WhoIsCalling caller) {
   uint8_t led_state;
   geto_blink_led_state(&led_state);
 
-  char msg[MESSAGE_SIZE_MAX];
+  char msg[TX_MSG_LENGTH_MAX];
   switch (caller) {
   case PERIODIC_TASK:
-    strncpy(msg, "Ciao amore.\r\n", MESSAGE_SIZE_MAX - 1);
+    strncpy(msg, "Ciao amore.\r\n", TX_MSG_LENGTH_MAX - 1);
     break;
     /* What starts with IRQ are callbacks! */
   case IRQ_BUILTIN_BUTTON:
-    strncpy(msg, "Ciao fata.\r\n", MESSAGE_SIZE_MAX - 1);
+    strncpy(msg, "Ciao fata.\r\n", TX_MSG_LENGTH_MAX - 1);
     break;
   case IRQ_SERIAL_RX:
     // Process the received message and place it in the right SO.
     if (xSemaphoreTake(mutex_rx_message, 100 / portTICK_PERIOD_MS) == pdTRUE) {
-      strncpy(msg, rx_message, MESSAGE_SIZE_MAX - 1);
+      strncpy(msg, rx_message, RX_MSG_LENGTH_MAX - 1);
       /* process_rx_char(rx_message); */
       xSemaphoreGive(mutex_rx_message);
     }
     pinin_usart(rx_message);
     break;
   default:
-    strncpy(msg, "Ciao stocazzo.\r\n", MESSAGE_SIZE_MAX - 1);
+    strncpy(msg, "Ciao stocazzo.\r\n", TX_MSG_LENGTH_MAX - 1);
     break;
   }
 
@@ -65,7 +64,7 @@ void serial_port_main(enum WhoIsCalling caller) {
   /* geto_tempsens_value(&tempsens_value); */
 
   // Assemble tx_message to be sent
-  /* (void)snprintf(tx_message, MESSAGE_SIZE_MAX, "led state: %d\r\n",
+  /* (void)snprintf(tx_message, TX_MSG_LENGTH_MAX, "led state: %d\r\n",
    * led_state); */
 
   // Cast float readings into string. TODO OBS! dtostrf applies only to
@@ -73,16 +72,17 @@ void serial_port_main(enum WhoIsCalling caller) {
   /* const uint8_t MIN_WIDTH = 5; */
   /* char pv_voltage_string[MIN_WIDTH]; */
   /* dtostrf(pv_voltage, MIN_WIDTH, 2, pv_voltage_string); */
-  /* char pv_readings[MESSAGE_SIZE_MAX]; */
-  /* (void)snprintf(pv_readings, MESSAGE_SIZE_MAX, "Photovoltaic reading: %s
+  /* char pv_readings[TX_MSG_LENGTH_MAX]; */
+  /* (void)snprintf(pv_readings, TX_MSG_LENGTH_MAX, "Photovoltaic reading: %s
    * V",
    */
   /*                pv_voltage_string); */
   /* } */
 
   if (xSemaphoreTake(mutex_tx_message, 100 / portTICK_PERIOD_MS) == pdTRUE) {
-    strncpy(tx_message, msg, MESSAGE_SIZE_MAX - 1);
-    msg[MESSAGE_SIZE_MAX - 1] = '\0'; // Ensure null-termination
+    strncpy(tx_message, msg, TX_MSG_LENGTH_MAX - 1);
+    // TODO: the following may be redundant.
+    tx_message[TX_MSG_LENGTH_MAX - 1] = '\0'; // Ensure null-termination
     xSemaphoreGive(mutex_tx_message);
   }
 
@@ -92,8 +92,8 @@ void serial_port_main(enum WhoIsCalling caller) {
   // Temperature
   /* char tempsens_value_string[MIN_WIDTH]; */
   /* dtostrf(tempsens_value, MIN_WIDTH, 2, tempsens_value_string); */
-  /* char tempsens_readings[MESSAGE_SIZE_MAX]; */
-  /* (void)snprintf(tempsens_readings, MESSAGE_SIZE_MAX, */
+  /* char tempsens_readings[TX_MSG_LENGTH_MAX]; */
+  /* (void)snprintf(tempsens_readings, TX_MSG_LENGTH_MAX, */
   /*                "Temperature: %s \xC2\xB0 Celsius", tempsens_value_string);
    */
   /* pinout_serial_port(tempsens_readings); */
