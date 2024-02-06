@@ -5,6 +5,6 @@
 //
 void pv_init(void);
 void pv_main(enum WhoIsCalling);
-void geto_pv_voltage(float *);
+void subscribe_pv_voltage(float *);
 
 #endif /* PHOTOVOLTAIC_MAIN_H */

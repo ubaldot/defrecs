@@ -5,7 +5,7 @@
 //  2. Mutex for setting/getting must contain the same name of the associated
 //     output, e.g. blink_led_state -> mutex_blink_led_state
 //  3. Setters and getters shape is the same for all the components and must
-//     have the form seto_<output_name>, e.g. seto_blink_seto_state()
+//     have the form publish_<output_name>, e.g. publish_blink_publish_state()
 //  4. The function to be placed in the scheduling must have suffix _main
 //  5. Outputs shall be initialized in the <prefix>_init() function.
 //===----------------------------------------------------------------------===//
@@ -28,7 +28,7 @@ static uint8_t blink_led_state;
 static SemaphoreHandle_t mutex_blink_led_state;
 
 // Set
-static void seto_blink_led_state(const uint8_t *pLedState) {
+static void publish_blink_led_state(const uint8_t *pLedState) {
   if (xSemaphoreTake(mutex_blink_led_state, 100 / portTICK_PERIOD_MS) ==
       pdTRUE) {
     memcpy(&blink_led_state, pLedState, 1);
@@ -37,7 +37,7 @@ static void seto_blink_led_state(const uint8_t *pLedState) {
 }
 
 // Get
-void geto_blink_led_state(uint8_t *pLedState) {
+void subscribe_blink_led_state(uint8_t *pLedState) {
   // Returns a copy of the output
   if (xSemaphoreTake(mutex_blink_led_state, 100 / portTICK_PERIOD_MS) ==
       pdTRUE) {
@@ -69,14 +69,14 @@ void blink_main(enum WhoIsCalling caller) {
   /* stafregna++; */
 
   // OUTPUT
-  seto_blink_led_state(&led_state);
+  publish_blink_led_state(&led_state);
   pinout_builtin_led(led_state);
 }
 
 // ---------- Interrupt --------------------------
 /* void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) { */
 /*   uint8_t led_state; */
-/*   geto_blink_led_state(&led_state); */
+/*   subscribe_blink_led_state(&led_state); */
 /*   if (led_state == 0) { */
 /*     led_state = 1; */
 /*   } else { */
@@ -89,6 +89,6 @@ void blink_main(enum WhoIsCalling caller) {
 /*   /1* stafregna++; *1/ */
 
 /*   // OUTPUT */
-/*   seto_blink_led_state(&led_state); */
+/*   publish_blink_led_state(&led_state); */
 /*   pinout_builtin_led(led_state); */
 /* } */

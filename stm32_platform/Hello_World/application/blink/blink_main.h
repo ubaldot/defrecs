@@ -7,6 +7,6 @@
 
 void blink_init(void);
 void blink_main(enum WhoIsCalling);
-void geto_blink_led_state(uint8_t *);
+void subscribe_blink_led_state(uint8_t *);
 
 #endif /* BLINK_MAIN_H */

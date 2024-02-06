@@ -22,7 +22,7 @@ static float pv_voltage;
 static SemaphoreHandle_t mutex_pv_voltage;
 
 // Set
-static void seto_pv_voltage(const float *pVoltage) {
+static void publish_pv_voltage(const float *pVoltage) {
   if (xSemaphoreTake(mutex_pv_voltage, 100 / portTICK_PERIOD_MS) == pdTRUE) {
     memcpy(&pv_voltage, pVoltage, sizeof(*pVoltage));
     xSemaphoreGive(mutex_pv_voltage);
@@ -30,7 +30,7 @@ static void seto_pv_voltage(const float *pVoltage) {
 }
 
 // Get
-void geto_pv_voltage(float *pVoltage) {
+void subscribe_pv_voltage(float *pVoltage) {
   // Returns a copy of the output
   if (xSemaphoreTake(mutex_pv_voltage, 100 / portTICK_PERIOD_MS) == pdTRUE) {
     memcpy(pVoltage, &pv_voltage, sizeof(*pVoltage));
@@ -48,7 +48,7 @@ void pv_init(void) {
 void pv_main(enum WhoIsCalling caller) {
     (void)caller;
   float voltage;
-  geto_pv_voltage(&voltage);
+  subscribe_pv_voltage(&voltage);
 
   // Read raw data
   uint16_t analog_value;
@@ -64,5 +64,5 @@ void pv_main(enum WhoIsCalling caller) {
   voltage = temp * (float)5.0/(float)1000.0;
 
   // OUTPUT
-  seto_pv_voltage(&voltage);
+  publish_pv_voltage(&voltage);
 }

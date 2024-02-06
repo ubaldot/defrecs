@@ -32,7 +32,7 @@ void serial_port_init() {
 void serial_port_main(enum WhoIsCalling caller) {
   // INPUTS
   uint8_t led_state;
-  geto_blink_led_state(&led_state);
+  subscribe_blink_led_state(&led_state);
 
   char msg[TX_MSG_LENGTH_MAX];
   switch (caller) {
@@ -60,10 +60,10 @@ void serial_port_main(enum WhoIsCalling caller) {
   }
 
   /* float pv_voltage; */
-  /* geto_pv_voltage(&pv_voltage); */
+  /* subscribe_pv_voltage(&pv_voltage); */
 
   /* float tempsens_value; */
-  /* geto_tempsens_value(&tempsens_value); */
+  /* subscribe_tempsens_value(&tempsens_value); */
 
   // Assemble tx_message to be sent
   /* (void)snprintf(tx_message, TX_MSG_LENGTH_MAX, "led state: %d\r\n",
