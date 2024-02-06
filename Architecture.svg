@@ -27,14 +27,14 @@
      inkscape:showpageshadow="2"
      inkscape:deskcolor="#d1d1d1"
      inkscape:zoom="0.63958333"
-     inkscape:cx="861.49837"
+     inkscape:cx="710.6189"
      inkscape:cy="539.41368"
      inkscape:window-width="1920"
      inkscape:window-height="1017"
      inkscape:window-x="1912"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer1" />
+     inkscape:current-layer="svg5" />
   <defs
      id="defs2">
     <inkscape:path-effect
@@ -164,7 +164,7 @@
          sodipodi:role="line"
          id="tspan1275"
          x="634.9057"
-         y="733.83905"></tspan></text>
+         y="733.83905" /></text>
     <path
        style="fill:none;stroke:#dcd8d8;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
        d="m 586.31921,318.95765 c 0,95.3756 0,190.75019 0,286.12378"
@@ -193,13 +193,13 @@
          id="tspan4628">specific</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;-inkscape-font-specification:'sans-serif, Normal';font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
-       x="351.92728"
-       y="452.10016"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none"
+       x="176.81326"
+       y="478.67996"
        id="text4626-7"><tspan
          sodipodi:role="line"
-         id="tspan4666">     This</tspan><tspan
-         sodipodi:role="line"
-         id="tspan4668">framework</tspan></text>
+         id="tspan4668"
+         x="176.81326"
+         y="478.67996">     This framework</tspan></text>
   </g>
 </svg>
