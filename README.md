@@ -57,9 +57,14 @@ an interrupt "A" we may wish a slightly different behavior.
 The chosen operating system is FreeRTOS. 
 Once 
 
+## Some rules
+1. components header files shall only have:
+2. A component can only belong to one task
+3. Order the components calls
+4. Interrupts must always be deferred to tasks. 
+
 
 
 
 At the bottom level we have the hardware. That can be whatever.
-## 
-## Operating System
+
