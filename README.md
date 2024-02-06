@@ -33,12 +33,12 @@ That is all.
 > It is then from the serial port component that we shall subscribe to the outputs of component A and then perform internally all the operations to send data over the serial port.
 
 The anatomy of a component is the following:
-1. Bunch of static variables that represent the component state `x`,
-2. Init function: to initialize the internal state, that is, our `x0`,
-3. Step function: a function that update the internal state and produces the outputs, which is our `f`,
-4. publish_/subscribe_ methods to publish/subscribe the outputs and inputs `y` and `u`.
+1. Bunch of *static variables* representing the component state `x`,
+2. *Init* function: to initialize the internal state, that is, our `x0`,
+3. *Step* function: a function that update the internal state and produces the outputs, which is our `f`,
+4. *publish_/subscribe_* methods to publish/subscribe the outputs and inputs `y` and `u`.
 
-This implies that the header files only contain the declaration of init function, main function, and the publish_/subscribe_ functions.
+This implies that the header files only contain the declaration of init function, main function, and the publish_/subscribe_ functions. And shall not contain anything more than that!
 
 In this way it is easy to resemble "block diagrams" that are widely used in tools like Simulink.
 
