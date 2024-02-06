@@ -46,8 +46,9 @@ void serial_port_main(enum WhoIsCalling caller) {
   case IRQ_SERIAL_RX:
     // Process the received message and place it in the right SO.
     if (xSemaphoreTake(mutex_rx_message, 100 / portTICK_PERIOD_MS) == pdTRUE) {
-      /* strncpy(msg, rx_message, RX_MSG_LENGTH_MAX - 1); */
       pinin_usart(rx_message, POLLING);
+      // Re-transmit the received message over the uart
+      strncpy(msg, rx_message, RX_MSG_LENGTH_MAX - 1);
       pinin_usart(rx_message, INTERRUPT);
       /* process_rx_char(rx_message); */
       xSemaphoreGive(mutex_rx_message);
@@ -85,10 +86,9 @@ void serial_port_main(enum WhoIsCalling caller) {
     // TODO: the following may be redundant.
     tx_message[TX_MSG_LENGTH_MAX - 1] = '\0'; // Ensure null-termination
     xSemaphoreGive(mutex_tx_message);
+    /* HAL_UART_Transmit is blocking, so we don't need a semaphore*/
+    pinout_serial_port(tx_message);
   }
-
-  /* HAL_UART_Transmit is blocking, so we don't need a semaphore*/
-  pinout_serial_port(tx_message);
 
   // Temperature
   /* char tempsens_value_string[MIN_WIDTH]; */
