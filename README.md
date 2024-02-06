@@ -16,7 +16,7 @@ The OS used is FreeRTOS.
 The description of each layer is top-down.
 ## Components
 The application follows a *publisher/subscriber* model to resemble as much as possible the classic Simulink model of connecting blocks.
-Each component has inputs, outputs and an internal state, hence it resemble the classic Control Theory state space form
+Each component has inputs, outputs and an internal state, hence it resemble the classic Control Theory state space form, as it follows:
 ```
 x[k+1] = f(x[k], u[k])
 y[k] = g(x[k], u[k])
@@ -32,13 +32,13 @@ That is all.
 > Instead here, Component A limits to publish the message it wants to send and nothing more.
 > It is then from the serial port component that we shall subscribe to the outputs of component A and then perform internally all the operations to send data over the serial port.
 
-The anatomy of a component is 
-1. Bunch of static variables that represent the component state,
-2. Init function: to initialize the internal state (which are static variables),
-3. Main function: a function that update the internal state and produces the outputs,
-4. seto_/geto_ methods to publish/subscribe outputs/inputs.
+The anatomy of a component is the following:
+1. Bunch of static variables that represent the component state `x`,
+2. Init function: to initialize the internal state, that is, our `x0`,
+3. Step function: a function that update the internal state and produces the outputs, which is our `f`,
+4. publish_/subscribe_ methods to publish/subscribe the outputs and inputs `y` and `u`.
 
-This implies that the header files only contain the declaration of init function, main function, and the seto_/geto_ functions for publishing/subscribe signals.
+This implies that the header files only contain the declaration of init function, main function, and the publish_/subscribe_ functions.
 
 In this way it is easy to resemble "block diagrams" that are widely used in tools like Simulink.
 
