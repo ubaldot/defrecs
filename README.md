@@ -21,7 +21,7 @@ Each component has inputs, outputs and an internal state, hence it resemble the 
 x[k+1] = f(x[k], u[k])
 y[k] = g(x[k], u[k])
 ```
-The inputs are the subscribed signals whereas the outputs are the published signals. 
+The inputs are the *subscribed* signals whereas the outputs are the *published* signals. 
 A component is enclosed in a file and it won't call any function of any other component. 
 It limits to read the subscribed signals, make some internal computations, and publish the output signals. 
 That is all. 
