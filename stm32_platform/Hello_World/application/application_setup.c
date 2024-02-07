@@ -1,3 +1,13 @@
+//===---------------- application_setup.c ------------------------*- C -*-===//
+//  Here the application is defined.
+//    1. The peridic tasks are defined,
+//    2. The components are initialized,
+//    3. A list of components is associated to each task,
+//    4. The application is run.
+//
+// PREFIX: none.
+// PUBLISHED SIGNALS: None.
+//===----------------------------------------------------------------------===//
 #include "application_setup.h"
 #include "FreeRTOS.h"
 #include "blink/blink.h"

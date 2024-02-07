@@ -1,19 +1,18 @@
-//===-------------------- blink_step.c ------------------------*- C -*-===//
+//===-------------------- blink.c ------------------------*- C -*-===//
 //  Each component has a prefix, to be easily searched.
 //
-//  1. Output must start with the prefix, e.g. blink_led_state
-//  2. Mutex for setting/getting must contain the same name of the associated
+//  1. Published signals must start with the prefix, e.g. blink_led_state
+//  2. Mutex for publishing/subscribing must contain the same name of the
+//  associated
 //     output, e.g. blink_led_state -> mutex_blink_led_state
-//  3. Setters and getters shape is the same for all the components and must
-//     have the form publish_<output_name>, e.g. publish_blink_publish_state()
+//  3. Publish and subscribing functions is the same for all the components and
+//  must
+//     have the form publish_<output_name>, e.g. publish_blink_led_state()
 //  4. The function to be placed in the scheduling must have suffix _step
 //  5. Outputs shall be initialized in the <prefix>_init() function.
-//===----------------------------------------------------------------------===//
-// blink led component.
 //
-// prefix: blink_
-//
-// OUTPUTS: blink_led_state
+// PREFIX: blink_
+// PUBLISHED SIGNALS: blink_led_state
 //===----------------------------------------------------------------------===//
 
 /* #include "application_setup.h" */
@@ -29,8 +28,7 @@ static SemaphoreHandle_t mutex_blink_led_state;
 
 // Publish
 static void publish_blink_led_state(const uint8_t *pLedState) {
-  if (xSemaphoreTake(mutex_blink_led_state, 100 / portTICK_PERIOD_MS) ==
-      pdTRUE) {
+  if (xSemaphoreTake(mutex_blink_led_state, pdMS_TO_TICKS(5)) == pdTRUE) {
     memcpy(&blink_led_state, pLedState, 1);
     xSemaphoreGive(mutex_blink_led_state);
   }
@@ -39,8 +37,7 @@ static void publish_blink_led_state(const uint8_t *pLedState) {
 // Subscribe (for the others)
 void subscribe_blink_led_state(uint8_t *pLedState) {
   // Returns a copy of the output
-  if (xSemaphoreTake(mutex_blink_led_state, 100 / portTICK_PERIOD_MS) ==
-      pdTRUE) {
+  if (xSemaphoreTake(mutex_blink_led_state, pdMS_TO_TICKS(5)) == pdTRUE) {
     memcpy(pLedState, &blink_led_state, 1);
     xSemaphoreGive(mutex_blink_led_state);
   }

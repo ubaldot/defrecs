@@ -1,25 +1,20 @@
-//===-------------------- tempsens_LM35_step.cpp --------------*- C++ //-*-===//
-// Photovoltaic panel reading component.
-//  OBS! This depends on LM35 specific sensor!
+//===-------------------- tempsens.c ------------------------*- C -*-===//
+// Temperature sensor component.
 //
-// However, the interface is the same.
-//
-// prefix: tempsens_
-//
-// OUTPUTS: tempsens_value
+// PREFIX: tempsens_
+// PUBLISHED SIGNALS: tempsens_value
 //===----------------------------------------------------------------------===//
 
-
+#include "pinin.h"
 #include <FreeRTOS.h>
 #include <semphr.h>
 #include <string.h>
-#include "pinin.h"
 
 // OUTPUTS AS EXAMPLES OF SETTER AND GETTER METHODS
 static float tempsens_value;
 static SemaphoreHandle_t mutex_tempsens_value;
 
-// Set
+// Publish
 static void publish_tempsens_value(const float *pTempValue) {
   if (xSemaphoreTake(mutex_tempsens_value, 100 / portTICK_PERIOD_MS) ==
       pdTRUE) {
@@ -28,7 +23,7 @@ static void publish_tempsens_value(const float *pTempValue) {
   }
 }
 
-// Get
+// Subscribe
 void subscribe_tempsens_value(float *pTempValue) {
   // Returns a copy of the output
   if (xSemaphoreTake(mutex_tempsens_value, 100 / portTICK_PERIOD_MS) ==

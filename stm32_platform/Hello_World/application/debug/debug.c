@@ -1,8 +1,8 @@
-//===-------------------- debug_step.c ------------------------*- C -*-===//
-// Used for debugging.
+//===-------------------- debug.c ------------------------*- C -*-===//
+// Used for debugging. You just check the watermarks.
 //
-// prefix: debug_
-//
+// PREFIX: debug_
+// PUBLISHED SIGNALS: None.
 //===----------------------------------------------------------------------===//
 
 #include "FreeRTOS.h"

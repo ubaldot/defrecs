@@ -5,17 +5,15 @@
 //
 // However, the interface is the same.
 //
-// prefix: pv_
-//
-// OUTPUTS: pv_voltage
+// PREFIX: pv_
+// PUBLISHED SIGNALS: pv_voltage
 //===----------------------------------------------------------------------===//
 
-
+#include "application_setup.h"
+#include "pinin.h"
 #include <FreeRTOS.h>
 #include <semphr.h>
 #include <string.h>
-#include "pinin.h"
-#include "application_setup.h"
 
 // OUTPUTS AS EXAMPLES OF SETTER AND GETTER METHODS
 static float pv_voltage;
@@ -46,7 +44,7 @@ void pv_init(void) {
 
 // ------- Actual function starts here! -------------
 void pv_step(enum WhoIsCalling caller) {
-    (void)caller;
+  (void)caller;
   float voltage;
   subscribe_pv_voltage(&voltage);
 
@@ -61,7 +59,7 @@ void pv_step(enum WhoIsCalling caller) {
 
   // Map V -> V,[0,5] linearly to [0,25]
   // This voltage meter maps [0,5] linearly to [0,25]
-  voltage = temp * (float)5.0/(float)1000.0;
+  voltage = temp * (float)5.0 / (float)1000.0;
 
   // OUTPUT
   publish_pv_voltage(&voltage);

@@ -1,3 +1,18 @@
+//===-------------------- serial_port.c ------------------------*- C -*-===//
+// This component does three things:
+//
+//  1. Send messages over the UART,
+//  2. Process received raw data,
+//  3. Publish processed received raw data into signals that can be subscribed
+//     by other components.
+//
+// The received messages are read byte by byte through interrupts. When a
+// terminator character is detected, then the task associated to the ISR
+// update a published signal.
+//
+// PREFIX: uart_
+// PUBLISHED SIGNALS: change all the time!
+//===----------------------------------------------------------------------===//
 #include "serial_port.h"
 #include "application_setup.h"
 #include "blink/blink.h"
@@ -67,7 +82,7 @@ void serial_port_step(enum WhoIsCalling caller) {
   /*                pv_voltage_string); */
   /* } */
 
-  if (xSemaphoreTake(mutex_tx_message, 100 / portTICK_PERIOD_MS) == pdTRUE) {
+  if (xSemaphoreTake(mutex_tx_message, pdMS_TO_TICKS(5)) == pdTRUE) {
     memcpy(tx_message, msg, MSG_LENGTH_MAX - 1);
     // To compute the message length we iterate through the array until we
     // encounter the null terminator
