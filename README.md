@@ -85,7 +85,7 @@ happens here.
 
 ## Operating system
 The chosen operating system is FreeRTOS.
-Once
+We use the one shipped with CubeMX and ArduinoFreeRTOS.
 
 ## Platform
 
