@@ -59,6 +59,9 @@ Once
 
 ## Interrupts
 They are always deferred and they publish their own signals.
+The ISR are defined in Core/Src/stm32fxx_it.c and, as you can see from the example, they have all the same structure:
+1. Release a semaphore to wake up a task
+2. Ask for a context switch in case the woken up task has higher priority than the current task. 
 
 ## Application setup
 This is where you shape your application. 
@@ -70,8 +73,8 @@ You establish the task and which component is run on which task.
 3. Order the components calls
 4. Interrupts must always be deferred to tasks. 
 
-
-
+ISR are always the same
+subscribe methods return copies of signals' realizations. 
 
 At the bottom level we have the hardware. That can be whatever.
 
