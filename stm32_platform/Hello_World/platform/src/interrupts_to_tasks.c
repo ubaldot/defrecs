@@ -19,8 +19,10 @@ SemaphoreHandle_t xSemaphoreBuiltinButton;
 // Received message over the serial port
 TaskHandle_t xTaskUsart2RxDeferred;
 SemaphoreHandle_t xSemaphoreUsart2Rx;
-static size_t ii = 0; // For counting the number of bytes received
+
+// Aux for UART reception.
 static uint8_t tmp_rx_buffer[MSG_LENGTH_MAX];
+static size_t ii; // For counting the number of bytes received
 static SemaphoreHandle_t mutex_tmp_rx_buffer;
 
 // OUTPUTS
@@ -33,7 +35,6 @@ static SemaphoreHandle_t mutex_irq_builtin_button;
 // Publish
 static void publish_irq_raw_rx_message(const uint8_t *pRawMessage,
                                        size_t arrlen) {
-  // The mutex is already taken.
   if (xSemaphoreTake(mutex_irq_raw_rx_message, 100 / portTICK_PERIOD_MS) ==
       pdTRUE) {
     memcpy(irq_raw_rx_message, pRawMessage, arrlen);
@@ -84,26 +85,29 @@ void subscribe_irq_builtin_button(uint8_t *pRawMessage) {
 void interrupts_to_tasks_init() {
   /* Transmit upon button press */
   xSemaphoreBuiltinButton = xSemaphoreCreateBinary();
-  xTaskCreate(BuiltinButton, "Usart2Tx", 128, NULL,
+  xTaskCreate(BuiltinButton, "Usart2Tx", 100, NULL,
               configLIBRARY_MAX_SYSCALL_INTERRUPT_PRIORITY,
               &xTaskBuitinButtonDeferred);
 
   /* Receive data */
   xSemaphoreUsart2Rx = xSemaphoreCreateBinary();
-  xTaskCreate(Usart2RxDeferred, "Usart2Rx", 128, NULL,
+  xTaskCreate(Usart2RxDeferred, "Usart2Rx", 100, NULL,
               configLIBRARY_MAX_SYSCALL_INTERRUPT_PRIORITY,
               &xTaskUsart2RxDeferred);
 
-  ii = 0;
   mutex_irq_raw_rx_message = xSemaphoreCreateMutex();
   mutex_irq_builtin_button = xSemaphoreCreateMutex();
+
+  ii = 0;
   mutex_tmp_rx_buffer = xSemaphoreCreateMutex();
   pinin_usart(tmp_rx_buffer, 1, INTERRUPT); // Initialize for reception
 }
 
 void BuiltinButton(void *pVParameters) {
   (void)pVParameters;
-  const uint8_t MESSAGE[] = "Leccami la nerchia.\r\n";
+  const uint8_t MESSAGE[] =
+      "Leccami la nerchia brutto figlio di puttana, troia mignotta che non sei "
+      "altro.8============D\r\n";
 
   size_t arrlen = 0;
   while (MESSAGE[arrlen] != '\0') {
