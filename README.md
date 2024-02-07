@@ -1,4 +1,4 @@
-*Disclaimer: this is a work in progress. Everything may change at any time.*
+*Disclaimer: this is a work in progress. Everything may change at any time. Also, consider that I am not a software engineering in a strict sense, but I am a control system engineer.*
 
 # Motivation
 Concurrency program is tough. Bugs are just behind the corner and having a bugs free software is practically impossible. 
