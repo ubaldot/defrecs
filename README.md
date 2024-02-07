@@ -57,6 +57,13 @@ an interrupt "A" we may wish a slightly different behavior.
 The chosen operating system is FreeRTOS. 
 Once 
 
+## Interrupts
+They are always deferred and they publish their own signals.
+
+## Application setup
+This is where you shape your application. 
+You establish the task and which component is run on which task. 
+
 ## Some rules
 1. components header files shall only have:
 2. A component can only belong to one task
