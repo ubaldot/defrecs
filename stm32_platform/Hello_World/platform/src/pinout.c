@@ -1,3 +1,4 @@
+#include "FreeRTOS.h"
 #include "pinout.h"
 #include "main.h"
 #include "portmacro.h"
