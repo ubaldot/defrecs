@@ -35,7 +35,7 @@ void serial_port_step(enum WhoIsCalling caller) {
     break;
     /* What starts with IRQ are callbacks! */
   case IRQ_BUILTIN_BUTTON:
-    strcpy((char *)msg, "Ciao fata.\r\n");
+    subscribe_irq_builtin_button(msg);
     break;
   case IRQ_SERIAL_RX:
     subscribe_irq_raw_rx_message(msg);
