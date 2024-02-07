@@ -1,10 +1,23 @@
+//===---------------- application_setup.c ------------------------*- C -*-===//
+//  Here the application is defined.
+//    1. The peridic tasks are defined,
+//    2. The components are initialized,
+//    3. A list of components is associated to each task,
+//    4. The application is run.
+//
+// PREFIX: none.
+// PUBLISHED SIGNALS: None.
+//===----------------------------------------------------------------------===//
+#include "application_setup.h"
 #include "FreeRTOS.h"
-#include "blink/blink_main.h"
-#include "debug/debug_main.h"
+#include "blink/blink.h"
+#include "debug/debug.h"
 #include "gpio.h"
-#include "photovoltaic/pv_main.h"
+#include "interrupts_to_tasks.h"
+#include "photovoltaic/pv.h"
 #include "serial_port/serial_port.h"
-#include "temperature_sensor/tempsens_main.h"
+#include "stm32f4xx_it.h"
+#include "temperature_sensor/tempsens_LM35.h"
 #include <portmacro.h>
 #include <task.h>
 
@@ -43,9 +56,13 @@ static void components_init() {
   /* tempsens_init(); */
 }
 
-void application_setup() {
+void run_application() {
   // Initialize all the components needed for this app.
+  // Disable all interrupts during startup
+  taskENTER_CRITICAL();
   components_init();
+  interrupts_to_tasks_init();
+  taskEXIT_CRITICAL();
 
   // Create tasks
   xTaskCreate(task_1000ms, NAME_1000MS, STACK_SIZE_1000MS,
@@ -66,9 +83,9 @@ static void task_1000ms(void *pVParameters) // This is a task.
 
   while (1) {
     // Run activities
-    blink_main();
-    debug_main();
-    /* serial_port_main(); */
+    blink_step(PERIODIC_TASK);
+    debug_step(PERIODIC_TASK);
+    serial_port_step(PERIODIC_TASK);
     /* tempsens_main(); */
 
     // Task Schedule
@@ -87,7 +104,7 @@ static void task_200ms(void *pVParameters) // This is a task.
 
   while (1) {
     /* pv_main(); */
-    debug_main();
+    debug_step(PERIODIC_TASK);
 
     // Task Schedule
     /* xMissedDeadline = */
