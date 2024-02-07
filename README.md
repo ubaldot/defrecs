@@ -41,6 +41,7 @@ The anatomy of a component is the following:
 This implies that the header files only contain the declaration of init function, main function, and the publish_/subscribe_ functions. And shall not contain anything more than that!
 
 In this way it is easy to resemble "block diagrams" that are widely used in tools like Simulink.
+It is a good idea if each component has an associated prefix. That would help the navigation in the codebase.
 
 ### Components instantiation:
 Components can be called:
