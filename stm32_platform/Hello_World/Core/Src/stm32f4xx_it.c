@@ -25,8 +25,6 @@
 /* USER CODE BEGIN Includes */
 #include "FreeRTOS.h"
 #include "semphr.h"
-#include "serial_port/serial_port.h"
-#include <string.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -46,10 +44,6 @@
 
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN PV */
-TaskHandle_t xTaskUsart2TxDeferred;
-SemaphoreHandle_t xSemaphoreUsart2Tx;
-TaskHandle_t xTaskUsart2RxDeferred;
-SemaphoreHandle_t xSemaphoreUsart2Rx;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -67,7 +61,8 @@ extern UART_HandleTypeDef huart2;
 extern TIM_HandleTypeDef htim1;
 
 /* USER CODE BEGIN EV */
-
+extern SemaphoreHandle_t xSemaphoreBuiltinButton;
+extern SemaphoreHandle_t xSemaphoreUsart2Rx;
 /* USER CODE END EV */
 
 /******************************************************************************/
@@ -201,43 +196,10 @@ void EXTI15_10_IRQHandler(void) {
   /* USER CODE BEGIN EXTI15_10_IRQn 1 */
   /* The following is always the same */
   BaseType_t xHigherPriorityTaskWoken = pdFALSE;
-  xSemaphoreGiveFromISR(xSemaphoreUsart2Tx, &xHigherPriorityTaskWoken);
+  xSemaphoreGiveFromISR(xSemaphoreBuiltinButton, &xHigherPriorityTaskWoken);
   portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
   /* USER CODE END EXTI15_10_IRQn 1 */
 }
 
 /* USER CODE BEGIN 1 */
-void interrupts_init() {
-  /* Transmit upon button press */
-  xSemaphoreUsart2Tx = xSemaphoreCreateBinary();
-  xTaskCreate(Usart2TxDeferred, "Usart2Tx", 128, NULL,
-              configLIBRARY_MAX_SYSCALL_INTERRUPT_PRIORITY,
-              &xTaskUsart2TxDeferred);
-
-  /* Receive data */
-  xSemaphoreUsart2Rx = xSemaphoreCreateBinary();
-  xTaskCreate(Usart2RxDeferred, "Usart2Rx", 128, NULL,
-              configLIBRARY_MAX_SYSCALL_INTERRUPT_PRIORITY,
-              &xTaskUsart2RxDeferred);
-}
-
-void Usart2TxDeferred(void *pVParameters) {
-  (void)pVParameters;
-  for (;;) {
-    while (xSemaphoreTake(xSemaphoreUsart2Tx, portMAX_DELAY) == pdTRUE) {
-      serial_port_step(IRQ_BUILTIN_BUTTON);
-    }
-  }
-}
-
-void Usart2RxDeferred(void *pVParameters) {
-  (void)pVParameters;
-
-  for (;;) {
-    while (xSemaphoreTake(xSemaphoreUsart2Rx, portMAX_DELAY) == pdTRUE) {
-      // TODO Many calls of serial_port_main() if
-      serial_port_step(IRQ_SERIAL_RX);
-    }
-  }
-}
 /* USER CODE END 1 */

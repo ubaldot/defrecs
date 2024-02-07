@@ -1,10 +1,11 @@
 #include "serial_port.h"
 #include "application_setup.h"
-#include "blink/blink_main.h"
-#include "photovoltaic/pv_main.h"
+#include "blink/blink.h"
+#include "interrupts_to_tasks.h"
+#include "photovoltaic/pv.h"
 #include "pinin.h"
 #include "pinout.h"
-#include "temperature_sensor/tempsens_main.h"
+#include "temperature_sensor/tempsens_LM35.h"
 #include <FreeRTOS.h>
 #include <semphr.h>
 #include <stddef.h>
@@ -12,50 +13,35 @@
 #include <string.h>
 #include <task.h>
 
-char tx_message[TX_MSG_LENGTH_MAX];
-char rx_message[RX_MSG_LENGTH_MAX];
+uint8_t tx_message[MSG_LENGTH_MAX];
 
 static SemaphoreHandle_t mutex_tx_message;
 static SemaphoreHandle_t mutex_rx_message;
-/* static SemaphoreHandle_t mutex_serial_pinin; */
-/* static volatile uint8_t UsartReady; */
 
 void serial_port_init() {
   mutex_tx_message = xSemaphoreCreateMutex();
   mutex_rx_message = xSemaphoreCreateMutex();
-  pinin_usart(rx_message, INTERRUPT); // Initialize for reception
 }
-
-/* void process_rx_char(char c) { strncpy(msg, rx_message, TX_MSG_LENGTH_MAX -
- * 1); } */
 
 void serial_port_step(enum WhoIsCalling caller) {
   // INPUTS
   uint8_t led_state;
   subscribe_blink_led_state(&led_state);
+  uint8_t msg[MSG_LENGTH_MAX];
 
-  char msg[TX_MSG_LENGTH_MAX];
   switch (caller) {
   case PERIODIC_TASK:
-    strncpy(msg, "Ciao amore.\r\n", TX_MSG_LENGTH_MAX - 1);
+    strcpy((char *)msg, "Ciao amore.\r\n");
     break;
     /* What starts with IRQ are callbacks! */
   case IRQ_BUILTIN_BUTTON:
-    strncpy(msg, "Ciao fata.\r\n", TX_MSG_LENGTH_MAX - 1);
+    strcpy((char *)msg, "Ciao fata.\r\n");
     break;
   case IRQ_SERIAL_RX:
-    // Process the received message and place it in the right SO.
-    if (xSemaphoreTake(mutex_rx_message, 100 / portTICK_PERIOD_MS) == pdTRUE) {
-      pinin_usart(rx_message, POLLING);
-      // Re-transmit the received message over the uart
-      strncpy(msg, rx_message, RX_MSG_LENGTH_MAX - 1);
-      pinin_usart(rx_message, INTERRUPT);
-      /* process_rx_char(rx_message); */
-      xSemaphoreGive(mutex_rx_message);
-    }
+    subscribe_irq_raw_rx_message(msg);
     break;
   default:
-    strncpy(msg, "Ciao stocazzo.\r\n", TX_MSG_LENGTH_MAX - 1);
+    strcpy((char *)msg, "Sto cazzo.\r\n");
     break;
   }
 
@@ -66,7 +52,7 @@ void serial_port_step(enum WhoIsCalling caller) {
   /* subscribe_tempsens_value(&tempsens_value); */
 
   // Assemble tx_message to be sent
-  /* (void)snprintf(tx_message, TX_MSG_LENGTH_MAX, "led state: %d\r\n",
+  /* (void)snprintf(tx_message, MSG_LENGTH_MAX, "led state: %d\r\n",
    * led_state); */
 
   // Cast float readings into string. TODO OBS! dtostrf applies only to
@@ -74,27 +60,30 @@ void serial_port_step(enum WhoIsCalling caller) {
   /* const uint8_t MIN_WIDTH = 5; */
   /* char pv_voltage_string[MIN_WIDTH]; */
   /* dtostrf(pv_voltage, MIN_WIDTH, 2, pv_voltage_string); */
-  /* char pv_readings[TX_MSG_LENGTH_MAX]; */
-  /* (void)snprintf(pv_readings, TX_MSG_LENGTH_MAX, "Photovoltaic reading: %s
+  /* char pv_readings[MSG_LENGTH_MAX]; */
+  /* (void)snprintf(pv_readings, MSG_LENGTH_MAX, "Photovoltaic reading: %s
    * V",
    */
   /*                pv_voltage_string); */
   /* } */
 
   if (xSemaphoreTake(mutex_tx_message, 100 / portTICK_PERIOD_MS) == pdTRUE) {
-    strncpy(tx_message, msg, TX_MSG_LENGTH_MAX - 1);
-    // TODO: the following may be redundant.
-    tx_message[TX_MSG_LENGTH_MAX - 1] = '\0'; // Ensure null-termination
+    memcpy(tx_message, msg, MSG_LENGTH_MAX - 1);
+    // To compute the message length we iterate through the array until we
+    // encounter the null terminator
+    size_t len = 0;
+    while (tx_message[len] != '\0') {
+      len++;
+    }
+    pinout_serial_port(tx_message, len);
     xSemaphoreGive(mutex_tx_message);
-    /* HAL_UART_Transmit is blocking, so we don't need a semaphore*/
-    pinout_serial_port(tx_message);
   }
 
   // Temperature
   /* char tempsens_value_string[MIN_WIDTH]; */
   /* dtostrf(tempsens_value, MIN_WIDTH, 2, tempsens_value_string); */
-  /* char tempsens_readings[TX_MSG_LENGTH_MAX]; */
-  /* (void)snprintf(tempsens_readings, TX_MSG_LENGTH_MAX, */
+  /* char tempsens_readings[MSG_LENGTH_MAX]; */
+  /* (void)snprintf(tempsens_readings, MSG_LENGTH_MAX, */
   /*                "Temperature: %s \xC2\xB0 Celsius", tempsens_value_string);
    */
   /* pinout_serial_port(tempsens_readings); */

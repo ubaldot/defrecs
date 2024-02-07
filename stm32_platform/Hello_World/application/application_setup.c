@@ -1,12 +1,13 @@
 #include "application_setup.h"
 #include "FreeRTOS.h"
-#include "blink/blink_main.h"
-#include "debug/debug_main.h"
+#include "blink/blink.h"
+#include "debug/debug.h"
 #include "gpio.h"
-#include "photovoltaic/pv_main.h"
+#include "interrupts_to_tasks.h"
+#include "photovoltaic/pv.h"
 #include "serial_port/serial_port.h"
 #include "stm32f4xx_it.h"
-#include "temperature_sensor/tempsens_main.h"
+#include "temperature_sensor/tempsens_LM35.h"
 #include <portmacro.h>
 #include <task.h>
 
@@ -45,10 +46,13 @@ static void components_init() {
   /* tempsens_init(); */
 }
 
-void application_setup() {
+void run_application() {
   // Initialize all the components needed for this app.
+  // Disable all interrupts during startup
+  taskENTER_CRITICAL();
   components_init();
-  interrupts_init();
+  interrupts_to_tasks_init();
+  taskEXIT_CRITICAL();
 
   // Create tasks
   xTaskCreate(task_1000ms, NAME_1000MS, STACK_SIZE_1000MS,

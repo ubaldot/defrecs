@@ -3,9 +3,7 @@
 
 #include "application_setup.h"
 
-
-#define TX_MSG_LENGTH_MAX 100
-#define RX_MSG_LENGTH_MAX 6
+#define MSG_LENGTH_MAX 100
 
 void serial_port_init(void);
 void serial_port_step(enum WhoIsCalling);
