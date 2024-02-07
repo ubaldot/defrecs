@@ -15,21 +15,26 @@ The OS used is FreeRTOS.
 
 The description of each layer is top-down.
 ## Application
-The application is made by interconnected components and it follows a
+The application is made by interconnected components through a
 *publisher/subscriber* model to resemble as much as possible a Simulink model.
 Each component has inputs, outputs and an internal state, hence it resemble the classic Control Theory state space form, as it follows:
 ```
 x[k+1] = f(x[k], u[k])
 y[k] = g(x[k], u[k])
 ```
+That means that in Software Engineering language the anatomy of a component is the following:
+1. Bunch of *static variables* representing the component state `x`,
+2. *Init* function: to initialize the internal state, that is, our `x0`,
+3. *Step* function: a function that update the internal state and produces the outputs, which is our `f`,
+4. *publish_/subscribe_* methods to publish/subscribe the outputs and inputs `y` and `u`.
+More precisely, the inputs `u` are **subscribed** signals whereas the outputs `y` are **published** signals.
+
 Components' state and outputs `x` and `y` can be updated periodically or in an event-based fashion.
 
-The inputs `u` are **subscribed** signals whereas the outputs `y` are **published** signals.
-The state `x` is represented by **static** variables within the file scope.
-
-Hence, a component is *enclosed in a file and it won't call any function of any other component.
-Instead, it communicates with other components through a publish/subscribe
-mechanism. That is all.
+As you may have understood, a component is *enclosed in a file and the only
+functions that will call and that are defined in another component file are
+*only** the subscribe functions.
+That is all.
 
 > Example:
 > Say that our application wants component A to send some characters over the
@@ -38,17 +43,16 @@ mechanism. That is all.
 > Instead here, Component A limits to publish the message it wants to send and nothing more.
 > It is then from the serial port component that we shall subscribe to the outputs of component A and then perform internally all the operations to send data over the serial port.
 
-The anatomy of a component is the following:
-1. Bunch of *static variables* representing the component state `x`,
-2. *Init* function: to initialize the internal state, that is, our `x0`,
-3. *Step* function: a function that update the internal state and produces the outputs, which is our `f`,
-4. *publish_/subscribe_* methods to publish/subscribe the outputs and inputs `y` and `u`.
 
-This implies that the header files only contain the declaration of init
-function, step function, and the publish_/subscribe_ functions. It shall not contain anything more than that!
+This implies that the header files of each component only contain the
+declaration of the init
+function, the step function, and the publish_/subscribe_ functions. Stop!
 
 In this way it is easy to resemble "block diagrams" that are widely used in tools like Simulink.
-Finally, it is a good idea if each component has an associated prefix. That would help the navigation in the codebase.
+
+Finally, each component shall have an associated prefix to help the navigation in the codebase.
+In-fact, if we know the prefix of a subscribed signal, then we also know the
+publisher. Handy!
 
 ### Components execution:
 Components can be called:
@@ -57,17 +61,26 @@ Components can be called:
 
 Periodic execution is performed through periodic tasks, whereas event-based execution is achieved by interrupts.
 
-To allow a bit of flexibility, the step function takes an argument to keep track of the component caller.
+To allow a bit of flexibility, the step functions take an argument to keep track of the component caller.
 This because when running in periodic more we may want the component to behave in a certain way, but when called from
 an interrupt "A" we may wish a slightly different behavior.
 
-Once you have connected all the components, it is time to schedule them.
+Once you have connected all the components, it is time to schedule them. That
+is the topic of the next section.
+
+ That is the topic of the next section.
+
+Q: Among all the possible way of connecting blocks, is there any specific
+guidelines? YES! See below.
+
 
 ### Application setup
-This is where you shape your application, namely you decide how you want to schedule your
-components.
-Each task has a list of component that will be executed.
-But before that, the components must be first initialized, and this also
+Once you have connected your components, then you want to schedule them.
+That happens here since it is here where the tasks are defined.
+
+Each task has a list of component that will be executed and an execution
+period.
+But before starting to execute the components, they must be first initialized, and this also
 happens here.
 
 ## Operating system
