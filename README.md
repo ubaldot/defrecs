@@ -1,5 +1,14 @@
 *Disclaimer: this is a work in progress. Everything may change at any time. Also, consider that I am not a software engineering in a strict sense, but I am a control system engineer.*
 
+# Requirements
+1. pyserial
+
+*Optional*:
+
+2. compiledb - for creating compile\_commands.json files.
+
+
+
 # Motivation
 Concurrency program is tough. Bugs are just behind the corner and having a bugs free software is practically impossible.
 However, one may try to prevent the occurrence of such bugs by adhering to some coding rules and/or by following some standards.
