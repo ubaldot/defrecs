@@ -1,12 +1,12 @@
 *Disclaimer: this is a work in progress. Everything may change at any time. Also, consider that I am not a software engineering in a strict sense, but I am a control system engineer.*
 
 # Requirements
-1. pyserial
+1. The toolchain of the platform that you are using,
+2. pyserial.
 
 *Optional*:
 
 2. compiledb - for creating compile\_commands.json files.
-
 
 
 # Motivation
