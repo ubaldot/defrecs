@@ -48,13 +48,13 @@ function, the step function, and the publish_/subscribe_ functions. Stop!
 
 
 Finally, each component shall have an associated prefix to help the navigation in the codebase.
-In-fact, if we know the prefix of a subscribed signal, then we also know the
+In-fact, if we know the prefix of a subscribed signal, then we also know its
 publisher. Handy!
 
 ### Components execution:
 Components' input, state and output `u` `x` and `y` can be updated periodically or in an event-based fashion.
 Periodic execution is performed through periodic tasks, whereas event-based
-execution is achieved by interrupts that unlock some other task.
+execution is achieved by interrupts that unlock some aperiodic task.
 
 To allow a bit of flexibility, the step functions take an argument to keep track of the component caller.
 This because when running in periodic more we may want the component to behave in a certain way, but when called from

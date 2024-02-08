@@ -259,8 +259,9 @@ compiledb:
 upload:
 	$(PROGRAMMER) --connect port=SWD mode=UR reset=HWrst -d ./build/$(TARGET).elf 0x08000000  --verify -g
 monitor:
+	pyserial-miniterm $(SERIAL_PORT) 112500
 	# $(PROGRAMMER) --connect port=$(SERIAL_PORT) P=NONE
-	screen $(SERIAL_PORT) 115200,cs8,-parenb,-cstopb
+	# screen $(SERIAL_PORT) 115200,cs8,-parenb,-cstopb
 # Set default target
 .DEFAULT_GOAL := build_flash
 
