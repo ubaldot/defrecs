@@ -179,9 +179,9 @@ void USART2_IRQHandler(void) {
   /* USER CODE BEGIN USART2_IRQn 1 */
 
   // Signal the semaphore to notify the task of data reception
-  BaseType_t xHigherPriorityTaskWoken = pdFALSE;
-  xSemaphoreGiveFromISR(xSemaphoreUsart2Rx, &xHigherPriorityTaskWoken);
-  portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
+  /* BaseType_t xHigherPriorityTaskWoken = pdFALSE; */
+  /* xSemaphoreGiveFromISR(xSemaphoreUsart2Rx, &xHigherPriorityTaskWoken); */
+  /* portYIELD_FROM_ISR(xHigherPriorityTaskWoken); */
   /* USER CODE END USART2_IRQn 1 */
   /* } */
 }
@@ -195,11 +195,31 @@ void EXTI15_10_IRQHandler(void) {
   HAL_GPIO_EXTI_IRQHandler(B1_Pin);
   /* USER CODE BEGIN EXTI15_10_IRQn 1 */
   /* The following is always the same */
-  BaseType_t xHigherPriorityTaskWoken = pdFALSE;
-  xSemaphoreGiveFromISR(xSemaphoreBuiltinButton, &xHigherPriorityTaskWoken);
-  portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
+  /* BaseType_t xHigherPriorityTaskWoken = pdFALSE; */
+  /* xSemaphoreGiveFromISR(xSemaphoreBuiltinButton, &xHigherPriorityTaskWoken);
+   */
+  /* portYIELD_FROM_ISR(xHigherPriorityTaskWoken); */
   /* USER CODE END EXTI15_10_IRQn 1 */
 }
 
 /* USER CODE BEGIN 1 */
+void HAL_UART_RxCpltCallback(
+    UART_HandleTypeDef *pHuart) { /* Set transmission flag: transfer complete*/
+
+  (void)pHuart;
+  // Signal the semaphore to notify the task of data reception
+  BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+  xSemaphoreGiveFromISR(xSemaphoreUsart2Rx, &xHigherPriorityTaskWoken);
+  portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
+}
+
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
+  if (GPIO_Pin == B1_Pin) {
+    BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+    xSemaphoreGiveFromISR(xSemaphoreBuiltinButton, &xHigherPriorityTaskWoken);
+    portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
+    // Handle EXTI line 13 interrupt
+    // This code will be executed when an interrupt occurs on GPIO pin 13
+  }
+}
 /* USER CODE END 1 */
