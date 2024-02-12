@@ -191,6 +191,9 @@ void EXTI15_10_IRQHandler(void) {
 /* USER CODE BEGIN 1 */
 void HAL_UART_RxCpltCallback(
     UART_HandleTypeDef *pHuart) { /* Set transmission flag: transfer complete*/
+    // This is called every time "n" bytes are received when
+    // HAL_UART_Receive_IT(...,..., n) is used. In this example n = 1, so this
+    // callback is called for every byte received.
 
   (void)pHuart;
   // Signal the semaphore to notify the task of data reception
