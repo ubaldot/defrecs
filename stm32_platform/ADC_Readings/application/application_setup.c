@@ -52,7 +52,7 @@ static void components_init() {
   blink_init();
   debug_init();
   serial_port_init();
-  /* pv_init(); */
+  pv_init();
   /* tempsens_init(); */
 }
 
@@ -103,7 +103,7 @@ static void task_200ms(void *pVParameters) // This is a task.
   /* volatile BaseType_t xMissedDeadline; */
 
   while (1) {
-    /* pv_main(); */
+    pv_step(PERIODIC_TASK);
     debug_step(PERIODIC_TASK);
 
     // Task Schedule

@@ -5,21 +5,27 @@
 #include "serial_port/serial_port.h"
 #include "usart.h"
 
-uint16_t pinin_pv(void) {
+float pinin_pv(void) {
+  /* Return the pin voltage in the interval [0, PIN_VOLTAGE] [V]*/
+  extern ADC_HandleTypeDef hadc1;
+  const uint32_t ADC_RESOLUTION_BITS = 10;
   // TODO: use some get function
-  const uint16_t ADC_RESOLUTION_BITS = 10; // For UNO, in bits
-  const float pin_voltage = 5000.0;        // [mV]
+  /* const uint32_t pippo = hadc1.Init.Resolution; // For UNO, in bits */
+  const float PIN_VOLTAGE = 5000.0F;            // [mV]
   const float ANALOG_IN_RESOLUTION =
-      pin_voltage / (float)(1 << ADC_RESOLUTION_BITS); // [mV]
+      PIN_VOLTAGE / (float)(1 << ADC_RESOLUTION_BITS); // [mV]
 
   /* size_t analog_read = readAnalog(PV); */
-  float voltage;
-  /* voltage = ANALOG_IN_RESOLUTION * analog_read; */
+  HAL_ADC_Start(&hadc1);
+  HAL_ADC_PollForConversion(&hadc1, HAL_MAX_DELAY);
+  size_t analog_read = HAL_ADC_GetValue(&hadc1);
+  float pin_voltage;
+  pin_voltage = ANALOG_IN_RESOLUTION * (float)analog_read;
 
-  return voltage;
+  return pin_voltage / 1000.0F;
 }
 
-uint16_t pinin_pv1(void) { return 1; }
+float pinin_pv1(void) { return 1; }
 
 void pinin_usart(uint8_t *pMessage, size_t len, enum HAL_Function_Mode mode) {
   HAL_StatusTypeDef status = HAL_OK;

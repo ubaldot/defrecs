@@ -89,13 +89,13 @@ void subscribe_irq_builtin_button_message(uint8_t *pRawMessage) {
 void interrupts_to_tasks_init() {
   /* Transmit upon button press */
   xSemaphoreBuiltinButton = xSemaphoreCreateBinary();
-  xTaskCreate(BuiltinButton, "Usart2Tx", 100, NULL,
+  xTaskCreate(BuiltinButton, "Usart2Tx", 128, NULL,
               configLIBRARY_MAX_SYSCALL_INTERRUPT_PRIORITY,
               &xTaskBuitinButtonDeferred);
 
   /* Receive data */
   xSemaphoreUsart2Rx = xSemaphoreCreateBinary();
-  xTaskCreate(Usart2RxDeferred, "Usart2Rx", 100, NULL,
+  xTaskCreate(Usart2RxDeferred, "Usart2Rx", 128, NULL,
               configLIBRARY_MAX_SYSCALL_INTERRUPT_PRIORITY,
               &xTaskUsart2RxDeferred);
 
