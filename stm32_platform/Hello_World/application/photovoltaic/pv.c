@@ -1,4 +1,4 @@
-//===-------------------- pv_standard_step.cpp --------------*- C++ //-*-===//
+//===-------------------- pv_standard_step.c --------------*- C //-*-===//
 // Photovoltaic panel reading component.
 //  OBS! This depends on the voltage meter used! In this case we assume a
 //  standard voltage meter such that the max reading is 25V.

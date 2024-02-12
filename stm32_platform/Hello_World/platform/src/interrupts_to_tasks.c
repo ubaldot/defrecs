@@ -1,13 +1,15 @@
 //===------------------ interrupts_to_tasks.c-------------------*- C -*-===//
 //  Each interrupt is deferred to a task with reasonably high priority.
-//  In this file the deferred tasks called by the ISR are defined.
+//  In this file the tasks called by the ISR callbacks are defined.
 //  ISR are defined in their own hardware specific file (for example, for
-//  stm32 the file is in Core/Src/stm32fx_it.c
+//  stm32 the file is in Core/Src/stm32fx_it.c) whereas the callbacks are
+//  defined here.
+//  Process: IRQ -> ISR -> Callback -> Task woken up.
 //
 // prefix: irq_
 //
 // PUBLISHED SIGNALS:
-//   - irq_builtin_button
+//   - irq_builtin_button_message
 //   - irq_raw_rx_message
 //===----------------------------------------------------------------------===//
 #include "FreeRTOS.h"
@@ -33,7 +35,7 @@ static SemaphoreHandle_t mutex_tmp_rx_buffer;
 
 // Published signals
 static uint8_t irq_raw_rx_message[MSG_LENGTH_MAX];
-static uint8_t irq_builtin_button[MSG_LENGTH_MAX];
+static uint8_t irq_builtin_button_message[MSG_LENGTH_MAX];
 
 static SemaphoreHandle_t mutex_irq_raw_rx_message;
 static SemaphoreHandle_t mutex_irq_builtin_button;
@@ -48,11 +50,11 @@ static void publish_irq_raw_rx_message(const uint8_t *pRawMessage,
   }
 }
 
-static void publish_irq_builtin_button(const uint8_t *pRawMessage,
-                                       size_t arrlen) {
+static void publish_irq_builtin_button_message(const uint8_t *pRawMessage,
+                                               size_t arrlen) {
   if (xSemaphoreTake(mutex_irq_builtin_button, pdMS_TO_TICKS(5)) == pdTRUE) {
-    memcpy(irq_builtin_button, pRawMessage, arrlen);
-    irq_builtin_button[arrlen] = '\0';
+    memcpy(irq_builtin_button_message, pRawMessage, arrlen);
+    irq_builtin_button_message[arrlen] = '\0';
     xSemaphoreGive(mutex_irq_builtin_button);
   }
 }
@@ -71,14 +73,14 @@ void subscribe_irq_raw_rx_message(uint8_t *pRawMessage) {
   }
 }
 
-void subscribe_irq_builtin_button(uint8_t *pRawMessage) {
+void subscribe_irq_builtin_button_message(uint8_t *pRawMessage) {
   // Returns a copy of the output
   if (xSemaphoreTake(mutex_irq_builtin_button, pdMS_TO_TICKS(5)) == pdTRUE) {
     size_t arrlen = 0;
-    while (irq_builtin_button[arrlen] != '\0') {
+    while (irq_builtin_button_message[arrlen] != '\0') {
       arrlen++;
     }
-    memcpy(pRawMessage, irq_builtin_button, arrlen);
+    memcpy(pRawMessage, irq_builtin_button_message, arrlen);
     pRawMessage[arrlen] = '\0';
     xSemaphoreGive(mutex_irq_builtin_button);
   }
@@ -114,7 +116,7 @@ void BuiltinButton(void *pVParameters) {
   while (MESSAGE[arrlen] != '\0') {
     arrlen++;
   }
-  publish_irq_builtin_button(MESSAGE, arrlen);
+  publish_irq_builtin_button_message(MESSAGE, arrlen);
 
   for (;;) {
     while (xSemaphoreTake(xSemaphoreBuiltinButton, portMAX_DELAY) == pdTRUE) {

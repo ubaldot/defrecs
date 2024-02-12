@@ -23,26 +23,28 @@ The OS used is FreeRTOS.
 ![Architecture](Architecture.svg)
 
 The description of each layer is top-down.
+
 ## Application
 The application is made by interconnected components through a
-*publisher/subscriber* model to resemble as much as possible a Simulink model.
-Each component has inputs, outputs and an internal state, hence it resemble the classic Control Theory state space form, as it follows:
+*publisher/subscriber* model to resemble as much as possible Simulink models.
+Each component has inputs `u`, outputs `y`, an internal state `x`, a state
+transition function `f` and
+an output function `h`, hence it resemble the classic Control Theory state space form, as it follows:
 ```
 x[k+1] = f(x[k], u[k])
-y[k] = g(x[k], u[k])
+y[k] = h(x[k], u[k])
 ```
-By traducing this boring math in Software Engineering language, then we see
-that the anatomy of a component is the following:
-1. Bunch of *static variables* representing the component state `x`,
+By traducing this boring math in Software Engineering language, and by
+considering C as language reference, a component is a .c file that contains
+the following:
+1. Bunch of  global *static variables* representing the component state `x`,
 2. *Init* function: to initialize the internal state, that is, our `x0`,
 3. *Step* function: a function that update the internal state and produces the outputs, which is our `f`,
-4. *publish_/subscribe_* methods to publish/subscribe the outputs and inputs `y` and `u`.
-More precisely, the inputs `u` are **subscribed** signals whereas the outputs `y` are **published** signals.
+4. An optional output function that maps the state `x` to the output `y`.
+5. *publish_/subscribe_* methods to publish/subscribe the outputs and inputs `y` and `u`.
 
-As you may have understood, a component is *enclosed in a file and the only
-functions that will call and that are defined in another component file are
-*only** the subscribe functions.
-That is all.
+That is, a component is *encapsulated in a file and communicate with the
+external world with its publish and subscribe functions.
 
 > Example:
 > Say that our application wants component A to send some characters over the
@@ -56,7 +58,8 @@ declaration of the init
 function, the step function, and the publish_/subscribe_ functions. Stop!
 
 
-Finally, each component shall have an associated prefix to help the navigation in the codebase.
+Finally, each component shall have an associated prefix to help the navigation
+in the code-base.
 In-fact, if we know the prefix of a subscribed signal, then we also know its
 publisher. Handy!
 
@@ -66,7 +69,7 @@ Periodic execution is performed through periodic tasks, whereas event-based
 execution is achieved by interrupts that unlock some aperiodic task.
 
 To allow a bit of flexibility, the step functions take an argument to keep track of the component caller.
-This because when running in periodic more we may want the component to behave in a certain way, but when called from
+This because when running in periodic mode we may want the component to behave in a certain way, but when called from
 an interrupt "A" we may wish a slightly different behavior.
 
 Once you have connected all the components, it is time to schedule them. That
@@ -99,12 +102,15 @@ wake up some task that will execute some code code.
 In this way, we only have to deal with tasks concurrency and not with a mixture of
 interrupts/tasks concurrency that can be very nasty!
 
-Hence, ISR always have the same structure:
+Hence, ISR always have the same structure and they generally call a Callback
+function. Inside the callback, you wake up a task that will implement the
+actual functionality. More precisely, the callback function will perform the
+following operations:
 
 1. Release a semaphore to wake up a task
 2. Ask for a context switch in case the woken up task has higher priority than the current task.
 
-The ISR for STM32 are defined in Core/Src/stm32fxx_it.c (so you must modify
+ISR and Callbacks for STM32 are defined in Core/Src/stm32fxx_it.c (so you must modify
 that file), whereas for Arduino I don't know... yet.
 To keep things separated, the deferred tasks are defined in the
 interrupts\_to\_task.c file.
