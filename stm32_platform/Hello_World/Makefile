@@ -102,7 +102,7 @@ Core/Src/freertos.c
 # Ubaldo
 C_SOURCES += application/application_setup.c
 C_SOURCES += $(wildcard platform/src/*.c)
-C_SOURCES += $(wildcard application/**/*.c)
+C_SOURCES += $(wildcard ../../components/**/*.c)
 
 # ASM sources
 ASM_SOURCES =  \
@@ -180,6 +180,7 @@ C_INCLUDES += -I$(ARM_NONE_EABI_PATH)/arm-none-eabi/include/newlib-nano
 C_INCLUDES += -I$(ARM_NONE_EABI_PATH)/lib/gcc/arm-none-eabi/11.3.1/include
 C_INCLUDES += -Iplatform/inc
 C_INCLUDES += -Iapplication
+C_INCLUDES += -I../../components
 
 
 # compile gcc flags
