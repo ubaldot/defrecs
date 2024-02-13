@@ -49,7 +49,7 @@ void pv_step(enum WhoIsCalling caller) {
   float pv_panel_voltage;
 
   // Read pin voltage [V]
-  pin_voltage = pinin_pv();
+  pinin_pv(&pin_voltage, DMA);
 
   // Map V -> V,[0,5] linearly to [0,25]
   // This voltage meter maps [0,5] linearly to [0,25] and convert mV to V.

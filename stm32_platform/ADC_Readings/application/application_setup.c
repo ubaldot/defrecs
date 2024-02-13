@@ -13,6 +13,7 @@
 #include "blink/blink.h"
 #include "debug/debug.h"
 #include "gpio.h"
+#include "pinin.h"
 #include "interrupts_to_tasks.h"
 #include "photovoltaic/pv.h"
 #include "serial_port/serial_port.h"
@@ -49,6 +50,7 @@ static void task_1000ms(void * /*pVParameters*/);
 
 static void components_init() {
   // List all the components used. Initializes queues, mutex, etc.
+  pinin_init();
   blink_init();
   debug_init();
   serial_port_init();

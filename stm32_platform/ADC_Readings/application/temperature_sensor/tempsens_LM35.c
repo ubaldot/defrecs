@@ -35,7 +35,7 @@ void subscribe_tempsens_value(float *pTempValue) {
 
 // Init
 void tempsens_init(void) {
-  tempsens_value = 0.0;
+  tempsens_value = 0.0F;
   mutex_tempsens_value = xSemaphoreCreateMutex();
 }
 
@@ -45,17 +45,13 @@ void tempsens_step() {
   /* float voltage_reading; */
   /* subscribe_tempsens_value(&voltage_reading); */
 
-  // Read raw data
-  uint16_t analog_value;
-  analog_value = pinin_pv();
-
-  float voltage;
-  const uint8_t ANALOG_IN_RESOLUTION = 10;
-  voltage = ANALOG_IN_RESOLUTION * analog_value;
+  // Read pin voltage
+  float pin_voltage = 0.0F;
+  pinin_pv(&pin_voltage, DMA);
 
   // V -> Celsius, [0 5] -> [0 50] linearly.
   float temperature_measured;
-  temperature_measured = voltage / (float)10.0;
+  temperature_measured = pin_voltage / 10.0F;
 
   // OUTPUT
   publish_tempsens_value(&temperature_measured);
