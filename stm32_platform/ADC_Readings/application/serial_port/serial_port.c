@@ -67,15 +67,9 @@ void serial_port_step(enum WhoIsCalling caller) {
     break;
   }
 
-  /* float pv_voltage; */
-  /* subscribe_pv_voltage(&pv_voltage); */
-
   /* float tempsens_value; */
   /* subscribe_tempsens_value(&tempsens_value); */
 
-  // Assemble tx_message to be sent
-  /* (void)snprintf(tx_message, MSG_LENGTH_MAX, "led state: %d\r\n",
-   * led_state); */
 
   // Cast float readings into string. TODO OBS! dtostrf applies only to
   // Arduino,

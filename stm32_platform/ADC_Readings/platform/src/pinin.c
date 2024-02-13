@@ -18,6 +18,7 @@ float pinin_pv(void) {
   /* size_t analog_read = readAnalog(PV); */
   HAL_ADC_Start(&hadc1);
   HAL_ADC_PollForConversion(&hadc1, HAL_MAX_DELAY);
+  HAL_ADC_Stop(&hadc1);
   size_t analog_read = HAL_ADC_GetValue(&hadc1);
   float pin_voltage;
   pin_voltage = ANALOG_IN_RESOLUTION * (float)analog_read;
