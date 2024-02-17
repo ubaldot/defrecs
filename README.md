@@ -34,11 +34,6 @@ The OS used is FreeRTOS.
   <p><em>Caption: Your caption text here</em></p>
 </div>
 
-<figure>
-    <img src="./Architecture.png"
-         alt="Albuquerque, New Mexico">
-    <figcaption>A single track trail outside of Albuquerque, New Mexico.</figcaption>
-</figure>
 The description of each layer is top-down.
 
 ## Application
@@ -84,7 +79,12 @@ declaration of the init
 function, the step function, and the publish_/subscribe_ functions. Stop!
 
 
-![Component](component.png)
+<!-- ![Component](component.png) -->
+
+<div align="center">
+  <img src="./component.png" alt="Image Alt Text" />
+  <p><em>Caption: Your caption text here</em></p>
+</div>
 
 Finally, each component shall have an associated prefix to help the navigation
 in the code-base.
@@ -143,7 +143,12 @@ Or, to use a more elegant solution, one may use function pointers. But I have
 no time to go through that.
 
 
-![Pinin and pinout](pinin_pinout.png)
+<!-- ![Pinin and pinout](pinin_pinout.png) -->
+
+<div align="pinin_pinout.png">
+  <img src="./component.png" alt="Image Alt Text" />
+  <p><em>Caption: Your caption text here</em></p>
+</div>
 
 ### Interrupts
 Interrupts are used to perform some action in response to some event. Events can be
