@@ -132,7 +132,7 @@ Or, to use a more elegant solution, one may use function pointers. But I have
 no time to go through that.
 
 
-![Pinin and pinout](pinin_pinout.svg)
+![Pinin and pinout](pinin_pinout.png)
 
 ### Interrupts
 Interrupts are used to perform some action in response to some event. Events can be
