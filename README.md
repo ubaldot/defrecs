@@ -145,8 +145,8 @@ no time to go through that.
 
 <!-- ![Pinin and pinout](pinin_pinout.png) -->
 
-<div align="pinin_pinout.png">
-  <img src="./component.png" alt="Image Alt Text" />
+<div align="center">
+  <img src="./pinin_pinout.png" alt="Image Alt Text" />
   <p><em>Caption: Your caption text here</em></p>
 </div>
 
