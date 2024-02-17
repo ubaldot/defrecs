@@ -26,7 +26,12 @@ The architecture is depicted below.
 The idea is to abstract the application to allow its re-utilization on different platforms with as less pain as possible.
 The OS used is FreeRTOS.
 
-![Architecture](Architecture.svg)
+<!-- ![Architecture](Architecture.png) -->
+<figure>
+    <img src="Architecture.png"
+         alt="Albuquerque, New Mexico">
+    <figcaption>A single track trail outside of Albuquerque, New Mexico.</figcaption>
+</figure>
 
 The description of each layer is top-down.
 
