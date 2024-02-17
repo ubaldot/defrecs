@@ -26,8 +26,13 @@ The architecture is depicted below.
 The idea is to abstract the application to allow its re-utilization on different platforms with as less pain as possible.
 The OS used is FreeRTOS.
 
-![Architecture](Architecture.png)
-*Cazzo figa culo deretano*
+<!-- ![Architecture](Architecture.png) -->
+<!-- *Cazzo figa culo deretano* -->
+
+<div align="center">
+  <img src="./Architecture.png" alt="Image Alt Text" />
+  <p><em>Caption: Your caption text here</em></p>
+</div>
 
 The description of each layer is top-down.
 
