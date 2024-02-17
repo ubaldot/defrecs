@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="297mm"
+   height="210mm"
+   viewBox="0 0 297 210"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2.1 (9c6d41e, 2022-07-14)"
+   sodipodi:docname="component.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.78127806"
+     inkscape:cx="382.06628"
+     inkscape:cy="282.22986"
+     inkscape:window-width="1872"
+     inkscape:window-height="1027"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2">
+    <marker
+       style="overflow:visible"
+       id="TriangleStart"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="TriangleStart"
+       markerWidth="5.3244081"
+       markerHeight="6.155385"
+       viewBox="0 0 5.3244081 6.1553851"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path135" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow2"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Arrow2"
+       markerWidth="7.6999998"
+       markerHeight="5.5999999"
+       viewBox="0 0 7.7 5.6"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="M -2,-4 9,0 -2,4 c 2,-2.33 2,-5.66 0,-8 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="arrow2L" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow2-7"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Arrow2"
+       markerWidth="7.6999998"
+       markerHeight="5.5999999"
+       viewBox="0 0 7.7 5.6"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="M -2,-4 9,0 -2,4 c 2,-2.33 2,-5.66 0,-8 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="arrow2L-2" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow2-6"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Arrow2"
+       markerWidth="7.6999998"
+       markerHeight="5.5999999"
+       viewBox="0 0 7.7 5.6"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="M -2,-4 9,0 -2,4 c 2,-2.33 2,-5.66 0,-8 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="arrow2L-5" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow2-8"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Arrow2"
+       markerWidth="7.6999998"
+       markerHeight="5.5999999"
+       viewBox="0 0 7.7 5.6"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="M -2,-4 9,0 -2,4 c 2,-2.33 2,-5.66 0,-8 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="arrow2L-1" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow2-7-4"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Arrow2"
+       markerWidth="7.6999998"
+       markerHeight="5.5999999"
+       viewBox="0 0 7.7 5.6"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="M -2,-4 9,0 -2,4 c 2,-2.33 2,-5.66 0,-8 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="arrow2L-2-7" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow2-6-1"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Arrow2"
+       markerWidth="7.6999998"
+       markerHeight="5.5999999"
+       viewBox="0 0 7.7 5.6"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="M -2,-4 9,0 -2,4 c 2,-2.33 2,-5.66 0,-8 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="arrow2L-5-3" />
+    </marker>
+    <filter
+       inkscape:label="Fill Background"
+       inkscape:menu="Fill and Transparency"
+       inkscape:menu-tooltip="Adds a colorizable opaque background"
+       style="color-interpolation-filters:sRGB;"
+       id="filter7940"
+       x="0"
+       y="0"
+       width="1"
+       height="1">
+      <feFlood
+         result="result1"
+         flood-color="rgb(255,255,255)"
+         flood-opacity="0.82014388489208634"
+         id="feFlood7928" />
+      <feImage
+         xlink:href=""
+         result="result2"
+         id="feImage7930" />
+      <feBlend
+         result="result4"
+         in2="result1"
+         mode="multiply"
+         id="feBlend7932" />
+      <feMerge
+         result="result3"
+         id="feMerge7938">
+        <feMergeNode
+           in="result1"
+           id="feMergeNode7934" />
+        <feMergeNode
+           in="SourceGraphic"
+           id="feMergeNode7936" />
+      </feMerge>
+    </filter>
+    <filter
+       inkscape:label="Fill Background"
+       inkscape:menu="Fill and Transparency"
+       inkscape:menu-tooltip="Adds a colorizable opaque background"
+       style="color-interpolation-filters:sRGB"
+       id="filter7940-8"
+       x="0"
+       y="0"
+       width="1"
+       height="1">
+      <feFlood
+         result="result1"
+         flood-color="rgb(255,255,255)"
+         flood-opacity="0.82014388489208634"
+         id="feFlood7928-3" />
+      <feImage
+         xlink:href=""
+         result="result2"
+         id="feImage7930-5" />
+      <feBlend
+         result="result4"
+         in2="result1"
+         mode="multiply"
+         id="feBlend7932-2" />
+      <feMerge
+         result="result3"
+         id="feMerge7938-2">
+        <feMergeNode
+           in="result1"
+           id="feMergeNode7934-6" />
+        <feMergeNode
+           in="SourceGraphic"
+           id="feMergeNode7936-6" />
+      </feMerge>
+    </filter>
+    <filter
+       inkscape:label="Fill Background"
+       inkscape:menu="Fill and Transparency"
+       inkscape:menu-tooltip="Adds a colorizable opaque background"
+       style="color-interpolation-filters:sRGB"
+       id="filter7940-8-5"
+       x="0"
+       y="0"
+       width="1"
+       height="1">
+      <feFlood
+         result="result1"
+         flood-color="rgb(255,255,255)"
+         flood-opacity="0.82014388489208634"
+         id="feFlood7928-3-6" />
+      <feImage
+         xlink:href=""
+         result="result2"
+         id="feImage7930-5-2" />
+      <feBlend
+         result="result4"
+         in2="result1"
+         mode="multiply"
+         id="feBlend7932-2-8" />
+      <feMerge
+         result="result3"
+         id="feMerge7938-2-5">
+        <feMergeNode
+           in="result1"
+           id="feMergeNode7934-6-9" />
+        <feMergeNode
+           in="SourceGraphic"
+           id="feMergeNode7936-6-4" />
+      </feMerge>
+    </filter>
+    <filter
+       inkscape:label="Fill Background"
+       inkscape:menu="Fill and Transparency"
+       inkscape:menu-tooltip="Adds a colorizable opaque background"
+       style="color-interpolation-filters:sRGB"
+       id="filter7940-4"
+       x="0"
+       y="0"
+       width="1"
+       height="1">
+      <feFlood
+         result="result1"
+         flood-color="rgb(255,255,255)"
+         flood-opacity="0.82014388489208634"
+         id="feFlood7928-6" />
+      <feImage
+         xlink:href=""
+         result="result2"
+         id="feImage7930-4" />
+      <feBlend
+         result="result4"
+         in2="result1"
+         mode="multiply"
+         id="feBlend7932-3" />
+      <feMerge
+         result="result3"
+         id="feMerge7938-8">
+        <feMergeNode
+           in="result1"
+           id="feMergeNode7934-4" />
+        <feMergeNode
+           in="SourceGraphic"
+           id="feMergeNode7936-0" />
+      </feMerge>
+    </filter>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#d94fc7;fill-opacity:1;stroke:none;stroke-width:1.554;stroke-dasharray:none"
+       id="rect3233"
+       width="89.404785"
+       height="90.159111"
+       x="106.33752"
+       y="62.574062"
+       ry="8.9359388" />
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:#9a4393;stroke-width:1.37081;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow2)"
+       d="M 45.952035,82.631698 H 96.547317"
+       id="path6405" />
+    <path
+       style="fill:#888888;fill-opacity:1;stroke:#5e5e5e;stroke-width:2.67838;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#TriangleStart)"
+       d="M 151.50216,24.865874 V 53.763658"
+       id="path6405-6" />
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:#9a4393;stroke-width:1.37081;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow2-7)"
+       d="M 45.952035,106.01596 H 96.547317"
+       id="path6405-3" />
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:#9a4393;stroke-width:1.37081;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow2-6)"
+       d="M 45.952035,131.05929 H 96.547317"
+       id="path6405-5" />
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:#9a4393;stroke-width:1.37081;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow2-8)"
+       d="m 196.8964,82.631698 h 50.59528"
+       id="path6405-8" />
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:#9a4393;stroke-width:1.37081;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow2-7-4)"
+       d="m 196.8964,106.01596 h 50.59528"
+       id="path6405-3-4" />
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:#9a4393;stroke-width:1.37081;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow2-6-1)"
+       d="m 196.8964,131.05929 h 50.59528"
+       id="path6405-5-8" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.1111px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;opacity:1;fill:#09070f;fill-opacity:0.502128;stroke:none;stroke-width:1.554;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter7940)"
+       x="40.533566"
+       y="103.46358"
+       id="text6996"
+       transform="matrix(1.159175,0,0,1,205.3461,17.111861)"><tspan
+         sodipodi:role="line"
+         id="tspan13972"
+         x="40.533566"
+         y="103.46358">y</tspan><tspan
+         sodipodi:role="line"
+         id="tspan13974"
+         x="40.533566"
+         y="121.10246">(publish)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.7958px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#09070f;fill-opacity:0.502128;stroke:none;stroke-width:1.554;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter7940-4)"
+       x="40.533566"
+       y="103.46358"
+       id="text6996-0"
+       transform="matrix(1.159175,0,0,1,117.84585,-82.64837)"><tspan
+         sodipodi:role="line"
+         id="tspan14326"
+         x="40.533566"
+         y="103.46358">Scheduling</tspan><tspan
+         sodipodi:role="line"
+         id="tspan14328"
+         x="40.533566"
+         y="118.20833">(periodic, event-based)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.7556px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#09070f;fill-opacity:0.502128;stroke:none;stroke-width:1.67311;stroke-dasharray:none;stroke-opacity:1"
+       x="140.86571"
+       y="124.06714"
+       id="text6996-7"
+       transform="scale(1.0766499,0.92880704)"><tspan
+         sodipodi:role="line"
+         id="tspan14108"
+         x="140.86571"
+         y="124.06714"
+         style="stroke-width:1.67311">f, h</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.1111px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#09070f;fill-opacity:0.502128;stroke:none;stroke-width:1.554;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter7940-8-5)"
+       x="40.533566"
+       y="103.46358"
+       id="text6996-7-3"
+       transform="matrix(1.159175,0,0,1,-4.7586603,-3.2636673)"><tspan
+         sodipodi:role="line"
+         id="tspan6994-8-9"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.1111px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#09070f;fill-opacity:0.502128;stroke:none;stroke-width:1.554;stroke-opacity:1"
+         x="40.533566"
+         y="103.46358">u</tspan><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.1111px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#09070f;fill-opacity:0.502128;stroke:none;stroke-width:1.554;stroke-opacity:1"
+         x="40.533566"
+         y="121.10246"
+         id="tspan6998-4-0">(subscribe)</tspan></text>
+  </g>
+</svg>
