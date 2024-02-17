@@ -73,7 +73,7 @@ declaration of the init
 function, the step function, and the publish_/subscribe_ functions. Stop!
 
 
-![Component](component.svg)
+![Component](component.png)
 
 Finally, each component shall have an associated prefix to help the navigation
 in the code-base.
