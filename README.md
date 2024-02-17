@@ -34,6 +34,11 @@ The OS used is FreeRTOS.
   <p><em>Caption: Your caption text here</em></p>
 </div>
 
+<figure>
+    <img src="./Architecture.png"
+         alt="Albuquerque, New Mexico">
+    <figcaption>A single track trail outside of Albuquerque, New Mexico.</figcaption>
+</figure>
 The description of each layer is top-down.
 
 ## Application
