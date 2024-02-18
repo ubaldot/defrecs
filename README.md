@@ -29,7 +29,7 @@ The OS used is FreeRTOS.
 <!-- ![Architecture](Architecture.png) -->
 <!-- *Cazzo figa culo deretano* -->
 
-<div align="center">
+<div align="left">
   <img src="./Architecture.png" alt="Image Alt Text" style="width: 70%;"/>
   <p><em>Caption: Your caption text here</em></p>
 </div>
