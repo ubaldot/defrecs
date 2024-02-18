@@ -95,7 +95,6 @@ declaration of the init
 function, the step function, and the publish_/subscribe_ functions. Stop!
 
 
-
 Finally, each component shall have an associated prefix to help the navigation
 in the code-base.
 In-fact, if we know the prefix of a subscribed signal, then we also know its
@@ -105,13 +104,13 @@ publisher. Handy!
 Components' input, state and output `u` `x` and `y` can be updated periodically or in an event-based fashion.
 Periodic execution is performed through periodic tasks, whereas event-based
 execution is achieved by deferring interrupts actions to some sleeping tasks
-that wake up when some events occur.
+that wake up only when some events occur.
 
 To allow a bit of flexibility, the step functions take an argument to keep track of the component caller.
 This because when running in periodic mode we may want the component to behave in a certain way,
-but we want it to behave differently in response to a sudden event, e.g. when a button connected to some GPIO is pressed.
+but we may want it to behave differently in response to a sudden event, e.g. when a button connected to some GPIO is pressed.
 
-Once you have connected through their publish and subscribe functions, it is time to run them.
+Once we have connected your selected components through their publish and subscribe functions, it is time to run them.
 That is the topic of the next section.
 
 Q: Among all the possible way of connecting blocks, is there any specific
@@ -120,6 +119,8 @@ guidelines? YES! See below.
 
 ### Application setup
 
+We have connected our components. The data flow is clear. Next, we have to
+schedule our components.
 In the *application_setup.c* file you do the following:
 
 1. Initalize the components,
@@ -157,7 +158,12 @@ no time to go through that.
 
 <div align="center">
   <img src="./pinin_pinout.png" alt="Image Alt Text" style="width: 80%;"/>
-  <p><em>Caption: Your caption text here</em></p>
+  <p><em>Communication with the platform layer. The components make calls to
+  sort of generic functions to read/write data from/to the hardware layer.
+  Such generic functions are mapped to specific hardware implementation. In
+  this picture they are mapped to the STM32 HAL. In this way, any change in
+  the underlying hardware should not affect the application layer.
+  </em></p>
 </div>
 
 ### Interrupts
