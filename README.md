@@ -30,7 +30,7 @@ The OS used is FreeRTOS.
 <!-- *Cazzo figa culo deretano* -->
 
 <div align="center">
-  <img src="./Architecture.png" alt="Image Alt Text" />
+  <img src="./Architecture.svg" alt="Image Alt Text" />
   <p><em>Caption: Your caption text here</em></p>
 </div>
 
