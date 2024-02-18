@@ -42,15 +42,10 @@ The OS used is FreeRTOS.
 
 ## Application Layer
 The application is made by interconnected components.
-The aim is to make such a layer platform-independent and as scalable as
-possible.
-That is, you should be able to connect the components as lego bricks and
-to use them no matter is you are using a STM32 or a Arduino board.
-<!-- The same applies for the *utils* library. -->
-
-Components communicates one each other through a
-*publisher/subscriber* model to resemble as much as possible Simulink models
-and with the platform layer with the *pinin* and *pinout* modules.
+The aim is to make them platform-independent and to allow users
+to connect in an easy manner.
+For this reason, components communicates one each other through a
+*publisher/subscriber* model to resemble as much as possible Simulink models.
 
 Each component has inputs `u`, outputs `y`, an internal state `x`, a state
 transition function `f` and
