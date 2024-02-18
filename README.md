@@ -40,7 +40,7 @@ The OS used is FreeRTOS.
 </div>
 
 
-## Application
+## Application Layer
 The application is made by interconnected components that shall be platform
 independent. That is, you can use the same components no matter is you are
 using a STM32 or a Arduino board.
@@ -109,7 +109,7 @@ that wake up when some events occur.
 
 To allow a bit of flexibility, the step functions take an argument to keep track of the component caller.
 This because when running in periodic mode we may want the component to behave in a certain way,
-but when we e.g. push a button to behave in a different way.
+but we want it to behave differently in response to a sudden event, e.g. when a button connected to some GPIO is pressed.
 
 Once you have connected through their publish and subscribe functions, it is time to run them.
 That is the topic of the next section.
@@ -128,12 +128,12 @@ In the *application_setup.c* file you do the following:
 3. For each periodic task you list the components that shall be executed.
 
 
-## Operating system
+## Operating System Layer
 The chosen operating system is FreeRTOS.
 We use the one shipped with CubeMX and ArduinoFreeRTOS.
 It takes a bit of application because components actually use freertos API.
 
-## Platform
+## Platform Layer
 
 ### pinin and pinout
 
@@ -209,7 +209,7 @@ to have a flexible solution for them. Hence, when switching platform, more
 work is required to accommodate interrupts.
 
 
-## Hardware
+## Hardware Layer
 
 
 1. components header files shall only have:
