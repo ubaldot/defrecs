@@ -82,7 +82,7 @@ function, the step function, and the publish_/subscribe_ functions. Stop!
 <!-- ![Component](component.png) -->
 
 <div align="center">
-  <img src="./component.svg" alt="Image Alt Text" />
+  <img src="./component.png" alt="Image Alt Text" />
   <p><em>Caption: Your caption text here</em></p>
 </div>
 
