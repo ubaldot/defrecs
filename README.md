@@ -30,7 +30,7 @@ The OS used is FreeRTOS.
 <!-- *Cazzo figa culo deretano* -->
 
 <div align="center">
-  <img src="./Architecture.png" alt="Image Alt Text" />
+  <img src="./Architecture.png" alt="Image Alt Text" style="width: 80%;"/>
   <p><em>Caption: Your caption text here</em></p>
 </div>
 
@@ -82,7 +82,7 @@ function, the step function, and the publish_/subscribe_ functions. Stop!
 <!-- ![Component](component.png) -->
 
 <div align="center">
-  <img src="./component.png" alt="Image Alt Text" />
+  <img src="./component.png" alt="Image Alt Text" style="width: 80%;" />
   <p><em>Caption: Your caption text here</em></p>
 </div>
 
@@ -146,7 +146,7 @@ no time to go through that.
 <!-- ![Pinin and pinout](pinin_pinout.png) -->
 
 <div align="center">
-  <img src="./pinin_pinout.png" alt="Image Alt Text" style="width: 50%;"/>
+  <img src="./pinin_pinout.png" alt="Image Alt Text" style="width: 80%;"/>
   <p><em>Caption: Your caption text here</em></p>
 </div>
 
