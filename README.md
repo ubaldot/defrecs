@@ -41,7 +41,8 @@ The OS used is FreeRTOS.
 
 
 ## Application Layer
-The application is made by interconnected components.
+The application is made by interconnected components stored in the `./application`
+folder.
 The aim is to make them platform-independent and to allow users
 to connect in an easy manner.
 For this reason, components communicates one each other through a
@@ -121,7 +122,7 @@ Q: Among all the possible way of connecting blocks, is there any specific
 guidelines? YES! See below.
 
 
-### Application setup
+### application_setup.c
 
 We have connected our components. The data flow is clear. Next, we have to
 schedule our components.
@@ -140,7 +141,7 @@ It takes a bit of application because components actually use freertos API.
 
 ## Platform Layer
 
-### pinin and pinout
+### pinin.c and pinout.c.
 
 To keep a minimum degree of flexibility among different hardware, the application software won't
 directly call HAL functions of a specific platform, but instead it uses this
@@ -154,9 +155,13 @@ A more elegant solution would be to use function pointers depending on the
 platform used. That would be nice to investigate as future work.
 At the moment we use just different files.
 
-Note that although the pinin and pinout may be modeled as components themselves, at the
-moment we don't see any major benefit is doing so as they model the
-physical boundary of the MCU.
+Note that although the pinin and pinout could be modeled as components themselves, at the
+moment I don't see any major benefit is doing so as they model the
+physical boundary of the MCU. Also, to avoid too much boilerplate, I decided
+to keep the implementation as is.
+A pinin function simply calls a HAL function that will read some raw data.
+Then, the component that called that pinin function converts such a raw data into
+meaningful information.
 
 However, if more than one component may wish to read/write from/to some data
 connected to the same pin, then race conditions may occur.
@@ -181,7 +186,7 @@ Note that ADC reading cannot be preempted.
   </em></p>
 </div>
 
-### Interrupts
+### interrupts_to_tasks.c
 Interrupts are used to perform some action in response to some event. Events can be
 somehow "predictable" or "unpredictable".
 An example of "predictable" event
