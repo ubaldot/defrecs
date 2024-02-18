@@ -29,7 +29,7 @@
      inkscape:document-units="mm"
      showgrid="false"
      inkscape:zoom="0.68533979"
-     inkscape:cx="542.06688"
+     inkscape:cx="543.52601"
      inkscape:cy="307.14691"
      inkscape:window-width="1352"
      inkscape:window-height="815"
@@ -510,15 +510,26 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.7556px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#09070f;fill-opacity:0.502128;stroke:none;stroke-width:1.67311;stroke-dasharray:none;stroke-opacity:1"
-       x="138.50662"
-       y="157.81924"
+       x="137.79002"
+       y="141.2326"
        id="text6996-7"
        transform="scale(1.0766499,0.92880704)"><tspan
          sodipodi:role="line"
          id="tspan14108"
-         x="138.50662"
-         y="157.81924"
+         x="137.79002"
+         y="141.2326"
          style="stroke-width:1.67311">f, h</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16.9333px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#09070f;fill-opacity:0.502128;stroke:none;stroke-width:1.67311;stroke-dasharray:none;stroke-opacity:1"
+       x="138.27098"
+       y="172.36069"
+       id="text6996-7-5"
+       transform="scale(1.0766499,0.92880704)"><tspan
+         sodipodi:role="line"
+         id="tspan11578"
+         x="138.27098"
+         y="172.36069">x, x0</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.1111px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;opacity:1;fill:#9a4393;fill-opacity:1;stroke:none;stroke-width:1.371;stroke-linecap:square;stroke-linejoin:bevel;stroke-dasharray:none;stroke-opacity:1"
@@ -551,15 +562,11 @@
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.1111px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#5e5e5e;fill-opacity:1;stroke:none;stroke-width:1.371;stroke-linecap:square;stroke-linejoin:bevel;stroke-dasharray:none;stroke-opacity:1"
        x="148.78999"
-       y="31.424601"
+       y="47.253124"
        id="text2323-0"><tspan
          sodipodi:role="line"
-         id="tspan3577"
+         id="tspan11549"
          x="148.78999"
-         y="31.424601">T</tspan><tspan
-         sodipodi:role="line"
-         id="tspan3579"
-         x="148.78999"
-         y="49.063477">(scheduling)</tspan></text>
+         y="47.253124">(scheduling)</tspan></text>
   </g>
 </svg>

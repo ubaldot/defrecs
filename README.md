@@ -35,23 +35,24 @@ The OS used is FreeRTOS.
 <div align="center">
   <p><em>The proposed architecture.
 <br>
-  The OS layer span a bit over the application because the application make direct calls to FreeRTOS API.
-  This means that you cannot replace the layers independently.</em></p>
+  The OS layer span a bit over the application because the application layer makes direct calls to FreeRTOS API.
+  This means that you cannot replace such layers independently.</em></p>
 </div>
 
-The description of each layer is top-down.
 
 ## Application
 The application is made by interconnected components that shall be platform
 independent. That is, you can use the same components no matter is you are
 using a STM32 or a Arduino board.
-The same applies for the *utils* library.
+<!-- The same applies for the *utils* library. -->
 
-Components communicates through a
-*publisher/subscriber* model to resemble as much as possible Simulink models.
+Components communicates one each other through a
+*publisher/subscriber* model to resemble as much as possible Simulink models
+and with the platform layer with the *pinin* and *pinout* modules.
+
 Each component has inputs `u`, outputs `y`, an internal state `x`, a state
 transition function `f` and
-an output function `h`, hence it resemble the classic Control Theory state
+an output function `h`, hence each component can be seen in classic Control Theory state
 space form (or the Moore/Melay machines if you like it more), as it follows:
 
 ```
@@ -60,7 +61,7 @@ y[k] = h(x[k], u[k]).
 ```
 
 By traducing this boring math in Software Engineering language, and by
-considering C as language reference, a component is a .c file that contains
+considering C as language reference, a component is nothing more than a .h/.c pair that contains
 the following:
 1. Bunch of  global *static variables* representing the component state `x`,
 2. *Init* function: to initialize the internal state, that is, our `x0`,
@@ -70,6 +71,16 @@ the following:
 
 That is, a component is *encapsulated* in a file and communicate with the
 external world with its *publish* and *subscribe* functions.
+
+<!-- ![Component](component.png) -->
+
+<div align="center">
+  <img src="./component.png" alt="Image Alt Text" style="width: 60%;" />
+  <p><em>A component has an internal state x, input u and output y, it is
+  initialized with initial condition x0 and it can be scheduled periodically
+  or in an event-based fashion. The step function (aka state-transition
+  function) and the output function are f and h, respectively.</em></p>
+</div>
 
 > Example:
 > Say that our application wants component A performs some sensor readings and
@@ -84,12 +95,6 @@ declaration of the init
 function, the step function, and the publish_/subscribe_ functions. Stop!
 
 
-<!-- ![Component](component.png) -->
-
-<div align="center">
-  <img src="./component.png" alt="Image Alt Text" style="width: 60%;" />
-  <p><em>Caption: Your caption text here</em></p>
-</div>
 
 Finally, each component shall have an associated prefix to help the navigation
 in the code-base.
