@@ -33,7 +33,9 @@ The OS used is FreeRTOS.
   <img src="./Architecture.png" alt="Image Alt Text" style="width: 70%;"/>
 </div>
 <div align="center">
-  <p><em>The proposed architecture. The OS takes a bit of
+  <p><em>The proposed architecture.
+<br>
+  The OS takes a bit of
   application because components make direct calls to FreeRTOS API.</em></p>
 </div>
 
