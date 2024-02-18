@@ -76,7 +76,8 @@ external world with its *publish* and *subscribe* functions.
 
 <div align="center">
   <img src="./component.png" alt="Image Alt Text" style="width: 60%;" />
-  <p><em>A component has an internal state x, input u and output y, it is
+  <p><em>A component.
+  <br> It has an internal state x, input u and output y, it is
   initialized with initial condition x0 and it can be scheduled periodically
   or in an event-based fashion. The step function (aka state-transition
   function) and the output function are f and h, respectively.</em></p>
@@ -111,8 +112,9 @@ To allow a bit of flexibility, the step functions take an argument to keep track
 This because when running in periodic mode we may want the component to behave in a certain way,
 but we may want it to behave differently in response to a sudden event, e.g. when a button connected to some GPIO is pressed.
 
-However, given that the component can be called periodically and in response to an event, to avoid race
-conditions both the subscribe and publish functions are always protected by a mutex.
+However, given that the component can be called periodically and in response to an event,
+both the subscribe and publish functions are always protected by a mutex to avoid race
+conditions
 
 Once we have connected your selected components through their publish and subscribe functions, it is time to run them.
 That is the topic of the next section.
@@ -124,7 +126,7 @@ guidelines? YES! See below.
 ### Application setup
 
 We have connected our components. The data flow is clear. Next, we have to
-schedule them.
+schedule our components.
 In the *application_setup.c* file you do the following:
 
 1. Initalize the platform and the components,
@@ -158,8 +160,8 @@ Note that although the pinin and pinout may be modeled as components themselves,
 moment we don't see any major benefit is doing so as they model the
 physical boundary of the MCU.
 
-However, more than one component may wish to read/write from/to some data
-connected to the same pin. Hence, race conditions may occur.
+However, if more than one component may wish to read/write from/to some data
+connected to the same pin, then race conditions may occur.
 That shall be handled at the platform level by using e.g. HAL blocking
 functions or by blocking the task who scheduled the
 ADC reading until some flag is set to high.
