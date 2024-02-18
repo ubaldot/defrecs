@@ -111,6 +111,9 @@ To allow a bit of flexibility, the step functions take an argument to keep track
 This because when running in periodic mode we may want the component to behave in a certain way,
 but we may want it to behave differently in response to a sudden event, e.g. when a button connected to some GPIO is pressed.
 
+However, given that the component can be called periodically and in response to an event, to avoid race
+conditions both the subscribe and publish functions are always protected by a mutex.
+
 Once we have connected your selected components through their publish and subscribe functions, it is time to run them.
 That is the topic of the next section.
 
@@ -147,12 +150,22 @@ However, the application shall not know about the underlying platform. A
 component just calls *pinin(&led\_state)*.
 The same for the pinout.
 
-For GPIO pins interface it is enough to
-include the appropriate pinin and pinout files in the build, depending if you
-are using STM32 or Arduino platform.
+A more elegant solution would be to use function pointers depending on the
+platform used. That would be nice to investigate as future work.
+At the moment we use just different files.
 
-Or, to use a more elegant solution, one may use function pointers. But I have
-no time to go through that.
+Note that although the pinin and pinout may be modeled as components themselves, at the
+moment we don't see any major benefit is doing so as they model the
+physical boundary of the MCU.
+Hence, it should be safe to inject or to deploy data straight away from/to a component to/from a pin.
+
+Race condition issues that may happen on functionalities directly connected to
+pins must obviously be taken into account. One way is to use blocking function
+or to use some signaling mechanism.
+A good example is depicted in ADC reading example: either you use a
+blocking HAL function, like polling, or you block the task who scheduled the
+ADC reading until a EOC flag is released. Note that ADC reading cannot be
+preempted.
 
 
 <!-- ![Pinin and pinout](pinin_pinout.png) -->
