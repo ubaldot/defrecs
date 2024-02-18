@@ -2,13 +2,16 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="1920"
-   height="1080"
-   viewBox="0 0 1920 1080"
+   width="1086.9816"
+   height="502.05286"
+   viewBox="0 0 1086.9816 502.05286"
    version="1.1"
    id="svg5"
    inkscape:version="1.2.1 (9c6d41e, 2022-07-14)"
    sodipodi:docname="Architecture.svg"
+   inkscape:export-filename="Architecture.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -20,19 +23,19 @@
      borderopacity="1.0"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0.0"
-     inkscape:pagecheckerboard="0"
+     inkscape:pagecheckerboard="false"
      inkscape:document-units="px"
      showgrid="false"
      units="px"
      inkscape:showpageshadow="2"
      inkscape:deskcolor="#d1d1d1"
-     inkscape:zoom="0.63958333"
-     inkscape:cx="712.18241"
-     inkscape:cy="541.75896"
-     inkscape:window-width="1390"
-     inkscape:window-height="1027"
+     inkscape:zoom="0.42720607"
+     inkscape:cx="1069.7414"
+     inkscape:cy="246.95342"
+     inkscape:window-width="1352"
+     inkscape:window-height="815"
      inkscape:window-x="0"
-     inkscape:window-y="25"
+     inkscape:window-y="35"
      inkscape:window-maximized="0"
      inkscape:current-layer="layer1" />
   <defs
@@ -74,7 +77,8 @@
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
-     id="layer1">
+     id="layer1"
+     transform="translate(-176.81326,-315.35764)">
     <rect
        style="fill:#df2f2f;fill-opacity:1;stroke:#808080;stroke-width:0.944883"
        id="rect181"
@@ -140,7 +144,7 @@
     <path
        id="rect1004-8"
        style="fill:#48cb2e;fill-opacity:1;stroke:#808080;stroke-width:0.944882"
-       d="M 1169.7578 315.83008 C 1160.9595 315.83008 1153.877 322.91457 1153.877 331.71289 L 1153.877 416.67773 L 619.44727 416.67773 C 615.3865 416.67773 612.11719 419.94705 612.11719 424.00781 L 612.11719 493.77734 C 612.11719 497.83811 615.3865 501.10742 619.44727 501.10742 L 1252.084 501.10742 C 1256.1447 501.10742 1259.4141 497.83811 1259.4141 493.77734 L 1259.4141 424.00781 C 1259.4141 422.85882 1259.1001 421.80791 1258.6328 420.8418 L 1258.6328 331.71289 C 1258.6328 322.91457 1251.5483 315.83008 1242.75 315.83008 L 1169.7578 315.83008 z " />
+       d="m 1169.7578,315.83008 c -8.7983,0 -15.8808,7.08449 -15.8808,15.88281 v 84.96484 H 619.44727 c -4.06077,0 -7.33008,3.26932 -7.33008,7.33008 v 69.76953 c 0,4.06077 3.26931,7.33008 7.33008,7.33008 H 1252.084 c 4.0607,0 7.3301,-3.26931 7.3301,-7.33008 v -69.76953 c 0,-1.14899 -0.314,-2.1999 -0.7813,-3.16601 v -89.12891 c 0,-8.79832 -7.0845,-15.88281 -15.8828,-15.88281 z" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:64px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke:none"
@@ -179,7 +183,7 @@
        inkscape:original-d="m 584.7557,624.62542 c 6.6e-4,62.54137 6.6e-4,125.08209 0,187.62215" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;fill:#818181;fill-opacity:1;stroke:none"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;fill:#7e7d7d;fill-opacity:1;stroke:none"
        x="412.76871"
        y="703.58307"
        id="text4626"><tspan
@@ -193,7 +197,7 @@
          id="tspan4628">specific</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#9d9d9d;fill-opacity:1;stroke:none"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#7e7d7d;fill-opacity:1;stroke:none"
        x="176.81326"
        y="478.67996"
        id="text4626-7"><tspan
