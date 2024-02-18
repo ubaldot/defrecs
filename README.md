@@ -14,15 +14,16 @@ Platformio.
 # Requirements
 
 1. The toolchain of the platform that you are using,
-2. pyserial.
+2. `pyserial`.
 
 *Optional*:
 
-2. compiledb - for creating compile\_commands.json files.
+2. `compiledb` - for creating `compile\_commands.json` files in case you use
+   some LSP like `clangd`.
 
 
 # Architecture
-The architecture is depicted below.
+The proposed architecture is depicted below.
 The idea is to abstract the application to allow its re-utilization on different platforms with as less pain as possible.
 The OS used is FreeRTOS.
 
