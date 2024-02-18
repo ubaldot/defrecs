@@ -31,6 +31,8 @@ The OS used is FreeRTOS.
 
 <div align="left">
   <img src="./Architecture.png" alt="Image Alt Text" style="width: 70%;"/>
+</div>
+<div align="center">
   <p><em>Caption: Your caption text here</em></p>
 </div>
 
