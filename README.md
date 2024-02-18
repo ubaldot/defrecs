@@ -103,8 +103,9 @@ publisher. Handy!
 ### Components execution:
 Components' input, state and output `u` `x` and `y` can be updated periodically or in an event-based fashion.
 Periodic execution is performed through periodic tasks, whereas event-based
-execution is achieved by deferring interrupts actions to some sleeping tasks
-that wake up only when some events occur.
+execution is achieved by interrupts.
+More precisely, interrupts service routines (ISR) wake up dedicated, sleeping tasks
+that will carry out the actual work needed.
 
 To allow a bit of flexibility, the step functions take an argument to keep track of the component caller.
 This because when running in periodic mode we may want the component to behave in a certain way,
@@ -120,10 +121,10 @@ guidelines? YES! See below.
 ### Application setup
 
 We have connected our components. The data flow is clear. Next, we have to
-schedule our components.
+schedule them.
 In the *application_setup.c* file you do the following:
 
-1. Initalize the components,
+1. Initalize the platform and the components,
 2. Define the periodic tasks (i.e. you set sampling period, allocated stack
    memory, etc),
 3. For each periodic task you list the components that shall be executed.
@@ -158,11 +159,12 @@ no time to go through that.
 
 <div align="center">
   <img src="./pinin_pinout.png" alt="Image Alt Text" style="width: 80%;"/>
-  <p><em>Communication with the platform layer. The components make calls to
-  sort of generic functions to read/write data from/to the hardware layer.
-  Such generic functions are mapped to specific hardware implementation. In
-  this picture they are mapped to the STM32 HAL. In this way, any change in
-  the underlying hardware should not affect the application layer.
+  <p><em>Communication with the platform layer.
+<br>
+  The components make calls to
+  generic functions to read/write data from/to the hardware layer.
+  In this picture such generic functions are mapped to the STM32 HAL.
+  In this way, any change in the underlying hardware should not affect the application.
   </em></p>
 </div>
 
