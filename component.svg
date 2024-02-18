@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="297mm"
-   height="210mm"
-   viewBox="0 0 297 210"
+   width="234.41924mm"
+   height="162.75879mm"
+   viewBox="0 0 234.41924 162.75879"
    version="1.1"
    id="svg5"
    inkscape:version="1.2.1 (9c6d41e, 2022-07-14)"
@@ -29,8 +29,8 @@
      inkscape:document-units="mm"
      showgrid="false"
      inkscape:zoom="0.68533979"
-     inkscape:cx="639.8286"
-     inkscape:cy="387.39907"
+     inkscape:cx="542.06688"
+     inkscape:cy="307.14691"
      inkscape:window-width="1352"
      inkscape:window-height="815"
      inkscape:window-x="0"
@@ -176,7 +176,7 @@
        inkscape:label="Fill Background"
        inkscape:menu="Fill and Transparency"
        inkscape:menu-tooltip="Adds a colorizable opaque background"
-       style="color-interpolation-filters:sRGB;"
+       style="color-interpolation-filters:sRGB"
        id="filter7940"
        x="0"
        y="0"
@@ -246,7 +246,7 @@
        inkscape:label="Opacity"
        inkscape:menu="Fill and Transparency"
        inkscape:menu-tooltip="Adds a white opaque background"
-       style="color-interpolation-filters:sRGB;"
+       style="color-interpolation-filters:sRGB"
        id="filter7940-8-5"
        x="0"
        y="0"
@@ -377,7 +377,10 @@
          operator="arithmetic"
          k4="1"
          result="result1"
-         in="fbSourceGraphic" />
+         in="fbSourceGraphic"
+         k1="0"
+         k2="0"
+         k3="0" />
       <feMerge
          id="feMerge1313"
          result="fbSourceGraphic">
@@ -403,7 +406,10 @@
          id="feComposite1771"
          operator="arithmetic"
          k2="0.323988"
-         result="fbSourceGraphic" />
+         result="fbSourceGraphic"
+         k1="0"
+         k3="0"
+         k4="0" />
       <feColorMatrix
          result="fbSourceGraphicAlpha"
          in="fbSourceGraphic"
@@ -419,7 +425,10 @@
          id="feComposite1819"
          operator="arithmetic"
          k2="1"
-         result="composite" />
+         result="composite"
+         k1="0"
+         k3="0"
+         k4="0" />
     </filter>
     <filter
        inkscape:label="Fill Background"
@@ -460,7 +469,8 @@
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
-     id="layer1">
+     id="layer1"
+     transform="translate(-26.29575,-21.323588)">
     <rect
        style="fill:#d94fc7;fill-opacity:1;stroke:none;stroke-width:1.554;stroke-dasharray:none"
        id="rect3233"
@@ -550,6 +560,6 @@
          sodipodi:role="line"
          id="tspan3579"
          x="148.78999"
-         y="49.063473">(scheduling)</tspan></text>
+         y="49.063477">(scheduling)</tspan></text>
   </g>
 </svg>
