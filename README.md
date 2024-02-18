@@ -30,7 +30,7 @@ The OS used is FreeRTOS.
 <!-- *Cazzo figa culo deretano* -->
 
 <div align="center">
-  <img src="./Architecture.svg" alt="Image Alt Text" />
+  <img src="./Architecture.png" alt="Image Alt Text" />
   <p><em>Caption: Your caption text here</em></p>
 </div>
 
@@ -146,7 +146,7 @@ no time to go through that.
 <!-- ![Pinin and pinout](pinin_pinout.png) -->
 
 <div align="center">
-  <img src="./pinin_pinout.svg" alt="Image Alt Text" />
+  <img src="./pinin_pinout.png" alt="Image Alt Text" />
   <p><em>Caption: Your caption text here</em></p>
 </div>
 
