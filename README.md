@@ -35,8 +35,8 @@ The OS used is FreeRTOS.
 <div align="center">
   <p><em>The proposed architecture.
 <br>
-  The OS takes a bit of
-  application because components make direct calls to FreeRTOS API.</em></p>
+  The OS layer span a bit over the application because the application make direct calls to FreeRTOS API.
+  This means that you cannot replace the layers independently.</em></p>
 </div>
 
 The description of each layer is top-down.
