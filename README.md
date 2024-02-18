@@ -80,7 +80,8 @@ external world with its *publish* and *subscribe* functions.
   <br> It has an internal state x, input u and output y, it is
   initialized with initial condition x0 and it can be scheduled periodically
   or in an event-based fashion. The step function (aka state-transition
-  function) and the output function are f and h, respectively.</em></p>
+  function) and the output function are f and h, respectively.
+  A component is encapsulated in a .h,.c pair. </em></p>
 </div>
 
 > Example:
