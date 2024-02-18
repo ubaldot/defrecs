@@ -1,11 +1,13 @@
 **Disclaimer**: *this is a work in progress. Everything may change at any time.
 Also, consider that I am not a software engineering in a strict sense, but I am a control system engineer.
-Finally, this is a perpetual on-going work and at the moment Arduino work is
+Finally, at the moment I am 100% focused on STM32 and therefore the Arduino framework is
 left a bit behind, so don't use it.*
 
 # Motivation
-Concurrency program is tough. Bugs are just behind the corner and having a bugs free software is practically impossible.
-However, one may try to prevent the occurrence of such bugs by adhering to some coding rules and/or by following some standards.
+Concurrency program is tough. Bugs are just behind the corner and in many cases it can be hard to detect them.
+This issue is even more emphasized for those who are not strict software developers,
+like for example control systems engineers.
+However, one may try to prevent the occurrence of bugs by adhering to some coding rules and/or by following some standards.
 
 Here, we aim at defining a software architecture that can help in preventing bugs when concurrency programming is employed.
 We target STM32 F4 and Arduino platforms. For the Arduino platform we use
@@ -44,14 +46,17 @@ The OS used is FreeRTOS.
 ## Application Layer
 The application is made by interconnected components stored in the `./application`
 folder.
-The aim is to make them platform-independent and to allow users
-to connect in an easy manner.
-For this reason, components communicates one each other through a
+A component could be a PI controller, a Kalman filter, a sensor reader, a
+finite-state machine and so on and so forth.
+The aim is to make components platform-independent and to allow users
+to connect them in an easy manner.
+To achieve such a goal, components communicates one each other through a
 *publisher/subscriber* model to resemble as much as possible Simulink models.
 
 Each component has inputs `u`, outputs `y`, an internal state `x`, a state
 transition function `f` and
-an output function `h`, hence each component can be seen in classic Control Theory state
+an output function `h`.
+Hence each component can be seen in classic Control Theory state
 space form (or the Moore/Melay machines if you like it more), as it follows:
 
 ```
@@ -60,7 +65,7 @@ y[k] = h(x[k], u[k]).
 ```
 
 By traducing this boring math in Software Engineering language, and by
-considering C as language reference, a component is nothing more than a .h/.c pair that contains
+considering C as language reference, a component is nothing more than a *.h/.c* pair that contains
 the following:
 1. Bunch of  global *static variables* representing the component state `x`,
 2. *Init* function: to initialize the internal state, that is, our `x0`,
