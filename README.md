@@ -35,15 +35,16 @@ The OS used is FreeRTOS.
 <div align="center">
   <p><em>The proposed architecture.
 <br>
-  The OS layer span a bit over the application because the application layer makes direct calls to FreeRTOS API.
+  The OS layer span a bit over the application layer because the latter makes direct calls to FreeRTOS API.
   This means that you cannot replace such layers independently.</em></p>
 </div>
 
 
 ## Application Layer
-The application is made by interconnected components that shall be platform
-independent. That is, you can use the same components no matter is you are
-using a STM32 or a Arduino board.
+The application is made by interconnected components.
+The aim is to make such a layer platform-independent and scalable.
+That is, you should be able to connect the components as lego bricks and
+to use them no matter is you are using a STM32 or a Arduino board.
 <!-- The same applies for the *utils* library. -->
 
 Components communicates one each other through a
