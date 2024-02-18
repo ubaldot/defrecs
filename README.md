@@ -157,16 +157,16 @@ At the moment we use just different files.
 Note that although the pinin and pinout may be modeled as components themselves, at the
 moment we don't see any major benefit is doing so as they model the
 physical boundary of the MCU.
-Hence, it should be safe to inject or to deploy data straight away from/to a component to/from a pin.
 
-Race condition issues that may happen on functionalities directly connected to
-pins must obviously be taken into account. One way is to use blocking function
-or to use some signaling mechanism.
-A good example is depicted in ADC reading example: either you use a
-blocking HAL function, like polling, or you block the task who scheduled the
-ADC reading until a EOC flag is released. Note that ADC reading cannot be
-preempted.
-
+However, more than one component may wish to read/write from/to some data
+connected to the same pin. Hence, race conditions may occur.
+That shall be handled at the platform level by using e.g. HAL blocking
+functions or by blocking the task who scheduled the
+ADC reading until some flag is set to high.
+An example is the ADC in the considered STM32 framework.
+In this case either you use a blocking function (polling from ADC) or you
+block the task who scheduled the ADC reading until a EOC flag is released.
+Note that ADC reading cannot be preempted.
 
 <!-- ![Pinin and pinout](pinin_pinout.png) -->
 
