@@ -1,7 +1,7 @@
-*Disclaimer: this is a work in progress. Everything may change at any time.
+**Disclaimer**: *this is a work in progress. Everything may change at any time.
 Also, consider that I am not a software engineering in a strict sense, but I am a control system engineer.
 Finally, this is a perpetual on-going work and at the moment Arduino work is
-left a bit behind, so don't use it.  *
+left a bit behind, so don't use it.*
 
 # Motivation
 Concurrency program is tough. Bugs are just behind the corner and having a bugs free software is practically impossible.
