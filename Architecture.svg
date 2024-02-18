@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="1086.9816"
+   width="903.40015"
    height="502.05286"
-   viewBox="0 0 1086.9816 502.05286"
+   viewBox="0 0 903.40017 502.05286"
    version="1.1"
    id="svg5"
    inkscape:version="1.2.1 (9c6d41e, 2022-07-14)"
@@ -30,8 +30,8 @@
      inkscape:showpageshadow="2"
      inkscape:deskcolor="#d1d1d1"
      inkscape:zoom="0.42720607"
-     inkscape:cx="593.39045"
-     inkscape:cy="246.95342"
+     inkscape:cx="228.2271"
+     inkscape:cy="141.61784"
      inkscape:window-width="1352"
      inkscape:window-height="815"
      inkscape:window-x="0"
@@ -78,7 +78,7 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-176.81326,-315.35764)">
+     transform="translate(-360.39471,-315.35764)">
     <rect
        style="fill:#df2f2f;fill-opacity:1;stroke:#808080;stroke-width:0.944883"
        id="rect181"
@@ -198,12 +198,16 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#7e7d7d;fill-opacity:1;stroke:none"
-       x="180.15382"
-       y="477.00977"
+       x="360.39471"
+       y="451.91211"
        id="text4626-7"><tspan
          sodipodi:role="line"
-         id="tspan4668"
-         x="180.15382"
-         y="477.00977">     This framework</tspan></text>
+         id="tspan10822"
+         x="360.39471"
+         y="451.91211">     This </tspan><tspan
+         sodipodi:role="line"
+         id="tspan10824"
+         x="360.39471"
+         y="501.91211">framework</tspan></text>
   </g>
 </svg>
