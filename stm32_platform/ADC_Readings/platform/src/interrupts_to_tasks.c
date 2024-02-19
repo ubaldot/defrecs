@@ -140,7 +140,7 @@ void interrupts_to_tasks_init() {
   /* Usart init */
   ii = 0;
   mutex_tmp_rx_buffer = xSemaphoreCreateMutex();
-  pinin_usart(tmp_rx_buffer, 1, INTERRUPT); // Initialize for reception
+  pinin_usart(tmp_rx_buffer, 1); // Initialize for reception
 }
 
 // Functions associated to tasks
@@ -168,7 +168,7 @@ void Usart2RxDeferred(void *pVParameters) {
     while (xSemaphoreTake(xSemaphoreUsart2Rx, portMAX_DELAY) == pdTRUE) {
       if (xSemaphoreTake(mutex_tmp_rx_buffer, pdMS_TO_TICKS(5)) == pdTRUE) {
         if (tmp_rx_buffer[ii] != '\r' && ii++ < MSG_LENGTH_MAX) {
-          pinin_usart(&tmp_rx_buffer[ii], 1, INTERRUPT);
+          pinin_usart(&tmp_rx_buffer[ii], 1);
         } else {
           publish_irq_raw_rx_message(tmp_rx_buffer, ii);
           serial_port_step(IRQ_SERIAL_RX);
@@ -177,7 +177,7 @@ void Usart2RxDeferred(void *pVParameters) {
           ii = 0;
           tmp_rx_buffer[0] = '\0';
           irq_raw_rx_message[0] = '\0';
-          pinin_usart(&tmp_rx_buffer[ii], 1, INTERRUPT);
+          pinin_usart(&tmp_rx_buffer[ii], 1);
         }
         xSemaphoreGive(mutex_tmp_rx_buffer);
       }
