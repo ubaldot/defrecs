@@ -45,7 +45,7 @@
 /* USER CODE BEGIN PV */
 SemaphoreHandle_t xSemaphoreBuiltinButton;
 SemaphoreHandle_t xSemaphoreUsart2Rx;
-SemaphoreHandle_t xSemaphoreADC_PV;
+SemaphoreHandle_t xSemaphoreADC_EOC;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -257,7 +257,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *pHadc) {
   (void)pHadc;
   BaseType_t xHigherPriorityTaskWoken = pdFALSE;
-  xSemaphoreGiveFromISR(xSemaphoreADC_PV, &(xHigherPriorityTaskWoken));
+  xSemaphoreGiveFromISR(xSemaphoreADC_EOC, &(xHigherPriorityTaskWoken));
   portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
 }
 /* USER CODE END 1 */

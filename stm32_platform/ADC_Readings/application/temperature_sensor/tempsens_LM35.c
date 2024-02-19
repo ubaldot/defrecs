@@ -5,7 +5,6 @@
 // PUBLISHED SIGNALS: tempsens_value
 //===----------------------------------------------------------------------===//
 
-#include "pinin.h"
 #include <FreeRTOS.h>
 #include <semphr.h>
 #include <string.h>

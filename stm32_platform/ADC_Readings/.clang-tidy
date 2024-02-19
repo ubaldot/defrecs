@@ -13,7 +13,8 @@ Checks: "
   readability-*,
   -misc-use-anonymous-namespace,
   -readability-identifier-length,
-  -readability-magic-numbers
+  -readability-magic-numbers,
+  -readability-unused-include
   "
 WarningsAsErrors: ''
 HeaderFilterRegex: ''
