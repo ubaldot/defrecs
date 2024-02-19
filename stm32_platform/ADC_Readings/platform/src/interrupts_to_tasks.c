@@ -48,7 +48,7 @@
 #include "FreeRTOS.h"
 #include "pinin.h"
 #include "semphr.h"
-#include "serial_port/serial_port.h"
+#include "usart2/usart2.h"
 #include <string.h>
 
 void BuiltinButtonDeferred(void * /*pVParameters*/);
@@ -62,63 +62,56 @@ extern SemaphoreHandle_t xSemaphoreBuiltinButton;
 TaskHandle_t xTaskUsart2RxDeferred;
 extern SemaphoreHandle_t xSemaphoreUsart2Rx;
 
-// Aux for UART reception.
-static uint8_t tmp_rx_buffer[MSG_LENGTH_MAX];
-static size_t ii; // For counting the number of bytes received
-static SemaphoreHandle_t mutex_tmp_rx_buffer;
-
 // Published signals
-static uint8_t irq_raw_rx_message[MSG_LENGTH_MAX];
-static uint8_t irq_builtin_button_message[MSG_LENGTH_MAX];
+/* static uint8_t irq_rx_char[MSG_LENGTH_MAX]; */
+/* static uint8_t irq_builtin_button_message[MSG_LENGTH_MAX]; */
 
-static SemaphoreHandle_t mutex_irq_raw_rx_message;
-static SemaphoreHandle_t mutex_irq_builtin_button;
+/* static SemaphoreHandle_t mutex_irq_rx_char; */
+/* static SemaphoreHandle_t mutex_irq_builtin_button; */
 
 // Publish functions
-static void publish_irq_raw_rx_message(const uint8_t *pRawMessage,
-                                       size_t arrlen) {
-  if (xSemaphoreTake(mutex_irq_raw_rx_message, pdMS_TO_TICKS(5)) == pdTRUE) {
-    memcpy(irq_raw_rx_message, pRawMessage, arrlen);
-    irq_raw_rx_message[arrlen] = '\0';
-    xSemaphoreGive(mutex_irq_raw_rx_message);
-  }
-}
+/* static void publish_irq_rx_char(const uint8_t *pChar) { */
+/*   if (xSemaphoreTake(mutex_irq_rx_char, pdMS_TO_TICKS(5)) == pdTRUE) { */
+/*     memcpy(irq_rx_char, pChar, 1); */
+/*     xSemaphoreGive(mutex_irq_rx_char); */
+/*   } */
+/* } */
 
-static void publish_irq_builtin_button_message(const uint8_t *pRawMessage,
-                                               size_t arrlen) {
-  if (xSemaphoreTake(mutex_irq_builtin_button, pdMS_TO_TICKS(5)) == pdTRUE) {
-    memcpy(irq_builtin_button_message, pRawMessage, arrlen);
-    irq_builtin_button_message[arrlen] = '\0';
-    xSemaphoreGive(mutex_irq_builtin_button);
-  }
-}
+/* static void publish_irq_builtin_button_message(const uint8_t *pRawMessage, */
+/*                                                size_t arrlen) { */
+/*   if (xSemaphoreTake(mutex_irq_builtin_button, pdMS_TO_TICKS(5)) == pdTRUE) { */
+/*     memcpy(irq_builtin_button_message, pRawMessage, arrlen); */
+/*     irq_builtin_button_message[arrlen] = '\0'; */
+/*     xSemaphoreGive(mutex_irq_builtin_button); */
+/*   } */
+/* } */
 
 // Subscribe functions
-void subscribe_irq_raw_rx_message(uint8_t *pRawMessage) {
-  // Returns a copy of the output
-  if (xSemaphoreTake(mutex_irq_raw_rx_message, pdMS_TO_TICKS(5)) == pdTRUE) {
-    size_t arrlen = 0;
-    while (irq_raw_rx_message[arrlen] != '\0') {
-      arrlen++;
-    }
-    memcpy(pRawMessage, irq_raw_rx_message, arrlen);
-    pRawMessage[arrlen] = '\0';
-    xSemaphoreGive(mutex_irq_raw_rx_message);
-  }
-}
+/* void subscribe_irq_rx_char(uint8_t *pRawMessage) { */
+/*   // Returns a copy of the output */
+/*   if (xSemaphoreTake(mutex_irq_rx_char, pdMS_TO_TICKS(5)) == pdTRUE) { */
+/*     size_t arrlen = 0; */
+/*     while (irq_rx_char[arrlen] != '\0') { */
+/*       arrlen++; */
+/*     } */
+/*     memcpy(pRawMessage, irq_rx_char, arrlen); */
+/*     pRawMessage[arrlen] = '\0'; */
+/*     xSemaphoreGive(mutex_irq_rx_char); */
+/*   } */
+/* } */
 
-void subscribe_irq_builtin_button_message(uint8_t *pRawMessage) {
-  // Returns a copy of the output
-  if (xSemaphoreTake(mutex_irq_builtin_button, pdMS_TO_TICKS(5)) == pdTRUE) {
-    size_t arrlen = 0;
-    while (irq_builtin_button_message[arrlen] != '\0') {
-      arrlen++;
-    }
-    memcpy(pRawMessage, irq_builtin_button_message, arrlen);
-    pRawMessage[arrlen] = '\0';
-    xSemaphoreGive(mutex_irq_builtin_button);
-  }
-}
+/* void subscribe_irq_builtin_button_message(uint8_t *pRawMessage) { */
+/*   // Returns a copy of the output */
+/*   if (xSemaphoreTake(mutex_irq_builtin_button, pdMS_TO_TICKS(5)) == pdTRUE) { */
+/*     size_t arrlen = 0; */
+/*     while (irq_builtin_button_message[arrlen] != '\0') { */
+/*       arrlen++; */
+/*     } */
+/*     memcpy(pRawMessage, irq_builtin_button_message, arrlen); */
+/*     pRawMessage[arrlen] = '\0'; */
+/*     xSemaphoreGive(mutex_irq_builtin_button); */
+/*   } */
+/* } */
 // Init
 void interrupts_to_tasks_init() {
   /* Transmit upon button press */
@@ -134,53 +127,26 @@ void interrupts_to_tasks_init() {
               &xTaskUsart2RxDeferred);
 
   /* mutex for published signals */
-  mutex_irq_raw_rx_message = xSemaphoreCreateMutex();
+  mutex_irq_rx_char = xSemaphoreCreateMutex();
   mutex_irq_builtin_button = xSemaphoreCreateMutex();
-
-  /* Usart init */
-  ii = 0;
-  mutex_tmp_rx_buffer = xSemaphoreCreateMutex();
-  pinin_usart(tmp_rx_buffer, 1); // Initialize for reception
 }
 
 // Functions associated to tasks
 void BuiltinButtonDeferred(void *pVParameters) {
   (void)pVParameters;
-  const uint8_t MESSAGE[] = "Button pressed!\r\n";
-
-  size_t arrlen = 0;
-  while (MESSAGE[arrlen] != '\0') {
-    arrlen++;
-  }
-  publish_irq_builtin_button_message(MESSAGE, arrlen);
 
   for (;;) {
     while (xSemaphoreTake(xSemaphoreBuiltinButton, portMAX_DELAY) == pdTRUE) {
-      serial_port_step(IRQ_BUILTIN_BUTTON);
+      usart2_step(IRQ_BUILTIN_BUTTON);
     }
   }
 }
 
 void Usart2RxDeferred(void *pVParameters) {
   (void)pVParameters;
-
   for (;;) {
     while (xSemaphoreTake(xSemaphoreUsart2Rx, portMAX_DELAY) == pdTRUE) {
-      if (xSemaphoreTake(mutex_tmp_rx_buffer, pdMS_TO_TICKS(5)) == pdTRUE) {
-        if (tmp_rx_buffer[ii] != '\r' && ii++ < MSG_LENGTH_MAX) {
-          pinin_usart(&tmp_rx_buffer[ii], 1);
-        } else {
-          publish_irq_raw_rx_message(tmp_rx_buffer, ii);
-          serial_port_step(IRQ_SERIAL_RX);
-
-          /* Reinitialize all the variables used */
-          ii = 0;
-          tmp_rx_buffer[0] = '\0';
-          irq_raw_rx_message[0] = '\0';
-          pinin_usart(&tmp_rx_buffer[ii], 1);
-        }
-        xSemaphoreGive(mutex_tmp_rx_buffer);
-      }
+      usart2_step(IRQ_SERIAL_RX);
     }
   }
 }

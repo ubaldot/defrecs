@@ -60,7 +60,7 @@ void serial_port_step(enum WhoIsCalling caller) {
     subscribe_irq_builtin_button_message(msg);
     break;
   case IRQ_SERIAL_RX:
-    subscribe_irq_raw_rx_message(msg);
+    subscribe_irq_rx_char(msg);
     break;
   default:
     strcpy((char *)msg, "Sto cazzo.\r\n");
