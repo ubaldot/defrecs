@@ -47,7 +47,7 @@ void tempsens_step() {
 
   // Read pin voltage
   float pin_voltage = 0.0F;
-  pinin_pv(&pin_voltage, DMA);
+  pinin_pv(&pin_voltage);
 
   // V -> Celsius, [0 5] -> [0 50] linearly.
   float temperature_measured;

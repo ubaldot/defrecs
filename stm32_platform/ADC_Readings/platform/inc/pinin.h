@@ -8,9 +8,8 @@
 
 void pinin_init(void);
 
+void pinin_pv(float *);
+void pinin_usart(uint8_t *, size_t len);
 float pinin_temp_sens(void);
-
-void pinin_pv(float *, enum HAL_Function_Mode);
-void pinin_usart(uint8_t *, size_t len, enum HAL_Function_Mode);
 
 #endif /* PININ_H */
