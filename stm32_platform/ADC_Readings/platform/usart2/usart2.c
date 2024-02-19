@@ -65,10 +65,10 @@ void usart2_step(enum WhoIsCalling caller) {
     break;
     /* What starts with IRQ are callbacks! */
   case IRQ_BUILTIN_BUTTON:
-    /* strncpy(msg, "Button pressed!\r\n", MSG_LENGTH_MAX - 1); */
-    /* msg[MSG_LENGTH_MAX - 1] = '\0'; */
+    strncpy(msg, "Button pressed!\r\n", MSG_LENGTH_MAX - 1);
+    msg[MSG_LENGTH_MAX - 1] = '\0';
 
-    (void)snprintf(msg, MSG_LENGTH_MAX, "pippo: %s \n", "cazzo");
+    /* (void)snprintf(msg, MSG_LENGTH_MAX, "pippo: %s \n", "cazzo"); */
 
     transmit(msg);
     break;
