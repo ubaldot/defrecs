@@ -26,8 +26,7 @@
 #include <stddef.h>
 #include <string.h>
 #include <task.h>
-
-extern int snprintf(char *, size_t, const char*, ...);
+#include <stdio.h>
 
 static void transmit(char *pMsg);
 
@@ -64,7 +63,7 @@ void usart2_step(enum WhoIsCalling caller) {
     /* (void)snprintf(msg, MSG_LENGTH_MAX, "Photovoltaic reading: %s V\n", */
     /*                pv_voltage_str); */
 
-    (void)snprintf(msg, MSG_LENGTH_MAX, "pippo: %s \n", "pluto");
+    /* (void)snprintf(msg, MSG_LENGTH_MAX, "pippo: %s \n", "pluto"); */
     transmit(msg);
     break;
     /* What starts with IRQ are callbacks! */
@@ -72,7 +71,8 @@ void usart2_step(enum WhoIsCalling caller) {
     /* strncpy(msg, "Button pressed!\r\n", MSG_LENGTH_MAX - 1); */
     /* msg[MSG_LENGTH_MAX - 1] = '\0'; */
 
-    (void)snprintf(msg, MSG_LENGTH_MAX, "pippo: %s \n", a);
+    /* (void)snprintf(msg, MSG_LENGTH_MAX, "pippo: %s \n", a); */
+    (void)sprintf(msg,  "pippo: %s \n", a);
 
     transmit(msg);
     break;
