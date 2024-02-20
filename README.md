@@ -44,7 +44,7 @@ The OS used is FreeRTOS.
 
 
 ## Application Layer
-The application is made by interconnected components stored in the `./application`
+The application is made by interconnected components stored in the `application`
 folder.
 A component could be a PI controller, a Kalman filter, a sensor reader, a
 finite-state machine and so on and so forth.
@@ -148,44 +148,13 @@ It takes a bit of application because components actually use freertos API.
 
 ## Platform Layer
 
-### pinin.c and pinout.c.
+In the `platform` folder there are stored all the components that make calls to the HAL layer.
+If you are changing platform you have to only have to adjust the files here,
+leaving the application untouched.
 
-To keep a minimum degree of flexibility among different hardware, the application software won't
-directly call HAL functions of a specific platform, but instead it uses this
-abstraction.
+As in the application layer, the platform components have states, inputs,
+outputs, an init function, a step function, etc.
 
-For example, *pinin(&led\_state)* calls
-e.g. *HAL_GPIO_ReadPin(...)* in STM32 and *digitalRead(...)* in Arduino.
-However, the application shall not know about the underlying platform. A
-component just calls *pinin(&led\_state)*.
-The same for the pinout.
-
-A more elegant solution would be to use function pointers depending on the
-platform used. That would be nice to investigate as future work.
-At the moment we use just different files.
-
-Note that although the pinin and pinout could be modeled as components themselves, at the
-moment we don't see any major benefit is doing so as they model the
-physical boundary of the MCU. Also, to avoid too much boilerplate, we decided
-to keep the implementation as is.
-A pinin function simply calls a HAL function to read/write some raw data.
-Then, the component that called that pinin function converts such a raw data into
-meaningful information.
-For example, the pinin function returns the voltage read by a pin. That is
-all. Then, a component calling such a pinin function will convert the read
-voltage to some meaningful information.
-
-However, if more than one component may wish to read/write from/to some data
-connected to the same pin, then race conditions may occur.
-That shall be handled at the platform level by using e.g. HAL blocking
-functions or by blocking the task who scheduled the
-ADC reading until some flag is set to high.
-An example is the ADC in the considered STM32 framework.
-In this case either you use a blocking function (polling from ADC) or you
-block the task who scheduled the ADC reading until a EOC flag is released.
-Note that ADC reading cannot be preempted.
-
-<!-- ![Pinin and pinout](pinin_pinout.png) -->
 
 <div align="center">
   <img src="./pinin_pinout.png" alt="Image Alt Text" style="width: 80%;"/>
@@ -204,7 +173,7 @@ somehow "predictable" or "unpredictable".
 An example of "predictable" event
 is the end-of-conversion (EOC) of an ADC when ADC readings are requested by a
 periodically scheduled task. In nominal conditions, we know more or less when
-the EOC is going to happen, which is about every T seconds, being T the period of
+the EOC is going to happen, which is about every *T* seconds, being *T* the period of
 the task. Another example of predictable event is the event corresponding to a Timer that fires.
 An example of unpredictable event is the pressure of a button connected to a
 GPIO pin. We have absolutely no idea when such a button is going to be pressed.
