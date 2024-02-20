@@ -58,7 +58,7 @@ extern SemaphoreHandle_t xSemaphoreUsart2Rx;
 void interrupts_to_tasks_init() {
   /* Transmit upon button press */
   xSemaphoreBuiltinButton = xSemaphoreCreateBinary();
-  xTaskCreate(BuiltinButtonDeferred, "Usart2Tx", 128, NULL,
+  xTaskCreate(BuiltinButtonDeferred, "BuiltinButtonPressed", 128, NULL,
               configLIBRARY_MAX_SYSCALL_INTERRUPT_PRIORITY,
               &xTaskBuitinButtonDeferred);
 
@@ -67,7 +67,6 @@ void interrupts_to_tasks_init() {
   xTaskCreate(Usart2RxDeferred, "Usart2Rx", 128, NULL,
               configLIBRARY_MAX_SYSCALL_INTERRUPT_PRIORITY,
               &xTaskUsart2RxDeferred);
-
 }
 
 // Functions associated to tasks

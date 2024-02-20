@@ -51,13 +51,13 @@ static void task_1000ms(void * /*pVParameters*/);
 
 static void components_init() {
   // List all the components used. Initializes queues, mutex, etc.
-  adc1_sensors_init();
+  /* adc1_sensors_init(); */
   digital_out_init();
   usart2_init();
 
   blink_init();
   debug_init();
-  pv_init();
+  /* pv_init(); */
   /* tempsens_init(); */
 }
 
@@ -90,7 +90,7 @@ static void task_1000ms(void *pVParameters) // This is a task.
     // Run activities
     blink_step(PERIODIC_TASK);
     debug_step(PERIODIC_TASK);
-    pv_step(PERIODIC_TASK);
+    /* pv_step(PERIODIC_TASK); */
     usart2_step(PERIODIC_TASK);
     /* tempsens_main(); */
 
@@ -109,7 +109,7 @@ static void task_200ms(void *pVParameters) // This is a task.
   /* volatile BaseType_t xMissedDeadline; */
 
   while (1) {
-    adc1_sensors_step(PERIODIC_TASK);
+    /* adc1_sensors_step(PERIODIC_TASK); */
     digital_out_step(PERIODIC_TASK);
 
     // Task Schedule
