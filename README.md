@@ -20,7 +20,7 @@ Platformio.
 
 *Optional*:
 
-2. `compiledb` - for creating `compile\_commands.json` files in case you use
+2. `compiledb` - for creating `compile_commands.json` files in case you use
    some LSP like `clangd`.
 
 
@@ -65,7 +65,7 @@ y[k] = h(x[k], u[k]).
 ```
 
 By traducing this boring math in Software Engineering language, and by
-considering C as language reference, a component is nothing more than a `.h/.c` pair that contains
+considering C as language reference, a component is nothing more than a `.h,.c` pair that contains
 the following:
 1. *Static variables* representing the component state `x`,
 2. *Init* function: to initialize the internal state, that is, our `x0`,
@@ -133,7 +133,7 @@ guidelines? YES! See below.
 
 We have connected our components. The data flow is clear. Next, we have to
 schedule our components.
-In the *application_setup.c* file you do the following:
+In the `application_setup.c` file you do the following:
 
 1. Initalize the platform and the components,
 2. Define the periodic tasks (i.e. you set sampling period, allocated stack
@@ -144,7 +144,7 @@ In the *application_setup.c* file you do the following:
 ## Operating System Layer
 The chosen operating system is FreeRTOS.
 We use the one shipped with CubeMX and ArduinoFreeRTOS.
-It takes a bit of application because components actually use freertos API.
+It takes a bit of application because components actually use FreeRTOS API.
 
 ## Platform Layer
 
@@ -164,7 +164,7 @@ is the end-of-conversion (EOC) of an ADC when ADC readings are requested by a
 periodically scheduled task. In nominal conditions, we know more or less when
 the EOC is going to happen, which is about every *T* seconds, being *T* the period of
 the task. Another example of predictable event is the event corresponding to a Timer that fires.
-An example of *unpredictable* event is the pressure of a button connected to a
+An example of "unpredictable" event is the pressure of a button connected to a
 GPIO pin. We have absolutely no idea when such a button is going to be pressed.
 
 In both cases, interrupt service routines (ISRs) don't preempt the OS by executing some
@@ -198,7 +198,7 @@ The functions implementing the deferred tasks for
 unpredictable events are defined in the `interrupts\_to\_task.c` file.
 When dealing with HAL functions that trigger interrupts, check these three
 files: the function that calls the HAL function, the `Core/Src/stm32f4xx_it.c`
-and the `interrupts\_to\_tasks.c`.
+and the `interrupts_to_tasks.c`.
 
 ## Hardware Layer
 
@@ -217,3 +217,4 @@ At the bottom level we have the hardware. That can be whatever.
 
 1. cmake and/or function pointers to deal with cross-platform.
 2. HAL and OS Error handling.
+3. Doxygen
