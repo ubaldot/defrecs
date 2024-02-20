@@ -24,9 +24,10 @@
 #include <FreeRTOS.h>
 #include <semphr.h>
 #include <stddef.h>
-#include <stdio.h>
 #include <string.h>
 #include <task.h>
+
+extern int snprintf(char *, size_t, const char*, ...);
 
 static void transmit(char *pMsg);
 

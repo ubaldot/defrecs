@@ -24,6 +24,7 @@
 #include <task.h>
 
 #define DEBUG 1
+#define USE_FREERTOS 1
 
 // Define parameters to be passed to tasks. See FreeRTOS guideline.
 struct TaskParams {
