@@ -155,19 +155,8 @@ leaving the application untouched.
 As in the application layer, the platform components have states, inputs,
 outputs, an init function, a step function, etc.
 
+### Interrupts
 
-<div align="center">
-  <img src="./pinin_pinout.png" alt="Image Alt Text" style="width: 80%;"/>
-  <p><em>Communication with the platform layer.
-<br>
-  The components make calls to
-  generic functions to read/write data from/to the hardware layer.
-  In this picture such generic functions are mapped to the STM32 HAL.
-  In this way, any change in the underlying hardware should not affect the application.
-  </em></p>
-</div>
-
-### interrupts\_to\_tasks.c
 Interrupts are used to perform some action in response to some event. Events can be
 somehow "predictable" or "unpredictable".
 An example of "predictable" event
@@ -175,7 +164,7 @@ is the end-of-conversion (EOC) of an ADC when ADC readings are requested by a
 periodically scheduled task. In nominal conditions, we know more or less when
 the EOC is going to happen, which is about every *T* seconds, being *T* the period of
 the task. Another example of predictable event is the event corresponding to a Timer that fires.
-An example of unpredictable event is the pressure of a button connected to a
+An example of *unpredictable* event is the pressure of a button connected to a
 GPIO pin. We have absolutely no idea when such a button is going to be pressed.
 
 In both cases, interrupt service routines (ISRs) don't preempt the OS by executing some
@@ -201,23 +190,15 @@ However, the difference relies in the following:
    semaphore to unlock the periodic task waiting for that event to happen and
    nothing more.
 2. *Unpredictable* events. In this case the callback wakes up a specific task
-   that performs the following actions:
-    1. Publish few signals,
-    2. Call all the components subscribed to such signals.
+   that calls the components with a specific caller argument.
 
 ISR and Callbacks for STM32 are defined in `Core/Src/stm32f4xx_it.c` (so you must modify
 that file), whereas for Arduino I don't know... yet.
-To keep things separated, the functions implementing the deferred tasks for
+The functions implementing the deferred tasks for
 unpredictable events are defined in the `interrupts\_to\_task.c` file.
 When dealing with HAL functions that trigger interrupts, check these three
 files: the function that calls the HAL function, the `Core/Src/stm32f4xx_it.c`
 and the `interrupts\_to\_tasks.c`.
-
-Differently from pinin and pinout functions that we discussed above, interrupt
-are tightly coupled to hardware so it appears very difficult if not impossible
-to have a flexible solution for them. Hence, when switching platform, more
-work is required to accommodate interrupts.
-
 
 ## Hardware Layer
 
