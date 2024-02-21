@@ -22,9 +22,6 @@
 static float adc1_pv_pin_voltage;
 static SemaphoreHandle_t mutex_adc1_pv_pin_voltage;
 
-// ADC End Of Conversion (EOC)
-extern SemaphoreHandle_t xSemaphoreADC_EOC;
-
 // Double check the numbers with hadc1.Init values!!!
 const uint8_t ADC1_RESOLUTION_BITS = 10;
 const uint8_t NUM_CHANNELS = 2;
@@ -57,8 +54,7 @@ void adc1_sensors_init() {
   // Dummy init value, useful for debugging
   adc1_pv_pin_voltage = 99.9F;
 
-  // A bit weird to create it here but there is no better place.
-  xSemaphoreADC_EOC = xSemaphoreCreateBinary();
+  // Mutex for protecting variables
   mutex_adc1_pv_pin_voltage = xSemaphoreCreateMutex();
 }
 
@@ -68,7 +64,7 @@ void adc1_sensors_step(enum WhoIsCalling caller) {
   uint32_t analog_read[NUM_CHANNELS];
 
   HAL_ADC_Start_DMA(&hadc1, analog_read, NUM_CHANNELS);
-  xSemaphoreTake(xSemaphoreADC_EOC, portMAX_DELAY); // Wait for ADC
+  ulTaskNotifyTake(pdTRUE, portMAX_DELAY); // Wait for ADC
                                                     // conversion end
   HAL_ADC_Stop_DMA(&hadc1);
 

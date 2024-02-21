@@ -48,22 +48,18 @@ void Usart2RxDeferred(void * /*pVParameters*/);
 
 // Builtin button pressed
 TaskHandle_t xTaskBuitinButtonDeferred;
-extern SemaphoreHandle_t xSemaphoreBuiltinButton;
 
 // Received message over the serial port
 TaskHandle_t xTaskUsart2RxDeferred;
-extern SemaphoreHandle_t xSemaphoreUsart2Rx;
 
 // Init
 void interrupts_to_tasks_init() {
   /* Transmit upon button press */
-  xSemaphoreBuiltinButton = xSemaphoreCreateBinary();
   xTaskCreate(BuiltinButtonDeferred, "BuiltinButtonPressed", 128, NULL,
               configLIBRARY_MAX_SYSCALL_INTERRUPT_PRIORITY,
               &xTaskBuitinButtonDeferred);
 
   /* Receive data on usart2*/
-  xSemaphoreUsart2Rx = xSemaphoreCreateBinary();
   xTaskCreate(Usart2RxDeferred, "Usart2Rx", 128, NULL,
               configLIBRARY_MAX_SYSCALL_INTERRUPT_PRIORITY,
               &xTaskUsart2RxDeferred);
@@ -73,16 +69,42 @@ void interrupts_to_tasks_init() {
 void BuiltinButtonDeferred(void *pVParameters) {
   (void)pVParameters;
 
+  uint32_t ulEventsToProcess;
+
   for (;;) {
-    xSemaphoreTake(xSemaphoreBuiltinButton, portMAX_DELAY);
-    usart2_step(IRQ_BUILTIN_BUTTON);
+    /* Wait to receive a notification sent directly to this task from the
+     interrupt service routine. */
+    ulEventsToProcess = ulTaskNotifyTake(pdTRUE, pdMS_TO_TICKS(10));
+    if (ulEventsToProcess != 0) {
+      /* To get here at least one event must have occurred. Loop here
+      until all the pending events have been processed (in this case,
+      just print out a message for each event). */
+      while (ulEventsToProcess > 0) {
+        usart2_step(IRQ_BUILTIN_BUTTON);
+        ulEventsToProcess--;
+      }
+    } else {
+      /* If this part of the function is reached then an interrupt did
+      not arrive within the expected time, and (in a real application)
+      it may be necessary to perform some error recovery operations. */
+    }
   }
 }
 
 void Usart2RxDeferred(void *pVParameters) {
   (void)pVParameters;
+
+  uint32_t ulEventsToProcess;
+
   for (;;) {
-    xSemaphoreTake(xSemaphoreUsart2Rx, portMAX_DELAY);
-    usart2_step(IRQ_SERIAL_RX);
+    ulEventsToProcess = ulTaskNotifyTake(pdTRUE, pdMS_TO_TICKS(10));
+    if (ulEventsToProcess != 0) {
+      while (ulEventsToProcess > 0) {
+        usart2_step(IRQ_SERIAL_RX);
+        ulEventsToProcess--;
+      }
+    } else {
+        // Error handling
+    }
   }
 }
