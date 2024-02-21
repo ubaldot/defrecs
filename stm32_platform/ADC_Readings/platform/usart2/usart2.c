@@ -24,9 +24,9 @@
 #include <FreeRTOS.h>
 #include <semphr.h>
 #include <stddef.h>
+#include <stdio.h>
 #include <string.h>
 #include <task.h>
-#include <stdio.h>
 
 static void transmit(char *pMsg);
 
@@ -49,44 +49,39 @@ void usart2_step(enum WhoIsCalling caller) {
   // INPUTS
   uint8_t led_state;
   subscribe_blink_led_state(&led_state);
-  /* float pv_voltage; */
+  float pv_voltage;
 
   char msg[MSG_LENGTH_MAX];
-  char a[] = "foo";
 
   switch (caller) {
   case PERIODIC_TASK:
-    /* subscribe_pv_voltage(&pv_voltage); */
+    subscribe_pv_voltage(&pv_voltage);
 
-    /* char pv_voltage_str[5]; */
-    /* (void)ftoa(pv_voltage, pv_voltage_str, 2); */
-    /* (void)snprintf(msg, MSG_LENGTH_MAX, "Photovoltaic reading: %s V\n", */
-    /*                pv_voltage_str); */
+    char pv_voltage_str[5];
+    (void)ftoa(pv_voltage, pv_voltage_str, 2);
+    (void)snprintf(msg, MSG_LENGTH_MAX, "Photovoltaic reading: %s V\n",
+                   pv_voltage_str);
 
-    /* (void)snprintf(msg, MSG_LENGTH_MAX, "pippo: %s \n", "pluto"); */
     transmit(msg);
     break;
     /* What starts with IRQ are callbacks! */
   case IRQ_BUILTIN_BUTTON:
-    /* strncpy(msg, "Button pressed!\r\n", MSG_LENGTH_MAX - 1); */
-    /* msg[MSG_LENGTH_MAX - 1] = '\0'; */
 
-    /* (void)snprintf(msg, MSG_LENGTH_MAX, "pippo: %s \n", a); */
-    (void)sprintf(msg,  "pippo: %s \n", a);
+    (void)snprintf(msg, MSG_LENGTH_MAX, "Button: %s \n", "pressed!");
 
     transmit(msg);
     break;
   case IRQ_SERIAL_RX:
     if (xSemaphoreTake(mutex_rx_buffer, pdMS_TO_TICKS(5)) == pdTRUE) {
-      if (rx_buffer[ii] == '\r' || ii > MSG_LENGTH_MAX) {
+      if (rx_buffer[ii] == '\n' || ii > MSG_LENGTH_MAX) {
         /* publish_usart2_rx_message(msg, strlen(msg)); */
-        strncpy(msg, rx_buffer, MSG_LENGTH_MAX - 1);
+        memcpy(msg, rx_buffer, MSG_LENGTH_MAX - 1);
         msg[MSG_LENGTH_MAX - 1] = '\0';
         transmit(msg);
 
         /* Reinitialize all the variables used */
         ii = 0;
-        rx_buffer[ii] = '\0';
+        memset(rx_buffer, '\0', MSG_LENGTH_MAX);
       } else {
         ii++;
       }
@@ -95,7 +90,7 @@ void usart2_step(enum WhoIsCalling caller) {
     }
     break;
   default:
-    strncpy(msg, "Sto cazzo.\r\n", MSG_LENGTH_MAX - 1);
+    strncpy(msg, "Sto cazzo.\n", MSG_LENGTH_MAX - 1);
     msg[MSG_LENGTH_MAX - 1] = '\0';
     break;
   }

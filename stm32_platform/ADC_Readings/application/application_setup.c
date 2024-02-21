@@ -24,7 +24,6 @@
 #include <task.h>
 
 #define DEBUG 1
-#define USE_FREERTOS 1
 
 // Define parameters to be passed to tasks. See FreeRTOS guideline.
 struct TaskParams {
@@ -34,14 +33,14 @@ struct TaskParams {
 // Task 1000ms
 TaskHandle_t xTaskHandle_1000ms;
 const char NAME_1000MS[] = "Task_1000ms";
-const size_t STACK_SIZE_1000MS = 1024;
+const size_t STACK_SIZE_1000MS = 128;
 const uint8_t PRIORITY_1000MS = 2;
 const struct TaskParams TASK_PARAMS_1000MS = {.PERIOD = 1000};
 
 // Task 200ms
 TaskHandle_t xTaskHandle_200ms;
 const char NAME_200MS[] = "Task_200ms";
-const size_t STACK_SIZE_200MS = 1024;
+const size_t STACK_SIZE_200MS = 128;
 const uint8_t PRIORITY_200MS = 2;
 const struct TaskParams TASK_PARAMS_200MS = {.PERIOD = 200};
 
@@ -52,13 +51,13 @@ static void task_1000ms(void * /*pVParameters*/);
 
 static void components_init() {
   // List all the components used. Initializes queues, mutex, etc.
-  /* adc1_sensors_init(); */
+  adc1_sensors_init();
   digital_out_init();
   usart2_init();
 
   blink_init();
   debug_init();
-  /* pv_init(); */
+  pv_init();
   /* tempsens_init(); */
 }
 
@@ -91,7 +90,7 @@ static void task_1000ms(void *pVParameters) // This is a task.
     // Run activities
     blink_step(PERIODIC_TASK);
     debug_step(PERIODIC_TASK);
-    /* pv_step(PERIODIC_TASK); */
+    pv_step(PERIODIC_TASK);
     usart2_step(PERIODIC_TASK);
     /* tempsens_main(); */
 
@@ -110,7 +109,7 @@ static void task_200ms(void *pVParameters) // This is a task.
   /* volatile BaseType_t xMissedDeadline; */
 
   while (1) {
-    /* adc1_sensors_step(PERIODIC_TASK); */
+    adc1_sensors_step(PERIODIC_TASK);
     digital_out_step(PERIODIC_TASK);
 
     // Task Schedule
