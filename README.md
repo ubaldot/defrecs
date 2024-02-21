@@ -3,6 +3,16 @@ Also, consider that I am not a software engineering in a strict sense, but I am 
 Finally, at the moment I am 100% focused on STM32 and therefore the Arduino framework is
 left a bit behind, so don't use it.*
 
+Welcome to DEFRECS!
+==================
+DEFRECS stands for DEvelopment Framework for Real-time Embedded Control Systems
+
+It is nothing more than a software architecture and a bunch of coding guides to
+simplify and scale the development of real-time control systems.
+The architecture is an application of *component-based software engineering*
+where the components communicate with a *publish/subscribe* model.
+
+
 # Motivation
 Concurrency program is tough. Bugs are just behind the corner and in many cases it can be hard to detect them.
 This issue is even more emphasized for those who are not strict software developers,
@@ -20,8 +30,10 @@ Platformio.
 
 *Optional*:
 
-2. `compiledb` - for creating `compile_commands.json` files in case you use
+3. `compiledb` - for creating `compile_commands.json` files in case you use
    some LSP like `clangd`.
+4. [State Smith](https://github.com/statesmith/statesmith) for generating
+   code for finite state-machines.
 
 
 # Architecture
