@@ -43,10 +43,6 @@
 
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN PV */
-/* SemaphoreHandle_t xSemaphoreBuiltinButton; */
-/* SemaphoreHandle_t xSemaphoreUsart2Rx; */
-/* SemaphoreHandle_t xSemaphoreADC_EOC; */
-
 extern TaskHandle_t xTaskBuitinButtonDeferred;
 extern TaskHandle_t xTaskUsart2RxDeferred;
 extern TaskHandle_t xTaskHandle_200ms;

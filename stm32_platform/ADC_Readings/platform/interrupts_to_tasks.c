@@ -56,12 +56,12 @@ TaskHandle_t xTaskUsart2RxDeferred;
 void interrupts_to_tasks_init() {
   /* Transmit upon button press */
   xTaskCreate(BuiltinButtonDeferred, "BuiltinButtonPressed", 128, NULL,
-              configLIBRARY_MAX_SYSCALL_INTERRUPT_PRIORITY,
+              configMAX_PRIORITIES - 1,
               &xTaskBuitinButtonDeferred);
 
   /* Receive data on usart2*/
   xTaskCreate(Usart2RxDeferred, "Usart2Rx", 128, NULL,
-              configLIBRARY_MAX_SYSCALL_INTERRUPT_PRIORITY,
+              configMAX_PRIORITIES - 1,
               &xTaskUsart2RxDeferred);
 }
 
