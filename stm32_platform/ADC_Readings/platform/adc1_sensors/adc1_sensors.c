@@ -24,9 +24,11 @@ static SemaphoreHandle_t mutex_adc1_pv_pin_voltage;
 
 // ADC End Of Conversion (EOC)
 extern SemaphoreHandle_t xSemaphoreADC_EOC;
-uint8_t ADC1_RESOLUTION_BITS;
+
+// Double check the numbers with hadc1.Init values!!!
+const uint8_t ADC1_RESOLUTION_BITS = 10;
 const uint8_t NUM_CHANNELS = 2;
-float ADC1_PINS_VOLTAGE;
+const float ADC1_PINS_VOLTAGE = 3300.0F;
 float ADC1_RESOLUTION;
 
 // Publish
@@ -49,28 +51,12 @@ void subscribe_adc1_pv_pin_voltage(float *pVoltage) {
 }
 
 void adc1_sensors_init() {
-  switch (hadc1.Init.Resolution) {
-  case ADC_RESOLUTION_6B:
-    ADC1_RESOLUTION_BITS = 6;
-    break;
-  case ADC_RESOLUTION_8B:
-    ADC1_RESOLUTION_BITS = 8;
-    break;
-  case ADC_RESOLUTION_10B:
-    ADC1_RESOLUTION_BITS = 10;
-    break;
-  case ADC_RESOLUTION_12B:
-    ADC1_RESOLUTION_BITS = 12;
-    break;
-  }
-
-  /* NUM_CHANNELS = hadc1.Init.NbrOfConversion; */
-  ADC1_PINS_VOLTAGE = 3300.0F; // [mV]
   ADC1_RESOLUTION =
       ADC1_PINS_VOLTAGE / (float)(1 << ADC1_RESOLUTION_BITS); // [mV]
 
   // Dummy init value, useful for debugging
   adc1_pv_pin_voltage = 99.9F;
+
   // A bit weird to create it here but there is no better place.
   xSemaphoreADC_EOC = xSemaphoreCreateBinary();
   mutex_adc1_pv_pin_voltage = xSemaphoreCreateMutex();
