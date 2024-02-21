@@ -50,7 +50,6 @@ static void publish_adc1_tempsens_pin_voltage(const float *pVoltage) {
 
 // subscribe
 void subscribe_adc1_pv_pin_voltage(float *pVoltage) {
-  // Returns a copy of the output
   if (xSemaphoreTake(mutex_adc1_pv_pin_voltage, 100 / portTICK_PERIOD_MS) ==
       pdTRUE) {
     memcpy(pVoltage, &adc1_pv_pin_voltage, sizeof(*pVoltage));

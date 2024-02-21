@@ -58,7 +58,7 @@ static void components_init() {
   blink_init();
   debug_init();
   pv_init();
-  /* tempsens_init(); */
+  tempsens_init();
 }
 
 void run_application() {
@@ -92,7 +92,7 @@ static void task_1000ms(void *pVParameters) // This is a task.
     debug_step(PERIODIC_TASK);
     pv_step(PERIODIC_TASK);
     usart2_step(PERIODIC_TASK);
-    /* tempsens_main(); */
+    tempsens_step(PERIODIC_TASK);
 
     // Task Schedule
     // TODO: Use xTaskDelayUntil, available from new FreeRTOS.

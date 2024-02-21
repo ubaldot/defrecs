@@ -50,6 +50,7 @@ void usart2_step(enum WhoIsCalling caller) {
   uint8_t led_state;
   subscribe_blink_led_state(&led_state);
   float pv_voltage;
+  float tempsens_C;
 
   char msg[MSG_LENGTH_MAX];
 
@@ -66,8 +67,11 @@ void usart2_step(enum WhoIsCalling caller) {
     break;
     /* What starts with IRQ are callbacks! */
   case IRQ_BUILTIN_BUTTON:
+    subscribe_tempsens_value(&tempsens_C);
 
-    (void)snprintf(msg, MSG_LENGTH_MAX, "Button: %s \n", "pressed!");
+    char tempsens_C_str[5];
+    (void)ftoa(tempsens_C, tempsens_C_str, 2);
+    (void)snprintf(msg, MSG_LENGTH_MAX, "Temperature: %s C \n", tempsens_C_str);
 
     transmit(msg);
     break;

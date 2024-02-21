@@ -5,6 +5,7 @@
 // PUBLISHED SIGNALS: tempsens_value
 //===----------------------------------------------------------------------===//
 
+#include "adc1_sensors/adc1_sensors.h"
 #include <FreeRTOS.h>
 #include <semphr.h>
 #include <string.h>
@@ -39,14 +40,11 @@ void tempsens_init(void) {
 }
 
 // ------- Actual function starts here! -------------
-void tempsens_step() {
+void tempsens_step(enum WhoIsCalling caller) {
+    (void)caller;
   // Get a copy of the output
-  /* float voltage_reading; */
-  /* subscribe_tempsens_value(&voltage_reading); */
-
-  // Read pin voltage
-  float pin_voltage = 0.0F;
-  pinin_pv(&pin_voltage);
+  float pin_voltage = 99.9F;
+  subscribe_adc1_tempsens_pin_voltage(&pin_voltage);
 
   // V -> Celsius, [0 5] -> [0 50] linearly.
   float temperature_measured;
