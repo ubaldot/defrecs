@@ -70,7 +70,7 @@ void adc1_sensors_init() {
       ADC1_PINS_VOLTAGE / (float)(1 << ADC1_RESOLUTION_BITS); // [mV]
 
   // Dummy init value, useful for debugging
-  adc1_pv_pin_voltage = 99.9;
+  adc1_pv_pin_voltage = 99.9F;
   // A bit weird to create it here but there is no better place.
   xSemaphoreADC_EOC = xSemaphoreCreateBinary();
   mutex_adc1_pv_pin_voltage = xSemaphoreCreateMutex();
@@ -79,7 +79,7 @@ void adc1_sensors_init() {
 void adc1_sensors_step(enum WhoIsCalling caller) {
   (void)caller;
   /* Return the pin voltage in the interval [0, PIN_VOLTAGE] [V]*/
-  uint32_t analog_read[NUM_CHANNELS]; // integer value
+  uint32_t analog_read[NUM_CHANNELS];
 
   HAL_ADC_Start_DMA(&hadc1, analog_read, NUM_CHANNELS);
   xSemaphoreTake(xSemaphoreADC_EOC, portMAX_DELAY); // Wait for ADC
