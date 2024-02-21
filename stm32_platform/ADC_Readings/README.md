@@ -2,15 +2,19 @@
 Also, consider that I am not a software engineering in a strict sense, but I
 am a control system engineer.*
 
-# Requirements 1. The toolchain of the platform that you are using, 2.
-pyserial.
+# Requirements
+
+1. The toolchain of the platform that you are using,
+2.  pyserial.
 
 *Optional*:
 
 2. compiledb - for creating compile\_commands.json files.
 
 
-# Motivation Concurrency program is tough. Bugs are just behind the corner and
+# Motivation
+
+Concurrency program is tough. Bugs are just behind the corner and
 having a bugs free software is practically impossible.  However, one may try
 to prevent the occurrence of such bugs by adhering to some coding rules and/or
 by following some standards.
@@ -18,7 +22,9 @@ by following some standards.
 Here, we aim at defining a software architecture that can help in preventing
 bugs when concurrency programming is employed.
 
-# Architecture The architecture is depicted below.  The idea is to abstract
+# Architecture
+
+The architecture is depicted below.  The idea is to abstract
 the application to allow its re-utilization on different platforms with as
 less pain as possible.  The OS used is FreeRTOS.
 
@@ -26,7 +32,9 @@ less pain as possible.  The OS used is FreeRTOS.
 
 The description of each layer is top-down.
 
-## Application The application is made by interconnected components that shall
+## Application
+
+The application is made by interconnected components that shall
 be platform independent. That is, you can use the same components no matter is
 you are using a STM32 or a Arduino board.  The same applies for the *utils*
 library.
@@ -52,7 +60,7 @@ which is our `f`, 4. An optional output function that maps the state `x` to
 the output `y`.  5. *publish_/subscribe_* methods to publish/subscribe the
 outputs and inputs `y` and `u`.
 
-That is, a component is *encapsulated in a file and communicate with the
+That is, a component is *encapsulated* in a file and communicate with the
 external world with its publish and subscribe functions.
 
 > Example: Say that our application wants component A to send some characters
@@ -72,7 +80,9 @@ Finally, each component shall have an associated prefix to help the navigation
 in the code-base.  In-fact, if we know the prefix of a subscribed signal, then
 we also know its publisher. Handy!
 
-### Components execution: Components' input, state and output `u` `x` and `y`
+### Components execution
+
+Components' input, state and output `u` `x` and `y`
 can be updated periodically or in an event-based fashion.  Periodic execution
 is performed through periodic tasks, whereas event-based execution is achieved
 by interrupts that unlock some aperiodic task.
@@ -89,7 +99,9 @@ Q: Among all the possible way of connecting blocks, is there any specific
 guidelines? YES! See below.
 
 
-### Application setup Once you have connected your components, then you want
+### Application setup
+
+Once you have connected your components, then you want
 to schedule them.  That happens here.
 
 Here you define your periodically executed tasks.  Each tasks has a list of
@@ -97,11 +109,20 @@ component that will be executed with the same period.  But before starting to
 execute the components, we must first initialize them.  This also happens
 here.
 
-## Operating system The chosen operating system is FreeRTOS.  We use the one
+## Operating system
+
+The chosen operating system is FreeRTOS.  We use the one
 shipped with CubeMX and ArduinoFreeRTOS.  It takes a bit of application
 because components actually use freertos API.
 
 ## Platform
+
+In the `platform` folder there are stored all the components that make calls to the HAL layer.
+If you are changing platform you have to only have to adjust the files here,
+leaving the application untouched.
+
+As in the application layer, the platform components have states, inputs,
+outputs, an init function, a step function, etc.
 
 ### Interrupts
 
@@ -110,44 +131,25 @@ they don't just execute arbitrary code by preempting OS operations and by
 executing some arbitrary code, but
 instead they unlock some task by releasing a semaphore and then they
 ask for a context switch between the current and the unlocked task. This means
-that interrupts are deferred to tasks.
+that interrupts are always deferred to tasks. In this way, we only have to
+deal with tasks concurrency and not with a mixture of interrupts/tasks
+concurrency that can be very nasty!
+
 
 The identified use-cases for interrupts are two:
 
   1. Unpredictable event. Such an event could be a button connected to a GPIO
-  pin that is pressed. In that case, the callback function publishes a signal
-  and immediately executes the components subscribed to that signal object.
+  pin that is pressed. In that case, the callback function immediately calls a
+  component with a caller argument. The component is immediately executed.
   2. Predictable event. A periodic task is blocked waiting for an event that
   is happening soon. Such an event could be the end-of-conversion (EOC) of
-  an ADC. The interrupt callback function in this case just release a
+  an ADC. The interrupt callback function just release a
   semaphore, as a task connected to it is already running.
 
-ISR and Callbacks for STM32 are defined in Core/Src/stm32fxx_it.c (so you must
-modify that file), whereas for Arduino I don't know... yet.  The actual
-implementation is in interrupts\_to\_tasks.c.
-
-
-Given that a ISR always end up with a callback function, all the interrupt
-handling code is implemented in a callback function.  For STM32 callback
-functions are implemented in Src/Core/stm32fxx_it.h whereas
-
-
-However, in their callbacks functions, they are but instead they always wake
-up some task that will execute some code code.  In this way, we only have to
-deal with tasks concurrency and not with a mixture of interrupts/tasks
-concurrency that can be very nasty!
-
-Hence, ISR always have the same structure and they generally call a Callback
-function. Inside the callback, you wake up a task that will implement the
-actual functionality. More precisely, the callback function will perform the
-following operations:
-
-1. Release a semaphore to wake up a task 2. Ask for a context switch in case
-the woken up task has higher priority than the current task.
 
 ISR and Callbacks for STM32 are defined in Core/Src/stm32fxx_it.c (so you must
-modify that file), whereas for Arduino I don't know... yet.  To keep things
-separated, the deferred tasks are defined in the interrupts\_to\_task.c file.
+modify that file), whereas for Arduino I don't know... yet.
+The functions associated to the deferred task are defined in the interrupts\_to\_task.c file.
 
 ## Hardware
 

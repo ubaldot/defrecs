@@ -3,6 +3,16 @@ Also, consider that I am not a software engineering in a strict sense, but I am 
 Finally, at the moment I am 100% focused on STM32 and therefore the Arduino framework is
 left a bit behind, so don't use it.*
 
+Welcome to DEFRECS!
+==================
+DEFRECS stands for DEvelopment Framework for Real-time Embedded Control Systems and
+it is nothing more than a software architecture and a bunch of coding guides to
+simplify and scale the development of real-time control systems.
+The architecture is an application of *component-based software engineering*
+where the components communicate with a *publish/subscribe* model.
+The chosen language is C.
+
+
 # Motivation
 Concurrency program is tough. Bugs are just behind the corner and in many cases it can be hard to detect them.
 This issue is even more emphasized for those who are not strict software developers,
@@ -20,8 +30,10 @@ Platformio.
 
 *Optional*:
 
-2. `compiledb` - for creating `compile\_commands.json` files in case you use
+3. `compiledb` - for creating `compile_commands.json` files in case you use
    some LSP like `clangd`.
+4. [State Smith](https://github.com/statesmith/statesmith) for generating
+   code for finite state-machines.
 
 
 # Architecture
@@ -44,7 +56,7 @@ The OS used is FreeRTOS.
 
 
 ## Application Layer
-The application is made by interconnected components stored in the `./application`
+The application is made by interconnected components stored in the `application`
 folder.
 A component could be a PI controller, a Kalman filter, a sensor reader, a
 finite-state machine and so on and so forth.
@@ -65,7 +77,11 @@ y[k] = h(x[k], u[k]).
 ```
 
 By traducing this boring math in Software Engineering language, and by
+<<<<<<< HEAD
 considering C as language reference, a component is nothing more than a `.h/.c` pair that contains
+=======
+considering C as language reference, a component is nothing more than a `.h,.c` pair that contains
+>>>>>>> task_notify
 the following:
 1. *Static variables* representing the component state `x`,
 2. *Init* function: to initialize the internal state, that is, our `x0`,
@@ -133,7 +149,7 @@ guidelines? YES! See below.
 
 We have connected our components. The data flow is clear. Next, we have to
 schedule our components.
-In the *application_setup.c* file you do the following:
+In the `application_setup.c` file you do the following:
 
 1. Initalize the platform and the components,
 2. Define the periodic tasks (i.e. you set sampling period, allocated stack
@@ -144,12 +160,15 @@ In the *application_setup.c* file you do the following:
 ## Operating System Layer
 The chosen operating system is FreeRTOS.
 We use the one shipped with CubeMX and ArduinoFreeRTOS.
-It takes a bit of application because components actually use freertos API.
+It takes a bit of application because components actually use FreeRTOS API.
 
 ## Platform Layer
 
-### pinin.c and pinout.c.
+In the `platform` folder there are stored all the components that make calls to the HAL layer.
+If you are changing platform you have to only have to adjust the files here,
+leaving the application untouched.
 
+<<<<<<< HEAD
 To keep a minimum degree of flexibility among different hardware, the application software won't
 directly call HAL functions of a specific platform, but instead it uses this
 abstraction.
@@ -159,11 +178,14 @@ e.g. *HAL_GPIO_ReadPin(...)* in STM32 and *digitalRead(...)* in Arduino.
 However, the application shall not know about the underlying platform. A
 component just calls *pinin(&led\_state)*.
 The same for the pinout.
+=======
+As in the application layer, the platform components have states, inputs,
+outputs, an init function, a step function, etc.
+>>>>>>> task_notify
 
-A more elegant solution would be to use function pointers depending on the
-platform used. That would be nice to investigate as future work.
-At the moment we use just different files.
+### Interrupts
 
+<<<<<<< HEAD
 Note that although the pinin and pinout could be modeled as components themselves, at the
 moment we don't see any major benefit is doing so as they model the
 physical boundary of the MCU. Also, to avoid too much boilerplate, we decided
@@ -199,14 +221,22 @@ Note that ADC reading cannot be preempted.
 </div>
 
 ### interrupts\_to\_tasks.c
+=======
+>>>>>>> task_notify
 Interrupts are used to perform some action in response to some event. Events can be
 somehow "predictable" or "unpredictable".
 An example of "predictable" event
 is the end-of-conversion (EOC) of an ADC when ADC readings are requested by a
 periodically scheduled task. In nominal conditions, we know more or less when
+<<<<<<< HEAD
 the EOC is going to happen, which is about every T seconds, being T the period of
 the task. Another example of predictable event is the event corresponding to a Timer that fires.
 An example of unpredictable event is the pressure of a button connected to a
+=======
+the EOC is going to happen, which is about every *T* seconds, being *T* the period of
+the task. Another example of predictable event is the event corresponding to a Timer that fires.
+An example of "unpredictable" event is the pressure of a button connected to a
+>>>>>>> task_notify
 GPIO pin. We have absolutely no idea when such a button is going to be pressed.
 
 In both cases, interrupt service routines (ISRs) don't preempt the OS by executing some
@@ -232,6 +262,7 @@ However, the difference relies in the following:
    semaphore to unlock the periodic task waiting for that event to happen and
    nothing more.
 2. *Unpredictable* events. In this case the callback wakes up a specific task
+<<<<<<< HEAD
    that performs the following actions:
     1. Publish few signals,
     2. Call all the components subscribed to such signals.
@@ -249,6 +280,17 @@ are tightly coupled to hardware so it appears very difficult if not impossible
 to have a flexible solution for them. Hence, when switching platform, more
 work is required to accommodate interrupts.
 
+=======
+   that calls the components with a specific caller argument.
+
+ISR and Callbacks for STM32 are defined in `Core/Src/stm32f4xx_it.c` (so you must modify
+that file), whereas for Arduino I don't know... yet.
+The functions implementing the deferred tasks for
+unpredictable events are defined in the `interrupts\_to\_task.c` file.
+When dealing with HAL functions that trigger interrupts, check these three
+files: the function that calls the HAL function, the `Core/Src/stm32f4xx_it.c`
+and the `interrupts_to_tasks.c`.
+>>>>>>> task_notify
 
 ## Hardware Layer
 
@@ -267,3 +309,7 @@ At the bottom level we have the hardware. That can be whatever.
 
 1. cmake and/or function pointers to deal with cross-platform.
 2. HAL and OS Error handling.
+<<<<<<< HEAD
+=======
+3. Doxygen
+>>>>>>> task_notify

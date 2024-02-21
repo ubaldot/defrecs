@@ -10,15 +10,16 @@
 //===----------------------------------------------------------------------===//
 #include "application_setup.h"
 #include "FreeRTOS.h"
+#include "adc1_sensors/adc1_sensors.h"
 #include "blink/blink.h"
 #include "debug/debug.h"
+#include "digital_out/digital_out.h"
 #include "gpio.h"
-#include "pinin.h"
 #include "interrupts_to_tasks.h"
 #include "photovoltaic/pv.h"
-#include "serial_port/serial_port.h"
 #include "stm32f4xx_it.h"
 #include "temperature_sensor/tempsens_LM35.h"
+#include "usart2/usart2.h"
 #include <portmacro.h>
 #include <task.h>
 
@@ -32,14 +33,14 @@ struct TaskParams {
 // Task 1000ms
 TaskHandle_t xTaskHandle_1000ms;
 const char NAME_1000MS[] = "Task_1000ms";
-const size_t STACK_SIZE_1000MS = 256;
+const size_t STACK_SIZE_1000MS = 128;
 const uint8_t PRIORITY_1000MS = 2;
 const struct TaskParams TASK_PARAMS_1000MS = {.PERIOD = 1000};
 
 // Task 200ms
 TaskHandle_t xTaskHandle_200ms;
 const char NAME_200MS[] = "Task_200ms";
-const size_t STACK_SIZE_200MS = 256;
+const size_t STACK_SIZE_200MS = 128;
 const uint8_t PRIORITY_200MS = 2;
 const struct TaskParams TASK_PARAMS_200MS = {.PERIOD = 200};
 
@@ -50,12 +51,14 @@ static void task_1000ms(void * /*pVParameters*/);
 
 static void components_init() {
   // List all the components used. Initializes queues, mutex, etc.
-  pinin_init();
+  adc1_sensors_init();
+  digital_out_init();
+  usart2_init();
+
   blink_init();
   debug_init();
-  serial_port_init();
   pv_init();
-  /* tempsens_init(); */
+  tempsens_init();
 }
 
 void run_application() {
@@ -87,8 +90,9 @@ static void task_1000ms(void *pVParameters) // This is a task.
     // Run activities
     blink_step(PERIODIC_TASK);
     debug_step(PERIODIC_TASK);
-    serial_port_step(PERIODIC_TASK);
-    /* tempsens_main(); */
+    pv_step(PERIODIC_TASK);
+    usart2_step(PERIODIC_TASK);
+    tempsens_step(PERIODIC_TASK);
 
     // Task Schedule
     // TODO: Use xTaskDelayUntil, available from new FreeRTOS.
@@ -105,8 +109,8 @@ static void task_200ms(void *pVParameters) // This is a task.
   /* volatile BaseType_t xMissedDeadline; */
 
   while (1) {
-    pv_step(PERIODIC_TASK);
-    debug_step(PERIODIC_TASK);
+    adc1_sensors_step(PERIODIC_TASK);
+    digital_out_step(PERIODIC_TASK);
 
     // Task Schedule
     /* xMissedDeadline = */
