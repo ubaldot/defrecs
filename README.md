@@ -5,12 +5,12 @@ left a bit behind, so don't use it.*
 
 Welcome to DEFRECS!
 ==================
-DEFRECS stands for DEvelopment Framework for Real-time Embedded Control Systems
-
-It is nothing more than a software architecture and a bunch of coding guides to
+DEFRECS stands for DEvelopment Framework for Real-time Embedded Control Systems and
+it is nothing more than a software architecture and a bunch of coding guides to
 simplify and scale the development of real-time control systems.
 The architecture is an application of *component-based software engineering*
 where the components communicate with a *publish/subscribe* model.
+The chosen language is C.
 
 
 # Motivation
