@@ -14,13 +14,10 @@
 #include "blink/blink.h"
 #include "debug/debug.h"
 #include "digital_out/digital_out.h"
-#include "gpio.h"
 #include "interrupts_to_tasks.h"
 #include "photovoltaic/pv.h"
-#include "stm32f4xx_it.h"
 #include "temperature_sensor/tempsens_LM35.h"
 #include "usart2/usart2.h"
-#include <portmacro.h>
 #include <task.h>
 
 #define DEBUG 1

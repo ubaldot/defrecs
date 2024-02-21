@@ -44,6 +44,7 @@
 
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN PV */
+extern TaskHandle_t xTaskBuitinButtonDeferred;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -61,8 +62,6 @@ extern UART_HandleTypeDef huart2;
 extern TIM_HandleTypeDef htim1;
 
 /* USER CODE BEGIN EV */
-extern SemaphoreHandle_t xSemaphoreBuiltinButton;
-extern SemaphoreHandle_t xSemaphoreUsart2Rx;
 /* USER CODE END EV */
 
 /******************************************************************************/
@@ -189,26 +188,15 @@ void EXTI15_10_IRQHandler(void) {
 }
 
 /* USER CODE BEGIN 1 */
-void HAL_UART_RxCpltCallback(
-    UART_HandleTypeDef *pHuart) { /* Set transmission flag: transfer complete*/
-    // This is called every time "n" bytes are received when
-    // HAL_UART_Receive_IT(...,..., n) is used. In this example n = 1, so this
-    // callback is called for every byte received.
-
-  (void)pHuart;
-  // Signal the semaphore to notify the task of data reception
-  BaseType_t xHigherPriorityTaskWoken = pdFALSE;
-  xSemaphoreGiveFromISR(xSemaphoreUsart2Rx, &xHigherPriorityTaskWoken);
-  portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
-}
-
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
   if (GPIO_Pin == B1_Pin) {
     BaseType_t xHigherPriorityTaskWoken = pdFALSE;
-    xSemaphoreGiveFromISR(xSemaphoreBuiltinButton, &xHigherPriorityTaskWoken);
+    vTaskNotifyGiveFromISR(xTaskBuitinButtonDeferred,
+                           &xHigherPriorityTaskWoken);
     portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
     // Handle EXTI line 13 interrupt
     // This code will be executed when an interrupt occurs on GPIO pin 13
   }
 }
+
 /* USER CODE END 1 */

@@ -19,7 +19,6 @@ TARGET = Hello_World
 # Programmer and compiler paths
 ######################################
 ifeq ($(OS),Windows_NT)
-	SERIAL_PORT = "TBD"
 	ARM_NONE_EABI_PATH = "C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools"
 	GCC_PATH = $(ARM_NONE_EABI_PATH)/bin
 	PROGRAMMER_PATH = "C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.win32_2.1.100.202311100844/tools/bin"
@@ -100,9 +99,12 @@ Core/Src/freertos.c
 
 
 # Ubaldo
-C_SOURCES += application/application_setup.c
-C_SOURCES += $(wildcard platform/src/*.c)
 C_SOURCES += $(wildcard application/**/*.c)
+C_SOURCES += application/application_setup.c
+C_SOURCES += $(wildcard platform/**/*.c)
+C_SOURCES += platform/interrupts_to_tasks.c
+C_SOURCES += $(wildcard utils/*.c)
+
 
 # ASM sources
 ASM_SOURCES =  \
@@ -178,8 +180,9 @@ C_INCLUDES =  \
 C_INCLUDES += -I$(ARM_NONE_EABI_PATH)/arm-none-eabi/include
 C_INCLUDES += -I$(ARM_NONE_EABI_PATH)/arm-none-eabi/include/newlib-nano
 C_INCLUDES += -I$(ARM_NONE_EABI_PATH)/lib/gcc/arm-none-eabi/11.3.1/include
-C_INCLUDES += -Iplatform/inc
+C_INCLUDES += -Iplatform
 C_INCLUDES += -Iapplication
+C_INCLUDES += -Iutils
 
 
 # compile gcc flags
@@ -260,9 +263,6 @@ upload:
 	$(PROGRAMMER) --connect port=SWD mode=UR reset=HWrst -d ./build/$(TARGET).elf 0x08000000  --verify -g
 monitor:
 	pyserial-miniterm $(SERIAL_PORT) 112500
-	# $(PROGRAMMER) --connect port=$(SERIAL_PORT) P=NONE
-	# screen $(SERIAL_PORT) 115200,cs8,-parenb,-cstopb
-# Set default target
 .DEFAULT_GOAL := build_flash
 
 #######################################
