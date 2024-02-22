@@ -231,3 +231,4 @@ At the bottom level we have the hardware. That can be whatever.
 2. HAL and OS Error handling.
 3. Doxygen
 4. Guidelines (naming convention, components - 1 periodic task, etc).
+5. Repo structure
