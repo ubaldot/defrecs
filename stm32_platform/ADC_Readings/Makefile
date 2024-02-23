@@ -105,8 +105,10 @@ Core/Src/dma.c
 
 
 # Ubaldo
+C_SOURCES += $(wildcard application/**/*.c)
 C_SOURCES += application/application_setup.c
-C_SOURCES += $(wildcard platform/src/*.c)
+C_SOURCES += $(wildcard platform/**/*.c)
+C_SOURCES += platform/interrupts_to_tasks.c
 C_SOURCES += $(wildcard utils/*.c)
 
 # ASM sources
