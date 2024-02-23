@@ -9,8 +9,12 @@
 // PUBLISHED SIGNALS: pv_voltage
 //===----------------------------------------------------------------------===//
 
+<<<<<<< HEAD
+#include "pinin.h"
+=======
 #include "adc1_sensors/adc1_sensors.h"
 #include "application_setup.h"
+>>>>>>> task_notify
 #include <FreeRTOS.h>
 #include <semphr.h>
 #include <string.h>
@@ -47,8 +51,12 @@ void pv_step(enum WhoIsCalling caller) {
   (void)caller;
   // INPUT
   // Read pin voltage [V]
+<<<<<<< HEAD
+  pinin_pv(&pin_voltage);
+=======
   float pin_voltage;
   subscribe_adc1_pv_pin_voltage(&pin_voltage);
+>>>>>>> task_notify
 
   // Map V -> V,[0,5] linearly to [0,25]
   // This voltage meter maps [0,5] linearly to [0,25] and convert mV to V.

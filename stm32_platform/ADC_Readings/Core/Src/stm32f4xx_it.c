@@ -43,9 +43,9 @@
 
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN PV */
-SemaphoreHandle_t xSemaphoreBuiltinButton;
-SemaphoreHandle_t xSemaphoreUsart2Rx;
-SemaphoreHandle_t xSemaphoreADC_PV;
+extern TaskHandle_t xTaskBuitinButtonDeferred;
+extern TaskHandle_t xTaskUsart2RxDeferred;
+extern TaskHandle_t xTaskHandle_200ms;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -60,6 +60,7 @@ SemaphoreHandle_t xSemaphoreADC_PV;
 
 /* External variables --------------------------------------------------------*/
 extern DMA_HandleTypeDef hdma_adc1;
+extern ADC_HandleTypeDef hadc1;
 extern UART_HandleTypeDef huart2;
 extern TIM_HandleTypeDef htim1;
 
@@ -164,6 +165,20 @@ void DebugMon_Handler(void)
 /******************************************************************************/
 
 /**
+  * @brief This function handles ADC1, ADC2 and ADC3 interrupts.
+  */
+void ADC_IRQHandler(void)
+{
+  /* USER CODE BEGIN ADC_IRQn 0 */
+
+  /* USER CODE END ADC_IRQn 0 */
+  HAL_ADC_IRQHandler(&hadc1);
+  /* USER CODE BEGIN ADC_IRQn 1 */
+
+  /* USER CODE END ADC_IRQn 1 */
+}
+
+/**
   * @brief This function handles TIM1 update interrupt and TIM10 global interrupt.
   */
 void TIM1_UP_TIM10_IRQHandler(void)
@@ -216,6 +231,9 @@ void DMA2_Stream0_IRQHandler(void)
 }
 
 /* USER CODE BEGIN 1 */
+/*****************************************
+ * Unpredictable events
+ **************************************/
 void HAL_UART_RxCpltCallback(
     UART_HandleTypeDef *pHuart) { /* Set transmission flag: transfer complete*/
   // This is called every time "n" bytes are received when
@@ -225,24 +243,33 @@ void HAL_UART_RxCpltCallback(
   (void)pHuart;
   // Signal the semaphore to notify the task of data reception
   BaseType_t xHigherPriorityTaskWoken = pdFALSE;
-  xSemaphoreGiveFromISR(xSemaphoreUsart2Rx, &xHigherPriorityTaskWoken);
+  /* Send a notification directly to the task to which interrupt processing
+   is being deferred. */
+  vTaskNotifyGiveFromISR(xTaskUsart2RxDeferred, &xHigherPriorityTaskWoken);
   portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
 }
 
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
   if (GPIO_Pin == B1_Pin) {
     BaseType_t xHigherPriorityTaskWoken = pdFALSE;
-    xSemaphoreGiveFromISR(xSemaphoreBuiltinButton, &xHigherPriorityTaskWoken);
+    vTaskNotifyGiveFromISR(xTaskBuitinButtonDeferred,
+                           &xHigherPriorityTaskWoken);
     portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
     // Handle EXTI line 13 interrupt
     // This code will be executed when an interrupt occurs on GPIO pin 13
   }
 }
 
+/*****************************************
+ * Predictable events *
+ *
+ * OBS! If the ADC conversion is performed in another task, then you must
+ * update this! *
+ ****************************************/
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *pHadc) {
   (void)pHadc;
   BaseType_t xHigherPriorityTaskWoken = pdFALSE;
-  xSemaphoreGiveFromISR(xSemaphoreADC_PV, &(xHigherPriorityTaskWoken));
+  vTaskNotifyGiveFromISR(xTaskHandle_200ms, &xHigherPriorityTaskWoken);
   portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
 }
 /* USER CODE END 1 */

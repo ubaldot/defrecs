@@ -2,6 +2,5 @@
 #define APPLICATION_SETUP_H
 
 enum WhoIsCalling { PERIODIC_TASK, IRQ_BUILTIN_BUTTON, IRQ_SERIAL_RX };
-enum HAL_Function_Mode { POLLING, INTERRUPT, DMA };
 
 #endif /* APPLICATION_SETUP_H */

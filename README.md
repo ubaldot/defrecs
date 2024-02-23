@@ -1,7 +1,17 @@
-**Disclaimer**: *this is a work in progress. Everything may change at any time.
+**Disclaimer**: *This is a perpetual work in progress. Everything may change at any time.
 Also, consider that I am not a software engineering in a strict sense, but I am a control system engineer.
 Finally, at the moment I am 100% focused on STM32 and therefore the Arduino framework is
 left a bit behind, so don't use it.*
+
+Welcome to DEFRECS!
+==================
+DEFRECS stands for DEvelopment Framework for Real-time Embedded Control Systems and
+it is nothing more than a software architecture and a bunch of coding guides to
+simplify and scale the development of real-time control systems.
+The architecture is an application of *component-based software engineering*
+where the components communicate with a *publish/subscribe* model.
+The chosen language is C.
+
 
 # Motivation
 Concurrency program is tough. Bugs are just behind the corner and in many cases it can be hard to detect them.
@@ -20,8 +30,10 @@ Platformio.
 
 *Optional*:
 
-2. `compiledb` - for creating `compile\_commands.json` files in case you use
+3. `compiledb` - for creating `compile_commands.json` files in case you use
    some LSP like `clangd`.
+4. [State Smith](https://github.com/statesmith/statesmith) for generating
+   code for finite state-machines.
 
 
 # Architecture
@@ -44,7 +56,7 @@ The OS used is FreeRTOS.
 
 
 ## Application Layer
-The application is made by interconnected components stored in the `./application`
+The application is made by interconnected components stored in the `application`
 folder.
 A component could be a PI controller, a Kalman filter, a sensor reader, a
 finite-state machine and so on and so forth.
@@ -65,13 +77,14 @@ y[k] = h(x[k], u[k]).
 ```
 
 By traducing this boring math in Software Engineering language, and by
-considering C as language reference, a component is nothing more than a *.h/.c* pair that contains
+considering C as language reference, a component is nothing more than a `.h,.c` pair that contains
 the following:
-1. Bunch of  global *static variables* representing the component state `x`,
+1. *Static variables* representing the component state `x`,
 2. *Init* function: to initialize the internal state, that is, our `x0`,
 3. *Step* function: a function that update the internal state and produces the outputs, which is our `f`,
-4. An optional output function that maps the state `x` to the output `y`.
-5. *publish_/subscribe_* methods to publish/subscribe the outputs and inputs `y` and `u`.
+4. *Output function* that maps the state `x` to the output `y`. This is useful
+   when the output is not the same as the state.
+5. *publish_/subscribe_* functions to publish/subscribe the outputs and inputs `y` and `u`.
 
 That is, a component is *encapsulated* in a file and communicate with the
 external world with its *publish* and *subscribe* functions.
@@ -119,7 +132,7 @@ but we may want it to behave differently in response to a sudden event, e.g. whe
 
 However, given that the component can be called periodically and in response to an event,
 both the subscribe and publish functions are always protected by a mutex to avoid race
-conditions
+conditions.
 
 Once we have connected your selected components through their publish and subscribe functions, it is time to run them.
 That is the topic of the next section.
@@ -128,11 +141,11 @@ Q: Among all the possible way of connecting blocks, is there any specific
 guidelines? YES! See below.
 
 
-### application_setup.c
+### application\_setup.c
 
 We have connected our components. The data flow is clear. Next, we have to
 schedule our components.
-In the *application_setup.c* file you do the following:
+In the `application_setup.c` file you do the following:
 
 1. Initalize the platform and the components,
 2. Define the periodic tasks (i.e. you set sampling period, allocated stack
@@ -143,67 +156,30 @@ In the *application_setup.c* file you do the following:
 ## Operating System Layer
 The chosen operating system is FreeRTOS.
 We use the one shipped with CubeMX and ArduinoFreeRTOS.
-It takes a bit of application because components actually use freertos API.
+It takes a bit of application because components actually use FreeRTOS API.
 
 ## Platform Layer
 
-### pinin.c and pinout.c.
+In the `platform` folder there are stored all the components that make calls to the HAL layer.
+If you are changing platform you have to only have to adjust the files here,
+leaving the application untouched.
 
-To keep a minimum degree of flexibility among different hardware, the application software won't
-directly call HAL functions of a specific platform, but instead it uses this
-abstraction. For example, *pinin(&led\_state)* calls
-e.g. *HAL_GPIO_ReadPin(...)* in STM32 and *digitalRead(...)* in Arduino.
-However, the application shall not know about the underlying platform. A
-component just calls *pinin(&led\_state)*.
-The same for the pinout.
+As in the application layer, the platform components have states, inputs,
+outputs, an init function, a step function, etc.
 
-A more elegant solution would be to use function pointers depending on the
-platform used. That would be nice to investigate as future work.
-At the moment we use just different files.
+### Interrupts
 
-Note that although the pinin and pinout could be modeled as components themselves, at the
-moment I don't see any major benefit is doing so as they model the
-physical boundary of the MCU. Also, to avoid too much boilerplate, I decided
-to keep the implementation as is.
-A pinin function simply calls a HAL function that will read some raw data.
-Then, the component that called that pinin function converts such a raw data into
-meaningful information.
-
-However, if more than one component may wish to read/write from/to some data
-connected to the same pin, then race conditions may occur.
-That shall be handled at the platform level by using e.g. HAL blocking
-functions or by blocking the task who scheduled the
-ADC reading until some flag is set to high.
-An example is the ADC in the considered STM32 framework.
-In this case either you use a blocking function (polling from ADC) or you
-block the task who scheduled the ADC reading until a EOC flag is released.
-Note that ADC reading cannot be preempted.
-
-<!-- ![Pinin and pinout](pinin_pinout.png) -->
-
-<div align="center">
-  <img src="./pinin_pinout.png" alt="Image Alt Text" style="width: 80%;"/>
-  <p><em>Communication with the platform layer.
-<br>
-  The components make calls to
-  generic functions to read/write data from/to the hardware layer.
-  In this picture such generic functions are mapped to the STM32 HAL.
-  In this way, any change in the underlying hardware should not affect the application.
-  </em></p>
-</div>
-
-### interrupts_to_tasks.c
 Interrupts are used to perform some action in response to some event. Events can be
 somehow "predictable" or "unpredictable".
 An example of "predictable" event
 is the end-of-conversion (EOC) of an ADC when ADC readings are requested by a
 periodically scheduled task. In nominal conditions, we know more or less when
-the EOC is going to happen, which is about every T seconds, being T the period of
-the task. Another example is the event corresponding to a Timer that fires.
-An example of unpredictable event is the pressure of a button connected to a
+the EOC is going to happen, which is about every *T* seconds, being *T* the period of
+the task. Another example of predictable event is the event corresponding to a Timer that fires.
+An example of "unpredictable" event is the pressure of a button connected to a
 GPIO pin. We have absolutely no idea when such a button is going to be pressed.
 
-In both cases, interrupt service routines (ISR) don't preempt the OS by executing some
+In both cases, interrupt service routines (ISRs) don't preempt the OS by executing some
 arbitrary code, but they are gentle in the sense that they
 wake up some task that will in turn execute some code code.
 We say that interrupts *defer* functionality to tasks.
@@ -219,27 +195,22 @@ perform the following operations:
 
 However, the difference relies in the following:
 
-1. Predictable events assume that a periodic task is already running and it gets
+1. *Predictable* events assume that a periodic task is already running and it gets
    blocked while waiting for an event that will happen soon (an ADC reading
    to be
    completed, a Timer that fires, etc.). In this case the callback just release a
    semaphore to unlock the periodic task waiting for that event to happen and
    nothing more.
-2. Unpredictable events. In this case the callback wakes up a specific task
-   that performs the following actions:
-    1. Publish few signals,
-    2. Call all the components subscribed to such signals.
+2. *Unpredictable* events. In this case the callback wakes up a specific task
+   that calls the components with a specific caller argument.
 
-ISR and Callbacks for STM32 are defined in Core/Src/stm32fxx_it.c (so you must modify
+ISR and Callbacks for STM32 are defined in `Core/Src/stm32f4xx_it.c` (so you must modify
 that file), whereas for Arduino I don't know... yet.
-To keep things separated, the functions implementing the deferred tasks for
-unpredictable events are defined in the interrupts\_to\_task.c file.
-
-Differently from pinin and pinout functions that we discussed above, interrupt
-are tightly coupled to hardware so it appears very difficult if not impossible
-to have a flexible solution for them. Hence, when switching platform, more
-work is required to accommodate interrupts.
-
+The functions implementing the deferred tasks for
+unpredictable events are defined in the `interrupts\_to\_task.c` file.
+When dealing with HAL functions that trigger interrupts, check these three
+files: the function that calls the HAL function, the `Core/Src/stm32f4xx_it.c`
+and the `interrupts_to_tasks.c`.
 
 ## Hardware Layer
 
@@ -253,3 +224,12 @@ ISR are always the same
 subscribe methods return copies of signals' realizations.
 
 At the bottom level we have the hardware. That can be whatever.
+
+## TODO:
+
+1. cmake and/or function pointers to deal with cross-platform.
+2. HAL and OS Error handling.
+3. Doxygen
+4. Guidelines (naming convention, components - 1 periodic task, etc).
+5. Repo structure
+6. Components vs functions

@@ -17,7 +17,6 @@
 
 /* #include "application_setup.h" */
 #include "application_setup.h"
-#include "pinout.h"
 #include <FreeRTOS.h>
 #include <semphr.h>
 #include <string.h>
@@ -52,40 +51,13 @@ void blink_init(void) {
 // ------- Actual function starts here! -------------
 void blink_step(enum WhoIsCalling caller) {
   (void)caller;
-  // send something every MAX_COUNT*TASK_PERIOD seconds.
-  static uint8_t led_state = 1;
-  if (led_state == 0) {
-    led_state = 1;
-  } else {
-    led_state = 0;
-  }
-  /* static uint32_t stocazzo = 69; */
-  /* stocazzo++; */
-
-  /* uint32_t stafregna = 0; */
-  /* stafregna++; */
+  // We use a local led_state to avoid race condition.
+  // In this way each task calling blink_step will have its own
+  // local copy of led_state in the stack memory, but the publishing operation
+  // is protected by a mutex.
+  uint8_t led_state;
+  led_state = blink_led_state ? 0 : 1;
 
   // OUTPUT
   publish_blink_led_state(&led_state);
-  pinout_builtin_led(led_state);
 }
-
-// ---------- Interrupt --------------------------
-/* void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) { */
-/*   uint8_t led_state; */
-/*   subscribe_blink_led_state(&led_state); */
-/*   if (led_state == 0) { */
-/*     led_state = 1; */
-/*   } else { */
-/*     led_state = 0; */
-/*   } */
-/*   /1* static uint32_t stocazzo = 69; *1/ */
-/*   /1* stocazzo++; *1/ */
-
-/*   /1* uint32_t stafregna = 0; *1/ */
-/*   /1* stafregna++; *1/ */
-
-/*   // OUTPUT */
-/*   publish_blink_led_state(&led_state); */
-/*   pinout_builtin_led(led_state); */
-/* } */

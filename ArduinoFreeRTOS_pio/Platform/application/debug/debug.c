@@ -14,6 +14,7 @@
 extern TaskHandle_t xTaskHandle_200ms;
 extern TaskHandle_t xTaskHandle_1000ms;
 extern TaskHandle_t xTaskBuitinButtonDeferred;
+extern TaskHandle_t xTaskUsart2RxDeferred;
 
 // Init
 void debug_init(void) {}
@@ -44,6 +45,8 @@ void debug_step(enum WhoIsCalling caller) {
   xTaskBuitinButtonDeferred_watermark =
       uxTaskGetStackHighWaterMark(xTaskBuitinButtonDeferred);
   volatile size_t xTaskUsart2RxDeferred_watermark;
+  xTaskUsart2RxDeferred_watermark =
+      uxTaskGetStackHighWaterMark(xTaskUsart2RxDeferred);
 
   NOOP;
   /* volatile size_t task_200ms_watermark; */
