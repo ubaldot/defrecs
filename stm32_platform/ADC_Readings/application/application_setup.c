@@ -16,7 +16,7 @@
 #include "digital_out/digital_out.h"
 #include "interrupts_to_tasks.h"
 #include "photovoltaic/pv.h"
-#include "temperature_sensor/tempsens_LM35.h"
+#include "temperature_sensor/tempsens_LM335.h"
 #include "usart2/usart2.h"
 #include <task.h>
 

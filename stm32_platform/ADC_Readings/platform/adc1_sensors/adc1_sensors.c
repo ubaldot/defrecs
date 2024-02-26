@@ -89,11 +89,10 @@ void adc1_sensors_step(enum WhoIsCalling caller) {
   HAL_ADC_Stop_DMA(&hadc1);
 
   // Process and publish
-  float pv_pin_voltage;
-  pv_pin_voltage = ADC1_RESOLUTION * (float)analog_read[0] / 1000.0F;
-  publish_adc1_pv_pin_voltage(&pv_pin_voltage);
+  float tmp;
+  tmp = ADC1_RESOLUTION * (float)analog_read[0] / 1000.0F;
+  publish_adc1_pv_pin_voltage(&tmp);
 
-  float tempsens_pin_voltage;
-  pv_pin_voltage = ADC1_RESOLUTION * (float)analog_read[1] / 1000.0F;
-  publish_adc1_tempsens_pin_voltage(&tempsens_pin_voltage);
+  tmp = ADC1_RESOLUTION * (float)analog_read[1] / 1000.0F;
+  publish_adc1_tempsens_pin_voltage(&tmp);
 }

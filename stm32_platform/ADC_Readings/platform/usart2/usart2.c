@@ -19,7 +19,7 @@
 #include "ftoa.h"
 #include "interrupts_to_tasks.h"
 #include "photovoltaic/pv.h"
-#include "temperature_sensor/tempsens_LM35.h"
+#include "temperature_sensor/tempsens_LM335.h"
 #include "usart.h"
 #include <FreeRTOS.h>
 #include <semphr.h>
@@ -57,11 +57,15 @@ void usart2_step(enum WhoIsCalling caller) {
   switch (caller) {
   case PERIODIC_TASK:
     subscribe_pv_voltage(&pv_voltage);
+    subscribe_tempsens_value(&tempsens_C);
 
     char pv_voltage_str[5];
+    char tempsens_C_str[5];
     (void)ftoa(pv_voltage, pv_voltage_str, 2);
-    (void)snprintf(msg, MSG_LENGTH_MAX, "Photovoltaic reading: %s V\n",
-                   pv_voltage_str);
+    (void)ftoa(tempsens_C, tempsens_C_str, 2);
+    (void)snprintf(msg, MSG_LENGTH_MAX,
+                   "Photovoltaic reading: %s V\n Temperature: %s C\n",
+                   pv_voltage_str, tempsens_C_str);
 
     transmit(msg);
     break;
@@ -69,7 +73,6 @@ void usart2_step(enum WhoIsCalling caller) {
   case IRQ_BUILTIN_BUTTON:
     subscribe_tempsens_value(&tempsens_C);
 
-    char tempsens_C_str[5];
     (void)ftoa(tempsens_C, tempsens_C_str, 2);
     (void)snprintf(msg, MSG_LENGTH_MAX, "Temperature: %s C \n", tempsens_C_str);
 
