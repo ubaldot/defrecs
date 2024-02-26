@@ -71,10 +71,8 @@ void usart2_step(enum WhoIsCalling caller) {
     break;
     /* What starts with IRQ are callbacks! */
   case IRQ_BUILTIN_BUTTON:
-    subscribe_tempsens_value(&tempsens_C);
 
-    (void)ftoa(tempsens_C, tempsens_C_str, 2);
-    (void)snprintf(msg, MSG_LENGTH_MAX, "Temperature: %s C \n", tempsens_C_str);
+    (void)snprintf(msg, MSG_LENGTH_MAX, "Button pressed!\n");
 
     transmit(msg);
     break;
