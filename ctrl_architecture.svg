@@ -23,15 +23,16 @@
      inkscape:pagecheckerboard="0"
      inkscape:document-units="mm"
      showgrid="false"
-     inkscape:zoom="1.3879489"
-     inkscape:cx="315.93381"
-     inkscape:cy="235.95969"
+     inkscape:zoom="0.5207735"
+     inkscape:cx="402.28621"
+     inkscape:cy="148.81709"
      inkscape:window-width="1920"
      inkscape:window-height="1003"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer1" />
+     inkscape:current-layer="layer1"
+     inkscape:snap-grids="true" />
   <defs
      id="defs8716">
     <marker
@@ -62,6 +63,87 @@
          d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
          id="path8841" />
     </marker>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath12874">
+      <g
+         inkscape:label="Clip"
+         id="use12876">
+        <rect
+           style="fill:#e9ff00;fill-opacity:1;stroke:#000000;stroke-width:0.211085;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           id="rect13100"
+           width="35.001411"
+           height="23.033089"
+           x="46.57568"
+           y="35.872463"
+           ry="4.5368209" />
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+           x="49.564354"
+           y="50.550709"
+           id="text13104"><tspan
+             sodipodi:role="line"
+             id="tspan13102"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.264583"
+             x="49.564354"
+             y="50.550709">sensor 1</tspan></text>
+      </g>
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath12874-5">
+      <g
+         inkscape:label="Clip"
+         id="use12876-9">
+        <rect
+           style="fill:#e9ff00;fill-opacity:1;stroke:#000000;stroke-width:0.211085;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           id="rect13012"
+           width="35.001411"
+           height="23.033089"
+           x="46.57568"
+           y="35.872463"
+           ry="4.5368209" />
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+           x="49.564354"
+           y="50.550709"
+           id="text13016"><tspan
+             sodipodi:role="line"
+             id="tspan13014"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.264583"
+             x="49.564354"
+             y="50.550709">sensor 1</tspan></text>
+      </g>
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath12874-5-7">
+      <g
+         inkscape:label="Clip"
+         id="use12876-9-7">
+        <rect
+           style="fill:#e9ff00;fill-opacity:1;stroke:#000000;stroke-width:0.211085;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           id="rect16813"
+           width="35.001411"
+           height="23.033089"
+           x="46.57568"
+           y="35.872463"
+           ry="4.5368209" />
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+           x="49.564354"
+           y="50.550709"
+           id="text16817"><tspan
+             sodipodi:role="line"
+             id="tspan16815"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.264583"
+             x="49.564354"
+             y="50.550709">sensor 1</tspan></text>
+      </g>
+    </clipPath>
   </defs>
   <g
      inkscape:label="Layer 1"
@@ -69,7 +151,166 @@
      id="layer1">
     <path
        id="rect9558"
-       style="fill:none;stroke:#000000;stroke-width:0.175348;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 41.555794,33.099151 v 3.537752 h -19.09473 v 7.076378 h 19.09473 v 3.537752 l 4.353145,-7.07594 z" />
+       style="fill:none;stroke:#000000;stroke-width:0.179755;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 16.70947,103.11022 0.268275,3.46248 -11.586289,0.0337 v 6.99322 h 11.452152 l 0.134138,3.49618 13.347976,-6.99279 z"
+       sodipodi:nodetypes="cccccccc" />
+    <rect
+       style="fill:#e9ff00;fill-opacity:1;stroke:#000000;stroke-width:0.264999;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect13210"
+       width="33.658863"
+       height="20.449348"
+       x="39.648766"
+       y="40.712765"
+       ry="6.2235289" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="43.967266"
+       y="50.238853"
+       id="text14028"><tspan
+         sodipodi:role="line"
+         id="tspan18325"
+         x="43.967266"
+         y="50.238853">temp</tspan><tspan
+         sodipodi:role="line"
+         id="tspan18327"
+         x="43.967266"
+         y="59.058304">sensor</tspan></text>
+    <rect
+       style="fill:#e9ff00;fill-opacity:1;stroke:#000000;stroke-width:0.264999;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect13210-5"
+       width="33.658863"
+       height="20.449348"
+       x="38.441784"
+       y="144.04581"
+       ry="6.2235289" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="48.094894"
+       y="156.62024"
+       id="text14028-6"><tspan
+         sodipodi:role="line"
+         id="tspan18302"
+         x="48.094894"
+         y="156.62024">IMU</tspan></text>
+    <rect
+       style="fill:#e9ff00;fill-opacity:1;stroke:#000000;stroke-width:0.264999;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect13210-6"
+       width="33.658863"
+       height="20.449348"
+       x="39.839291"
+       y="76.332779"
+       ry="6.2235289" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="45.173908"
+       y="85.858871"
+       id="text14028-7"><tspan
+         sodipodi:role="line"
+         id="tspan18370"
+         x="45.173908"
+         y="85.858871">Angle</tspan><tspan
+         sodipodi:role="line"
+         id="tspan18372"
+         x="45.173908"
+         y="94.678322">estim.</tspan></text>
+    <rect
+       style="fill:#81ff00;fill-opacity:1;stroke:#000000;stroke-width:0.264999;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect13210-4"
+       width="33.658863"
+       height="20.449348"
+       x="101.41773"
+       y="37.514816"
+       ry="6.2235289" />
+    <rect
+       style="fill:#00ffd0;fill-opacity:1;stroke:#000000;stroke-width:0.264999;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect13210-4-9"
+       width="33.658863"
+       height="20.449348"
+       x="217.38548"
+       y="55.822914"
+       ry="6.2235289" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="220.30339"
+       y="68.379349"
+       id="text14028-8"><tspan
+         sodipodi:role="line"
+         id="tspan19099"
+         x="220.30339"
+         y="68.379349">EM map</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="106.80351"
+       y="45.408024"
+       id="text14028-8-6"><tspan
+         sodipodi:role="line"
+         id="tspan18392-3"
+         x="106.80351"
+         y="45.408024">Startup</tspan><tspan
+         sodipodi:role="line"
+         id="tspan18394-8"
+         x="106.80351"
+         y="54.227474">Ctrl</tspan></text>
+    <rect
+       style="fill:#81ff00;fill-opacity:1;stroke:#000000;stroke-width:0.264999;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect13210-5-9"
+       width="33.658863"
+       height="20.449348"
+       x="95.130165"
+       y="123.57387"
+       ry="6.2235289" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="97.924484"
+       y="132.84593"
+       id="text14028-6-3"><tspan
+         sodipodi:role="line"
+         id="tspan18436"
+         x="97.924484"
+         y="132.84593">Fallback</tspan><tspan
+         sodipodi:role="line"
+         id="tspan18438"
+         x="97.924484"
+         y="140.78343">Ctrl</tspan></text>
+    <rect
+       style="fill:#81ff00;fill-opacity:1;stroke:#000000;stroke-width:0.264999;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect13210-6-8"
+       width="33.658863"
+       height="20.449348"
+       x="95.511566"
+       y="77.199303"
+       ry="6.2235289" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="97.797821"
+       y="86.217331"
+       id="text14028-7-8"><tspan
+         sodipodi:role="line"
+         id="tspan18414"
+         x="97.797821"
+         y="86.217331">Nominal</tspan><tspan
+         sodipodi:role="line"
+         id="tspan18416"
+         x="97.797821"
+         y="95.036781">Ctrl</tspan></text>
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.264999;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect18462"
+       width="34.547966"
+       height="109.7406"
+       x="156.48196"
+       y="44.709137"
+       ry="6.2235289" />
+    <path
+       style="fill:none;stroke:#848484;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       d="m 156.99003,61.983119 16.76593,45.217191 h 16.76592"
+       id="path18519" />
   </g>
 </svg>
