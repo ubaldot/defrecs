@@ -5,7 +5,7 @@ left a bit behind, so don't use it.*
 
 Welcome to DEFRECS!
 ==================
-DEFRECS stands for DEvelopment Framework for Real-time Embedded Control Systems and
+DEFRECS stands for *DEvelopment Framework for Real-time Embedded Control Systems* and
 it is nothing more than a software architecture and a bunch of coding guides to
 simplify and scale the development of real-time control systems.
 The architecture is an application of *component-based software engineering*
@@ -14,35 +14,39 @@ The chosen language is C.
 
 
 # Motivation
-Concurrency program is tough. Bugs are just behind the corner and in many cases it can be hard to detect them.
+Concurrency program is tough. Bugs are just behind the corner and in many cases it is hard to detect them.
 This issue is even more emphasized for those who are not strict software developers,
 like for example control systems engineers.
 However, one may try to prevent the occurrence of bugs by adhering to some coding rules and/or by following some standards.
 
 Here, we aim at defining a software architecture that can help in preventing bugs when concurrency programming is employed.
-We target STM32 F4 and Arduino platforms. For the Arduino platform we use
-Platformio.
+Furthermore, the proposed architecture allows different people working on
+different components without the risk of interfering one each other.
+
+
 
 # Requirements
 
 1. The toolchain of the platform that you are using,
-2. `pyserial`.
+2. [pyserial](https://github.com/pyserial/pyserial)
 
 *Optional*:
 
-3. `compiledb` - for creating `compile_commands.json` files in case you use
-   some LSP like `clangd`.
+3. [compiledb](https://github.com/nickdiego/compiledb)- for creating `compile_commands.json` files in case you use
+   some LSP like [clangd](https://clangd.llvm.org/).
 4. [State Smith](https://github.com/statesmith/statesmith) for generating
    code for finite state-machines.
 
+And of course a board to flash.
+Here we used an STM32F446RE Nucleo board and an Arduino UNO. For the Arduino platform we use
+Platformio but at the moment the Arduino platform is left a bit behind. PR are
+welcome of course.
 
 # Architecture
 The proposed architecture is depicted below.
 The idea is to abstract the application to allow its re-utilization on different platforms with as less pain as possible.
 The OS used is FreeRTOS.
 
-<!-- ![Architecture](Architecture.png) -->
-<!-- *Cazzo figa culo deretano* -->
 
 <div align="left">
   <img src="./Architecture.png" alt="Image Alt Text" style="width: 70%;"/>
@@ -64,6 +68,15 @@ The aim is to make components platform-independent and to allow users
 to connect them in an easy manner.
 To achieve such a goal, components communicates one each other through a
 *publisher/subscriber* model to resemble as much as possible Simulink models.
+
+
+<div align="center">
+  <img src="./application_example.png" alt="Image Alt Text" style="width: 60%;" />
+  <p><em>Application example.
+  <br>
+  Components are connected through subscribe (inputs) and publish (outputs) functions.
+   </em></p>
+</div>
 
 Each component has inputs `u`, outputs `y`, an internal state `x`, a state
 transition function `f` and
@@ -207,7 +220,7 @@ However, the difference relies in the following:
 ISR and Callbacks for STM32 are defined in `Core/Src/stm32f4xx_it.c` (so you must modify
 that file), whereas for Arduino I don't know... yet.
 The functions implementing the deferred tasks for
-unpredictable events are defined in the `interrupts\_to\_task.c` file.
+unpredictable events are defined in the `interrupts_to_task.c` file.
 When dealing with HAL functions that trigger interrupts, check these three
 files: the function that calls the HAL function, the `Core/Src/stm32f4xx_it.c`
 and the `interrupts_to_tasks.c`.

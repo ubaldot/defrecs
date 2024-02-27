@@ -19,17 +19,23 @@ TARGET = Hello_World
 # Programmer and compiler paths
 ######################################
 ifeq ($(OS),Windows_NT)
-	ARM_NONE_EABI_PATH = "C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools"
+	SERIAL_PORT = COM3
+	ARM_NONE_EABI_PATH = C:/ST/STM32CubeCLT/GNU-tools-for-STM32
 	GCC_PATH = $(ARM_NONE_EABI_PATH)/bin
-	PROGRAMMER_PATH = "C:/ST/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.win32_2.1.100.202311100844/tools/bin"
+	PROGRAMMER_PATH = C:/ST/STM32CubeCLT/STM32CubeProgrammer/bin
 	PROGRAMMER = $(PROGRAMMER_PATH)/STM32_Programmer_CLI
-
+else ifeq ($(OS),Linux)
+	SERIAL_PORT = /dev/ttys3
+	ARM_NONE_EABI_PATH = /opt/st/stm32cubeclt/GNU-tools-for-STM32
+	GCC_PATH = $(ARM_NONE_EABI_PATH)/bin
+	PROGRAMMER_PATH = /opt/st/stm32cubeclt/stm32cubeprogrammer
+	PROGRAMMER = $(PROGRAMMER_PATH)/STM32_Programmer_CLI
 else
 	SERIAL_PORT = /dev/cu.usbmodem103
-	ARM_NONE_EABI_PATH =/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.macos64_1.1.100.202310310803/tools/
+	ARM_NONE_EABI_PATH = /opt/ST/STM32CubeCLT/GNU-tools-for-STM32
 	GCC_PATH = $(ARM_NONE_EABI_PATH)/bin
-	PROGRAMMER_PATH = /Applications/STMicroelectronics/STM32CubeProgrammer.app/Contents/MacOs/bin
-	PROGRAMMER = $(PROGRAMMER_PATH)/STM32_Programmer_CLI
+	PROGRAMMER_PATH = /opt/ST/STM32CubeCLT/STM32CubeProgrammer
+	PROGRAMMER = $(PROGRAMMER_PATH)/bin/STM32_Programmer_CLI
 endif
 
 ######################################
