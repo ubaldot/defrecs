@@ -24,7 +24,7 @@ generating code from them, he/she directly C-code them.
 Note that within this framework advanced coding skills should not be required,
 especially in the application layer.
 
-There is a separation between the application and the platform layers.
+The proposed framework consider separation between the application and the platform layers.
 The aim is to make the application as portable as possible and the platform as
 scalable as possible. For example, if you are working on a STM32 platform and
 you want to move on an Arduino platform, the only layer that must be changed

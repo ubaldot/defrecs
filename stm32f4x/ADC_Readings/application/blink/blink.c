@@ -5,25 +5,29 @@
 // PUBLISHED SIGNALS: blink_led_state
 //===----------------------------------------------------------------------===//
 
-/* #include "application_setup.h" */
 #include "application_setup.h"
 #include <FreeRTOS.h>
 #include <semphr.h>
 #include <string.h>
 
-// OUTPUTS AS EXAMPLES OF SETTER AND GETTER METHODS
+/******************
+ * INTERNAL STATE *
+ *****************/
 static uint8_t blink_led_state;
 static SemaphoreHandle_t mutex_blink_led_state;
 
-// Publish
+/************
+ *  OUTPUTS *
+ ************/
 static void publish_blink_led_state(const uint8_t *pLedState) {
   if (xSemaphoreTake(mutex_blink_led_state, pdMS_TO_TICKS(5)) == pdTRUE) {
     memcpy(&blink_led_state, pLedState, 1);
     xSemaphoreGive(mutex_blink_led_state);
   }
 }
-
-// Subscribe (for the others)
+/************
+ *  INPUTS  *
+ ************/
 void subscribe_blink_led_state(uint8_t *pLedState) {
   // Returns a copy of the output
   if (xSemaphoreTake(mutex_blink_led_state, pdMS_TO_TICKS(5)) == pdTRUE) {
@@ -32,13 +36,17 @@ void subscribe_blink_led_state(uint8_t *pLedState) {
   }
 }
 
-// Init
+/******************
+ *  INIT FUNCTION *
+ *****************/
 void blink_init(void) {
   blink_led_state = 0;
   mutex_blink_led_state = xSemaphoreCreateMutex();
 }
 
-// Step
+/******************
+ *  STEP FUNCTION *
+ ******************/
 void blink_step(enum WhoIsCalling caller) {
   (void)caller;
   /* We use a local led_state to avoid race condition. */
