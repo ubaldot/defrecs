@@ -26,11 +26,11 @@ ifeq ($(OS),Windows_NT)
 	PROGRAMMER_PATH = C:/ST/STM32CubeCLT/STM32CubeProgrammer/bin
 	PROGRAMMER = $(PROGRAMMER_PATH)/STM32_Programmer_CLI
 else ifeq ($(OS),Linux)
-	SERIAL_PORT = /dev/ttys3
+	SERIAL_PORT = /dev/ttyS3
 	ARM_NONE_EABI_PATH = /opt/st/stm32cubeclt/GNU-tools-for-STM32
 	GCC_PATH = $(ARM_NONE_EABI_PATH)/bin
-	PROGRAMMER_PATH = /opt/st/stm32cubeclt/stm32cubeprogrammer
-	PROGRAMMER = $(PROGRAMMER_PATH)/STM32_Programmer_CLI
+	PROGRAMMER_PATH = /opt/st/stm32cubeclt/STM32CubeProgrammer
+	PROGRAMMER = $(PROGRAMMER_PATH)/bin/STM32_Programmer_CLI
 else
 	SERIAL_PORT = /dev/cu.usbmodem103
 	ARM_NONE_EABI_PATH = /opt/ST/STM32CubeCLT/GNU-tools-for-STM32
