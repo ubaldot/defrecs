@@ -344,11 +344,14 @@ For STM32 you have to modify the *Programmer and compiler paths* and the *Custom
    </em></p>
 </div>
 
+
+# Application Software Architecture
+
+
+
 ## TODO:
 
 1. cmake and/or function pointers to deal with cross-platform.
 2. HAL and OS Error handling.
 3. Doxygen
-4. Guidelines (naming convention, components - 1 periodic task, etc).
-5. Repo structure
-6. Components vs functions
+4. Components vs functions
