@@ -49,6 +49,36 @@ platform. For every platform folder (e.g. `stm32f446re_platform`) each sub-folde
 represent an example (e.g. `Hello_World`, `ADC_Readings`, etc.). You also have
 some additional files that you could ignore as they are using for the debugging framework used by the author.
 
+``
+defrecs
+    ├── Platform1 (e.g Arduino)
+    │   ├── Example1
+    │   │   ├── application
+    │   │   ├── platform
+    │   │   ├── utils
+    │   │   ├── contrib
+    │   │   └── ... other platform specific folders
+    │   └─── Example2
+    │       ├── application
+    │       ├── platform
+    │       ├── utils
+    │       ├── contrib
+    │       └── ... other platform specific folders
+    └── Platform2 (e.g. STM32446RE)
+        ├── Example1
+        │   ├── application
+        │   ├── platform
+        │   ├── utils
+        │   ├── contrib
+        │   └── ... other platform specific folders
+        └── Example2
+            ├── application
+            ├── platform
+            ├── utils
+            ├── contrib
+            └── ... other platform specific folders
+``
+
 The structure of each example is always the same: you have an `application`
 folder that contains a selection of application components, and a `platform`
 folder that contains platform components. Among other things, the platform components are in
@@ -58,9 +88,11 @@ application components.**
 Then, you have a `utils` folder that contains a number of utilities (like for
 example the `ftoa` used to convert floats into ASCII in embedded systems, etc.).
 
-Finally, you have a `rtos-helpers` function that you can ignore as it contains
-additional files that are needed for other purposes, for example accessing
+You have a `contrib` folder that you can ignore as it contains
+helpers from third-parties, for example for accessing
 FreeRTOS tasks through *openocd* when you are debugging and so on.
+
+Finally, you have a bunch of folders which are platform/framework specific.
 
 ## STM32
 
@@ -73,35 +105,6 @@ has been slightly edited.
 ## Arduino
 
 TBD.
-
-# Nice but... how to use it?
-
-Good question. Copy any example and modify it at your will.
-
-Here are some guidelines:
-
-1. Start your project by adjusting the platform components. Don't forget to
-   initialize them and to schedule them from the `application_setup.c` file.
-2. You only have two types of tasks: *periodic* tasks defined in `application_setup.c` and *deferring*
-   tasks called by ISR:s which are defined in
-   `interrupts_to_tasks.c`. Deferring tasks wake up sporadically, so they are
-   not periodic.
-3. A component should be scheduled only in one periodic task. Avoid calling the same
-   component from different periodic task. However, and already scheduled components can be called by
-   a deferring tasks.
-4. Never use HAL functions in the application layer otherwise you lose
-   portability.
-5. Make components to only communicate through their publish/subscribe
-   interfaces.
-6. Pay attention to your components scheduling. Some outputs may be
-   sampled faster/slower than some inputs and that could lead to a number of
-   problems. Be sure that the scheduling makes sense to your application.
-
-<div align="center">
-  <img src="./comp_scheduling.png" alt="Image Alt Text" style="width: 60%;" />
-  <p><em>Scheduling example. Check that you don't have timing issues.
-   </em></p>
-</div>
 
 # Architecture
 The proposed architecture is depicted below.
@@ -288,16 +291,58 @@ and the `interrupts_to_tasks.c`.
 
 ## Hardware Layer
 
+At the bottom level we have the hardware that is what you plan to deploy your
+code.
 
-1. components header files shall only have:
-2. A component can only belong to one task
-3. Order the components calls
-4. Interrupts must always be deferred to tasks.
+# Nice but... how to use it?
 
-ISR are always the same
-subscribe methods return copies of signals' realizations.
+Good question. Copy any example and modify it at your will.
 
-At the bottom level we have the hardware. That can be whatever.
+Here are some general guidelines:
+
+1. Start your project by adjusting the platform components. Don't forget to
+   initialize them and to schedule them from the `application_setup.c` file.
+2. You only have two types of tasks: *periodic* tasks defined in `application_setup.c` and *deferring*
+   tasks called by ISR:s which are defined in
+   `interrupts_to_tasks.c`. Deferring tasks wake up sporadically, i.e. upon
+   Interrupt-Service-Routine (ISR) call, so they are not periodic.
+3. ISR shall always be deferred to tasks.
+4. A component should be scheduled only in one periodic task. Avoid calling the same
+   component from different periodic task. However, and already scheduled components can be called by
+   a deferring tasks.
+5. Never use HAL functions in the application layer otherwise you lose
+   portability.
+6. Make components to only communicate through their publish/subscribe
+   interfaces.
+7. Pay attention to your components scheduling. Some outputs may be
+   sampled faster/slower than some inputs and that could lead to a number of
+   problems. Be sure that the scheduling makes sense to your application.
+
+Here are some guidelines on how to write components:
+
+1. Each component must have a prefix, to be easily searched,
+2. Published signals must start with the prefix, e.g. `blink_led_state`
+3. Mutex for publishing/subscribing must contain the same name of the
+   associated output, e.g. `blink_led_state` -> `mutex_blink_led_state`
+4. Publish and subscribing functions is the same for all the components and
+   must have the form `publish_<output_name>(...)`,
+   e.g. `publish_blink_led_state(&led_state)`,
+5. The function to be placed in the scheduling must have the form `<prefix>_step`,
+   e.g. `blink_step(PERIODIC_TASK)`,
+6. Outputs shall be initialized in the `<prefix>_init()` function,
+7. In a component header file you must only include the prototypes for the
+   init, the step and the subscribe functions.
+
+
+Once done, edit the `Makefile` and you are set.
+For STM32 you have to modify the *Programmer and compiler paths* and the *Custom targets* sections.
+
+<div align="center">
+  <img src="./comp_scheduling.png" alt="Image Alt Text" style="width: 60%;" />
+  <p><em>Scheduling example. Check that the execution periods won't mess up
+  your application.
+   </em></p>
+</div>
 
 ## TODO:
 

@@ -1,15 +1,5 @@
 //===-------------------- blink.c ------------------------*- C -*-===//
-//  Each component has a prefix, to be easily searched.
-//
-//  1. Published signals must start with the prefix, e.g. blink_led_state
-//  2. Mutex for publishing/subscribing must contain the same name of the
-//  associated
-//     output, e.g. blink_led_state -> mutex_blink_led_state
-//  3. Publish and subscribing functions is the same for all the components and
-//  must
-//     have the form publish_<output_name>, e.g. publish_blink_led_state()
-//  4. The function to be placed in the scheduling must have suffix _step
-//  5. Outputs shall be initialized in the <prefix>_init() function.
+// Simply toggle the led state.
 //
 // PREFIX: blink_
 // PUBLISHED SIGNALS: blink_led_state
@@ -48,14 +38,15 @@ void blink_init(void) {
   mutex_blink_led_state = xSemaphoreCreateMutex();
 }
 
-// ------- Actual function starts here! -------------
+// Step
 void blink_step(enum WhoIsCalling caller) {
   (void)caller;
   /* We use a local led_state to avoid race condition. */
   /* In this way each task calling blink_step will have its own */
-  /* local copy of led_state in the stack memory, but the publishing operation */
+  /* local copy of led_state in the stack, but the publishing operation */
   /* is protected by a mutex. */
-  /* Perhaps a more robust solution is to assign led_state through subscribe_blink_led_state though. */
+  /* Perhaps a more robust solution is to assign led_state through
+   * subscribe_blink_led_state though. */
   uint8_t led_state;
   led_state = blink_led_state ? 0 : 1;
 

@@ -99,15 +99,6 @@ Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c \
 Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c \
 Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c \
 Core/Src/dma.c
-# freertos/croutine.c \
-# freertos/croutine.c \# freertos/croutine.c \# freertos/croutine.c \# freertos/croutine.c \# freertos/croutine.c \# freertos/event_groups.c \
-# freertos/list.c \
-# freertos/queue.c \
-# freertos/stream_buffer.c \
-# freertos/tasks.c \
-# freertos/timers.c \
-# freertos/portable/MemMang/heap_4.c \
-# freertos/portable/GCC/ARM_CM4F/port.c
 
 
 # Ubaldo
@@ -259,7 +250,7 @@ $(BUILD_DIR):
 	mkdir $@
 
 #######################################
-# clean up
+# Custom targets
 #######################################
 build_flash:
 	make -j9 all && make upload
