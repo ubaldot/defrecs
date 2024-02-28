@@ -17,6 +17,13 @@ The architecture is an application of *component-based software engineering*
 where the components communicate with a *publish/subscribe* model.
 The chosen language is C.
 
+The architecture shall resemble as much as possible the so-called "model-based
+design" which is the paradigm used for example by Simulink. Here, we wish that
+the developer still thinks in terms or "connecting blocks" but instead of
+generating code from them, he/she directly C-code them.
+Note that within this framework advanced coding skills should not be required,
+especially in the application layer.
+
 There is a separation between the application and the platform layers.
 The aim is to make the application as portable as possible and the platform as
 scalable as possible. For example, if you are working on a STM32 platform and
