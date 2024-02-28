@@ -53,6 +53,7 @@ defrecs
     ├── Platform1 (e.g Arduino)
     │   ├── Example1
     │   │   ├── application
+
     │   │   ├── platform
     │   │   ├── utils
     │   │   ├── contrib
