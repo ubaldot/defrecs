@@ -18,27 +18,27 @@ where the components communicate with a *publish/subscribe* model.
 The chosen language is C.
 
 The best way to play with this framework is to look at the examples. The
-theoretical part that serve as basis for all the examples are based is
+theoretical part that serve as basis for all the examples is
 discussed in the reminder of this `README` file.
 
 # Requirements
 
-1. The toolchain of the platform that you are using,
-2. [pyserial](https://github.com/pyserial/pyserial)
+The toolchain of the platform that you are using,
 
 *Optional*:
 
-3. [compiledb](https://github.com/nickdiego/compiledb)- for creating
+1. [pyserial](https://github.com/pyserial/pyserial)
+
+2. [compiledb](https://github.com/nickdiego/compiledb)- for creating
    `compile_commands.json` files in case you use
    some LSP like [clangd](https://clangd.llvm.org/).
-4. [State Smith](https://github.com/statesmith/statesmith) for generating
+3. [State Smith](https://github.com/statesmith/statesmith) for generating
    code for finite state-machines.
 
 And of course a board to flash.
-Here we used an STM32F446RE Nucleo board and an Arduino UNO. For the Arduino
-platform we use
-Platformio but at the moment the Arduino platform is left a bit behind. PR are
-welcome of course.
+Here we used an STM32F446RE Nucleo board and/or an Arduino. For the Arduino
+platform we use Platformio but at the moment the Arduino platform is left a
+bit behind. PR are welcome of course.
 
 # Repository structure
 
@@ -93,7 +93,7 @@ FreeRTOS tasks through *openocd* when you are debugging and so on.
 
 Finally, you have a bunch of folders which are platform/framework specific.
 
-Note that each example has a `README.md` file that explain what has been done.
+Note that each example has a `README.md` file that explains what has been done.
 
 ## STM32F446RE
 
@@ -220,7 +220,7 @@ Components' input, state and output `u` `x` and `y` can be updated
 periodically or in an event-based fashion.
 Periodic execution is performed through periodic tasks, whereas event-based
 execution is achieved by interrupts.
-More precisely, interrupts service routines (ISR) wake up dedicated, sleeping
+More precisely, Interrupts Service Routines (ISR) wake up dedicated, sleeping
 tasks
 that will carry out the actual work needed.
 
@@ -335,7 +335,7 @@ and the `interrupts_to_tasks.c`.
 At the bottom level we have the hardware that is what you plan to deploy your
 code.
 
-# Nice but... how to use it?
+# Guidelines
 
 Everything looks very complex, but in reality it is not.
 The best is to directly look at the examples and modify them at your will.
