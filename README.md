@@ -11,32 +11,15 @@ Welcome to DEFRECS!
 
 DEFRECS stands for *DEvelopment Framework for Real-time Embedded Control
 Systems* and
-it is nothing more than a software architecture and a bunch of coding guides
-to
-simplify and scale the development of real-time control systems.
+it is nothing more than a software architecture and a bunch of guidelines
+to simplify and scale the development of real-time control systems.
 The architecture is an application of *component-based software engineering*
 where the components communicate with a *publish/subscribe* model.
 The chosen language is C.
 
-
-# Motivation
-
-Concurrency program is tough. Bugs are just behind the corner and in many
-cases it is hard to detect them.
-This issue is even more emphasized for those who are not strict software
-developers,
-like for example control systems engineers.
-However, one may try to prevent the occurrence of bugs by adhering to some
-coding rules and/or by following some standards.
-
-Here, we aim at defining a software architecture and some guidelines that can
-help in preventing bugs when concurrency programming is employed.
-Furthermore, the proposed architecture allows different people working on
-different components without the risk of interfering one each other.
-For example, one person may work in designing a PID controller, another person
-or team in developing a Kalman filter for estimating some quantities, etc.
-
-
+The best way to play with this framework is to look at the examples. The
+theoretical part that applies to all the examples is in the following of this
+`README` file.
 
 # Requirements
 
@@ -110,7 +93,9 @@ FreeRTOS tasks through *openocd* when you are debugging and so on.
 
 Finally, you have a bunch of folders which are platform/framework specific.
 
-## STM32
+Note that each example has a `README.md` file that explain what has been done.
+
+## STM32F446RE
 
 In the STM32 case, you have a bunch of folders (`Core`, `Drivers` and
 `Middleware`) that are automatically
@@ -352,7 +337,8 @@ code.
 
 # Nice but... how to use it?
 
-Good question. Copy any example and modify it at your will.
+Everything looks very complex, but in reality it is not.
+The best is to directly look at the examples and modify them at your will.
 
 Here are some general guidelines:
 
@@ -366,7 +352,7 @@ Here are some general guidelines:
 3. ISR shall always be deferred to tasks.
 4. A component should be scheduled only in one periodic task. Avoid calling
 the same
-   component from different periodic task. However, and already scheduled
+   component from different periodic task. However, an already scheduled
    components can be called by
    a deferring tasks.
 5. Never use HAL functions in the application layer!
@@ -408,6 +394,24 @@ For STM32 you have to modify the *Programmer and compiler paths* and the
 # Application Software Architecture
 
 TBD
+
+
+# Motivation
+
+Concurrency program is tough. Bugs are just behind the corner and in many
+cases it is hard to detect them.
+This issue is even more emphasized for those who are not strict software
+developers,
+like for example control systems engineers.
+However, one may try to prevent the occurrence of bugs by adhering to some
+coding rules and/or by following some standards.
+
+Here, we aim at defining a software architecture and some guidelines that can
+help in preventing bugs when concurrency programming is employed.
+Furthermore, the proposed architecture allows different people working on
+different components without the risk of interfering one each other.
+For example, one person may work in designing a PID controller, another person
+or team in developing a Kalman filter for estimating some quantities, etc.
 
 ## TODO:
 
