@@ -27,11 +27,12 @@ The toolchain of the platform that you are using,
 
 *Optional*:
 
-1. [pyserial](https://github.com/pyserial/pyserial)
+1. [pyserial](https://github.com/pyserial/pyserial) for interacting with the
+   serial port of your laptop,
 
-2. [compiledb](https://github.com/nickdiego/compiledb)- for creating
+2. [compiledb](https://github.com/nickdiego/compiledb) for creating
    `compile_commands.json` files in case you use
-   some LSP like [clangd](https://clangd.llvm.org/).
+   some LSP like [clangd](https://clangd.llvm.org/),
 3. [State Smith](https://github.com/statesmith/statesmith) for generating
    code for finite state-machines.
 
