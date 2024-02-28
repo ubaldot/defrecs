@@ -1,5 +1,5 @@
-//===-------------------- tempsens.c ------------------------*- C -*-===//
-// Temperature sensor component.
+//===-------------------- tempsens_LM335.c ------------------------*- C -*-===//
+// Temperature sensor component. Based on LM335.
 //
 // PREFIX: tempsens_
 // PUBLISHED SIGNALS: tempsens_value

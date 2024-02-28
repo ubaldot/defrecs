@@ -1,7 +1,7 @@
 //===-------------------- pv_standard_step.c --------------*- C //-*-===//
 // Photovoltaic panel reading component.
 //  OBS! This depends on the voltage meter used! In this case we assume a
-//  standard voltage meter such that the max reading is 25V.
+//  standard voltage meter such that the max reading is 3.3*5 = 16.5 V
 //
 // However, the interface is the same.
 //

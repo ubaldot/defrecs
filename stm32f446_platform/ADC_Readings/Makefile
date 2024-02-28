@@ -18,7 +18,7 @@ TARGET = ADC_Readings
 ######################################
 # Programmer and compiler paths
 ######################################
-OS := $(shell uname)
+# OS := $(shell uname)
 ifeq ($(OS),Windows_NT)
 	SERIAL_PORT = COM3
 	ARM_NONE_EABI_PATH = C:/ST/STM32CubeCLT/GNU-tools-for-STM32

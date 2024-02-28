@@ -1,17 +1,12 @@
 //===-------------------- usart2.c ------------------------*- C -*-===//
-// This component does three things:
-//
-//  1. Send messages over the UART,
-//  2. Process received raw data,
-//  3. Publish processed received raw data into signals that can be subscribed
-//     by other components.
+// This component sends/receive messages from the UART.
 //
 // The received messages are read byte by byte through interrupts. When a
-// terminator character is detected, then the task associated to the ISR
-// update a published signal.
+// terminator character is detected, then the content of rx_buffer shall be
+// published into some appropriate signal.
 //
 // PREFIX: usart2_
-// PUBLISHED SIGNALS: change all the time!
+// PUBLISHED SIGNALS: None.
 //===----------------------------------------------------------------------===//
 #include "usart2/usart2.h"
 #include "application_setup.h"

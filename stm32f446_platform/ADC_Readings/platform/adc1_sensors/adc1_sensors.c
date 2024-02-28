@@ -1,15 +1,15 @@
-//===-------------------- pinin.c --------------*- C //-*-===//
-// This is the platform interface between different HAL and the rest of the
-// SW.
+//===-------------------- adc1_sensor.c ------------------------*- C -*-===//
+// Platform component for the STM32F4xx ADC1.
 //
-// This is NOT really a component in the sense that does not publish or
-// subscribe any signal. For some obscure reasons to myself I decided to not
-// consider this as a component.
-//
-// The functions herein defined can be called by periodically scheduled
-// components or by ISR callback functions.
+// All the ADC1 channel are scan at once and it returns the voltage on the
+// pins. That is all. Then, such voltage shall be interpreted by some other
+// component which is tied to a specific sensor.
 //
 //
+// PREFIX: adc1_
+// PUBLISHED SIGNALS:
+//   - adc1_pv_pin_voltage
+//   - adc1_tempsens_pin_voltage
 //===----------------------------------------------------------------------===//
 
 #include "FreeRTOS.h"

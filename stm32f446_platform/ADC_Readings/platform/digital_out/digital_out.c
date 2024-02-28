@@ -1,3 +1,9 @@
+//===-------------------- digital_out.c ------------------------*- C -*-===//
+// Set the digital pins out to a certain value
+//
+// PREFIX: digital_out_
+// PUBLISHED SIGNALS: None.
+//===----------------------------------------------------------------------===//
 #include "application_setup.h"
 #include "blink/blink.h"
 #include "gpio.h"
