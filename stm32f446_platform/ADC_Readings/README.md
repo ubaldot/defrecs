@@ -5,8 +5,8 @@ The "system" behaves as it follows:
 
 1. The builtin led blinks every second,
 2. Two sensors are connected to the ADC1, but:
-    a. The values of the first sensor are sent periodically over the USART2,
-    b. The values of the second sensor are sent over the USART2 only when the
+    1. The values of the first sensor are sent periodically over the USART2,
+    2. The values of the second sensor are sent over the USART2 only when the
     builtin button is pressed.
 3. User can type anything on its computer keyboard. Once `Enter` is pressed,
    the message is sent through the USART2.
