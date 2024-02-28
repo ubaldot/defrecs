@@ -5,6 +5,7 @@ left a bit behind, so don't use it.*
 
 Welcome to DEFRECS!
 ==================
+
 DEFRECS stands for *DEvelopment Framework for Real-time Embedded Control Systems* and
 it is nothing more than a software architecture and a bunch of coding guides to
 simplify and scale the development of real-time control systems.
@@ -14,12 +15,13 @@ The chosen language is C.
 
 
 # Motivation
+
 Concurrency program is tough. Bugs are just behind the corner and in many cases it is hard to detect them.
 This issue is even more emphasized for those who are not strict software developers,
 like for example control systems engineers.
 However, one may try to prevent the occurrence of bugs by adhering to some coding rules and/or by following some standards.
 
-Here, we aim at defining a software architecture that can help in preventing bugs when concurrency programming is employed.
+Here, we aim at defining a software architecture and some guidelines that can help in preventing bugs when concurrency programming is employed.
 Furthermore, the proposed architecture allows different people working on
 different components without the risk of interfering one each other.
 
@@ -104,7 +106,9 @@ has been slightly edited.
 
 TBD.
 
+
 # Architecture
+
 The proposed architecture is depicted below.
 The idea is to abstract the application to allow its re-utilization on different platforms with as less pain as possible.
 The OS used is FreeRTOS.
@@ -122,6 +126,7 @@ The OS used is FreeRTOS.
 
 
 ## Application Layer
+
 The application is made by interconnected components stored in the `application`
 folder.
 A component could be a PI controller, a Kalman filter, a sensor reader, a
@@ -195,6 +200,7 @@ In-fact, if we know the prefix of a subscribed signal, then we also know its
 publisher. Handy!
 
 ### Components execution:
+
 Components' input, state and output `u` `x` and `y` can be updated periodically or in an event-based fashion.
 Periodic execution is performed through periodic tasks, whereas event-based
 execution is achieved by interrupts.
@@ -229,6 +235,7 @@ In the `application_setup.c` file you do the following:
 
 
 ## Operating System Layer
+
 The chosen operating system is FreeRTOS.
 We use the one shipped with CubeMX and ArduinoFreeRTOS.
 It takes a bit of application because components actually use FreeRTOS API.
