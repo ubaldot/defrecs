@@ -18,8 +18,8 @@ where the components communicate with a *publish/subscribe* model.
 The chosen language is C.
 
 The best way to play with this framework is to look at the examples. The
-theoretical part that applies to all the examples is in the following of this
-`README` file.
+theoretical part that serve as basis for all the examples are based is
+discussed in the reminder of this `README` file.
 
 # Requirements
 
