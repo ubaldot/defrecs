@@ -49,34 +49,33 @@ platform. For every platform folder (e.g. `stm32f446re_platform`) each sub-folde
 represent an example (e.g. `Hello_World`, `ADC_Readings`, etc.). You also have
 some additional files that you could ignore as they are using for the debugging framework used by the author.
 
-defrecs
-    ├── Platform1 (e.g Arduino)
-    │   ├── Example1
-    │   │   ├── application
-
-    │   │   ├── platform
-    │   │   ├── utils
-    │   │   ├── contrib
-    │   │   └── ... other platform specific folders
-    │   └─── Example2
-    │       ├── application
-    │       ├── platform
-    │       ├── utils
-    │       ├── contrib
-    │       └── ... other platform specific folders
-    └── Platform2 (e.g. STM32446RE)
-        ├── Example1
-        │   ├── application
-        │   ├── platform
-        │   ├── utils
-        │   ├── contrib
-        │   └── ... other platform specific folders
-        └── Example2
-            ├── application
-            ├── platform
-            ├── utils
-            ├── contrib
-            └── ... other platform specific folders
+    defrecs
+        ├── Platform1 (e.g Arduino)
+        │   ├── Example1
+        │   │   ├── application
+        │   │   ├── platform
+        │   │   ├── utils
+        │   │   ├── contrib
+        │   │   └── ... other platform specific folders
+        │   └─── Example2
+        │       ├── application
+        │       ├── platform
+        │       ├── utils
+        │       ├── contrib
+        │       └── ... other platform specific folders
+        └── Platform2 (e.g. STM32446RE)
+            ├── Example1
+            │   ├── application
+            │   ├── platform
+            │   ├── utils
+            │   ├── contrib
+            │   └── ... other platform specific folders
+            └── Example2
+                ├── application
+                ├── platform
+                ├── utils
+                ├── contrib
+                └── ... other platform specific folders
 
 The structure of each example is always the same: you have an `application`
 folder that contains a selection of application components, and a `platform`
