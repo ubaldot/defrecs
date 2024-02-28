@@ -24,6 +24,8 @@ However, one may try to prevent the occurrence of bugs by adhering to some codin
 Here, we aim at defining a software architecture and some guidelines that can help in preventing bugs when concurrency programming is employed.
 Furthermore, the proposed architecture allows different people working on
 different components without the risk of interfering one each other.
+For example, one person may work in designing a PID controller, another person
+or team in developing a Kalman filter for estimating some quantities, etc.
 
 
 
