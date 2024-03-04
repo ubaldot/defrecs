@@ -24,7 +24,7 @@ ifeq ($(shell uname),Linux)
     GCC_PATH = $(ARM_NONE_EABI_PATH)/bin
     PROGRAMMER_PATH = /opt/st/stm32cubeclt/STM32CubeProgrammer
     PROGRAMMER = $(PROGRAMMER_PATH)/bin/STM32_Programmer_CLI
-else ifneq ($(SYSTEMROOT),)
+else ifeq ($(OS),Windows_NT)
     SERIAL_PORT = COM3
     ARM_NONE_EABI_PATH = C:/ST/STM32CubeCLT/GNU-tools-for-STM32
     GCC_PATH = $(ARM_NONE_EABI_PATH)/bin
