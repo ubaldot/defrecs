@@ -132,6 +132,13 @@ STM32 HOW TO:
 
       Next, we have to connect with a client (gdb through Termdebug in Vim).
       Note that we need arm-wabi-none-gdb!!!
+      Open another shell window and run
+
+        arm-none-eabi-gdb -x ../gdb_commands_init.txt
+
+      So, at the end you will have two shells running: one with the openocd
+      server and the other with gdb. If you use Windows use MYGW64.
+
       To use Termdebug you must run with Termdebug <filename>.elf and once
       started you always have to run
 
