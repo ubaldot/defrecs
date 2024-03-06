@@ -10,6 +10,7 @@ DEFRECS stands for *DEvelopment Framework for Real-time Embedded Control
 Systems*.
 Its purpose is to let people with a control system background to come closer
 to the world of software development.
+
 DEFRECS is nothing but a software architecture and a bunch of guidelines
 to simplify and scale the development of real-time control systems.
 The architecture is an application of *component-based software engineering*
@@ -75,7 +76,7 @@ debugging framework used by the author.
 
     defrecs
         └── stm32f4x
-            ├── HelloWorld
+            ├── Hello_World
             │   ├── application
             │   ├── platform
             │   ├── utils
