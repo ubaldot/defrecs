@@ -226,7 +226,7 @@ Components' input, state and output `u` `x` and `y` can be updated
 periodically or in an event-based fashion.
 Periodic execution is performed through periodic tasks, whereas event-based
 execution is achieved by interrupts.
-More precisely, Interrupts Service Routines (ISR) wake up dedicated, sleeping
+More precisely, *Interrupts Service Routines* (ISR) wake up dedicated, sleeping
 tasks
 that will carry out the actual work needed.
 
@@ -425,3 +425,4 @@ or team in developing a Kalman filter for estimating some quantities, etc.
 2. HAL and OS Error handling.
 3. Doxygen
 4. Components vs functions
+5. Generate interfaces from yaml
