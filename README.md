@@ -24,7 +24,8 @@ generating code from them, he/she directly C-code them.
 Note that within this framework advanced coding skills should not be required,
 especially in the application layer.
 
-The proposed framework considers separation between the application and the platform layers.
+The proposed framework considers separation between the application and the
+platform layers.
 The aim is to make the application as portable as possible and the platform as
 scalable as possible. For example, if you are working on a STM32 platform and
 you want to move on an Arduino platform, the only layer that must be changed
@@ -38,7 +39,8 @@ discussed in the reminder of this `README` file.
 # Requirements
 
 For running the example as-is you need a STM32F446RE Nucleo board, but you can
-of course use any other STM32 board provided that you regenerate the firmware code through
+of course use any other STM32 board provided that you regenerate the firmware
+code through
 CubeMX or CubeIDE.
 
 Then you need:
@@ -47,7 +49,8 @@ Then you need:
 2. [CubeCLT](https://www.st.com/en/development-tools/stm32cubeclt.html) which
    is the IDE if you use third-party tools.
 
-If you want, you can also install [CubeIDE](https://www.st.com/en/development-tools/stm32cubeide.html)
+If you want, you can also install
+[CubeIDE](https://www.st.com/en/development-tools/stm32cubeide.html)
 to have all in one! However, if you go for this solution you should add the
 include paths and the source code files to be compiled.
 
@@ -69,8 +72,10 @@ If you write the platform for other boards feel free to open a PR.
 # Repository structure
 
 On the top level you have each folder representing each
-platform. As it is today, we only have one platform folder (e.g. `stm32f446re_platform`).
-Each sub-folder represents an example (e.g. `Hello_World`, `ADC_Readings`, etc.). You also have
+platform. As it is today, we only have one platform folder
+(e.g. `stm32f446re_platform`).
+Each sub-folder represents an example (e.g. `Hello_World`, `ADC_Readings`,
+etc.). You also have
 some additional files that you could ignore as they are using for the
 debugging framework used by the author.
 
@@ -105,7 +110,10 @@ FreeRTOS tasks through *openocd* when you are debugging and so on.
 
 Finally, you have a bunch of folders which are platform/framework specific.
 
-Note that each example has a `README.md` file that explains what has been done.
+Note that each example has a `README.md` file that explains what has been
+done.
+
+You will most likely use only the `application` and the `platform` folders.
 
 ### stm32f4xx
 
@@ -226,7 +234,8 @@ Components' input, state and output `u` `x` and `y` can be updated
 periodically or in an event-based fashion.
 Periodic execution is performed through periodic tasks, whereas event-based
 execution is achieved by interrupts.
-More precisely, *Interrupts Service Routines* (ISR) wake up dedicated, sleeping
+More precisely, *Interrupts Service Routines* (ISR) wake up dedicated,
+sleeping
 tasks
 that will carry out the actual work needed.
 
@@ -341,10 +350,21 @@ and the `interrupts_to_tasks.c`.
 At the bottom level we have the hardware that is what you plan to deploy your
 code.
 
-# Guidelines
+# How to use?
 
 Everything looks very complex, but in reality it is not.
 The best is to directly look at the examples and modify them at your will.
+The process is fairly easy:
+
+1. You setup your firmware with CubeMX. Generate the `Makefile` from there: in
+the Section `Project Manager - Project - Toolchain/IDE` select `Makefile`,
+2. Adjust the `Makefile` to include your tools path and the source and include
+paths.
+3. Adjust the platform layer components located in the `platform` folder,
+4. Develop and connect your components in the `application folder`,
+5. Schedule them from the `application_setup.c` file,
+6. Adjust the code for handling interrupts, if any
+
 
 Here are some general guidelines:
 
@@ -357,8 +377,7 @@ Here are some general guidelines:
    Interrupt-Service-Routine (ISR) call, so they are not periodic.
 3. ISR shall always be deferred to tasks.
 4. A component should be scheduled only in one periodic task. Avoid calling
-the same
-   component from different periodic task. However, an already scheduled
+the same component from different periodic task. However, an already scheduled
    components can be called by
    a deferring tasks.
 5. Never use HAL functions in the application layer!
