@@ -12,19 +12,20 @@ Welcome to DEFRECS!
 DEFRECS stands for *DEvelopment Framework for Real-time Embedded Control
 Systems* and
 it is nothing more than a software architecture and a bunch of guidelines
-to simplify and scale the development of real-time control systems.
+to simplify and scale the development of real-time control systems and help
+control systems engineers to code their algorithms in C.
+
 The architecture is an application of *component-based software engineering*
 where the components communicate with a *publish/subscribe* model.
-The chosen language is C.
 
-The architecture shall resemble as much as possible the so-called "model-based
-design" which is the paradigm used for example by Simulink. Here, we wish that
+The architecture resembles as much as possible the so-called *model-based
+design* which is the paradigm used for example by Simulink. Here, we wish that
 the developer still thinks in terms or "connecting blocks" but instead of
 generating code from them, he/she directly C-code them.
 Note that within this framework advanced coding skills should not be required,
 especially in the application layer.
 
-The proposed framework consider separation between the application and the platform layers.
+The proposed framework considers separation between the application and the platform layers.
 The aim is to make the application as portable as possible and the platform as
 scalable as possible. For example, if you are working on a STM32 platform and
 you want to move on an Arduino platform, the only layer that must be changed
@@ -36,7 +37,7 @@ discussed in the reminder of this `README` file.
 
 # Requirements
 
-The toolchain of the platform that you are using,
+The tool-chain of the platform that you are using,
 
 *Optional*:
 
@@ -49,7 +50,7 @@ The toolchain of the platform that you are using,
 3. [State Smith](https://github.com/statesmith/statesmith) for generating
    code for finite state-machines.
 
-And of course a board to flash.
+And of course a board where to download the software.
 Here we used an STM32F446RE Nucleo board and/or an Arduino. For the Arduino
 platform we use Platformio but at the moment the Arduino platform is left a
 bit behind. PR are welcome of course.
