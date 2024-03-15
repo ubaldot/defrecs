@@ -10,11 +10,13 @@
 #include <semphr.h>
 #include <string.h>
 
-// OUTPUTS AS EXAMPLES OF SETTER AND GETTER METHODS
+// Internal state
 static float tempsens_value;
 static SemaphoreHandle_t mutex_tempsens_value;
 
-// Publish
+/************
+ *  OUTPUTS *
+ ************/
 static void publish_tempsens_value(const float *pTempValue) {
   if (xSemaphoreTake(mutex_tempsens_value, 100 / portTICK_PERIOD_MS) ==
       pdTRUE) {
@@ -33,13 +35,17 @@ void subscribe_tempsens_value(float *pTempValue) {
   }
 }
 
-// Init
+/******************
+ *  INIT FUNCTION *
+ *****************/
 void tempsens_init(void) {
   tempsens_value = 0.0F;
   mutex_tempsens_value = xSemaphoreCreateMutex();
 }
 
-// ------- Actual function starts here! -------------
+/******************
+ *  STEP FUNCTION *
+ ******************/
 void tempsens_step(enum WhoIsCalling caller) {
   (void)caller;
   // Get a copy of the output

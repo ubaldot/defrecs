@@ -25,9 +25,7 @@ static void publish_blink_led_state(const uint8_t *pLedState) {
     xSemaphoreGive(mutex_blink_led_state);
   }
 }
-/************
- *  INPUTS  *
- ************/
+
 void subscribe_blink_led_state(uint8_t *pLedState) {
   // Returns a copy of the output
   if (xSemaphoreTake(mutex_blink_led_state, pdMS_TO_TICKS(5)) == pdTRUE) {

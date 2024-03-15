@@ -19,7 +19,9 @@
 static float pv_voltage;
 static SemaphoreHandle_t mutex_pv_voltage;
 
-// Publish
+/************
+ *  OUTPUTS *
+ ************/
 static void publish_pv_voltage(const float *pVoltage) {
   if (xSemaphoreTake(mutex_pv_voltage, 100 / portTICK_PERIOD_MS) == pdTRUE) {
     memcpy(&pv_voltage, pVoltage, sizeof(*pVoltage));
@@ -27,7 +29,6 @@ static void publish_pv_voltage(const float *pVoltage) {
   }
 }
 
-// subscribe
 void subscribe_pv_voltage(float *pVoltage) {
   // Returns a copy of the output
   if (xSemaphoreTake(mutex_pv_voltage, 100 / portTICK_PERIOD_MS) == pdTRUE) {
@@ -36,13 +37,17 @@ void subscribe_pv_voltage(float *pVoltage) {
   }
 }
 
-// Init
+/******************
+ *  INIT FUNCTION *
+ *****************/
 void pv_init(void) {
   pv_voltage = 0.0F;
   mutex_pv_voltage = xSemaphoreCreateMutex();
 }
 
-// ------- Actual function starts here! -------------
+/******************
+ *  STEP FUNCTION *
+ ******************/
 void pv_step(enum WhoIsCalling caller) {
   (void)caller;
   // INPUT

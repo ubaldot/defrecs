@@ -191,6 +191,7 @@ the following:
 5. *publish_/subscribe_* functions to publish/subscribe the outputs and inputs
    `y` and `u`.
 
+
 That is, a component is *encapsulated* in a file and communicate with the
 external world with its *publish* and *subscribe* functions.
 
@@ -217,16 +218,27 @@ external world with its *publish* and *subscribe* functions.
 > to the outputs of component A and then perform internally all the operations
 > to send data over the serial port.
 
-A corollary of the above is that the header files of each component must only
-contain the
+
+### Components implementation
+
+It follows a checklist for components implementation:
+
+1. Each internal state must have an associated mutex.
+2. Each output must have both a publish and a subscribe
+function. The publish is used internally to update the internal state and
+the subscribe is exposed to other components. For example, if output `y` of component A
+is used as input of component B, then component A must implement both a
+publish and subscribe function for `y`. The publish function is kept
+internal to component A (in-fact it is declared as `static`)  whereas the
+subscribe function is included in `componentA.h` file and it is is called by component
+3. Header files of each component must only contain the
 declaration of the init
 function, the step function, and the publish_/subscribe_ functions. Stop!
+4. Due to that C language does not have namespaces, each component shall have
+   an associated prefix
+5. Don't forget to initialize and schedule your component from the
+   `application_setup.c` file.
 
-
-Finally, each component shall have an associated prefix to help the navigation
-in the code-base.
-In-fact, if we know the prefix of a subscribed signal, then we also know its
-publisher. Handy!
 
 ### Components execution:
 

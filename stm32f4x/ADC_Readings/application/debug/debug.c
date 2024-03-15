@@ -16,10 +16,27 @@ extern TaskHandle_t xTaskHandle_1000ms;
 extern TaskHandle_t xTaskBuitinButtonDeferred;
 extern TaskHandle_t xTaskUsart2RxDeferred;
 
-// Init
+
+/************
+ *  INPUTS  *
+ ************/
+/* None */
+
+
+/************
+ *  OUTPUTS *
+ ************/
+/* None */
+
+
+/******************
+ *  INIT FUNCTION *
+ *****************/
 void debug_init(void) {}
 
-// ------- Actual function starts here! -------------
+/******************
+ *  STEP FUNCTION *
+ ******************/
 void debug_step(enum WhoIsCalling caller) {
   (void)caller;
 
