@@ -223,24 +223,31 @@ external world with its *publish* and *subscribe* functions.
 
 It follows a checklist for components implementation:
 
-1. Each internal state must have an associated mutex.
+1. Each internal state `x` must have an associated mutex.
 2. Each output must have both a publish and a subscribe
-function. The publish is used internally to update the internal state and
+function. The publish function is used internally to update the output and
 the subscribe is exposed to other components. For example, if output `y` of component A
 is used as input of component B, then component A must implement both a
 publish and subscribe function for `y`. The publish function is kept
 internal to component A (in-fact it is declared as `static`)  whereas the
-subscribe function is included in `componentA.h` file and it is is called by component
+subscribe function is included in `componentA.h` file and it is is called by component B.
+The output function `h(x,u)` can be implemented either inside the publish or
+the subscribe function.
 3. Header files of each component must only contain the
 declaration of the init
-function, the step function, and the publish_/subscribe_ functions. Stop!
+function, the step function, and the subscribe_ functions.
+  1. The `*_init()` function is called by `application_setup.c` file,
+  2. The `*_step(WhoIscalling caller)` is called by `application_setup.c` and
+     by some deferring tasks defined in `interrupts_to_tasks.c` file,
+  3. The `*_subscribe()` functions are called by all the components that takes
+     those outputs as inputs.
 4. Due to that C language does not have namespaces, each component shall have
    an associated prefix
 5. Don't forget to initialize and schedule your component from the
    `application_setup.c` file.
 
 
-### Components execution:
+### Components execution
 
 Components' input, state and output `u` `x` and `y` can be updated
 periodically or in an event-based fashion.
