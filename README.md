@@ -1,10 +1,7 @@
 **Disclaimer**: *This is a perpetual work in progress. Everything may change
 at any time.
 Also, consider that I am not a software engineering in a strict sense, but I
-am a control system engineer.
-Finally, at the moment I am 100% focused on STM32 and therefore the Arduino
-framework is
-left a bit behind, so don't use it.*
+am a control system engineer.*
 
 Welcome to DEFRECS!
 ==================
@@ -15,6 +12,8 @@ it is nothing more than a software architecture and a bunch of guidelines
 to simplify and scale the development of real-time control systems and help
 control systems engineers to code their algorithms in C.
 
+DEFRECS is nothing but a software architecture and a bunch of guidelines
+to simplify and scale the development of real-time control systems.
 The architecture is an application of *component-based software engineering*
 where the components communicate with a *publish/subscribe* model.
 
@@ -29,7 +28,8 @@ The proposed framework considers separation between the application and the plat
 The aim is to make the application as portable as possible and the platform as
 scalable as possible. For example, if you are working on a STM32 platform and
 you want to move on an Arduino platform, the only layer that must be changed
-is the platform layer.
+is the platform layer, even if at the moment we develop it solely for STM32
+platform.
 
 The best way to play with this framework is to look at the examples. The
 theoretical part that serve as basis for all the examples is
@@ -37,9 +37,21 @@ discussed in the reminder of this `README` file.
 
 # Requirements
 
-The tool-chain of the platform that you are using,
+For running the example as-is you need a STM32F446RE Nucleo board, but you can
+of course use any other STM32 board provided that you regenerate the firmware code through
+CubeMX or CubeIDE.
 
-*Optional*:
+Then you need:
+1. [CubeMX](https://www.st.com/en/development-tools/stm32cubemx.html) for
+   generating the firmware,
+2. [CubeCLT](https://www.st.com/en/development-tools/stm32cubeclt.html) which
+   is the IDE if you use third-party tools.
+
+If you want, you can also install [CubeIDE](https://www.st.com/en/development-tools/stm32cubeide.html)
+to have all in one! However, if you go for this solution you should add the
+include paths and the source code files to be compiled.
+
+*Optional* tools that I personally use:
 
 1. [pyserial](https://github.com/pyserial/pyserial) for interacting with the
    serial port of your laptop,
@@ -47,45 +59,30 @@ The tool-chain of the platform that you are using,
 2. [compiledb](https://github.com/nickdiego/compiledb) for creating
    `compile_commands.json` files in case you use
    some LSP like [clangd](https://clangd.llvm.org/),
-3. [State Smith](https://github.com/statesmith/statesmith) for generating
-   code for finite state-machines.
 
-And of course a board where to download the software.
-Here we used an STM32F446RE Nucleo board and/or an Arduino. For the Arduino
-platform we use Platformio but at the moment the Arduino platform is left a
-bit behind. PR are welcome of course.
+3. [State Smith](https://github.com/statesmith/statesmith) for generating
+   code for finite state-machines (ok, I don't use it yet, but I plan to
+   investigate its potential).
+
+If you write the platform for other boards feel free to open a PR.
 
 # Repository structure
 
 On the top level you have each folder representing each
-platform. For every platform folder (e.g. `stm32f446re_platform`) each
-sub-folder
-represent an example (e.g. `Hello_World`, `ADC_Readings`, etc.). You also have
+platform. As it is today, we only have one platform folder (e.g. `stm32f446re_platform`).
+Each sub-folder represents an example (e.g. `Hello_World`, `ADC_Readings`, etc.). You also have
 some additional files that you could ignore as they are using for the
 debugging framework used by the author.
 
     defrecs
-        ├── Arduino_pio
-        │   ├── Example1
-        │   │   ├── application
-        │   │   ├── platform
-        │   │   ├── utils
-        │   │   ├── contrib
-        │   │   └── ... other platform specific folders
-        │   └─── Example2
-        │       ├── application
-        │       ├── platform
-        │       ├── utils
-        │       ├── contrib
-        │       └── ... other platform specific folders
         └── stm32f4x
-            ├── Example1
+            ├── Hello_World
             │   ├── application
             │   ├── platform
             │   ├── utils
             │   ├── contrib
             │   └── ... other platform specific folders
-            └── Example2
+            └── ADC_Readings
                 ├── application
                 ├── platform
                 ├── utils
@@ -95,8 +92,8 @@ debugging framework used by the author.
 The structure of each example is always the same: you have an `application`
 folder that contains a selection of application components, and a `platform`
 folder that contains platform components. Among other things, the platform
-components are in
-charge of wrapping the HAL of a specific vendor.
+components are in charge of wrapping the HAL of a specific vendor, in this
+case STM32.
 
 Then, you have a `utils` folder that contains a number of utilities (like for
 example the `ftoa` used to convert floats into ASCII in embedded systems,
@@ -118,10 +115,6 @@ generated by CubeMX. They contain the board firmware and FreeRTOS.
 
 You also have a `Makefile` which is originally generated by CubeMX and then it
 has been slightly edited.
-
-### Arduino_pio
-
-TBD.
 
 
 # Architecture
@@ -147,8 +140,7 @@ The OS used is FreeRTOS.
 ## Application Layer
 
 The application is made by interconnected components stored in the
-`application`
-folder.
+`application` folder.
 A component could be a PI controller, a Kalman filter, a sensor reader, a
 finite-state machine and so on and so forth.
 The aim is to make components platform-independent and to allow users
@@ -194,7 +186,6 @@ the following:
 That is, a component is *encapsulated* in a file and communicate with the
 external world with its *publish* and *subscribe* functions.
 
-<!-- ![Component](component.png) -->
 
 <div align="center">
   <img src="./component.png" alt="Image Alt Text" style="width: 60%;" />
@@ -235,7 +226,7 @@ Components' input, state and output `u` `x` and `y` can be updated
 periodically or in an event-based fashion.
 Periodic execution is performed through periodic tasks, whereas event-based
 execution is achieved by interrupts.
-More precisely, Interrupts Service Routines (ISR) wake up dedicated, sleeping
+More precisely, *Interrupts Service Routines* (ISR) wake up dedicated, sleeping
 tasks
 that will carry out the actual work needed.
 
@@ -434,3 +425,4 @@ or team in developing a Kalman filter for estimating some quantities, etc.
 2. HAL and OS Error handling.
 3. Doxygen
 4. Components vs functions
+5. Generate interfaces from yaml
