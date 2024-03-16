@@ -244,10 +244,10 @@ the subscribe is exposed to other components.
 declaration of the init
 function, the step function, and the subscribe_ functions.
 
-  1. The `*_init()` function is called by `application_setup.c` file,
-  2. The `*_step(WhoIscalling caller)` is called by `application_setup.c` and
+  a. The `*_init()` function is called by `application_setup.c` file,
+  b. The `*_step(WhoIscalling caller)` is called by `application_setup.c` and
      by some deferring tasks defined in `interrupts_to_tasks.c` file,
-  3. The `*_subscribe()` functions are called by all the components that takes
+  c. The `*_subscribe()` functions are called by all the components that takes
      those outputs as inputs.
 
 4. Due to that C language does not have namespaces, each component shall have
