@@ -33,6 +33,17 @@ The first sensor is connected to `PC0` whereas the second is connected to
 
 The component view is the following:
 
+<div align="left">
+  <img src="./Architecture.png" alt="Image Alt Text" style="width: 70%;"/>
+</div>
+<div align="center">
+  <p><em>The proposed architecture.
+<br>
+  The OS layer span a bit over the application layer because the latter makes
+  direct calls to FreeRTOS API.
+  This means that you cannot replace such layers independently.</em></p>
+</div>
+
 <div align="center"
   <img src="./drawing.png" alt="Image Alt Text" style="width: 70%;"/>
 </div>
