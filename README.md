@@ -19,8 +19,8 @@ where the components communicate with a *publish/subscribe* model.
 
 The architecture resembles as much as possible the so-called *model-based
 design* which is the paradigm used for example by Simulink. Here, we wish that
-the developer still thinks in terms or "connecting blocks" but instead of
-generating code from them, he/she directly C-code them.
+developer still think in terms or "connecting blocks" but instead of
+generating code from them, they directly C-code them.
 Note that within this framework advanced coding skills should not be required,
 especially in the application layer.
 
@@ -38,10 +38,10 @@ discussed in the reminder of this `README` file.
 
 # Requirements
 
-For running the example as-is you need a STM32F446RE Nucleo board, but you can
+For running the examples "as-is" you need a STM32F446RE Nucleo board, but you
+can
 of course use any other STM32 board provided that you regenerate the firmware
-code through
-CubeMX or CubeIDE.
+code through CubeMX or CubeIDE.
 
 Then you need:
 1. [CubeMX](https://www.st.com/en/development-tools/stm32cubemx.html) for
@@ -223,16 +223,23 @@ external world with its *publish* and *subscribe* functions.
 
 It follows a checklist for components implementation:
 
-1. Each internal state `x` must have an associated mutex.
-2. Each output must have both a publish and a subscribe
-function. The publish function is used internally to update the output and
-the subscribe is exposed to other components. For example, if output `y` of component A
-is used as input of component B, then component A must implement both a
-publish and subscribe function for `y`. The publish function is kept
-internal to component A (in-fact it is declared as `static`)  whereas the
-subscribe function is included in `componentA.h` file and it is is called by component B.
-The output function `h(x,u)` can be implemented either inside the publish or
-the subscribe function.
+1. Each internal state `x` must have an associated mutex,
+2. Each output must have both a *publish* and a *subscribe* function.
+The publish function is used internally to update the output and
+the subscribe is exposed to other components.
+
+> [TIP!]
+>
+> If output `y` of component A is used as input of component B, then
+> component A must implement both a publish and subscribe function for `y`.
+> The publish function is kept internal to component A (in-fact it is declared
+> as `static`)  whereas the > subscribe function is included in
+> `componentA.h`.  Next, `ComponentB.c` shall include `componentA.h` and
+> now `ComponentB` can read `y` as input by simply call the subscribe function.
+>
+> The output function `h(x,u)` can be  implemented
+> either inside the publish or the subscribe function.
+
 3. Header files of each component must only contain the
 declaration of the init
 function, the step function, and the subscribe_ functions.
