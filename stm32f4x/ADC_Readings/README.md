@@ -24,9 +24,9 @@ publish/subscribe links, see picture below.
   <img src="./drawing.png" alt="Image Alt Text" style="width: 70%;"/>
 </div>
 <div align="center">
-  <p><em>Software architecture.
+  <p><em>ADC Reading example software architecture.
 <br>
-  From the picture we can see how the components are connected, how they are
+  We can see how the components are connected, how they are
   scheduled and we can see also the predictable and the unpredictable events.
   </em></p>
 </div>
