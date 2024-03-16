@@ -229,6 +229,7 @@ The publish function is used internally to update the output and
 the subscribe is exposed to other components.
 
 > **Example**
+>
 > If output `y` of component A is used as input of component B, then
 > component A must implement both a publish and subscribe function for `y`.
 > The publish function is kept internal to component A (in-fact it is declared
@@ -239,17 +240,24 @@ the subscribe is exposed to other components.
 > The output function `h(x,u)` can be  implemented
 > either inside the publish or the subscribe function.
 
+> [!TIP]
+> The definitions of the publish and subscribe function is always the
+> same. The only thing that changes is the dimension in the `memset`
+> function. In the future we may thing to automatically generate that part of
+> code based on some `.yamli/.json` file used to configure the input and
+> output of the components.
+
 3. Header files of each component must only contain the
 declaration of the init function, the step function, and the subscribe_ functions.
 
    1. The `*_init()` function is called by `application_setup.c` file,
-   2. The `*_step(WhoIscalling caller)` is called by `application_setup.c` and
+   2. The `*_step(WhoIsCalling caller)` is called by `application_setup.c` and
       by some deferring tasks defined in `interrupts_to_tasks.c` file,
-   3. The `*_subscribe()` functions are called by all the components that takes
+   3. The `subscribe_*` functions are called by all the components that take
      those outputs as inputs.
 
 4. Due to that C language does not have namespaces, each component shall have
-   an associated prefix
+   an associated prefix,
 5. Don't forget to initialize and schedule your component from the
    `application_setup.c` file.
 
@@ -301,7 +309,7 @@ In the `application_setup.c` file you do the following:
 ## Operating System Layer
 
 The chosen operating system is FreeRTOS.
-We use the one shipped with CubeMX and ArduinoFreeRTOS.
+In the examples, we use the one shipped with CubeMX.
 It takes a bit of application because components actually use FreeRTOS API.
 
 ## Platform Layer
