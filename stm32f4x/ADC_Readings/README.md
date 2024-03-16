@@ -20,6 +20,16 @@ Feel free to replace these sensors with whatever you want, but mind that
 you must have to create two new application components and adjust the
 publish/subscribe links, see picture below.
 
+<div align="center"
+  <img src="./drawing.png" alt="Image Alt Text" style="width: 70%;"/>
+</div>
+<div align="center">
+  <p><em>ADC Reading example software architecture.
+<br>
+  We can see how the components are connected, how they are
+  scheduled and we can see also the predictable and the unpredictable events.
+  </em></p>
+</div>
 
 # Implementation
 
@@ -28,31 +38,10 @@ publish/subscribe links, see picture below.
 The first sensor is connected to `PC0` whereas the second is connected to
 `PC1`. The Nucleo board is connected to the PC.
 
-<div align="center"
-  <img src="./drawing.png" alt="Image Alt Text" style="width: 70%;"/>
-</div>
-<div align="center">
-  <p><em>ADC Reading example software architecture.
-<br>
-  We can see how the components are connected, how they are
-  scheduled and we can see also the predictable and the unpredictable events.
-  </em></p>
-</div>
 
 ## Software
 
 The component view is the following:
-
-<div align="center"
-  <img src="./drawing.png" alt="Image Alt Text" style="width: 70%;"/>
-</div>
-<div align="center">
-  <p><em>ADC Reading example software architecture.
-<br>
-  We can see how the components are connected, how they are
-  scheduled and we can see also the predictable and the unpredictable events.
-  </em></p>
-</div>
 
 ### Platform
 We only use a `usart2_`, `adc1_` and `digital_out_` components. These components
