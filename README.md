@@ -242,7 +242,7 @@ the subscribe is exposed to other components.
 
 > [!TIP]
 > The definitions of the publish and subscribe function is always the
-> same. The only thing that changes is the dimension in the `memset`
+> same. The only thing that changes is the dimension in the `memcpy`
 > function. In the future we may thing to automatically generate that part of
 > code based on some `.yamli/.json` file used to configure the input and
 > output of the components.
@@ -268,7 +268,7 @@ Components' input, state and output `u` `x` and `y` can be updated
 periodically or in an event-based fashion.
 Periodic execution is performed through periodic tasks, whereas event-based
 execution is achieved by interrupts.
-More precisely, *Interrupts Service Routines* (ISR) wake up dedicated,
+More precisely, *Interrupts Service Routines* (ISR:s) wake up dedicated,
 sleeping
 tasks
 that will carry out the actual work needed.
@@ -338,7 +338,7 @@ An example of "unpredictable" event is the pressure of a button connected to a
 GPIO pin. We have absolutely no idea when such a button is going to be
 pressed.
 
-In both cases, interrupt service routines (ISRs) don't preempt the OS by
+In both cases, interrupt service routines (ISR:s) don't preempt the OS by
 executing some
 arbitrary code, but they are gentle in the sense that they
 wake up some task that will in turn execute some code code.
@@ -370,7 +370,7 @@ gets
 2. *Unpredictable* events. In this case the callback wakes up a specific task
    that calls the components with a specific caller argument.
 
-ISR and Callbacks for STM32 are defined in `Core/Src/stm32f4xx_it.c` (so you
+ISR:s and Callbacks for STM32 are defined in `Core/Src/stm32f4xx_it.c` (so you
 must modify
 that file), whereas for Arduino I don't know... yet.
 The functions implementing the deferred tasks for
@@ -387,6 +387,10 @@ code.
 # How to use?
 
 Everything looks very complex, but in reality it is not.
+
+Every example comes with a `README.md` file that explains what the system is
+supposed to and how it is implemented.
+
 The best is to directly look at the examples and modify them at your will.
 The process is fairly easy:
 
@@ -409,7 +413,7 @@ Here are some general guidelines:
    tasks called by ISR:s which are defined in
    `interrupts_to_tasks.c`. Deferring tasks wake up sporadically, i.e. upon
    Interrupt-Service-Routine (ISR) call, so they are not periodic.
-3. ISR shall always be deferred to tasks.
+3. ISR:s shall always be deferred to tasks.
 4. A component should be scheduled only in one periodic task. Avoid calling
 the same component from different periodic task. However, an already scheduled
    components can be called by

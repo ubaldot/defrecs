@@ -1,6 +1,9 @@
 # ADC reading example
 
 In this example you can see the power of multitasking shining!
+
+# Requirements:
+
 The "system" behaves as it follows:
 
 1. The builtin led blinks every second,
@@ -17,22 +20,24 @@ Feel free to replace these sensors with whatever you want, but mind that
 you must have to create two new application components and adjust the
 publish/subscribe links, see picture below.
 
-# Hardware
+# Implementation
+
+## Hardware
 
 The first sensor is connected to `PC0` whereas the second is connected to
 `PC1`. The Nucleo board is connected to the PC.
 
 
-# Software
+## Software
 
 The component view is the following:
 
-## Platform
+#### Platform
 We only use a `usart2_`, `adc1_` and `digital_out_` components. These components
 calls HAL function and publish signals that the application components can
 subscribe to or they are subscribed to application components.
 
-### Interrupts
+#### Interrupts
 
 We have:
 
@@ -48,7 +53,7 @@ notify a blocked periodic task, whereas in the latter case the work is
 deferred to two deferring tasks. Such deferring tasks are defined in
 `interrupts_to_task.c`
 
-## Application
+### Application
 The `blink_` does not subscribe anything but it publishes its state. The
 `digital_out_` subscribe that signal.
 
