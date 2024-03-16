@@ -44,17 +44,6 @@ The component view is the following:
   </em></p>
 </div>
 
-<div align="center"
-  <img src="./drawing.png" alt="Image Alt Text" style="width: 70%;"/>
-</div>
-<div align="center">
-  <p><em>ADC Reading example software architecture.
-<br>
-  We can see how the components are connected, how they are
-  scheduled and we can see also the predictable and the unpredictable events.
-  </em></p>
-</div>
-
 ### Platform
 We only use a `usart2_`, `adc1_` and `digital_out_` components. These components
 calls HAL function and publish signals that the application components can
