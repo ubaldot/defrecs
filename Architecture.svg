@@ -7,7 +7,7 @@
    viewBox="0 0 903.40017 502.05286"
    version="1.1"
    id="svg5"
-   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   inkscape:version="1.2.1 (9c6d41e, 2022-07-14)"
    sodipodi:docname="Architecture.svg"
    inkscape:export-filename="Architecture.png"
    inkscape:export-xdpi="96"
@@ -31,11 +31,11 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:zoom="1.7088243"
      inkscape:cx="229.39749"
-     inkscape:cy="324.49211"
+     inkscape:cy="137.81405"
      inkscape:window-width="1607"
      inkscape:window-height="991"
-     inkscape:window-x="26"
-     inkscape:window-y="23"
+     inkscape:window-x="217"
+     inkscape:window-y="200"
      inkscape:window-maximized="0"
      inkscape:current-layer="layer1" />
   <defs
@@ -80,7 +80,7 @@
      id="layer1"
      transform="translate(-360.39471,-315.35764)">
     <rect
-       style="fill:#df2f2f;fill-opacity:1;stroke:#808080;stroke-width:0.944883"
+       style="fill:#2f5bdf;fill-opacity:1;stroke:#808080;stroke-width:0.944883"
        id="rect181"
        width="528.46912"
        height="92.247559"

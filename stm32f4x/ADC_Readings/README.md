@@ -20,6 +20,17 @@ Feel free to replace these sensors with whatever you want, but mind that
 you must have to create two new application components and adjust the
 publish/subscribe links, see picture below.
 
+<div align="left">
+  <img src="./drawing.png" alt="Image Alt Text" style="width: 70%;"/>
+</div>
+<div align="center">
+  <p><em>Software architecture.
+<br>
+  From the picture we can see how the components are connected, how they are
+  scheduled and we can see also the predictable and the unpredictable events.
+  </em></p>
+</div>
+
 # Implementation
 
 ## Hardware
