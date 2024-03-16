@@ -32,14 +32,12 @@ The first sensor is connected to `PC0` whereas the second is connected to
 
 The component view is the following:
 
-#### Platform
+### Platform
 We only use a `usart2_`, `adc1_` and `digital_out_` components. These components
 calls HAL function and publish signals that the application components can
 subscribe to or they are subscribed to application components.
 
-#### Interrupts
-
-We have:
+We have the following *interrupts*:
 
 - Predictable event:
     1. "ADC1 end-of-conversion",
