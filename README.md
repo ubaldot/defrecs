@@ -228,12 +228,12 @@ It follows a checklist for components implementation:
 The publish function is used internally to update the output and
 the subscribe is exposed to other components.
 
-> [TIP!]
+> **Example**
 >
 > If output `y` of component A is used as input of component B, then
 > component A must implement both a publish and subscribe function for `y`.
 > The publish function is kept internal to component A (in-fact it is declared
-> as `static`)  whereas the > subscribe function is included in
+> as `static`)  whereas the subscribe function is included in
 > `componentA.h`.  Next, `ComponentB.c` shall include `componentA.h` and
 > now `ComponentB` can read `y` as input by simply call the subscribe function.
 >
@@ -243,11 +243,13 @@ the subscribe is exposed to other components.
 3. Header files of each component must only contain the
 declaration of the init
 function, the step function, and the subscribe_ functions.
+
   1. The `*_init()` function is called by `application_setup.c` file,
   2. The `*_step(WhoIscalling caller)` is called by `application_setup.c` and
      by some deferring tasks defined in `interrupts_to_tasks.c` file,
   3. The `*_subscribe()` functions are called by all the components that takes
      those outputs as inputs.
+
 4. Due to that C language does not have namespaces, each component shall have
    an associated prefix
 5. Don't forget to initialize and schedule your component from the
