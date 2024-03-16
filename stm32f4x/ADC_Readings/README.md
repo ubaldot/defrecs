@@ -44,6 +44,7 @@ The component view is the following:
 </div>
 
 ### Platform
+
 We only use a `usart2_`, `adc1_` and `digital_out_` components. These components
 calls HAL function and publish signals that the application components can
 subscribe to or they are subscribed to application components.
@@ -63,11 +64,16 @@ deferred to two deferring tasks. Such deferring tasks are defined in
 `interrupts_to_task.c`
 
 ### Application
+
 The `blink_` does not subscribe anything but it publishes its state. The
 `digital_out_` subscribe that signal.
 
 The `pv_` and `tempsems_` components interpret the pin voltages encapsulated in
-the published signals from `adc1_` and publish a value. The `serial_` subscribe
-these signals and send them to `usart2_`.
+the published signals from `adc1_` and publish a value. The component
+`usart2_` subscribe these signals.
 
-## Scheduling
+### Scheduling
+
+There are only two periodic tasks: one running at 1000ms and the other at
+200ms. However, there are also two deferring tasks associated to the
+unpredictable events. Such tasks call the `usart2_` component.
