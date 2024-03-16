@@ -38,9 +38,8 @@ The component view is the following:
 </div>
 <div align="center">
   <p><em>ADC Reading example software architecture.
-<br>
   We can see how the components are connected, how they are
-  scheduled and we can see also the predictable and the unpredictable events.
+  scheduled and we can also see the predictable and the unpredictable events.
   </em></p>
 </div>
 
