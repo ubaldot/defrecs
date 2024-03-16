@@ -20,7 +20,7 @@ Feel free to replace these sensors with whatever you want, but mind that
 you must have to create two new application components and adjust the
 publish/subscribe links, see picture below.
 
-<div align="left">
+<div align="center">
   <img src="./drawing.png" alt="Image Alt Text" style="width: 70%;"/>
 </div>
 <div align="center">
