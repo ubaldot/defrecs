@@ -63,6 +63,8 @@ notify a blocked periodic task, whereas in the latter case the work is
 deferred to two deferring tasks. Such deferring tasks are defined in
 `interrupts_to_task.c`
 
+Note that only platform components are allowed to make HAL API calls.
+
 ### Application
 
 The `blink_` does not subscribe anything but it publishes its state. The
@@ -76,4 +78,4 @@ the published signals from `adc1_` and publish a value. The component
 
 There are only two periodic tasks: one running at 1000ms and the other at
 200ms. However, there are also two deferring tasks associated to the
-unpredictable events. Such tasks call the `usart2_` component.
+unpredictable events. Such deferring tasks call the `usart2_` component.

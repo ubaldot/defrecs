@@ -12,19 +12,16 @@ it is nothing more than a software architecture and a bunch of guidelines
 to simplify and scale the development of real-time control systems and help
 control systems engineers to code their algorithms in C.
 
-DEFRECS is nothing but a software architecture and a bunch of guidelines
-to simplify and scale the development of real-time control systems.
 The architecture is an application of *component-based software engineering*
-where the components communicate with a *publish/subscribe* model.
-
-The architecture resembles as much as possible the so-called *model-based
+where the components communicate with a *publish/subscribe* model and it
+resembles as much as possible the so-called *model-based
 design* which is the paradigm used for example by Simulink. Here, we wish that
 developer still think in terms or "connecting blocks" but instead of
 generating code from them, they directly C-code them.
 Note that within this framework advanced coding skills should not be required,
 especially in the application layer.
 
-The proposed framework considers separation between the application and the
+The proposed framework separates  the application from the
 platform layers.
 The aim is to make the application as portable as possible and the platform as
 scalable as possible. For example, if you are working on a STM32 platform and
@@ -235,7 +232,8 @@ the subscribe is exposed to other components.
 > The publish function is kept internal to component A (in-fact it is declared
 > as `static`)  whereas the subscribe function is included in
 > `componentA.h`.  Next, `ComponentB.c` shall include `componentA.h` and
-> now `ComponentB` can read `y` as input by simply call the subscribe function.
+> now `ComponentB` can read `y` as input by simply call the subscribe
+> function.
 >
 > The output function `h(x,u)` can be  implemented
 > either inside the publish or the subscribe function.
@@ -248,7 +246,8 @@ the subscribe is exposed to other components.
 > output of the components.
 
 3. Header files of each component must only contain the
-declaration of the init function, the step function, and the subscribe_ functions.
+declaration of the init function, the step function, and the subscribe_
+functions.
 
    1. The `*_init()` function is called by `application_setup.c` file,
    2. The `*_step(WhoIsCalling caller)` is called by `application_setup.c` and
@@ -386,25 +385,22 @@ code.
 
 # How to use?
 
-Everything looks very complex, but in reality it is not.
-
-Every example comes with a `README.md` file that explains what the system is
-supposed to and how it is implemented.
-
-The best is to directly look at the examples and modify them at your will.
+The best is to copy an example and adjust based on your need.
 The process is fairly easy:
 
-1. You setup your firmware with CubeMX. Generate the `Makefile` from there: in
-the Section `Project Manager - Project - Toolchain/IDE` select `Makefile`,
+1. Open the `.ioc` file with CubeMX and adjust your hardware configuration.
+Generate the `Makefile` from there: in the Section `Project Manager - Project
+- Toolchain/IDE` select `Makefile`,
 2. Adjust the `Makefile` to include your tools path and the source and include
 paths.
 3. Adjust the platform layer components located in the `platform` folder,
-4. Develop and connect your components in the `application folder`,
-5. Schedule them from the `application_setup.c` file,
-6. Adjust the code for handling interrupts, if any
+4. Develop and connect your components in the `application folder`, through
+   publish/subscribe functions,
+5. Schedule the components in the `application_setup.c` file,
+6. Adjust the code for handling interrupts, if any.
 
 
-Here are some general guidelines:
+Here are some general guidelines on how to design your application:
 
 1. Start your project by adjusting the platform components. Don't forget to
    initialize them and to schedule them from the `application_setup.c` file.
@@ -416,29 +412,28 @@ Here are some general guidelines:
 3. ISR:s shall always be deferred to tasks.
 4. A component should be scheduled only in one periodic task. Avoid calling
 the same component from different periodic task. However, an already scheduled
-   components can be called by
-   a deferring tasks.
+   components can be called by a deferring tasks.
 5. Never use HAL functions in the application layer!
 6. Components shall communicate only through their publish/subscribe
    interfaces.
 7. Pay attention to your components scheduling. Some outputs may be
-   sampled faster/slower than some inputs and that could lead to a number of
+   sampled faster or slower than some inputs and that could lead to a number of
    problems. Be sure that the scheduling makes sense to your application.
 
-Here are some guidelines on how to write components:
+Here are some guidelines on how to design components:
 
 1. Each component must have a prefix, to be easily searched,
 2. Published signals must start with the prefix, e.g. `blink_led_state`
-3. Mutex for publishing/subscribing must contain the same name of the
+3. Each signal must be published/subscribed through a mutex.
+4. Mutex for publishing/subscribing must contain the same name of the
    associated output, e.g. `blink_led_state` -> `mutex_blink_led_state`
-4. Publish and subscribing functions is the same for all the components and
+5. Publish and subscribing functions is the same for all the components and
    must have the form `publish_<output_name>(...)`,
    e.g. `publish_blink_led_state(&led_state)`,
-5. The function to be placed in the scheduling must have the form
-`<prefix>_step`,
-   e.g. `blink_step(PERIODIC_TASK)`,
-6. Outputs shall be initialized in the `<prefix>_init()` function,
-7. In a component header file you must only include the prototypes for the
+6. The function to be placed in the scheduling must have the form
+`<prefix>_step`, e.g. `blink_step(PERIODIC_TASK)`,
+7. Outputs shall be initialized in the `<prefix>_init()` function,
+8. Component header files must include only the prototypes of the
    init, the step and the subscribe functions.
 
 
