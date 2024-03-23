@@ -1,10 +1,10 @@
 # Hello World!
 
-This is a very simple example.
+This is a very simple example to show the basics of DEFRECS.
 
 # Requirements:
 
-The "system" behaves as it follows:
+The "system" shall behave as it follows:
 
 1. The builtin led blinks every second,
 2. The led state is sent over the USART2,

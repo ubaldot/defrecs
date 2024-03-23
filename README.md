@@ -45,7 +45,7 @@ Hence, you need the following software:
 
 If you want, you can also install
 [CubeIDE](https://www.st.com/en/development-tools/stm32cubeide.html)
-to have all in one! However, if you go for this solution you should add the
+to have all in one. However, if you go for this solution you should add the
 include paths and the source code files to be compiled.
 
 *Optional* tools that I personally use:
