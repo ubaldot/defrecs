@@ -68,7 +68,7 @@ are eager to start, jump to the *How to use* Section below.
 
 On the top level you have each folder representing each
 platform. As it is today, we only have one platform folder
-(e.g. `stm32f446re_platform`).
+(e.g. `stm32f4x`).
 Each sub-folder represents an example (e.g. `Hello_World`, `ADC_Readings`,
 etc.). You also have
 some additional files that you could ignore as they are using for the
