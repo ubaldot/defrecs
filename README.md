@@ -64,7 +64,8 @@ include paths and the source code files to be compiled.
    code for finite state-machines (ok, I don't use it yet, but I plan to
    investigate its potential).
 
-If you write the platform for other boards feel free to open a PR.
+If you write the platform for other boards feel free to open a PR and if you
+are eager to start, jump to the *How to use* Section below.
 
 # Repository structure
 
@@ -385,14 +386,27 @@ code.
 
 # How to use?
 
-The best is to copy an example and adjust based on your need.
-The process is fairly easy:
+The best is to copy an example and adjust it based on your need.
+For each example you have an associated `README.md`file with the following
+structure:
+
+1. Introduction
+2. Requirements - what the system shall do.
+3. Implementation
+   1. Hardware - which pin corresponds to what, etc.
+   2. Software - how components are connected.
+      1. Platform - platform components description, predictable and unpredictable
+         events.
+      2. Application - application components description.
+      3. Scheduling - how components are scheduled
+
+The process for modifying an existing example is fairly easy:
 
 1. Open the `.ioc` file with CubeMX and adjust your hardware configuration.
-Generate the `Makefile` from there: in the Section `Project Manager - Project
-- Toolchain/IDE` select `Makefile`,
+   Generate the `Makefile` from there:
+   in the Section `Project Manager - Project - Toolchain/IDE` select `Makefile`,
 2. Adjust the `Makefile` to include your tools path and the source and include
-paths.
+   paths,
 3. Adjust the platform layer components located in the `platform` folder,
 4. Develop and connect your components in the `application folder`, through
    publish/subscribe functions,
@@ -403,19 +417,18 @@ paths.
 Here are some general guidelines on how to design your application:
 
 1. Start your project by adjusting the platform components. Don't forget to
-   initialize them and to schedule them from the `application_setup.c` file.
+   initialize them and to schedule them from the `application_setup.c` file,
 2. You only have two types of tasks: *periodic* tasks defined in
-`application_setup.c` and *deferring*
-   tasks called by ISR:s which are defined in
+   `application_setup.c` and *deferring* tasks called by ISR:s which are defined in
    `interrupts_to_tasks.c`. Deferring tasks wake up sporadically, i.e. upon
-   Interrupt-Service-Routine (ISR) call, so they are not periodic.
-3. ISR:s shall always be deferred to tasks.
+   Interrupt-Service-Routine (ISR) call, so they are not periodic,
+3. ISR:s shall always be deferred to tasks,
 4. A component should be scheduled only in one periodic task. Avoid calling
-the same component from different periodic task. However, an already scheduled
-   components can be called by a deferring tasks.
-5. Never use HAL functions in the application layer!
+   the same component from different periodic task,
+   However, an already scheduled components can be called by a deferring tasks,
+5. Never use HAL functions in the application layer,
 6. Components shall communicate only through their publish/subscribe
-   interfaces.
+   interfaces,
 7. Pay attention to your components scheduling. Some outputs may be
    sampled faster or slower than some inputs and that could lead to a number of
    problems. Be sure that the scheduling makes sense to your application.
@@ -423,8 +436,10 @@ the same component from different periodic task. However, an already scheduled
 Here are some guidelines on how to design components:
 
 1. Each component must have a prefix, to be easily searched,
-2. Published signals must start with the prefix, e.g. `blink_led_state`
-3. Each signal must be published/subscribed through a mutex.
+2. Published signals must start with the prefix, e.g. `blink_led_state`,
+3. Each published/subscribed is protected through a mutex,as well as HAL calls
+   (think for example if some usart component that transmit data is called
+   concurrently),
 4. Mutex for publishing/subscribing must contain the same name of the
    associated output, e.g. `blink_led_state` -> `mutex_blink_led_state`
 5. Publish and subscribing functions is the same for all the components and

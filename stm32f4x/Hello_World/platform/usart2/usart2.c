@@ -11,7 +11,7 @@
 // update a published signal.
 //
 // PREFIX: usart2_
-// PUBLISHED SIGNALS: change all the time!
+// PUBLISHED SIGNALS: None.
 //===----------------------------------------------------------------------===//
 #include "usart2/usart2.h"
 #include "application_setup.h"
@@ -28,10 +28,15 @@
 
 static void transmit(char *pMsg);
 
+/* Semaphore to prevent race conditions in HAL_UART_Transmit */
+/* Note that this function does not publish any signal, hence no other mutexes */
+/* are needed */
 static SemaphoreHandle_t mutex_tx_process;
 
+/* Init */
 void usart2_init() { mutex_tx_process = xSemaphoreCreateMutex(); }
 
+/* Step */
 void usart2_step(enum WhoIsCalling caller) {
   // INPUTS
   uint8_t led_state;
