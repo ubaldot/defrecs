@@ -1,10 +1,11 @@
-# ADC reading example
+# ADC reading
 
-In this example you can see the power of multitasking shining!
+In this example we add the utilization of the ADC converter and we require
+something slightly more complex to the system.
 
 # Requirements:
 
-The "system" behaves as it follows:
+The "system" shall behave as it follows:
 
 1. The builtin led blinks every second,
 2. Two sensors are connected to the ADC1, but:

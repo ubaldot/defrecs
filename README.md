@@ -487,6 +487,10 @@ or team in developing a Kalman filter for estimating some quantities, etc.
 
 1. cmake and/or function pointers to deal with cross-platform.
 2. HAL and OS Error handling.
-3. Doxygen
-4. Components vs functions
-5. Generate interfaces from yaml
+3. Doxygen.
+4. Components vs "utils" functions.
+5. Generate interfaces from yaml.
+6. Keep the components in a common top folder and link them from the Makefile
+   of each example (how to deal with compile\_commands.json file then?)
+7. Investigate if you can use vanilla FreeRTOS to make it even more
+   platform independent.
