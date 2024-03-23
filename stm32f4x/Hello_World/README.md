@@ -72,3 +72,20 @@ with e.g. `gdb`.
 There are only two periodic tasks: one running at 1000ms and the other at
 200ms. However, there are also two deferring tasks associated to the
 unpredictable events. Such deferring tasks call the `usart2_` component.
+
+### Conclusions
+
+This was a truly just `Hello World` example, but it exhibit many aspects of
+DEFRECS. In particular, it is shown:
+
+1. how the system is broken down into components,
+2. how components are grouped into platform and application (Note:
+   only platform components call HAL function, so if you can swap to an
+   e.g. Arduino board all you have to do is to adjust the platform layer,
+   leaving the application untouched),
+3. how interrupts are handled,
+4. how simple is to sketch a block diagram in a Simulink-like style,
+5. how the publish/subscribe mechanism work,
+6. how to use mutexes for protecting internal components state and HAL calls.
+
+I hope you enjoyed it!

@@ -29,7 +29,8 @@
 static void transmit(char *pMsg);
 
 /* Semaphore to prevent race conditions in HAL_UART_Transmit */
-/* Note that this function does not publish any signal, hence no other mutexes */
+/* Note that this function does not publish any signal, hence no other mutexes
+ */
 /* are needed */
 static SemaphoreHandle_t mutex_tx_process;
 
@@ -63,7 +64,8 @@ void usart2_step(enum WhoIsCalling caller) {
   }
 }
 
-void transmit(char *pMsg) {
+/* Util function. It can be used only inside this component. */
+static void transmit(char *pMsg) {
   if (xSemaphoreTake(mutex_tx_process, pdMS_TO_TICKS(5)) == pdTRUE) {
     HAL_UART_Transmit(&huart2, (uint8_t *)pMsg, strlen(pMsg), portMAX_DELAY);
     xSemaphoreGive(mutex_tx_process);

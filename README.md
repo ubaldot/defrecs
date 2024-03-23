@@ -21,7 +21,7 @@ generating code from them, they directly C-code them.
 Note that within this framework advanced coding skills should not be required,
 especially in the application layer.
 
-The proposed framework separates  the application from the
+The proposed framework separates the application and the
 platform layers.
 The aim is to make the application as portable as possible and the platform as
 scalable as possible. For example, if you are working on a STM32 platform and
@@ -243,11 +243,11 @@ the subscribe is exposed to other components.
 > The definitions of the publish and subscribe function is always the
 > same. The only thing that changes is the dimension in the `memcpy`
 > function. In the future we may thing to automatically generate that part of
-> code based on some `.yamli/.json` file used to configure the input and
+> code based on some `.yaml/.json` file used to configure the input and
 > output of the components.
 
 3. Header files of each component must only contain the
-declaration of the init function, the step function, and the subscribe_
+declaration of the init function, the step function, and the subscribe
 functions.
 
    1. The `*_init()` function is called by `application_setup.c` file,
