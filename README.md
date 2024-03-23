@@ -35,12 +35,9 @@ discussed in the reminder of this `README` file.
 
 # Requirements
 
-For running the examples "as-is" you need a STM32F446RE Nucleo board, but you
-can
-of course use any other STM32 board provided that you regenerate the firmware
-code through CubeMX or CubeIDE.
+For running the examples "as-is" you need a STM32F446RE Nucleo board.
+Hence, you need the following software:
 
-Then you need:
 1. [CubeMX](https://www.st.com/en/development-tools/stm32cubemx.html) for
    generating the firmware,
 2. [CubeCLT](https://www.st.com/en/development-tools/stm32cubeclt.html) which
