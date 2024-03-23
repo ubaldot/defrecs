@@ -21,7 +21,7 @@
 #include <semphr.h>
 #include <string.h>
 
-// OUTPUTS AS EXAMPLES OF SETTER AND GETTER METHODS
+// OUTPUTS: DEFINE BOTH PUBLISH AND SUBSCRIBE FUNCTIONS
 static uint8_t blink_led_state;
 static SemaphoreHandle_t mutex_blink_led_state;
 

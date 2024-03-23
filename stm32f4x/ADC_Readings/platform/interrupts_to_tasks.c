@@ -20,6 +20,8 @@
 void BuiltinButtonDeferred(void * /*pVParameters*/);
 void Usart2RxDeferred(void * /*pVParameters*/);
 
+/* Tasks associated to unpredictable events */
+
 // Builtin button pressed
 TaskHandle_t xTaskBuitinButtonDeferred;
 

@@ -18,16 +18,15 @@
 
 void BuiltinButtonDeferred(void * /*pVParameters*/);
 
-// Builtin button pressed
+// Builtin button pressed. Only tasks associated to unpredictable events shall
+// be defined here.
 TaskHandle_t xTaskBuitinButtonDeferred;
-
 
 // Init
 void interrupts_to_tasks_init() {
   /* Transmit upon button press */
   xTaskCreate(BuiltinButtonDeferred, "BuiltinButtonPressed", 128, NULL,
-              configMAX_PRIORITIES - 1,
-              &xTaskBuitinButtonDeferred);
+              configMAX_PRIORITIES - 1, &xTaskBuitinButtonDeferred);
 }
 
 // Functions associated to tasks
