@@ -93,22 +93,27 @@ The structure of each example is always the same: you have an `application`
 folder that contains a selection of application components, and a `platform`
 folder that contains platform components. Among other things, the platform
 components are in charge of wrapping the HAL of a specific vendor, in this
-case STM32.
+case STM32. Given that your task is 90% developing and connecting components,
+you will work 90% in these two folders.
 
-Then, you have a `utils` folder that contains a number of utilities (like for
-example the `ftoa` used to convert floats into ASCII in embedded systems,
-etc.).
+However, there are some other folders and files.
+For example, there is a `utils` folder that contains a number of utilities, like for
+example the `ftoa` used to convert floats into ASCII in embedded systems, that
+you may want to re-use in your components.
 
-You have a `contrib` folder that you can ignore as it contains
+There is a `contrib` folder that you can ignore as it contains
 helpers from third-parties, for example for accessing
 FreeRTOS tasks through *openocd* when you are debugging and so on.
 
-Finally, you have a bunch of folders which are platform/framework specific.
+Finally, there are a bunch of other folders which are platform/framework
+specific or are files that the author uses (like `opendocd_*` files etc)
+that you can simply ignore.
 
 Note that each example has a `README.md` file that explains what has been
 done.
 
-You will most likely use only the `application` and the `platform` folders.
+Again, you will most likely use only the `application` and the `platform` folders
+ even though sometimes you need to do some adjustments here and there.
 
 ### stm32f4xx
 
