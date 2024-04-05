@@ -2,6 +2,12 @@
 
 This is a very simple example to show the basics of DEFRECS.
 
+<div align="center">
+  <img src="./Blink.jpg" alt="Image Alt Text" style="width: 70%;"/>
+</div>
+<div align="center">
+  <p><em>Blink setup.  </em></p>
+</div>
 # Requirements:
 
 The "system" shall behave as it follows:

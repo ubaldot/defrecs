@@ -3,6 +3,13 @@
 In this example we add the utilization of the ADC converter and we require
 something slightly more complex to the system.
 
+<div align="center">
+  <img src="./PhotoVoltaic.jpg" alt="Image Alt Text" style="width: 70%;"/>
+</div>
+<div align="center">
+  <p><em>ADC reading example setup.  </em></p>
+</div>
+
 # Requirements:
 
 The "system" shall behave as it follows:
