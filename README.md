@@ -222,10 +222,12 @@ It follows a checklist for components implementation:
 > The output function `h(x,u)` can be implemented either inside the publish or
 > the subscribe function.
 
-> [!TIP] The definitions of the publish and subscribe function is always the
-> same. The only thing that changes is the dimension in the `memcpy` function.
-> In the future we may thing to automatically generate that part of code based
-> on some `.yaml/.json` file used to configure the input and output of the
+> [!TIP]
+>
+> The definitions of the publish and subscribe function is always the same.
+> The only thing that changes is the dimension in the `memcpy` function. In
+> the future we may thing to automatically generate that part of code based on
+> some `.yaml/.json` file used to configure the input and output of the
 > components.
 
 3. Header files of each component must only contain the declaration of the
