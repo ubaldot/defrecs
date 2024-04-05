@@ -31,7 +31,7 @@ else ifeq ($(OS),Linux)
 	PROGRAMMER_PATH = /opt/st/stm32cubeclt/stm32cubeprogrammer
 	PROGRAMMER = $(PROGRAMMER_PATH)/STM32_Programmer_CLI
 else
-	SERIAL_PORT = /dev/cu.usbmodem103
+	SERIAL_PORT = /dev/cu.usbmodem1103
 	ARM_NONE_EABI_PATH = /opt/ST/STM32CubeCLT/GNU-tools-for-STM32
 	GCC_PATH = $(ARM_NONE_EABI_PATH)/bin
 	PROGRAMMER_PATH = /opt/ST/STM32CubeCLT/STM32CubeProgrammer
