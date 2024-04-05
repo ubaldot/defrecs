@@ -93,8 +93,13 @@ The structure of each example is always the same: you have an `application`
 folder that contains a selection of application components, and a `platform`
 folder that contains platform components. Among other things, the platform
 components are in charge of wrapping the HAL of a specific vendor, in this
-case STM32. Given that your task is 90% developing and connecting components,
-you will work 90% of your time with the files contained in these two folders.
+case STM32.
+
+The components in the `application` folder shall be platform independent. They
+shall never directly call HAL functions. At most, they call OS functions.
+
+Given that your task is 90% developing and connecting components, you will
+work 90% of your time with the files contained in these two folders.
 
 However, there are some other folders and files. For example, there is a
 `utils` folder that contains a number of utilities, like for example the
