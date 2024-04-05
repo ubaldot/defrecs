@@ -22,10 +22,12 @@ The "system" shall behave as it follows:
 3. User can type anything on its computer keyboard. Once `Enter` is pressed,
    the message is sent through the USART2.
 
-We used two small photo-voltaic panels connected in series and a LM335
-temperature sensor as sensors. Feel free to replace these sensors with
-whatever you want, but mind that you must have to create two new application
-components and adjust the publish/subscribe links, see picture below.
+We used two small photo-voltaic panels connected in series and the output of
+such a series connection is connected to a simple voltmeter which represents
+our first sensor. Then, a LM335 temperature sensor is used as second sensor.
+Feel free to replace these sensors with whatever you want, but mind that you
+must have to create two new application components and adjust the
+publish/subscribe links, see picture below.
 
 # Implementation
 
