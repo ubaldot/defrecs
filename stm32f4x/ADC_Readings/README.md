@@ -4,7 +4,7 @@ In this example we add the utilization of the ADC converter and we require
 something slightly more complex to the system.
 
 <div align="center">
-  <img src="./PhotoVoltaic.jpg" alt="Image Alt Text" style="width: 70%;"/>
+  <img src="./stm32f4x/ADC_Readings/PhotoVoltaic.JPG" alt="Image Alt Text" style="width: 70%;"/>
 </div>
 <div align="center">
   <p><em>ADC reading example setup.  </em></p>
