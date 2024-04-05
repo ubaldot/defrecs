@@ -126,7 +126,7 @@ application to allow its re-utilization on different platforms with as less
 pain as possible. The OS used is FreeRTOS.
 
 <div align="left">
-  <img src="./Architecture.png" alt="Image Alt Text" style="width: 70%;"/>
+  <img src="./figures/Architecture.png" alt="Image Alt Text" style="width: 70%;"/>
 </div>
 <div align="center">
   <p><em>The proposed architecture.
@@ -147,7 +147,7 @@ through a _publisher/subscriber_ model to resemble as much as possible
 Simulink models.
 
 <div align="center">
-  <img src="./application_example.png" alt="Image Alt Text" style="width:
+  <img src="./figures/application_example.png" alt="Image Alt Text" style="width:
   60%;" />
   <p><em>Application example.
   <br>
@@ -183,7 +183,7 @@ That is, a component is _encapsulated_ in a file and communicate with the
 external world with its _publish_ and _subscribe_ functions.
 
 <div align="center">
-  <img src="./component.png" alt="Image Alt Text" style="width: 60%;" />
+  <img src="./figures/component.png" alt="Image Alt Text" style="width: 60%;" />
   <p><em>A component.
   <br> It has an internal state x, input u and output y, it is
   initialized with initial condition x0 and it can be scheduled periodically
@@ -411,7 +411,7 @@ Once done, edit the `Makefile` and you are set. For STM32 you have to modify
 the _Programmer and compiler paths_ and the _Custom targets_ sections.
 
 <div align="center">
-  <img src="./comp_scheduling.png" alt="Image Alt Text" style="width: 60%;" />
+  <img src="./figures/comp_scheduling.png" alt="Image Alt Text" style="width: 60%;" />
   <p><em>Scheduling example. Check that the execution periods won't mess up
   your application.
    </em></p>
