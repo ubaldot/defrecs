@@ -299,7 +299,7 @@ Why use a RTOS is well explained in the FreeRTOS homepage, whereas it has been
 recently released a new FreeRTOS guideline.
 
 However, regardless of the used OS, it is good to know general concepts such
-as tasks, interrupts, interrupt-service-routines (ISR) and the problem that
+as tasks, interrupts, interrupt-service-routines (ISR) and the problems that
 may arise when using a RTOS. The way we are using the OS in DEFRECS should -
 hopefully - minimize all the occurrence of all the problems introduced by the
 usage of a RTOS.
