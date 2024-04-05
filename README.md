@@ -181,8 +181,8 @@ considering C as language reference, a component is nothing more than a
 2. _Init_ function: to initialize the internal state, that is, our `x0`,
 3. _Step_ function: a function that update the internal state and produces the
    outputs, which is our `f`,
-4. _Output function_ that maps the state `x` to the output `y`. This is useful
-   when the output is not the same as the state.
+4. _Output function_ that maps the state `x` and the input `u` to the output
+   `y`.
 5. _publish*/subscribe*_ functions to publish/subscribe the outputs and inputs
    `y` and `u`.
 
@@ -341,8 +341,8 @@ For this reason, ISR:s always have pretty much always the same structure
 regardless of the nature of the event as well as the associated callbacks
 functions that only perform the following operations:
 
-1. Release a semaphore to unlock a task,
-2. Ask for a context switch if the unlocked task has higher priority than the
+1. Notify a deferring task that wakes up,
+2. Ask for a context switch if the woken up task has higher priority than the
    current task.
 
 However, the difference relies in the following:
@@ -395,7 +395,7 @@ The process for modifying an existing example is fairly easy:
 5. Schedule the components in the `application_setup.c` file,
 6. Adjust the code for handling interrupts, if any.
 
-Here are some general guidelines on how to design your **application**:
+## Application design
 
 1. Start your project by adjusting the platform components. Don't forget to
    initialize them and to schedule them from the `application_setup.c` file,
@@ -414,7 +414,7 @@ Here are some general guidelines on how to design your **application**:
    faster or slower than some inputs and that could lead to a number of
    problems. Be sure that the scheduling makes sense to your application.
 
-Here are some guidelines on how to design **components**:
+## Components design
 
 1. Each component must have a prefix, to be easily searched,
 2. Published signals must start with the prefix, e.g. `blink_led_state`,
