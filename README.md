@@ -278,9 +278,6 @@ Once we have connected your selected components through their publish and
 subscribe functions, it is time to run them. That is the topic of the next
 section.
 
-Q: Among all the possible way of connecting blocks, is there any specific
-guidelines? YES! See below.
-
 ### application_setup.c
 
 We have connected our components. The data flow is clear. Next, we have to
