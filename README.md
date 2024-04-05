@@ -292,18 +292,18 @@ takes a bit of application because components actually use FreeRTOS API.
 Why use a RTOS is well explained in the FreeRTOS homepage, whereas it has been
 recently released a new FreeRTOS guideline.
 
-Regardless of the used OS, it is good to know general concepts such as tasks,
-interrupts, interrupt-service-routines (ISR) and the problem that may arise
-when using a RTOS. The way we are using the OS in DEFRECS should - hopefully -
-minimize all the occurrence of all the problems introduced by the usage of a
-RTOS.
+However, regardless of the used OS, it is good to know general concepts such
+as tasks, interrupts, interrupt-service-routines (ISR) and the problem that
+may arise when using a RTOS. The way we are using the OS in DEFRECS should -
+hopefully - minimize all the occurrence of all the problems introduced by the
+usage of a RTOS.
 
-We consider only two types of tasks: periodic tasks and deferring tasks. The
-first schedule components in a periodic fashion, whereas the second are woken
-up in response to an unpredictable event that has occurred. See interrupt
-Section below for more information.
+We consider only two types of tasks: periodic and deferring. The first
+schedule components in a periodic fashion, whereas the second are woken up in
+response to an unpredictable event that has occurred. See interrupt Section
+below for more information.
 
-We further carefully uses mutex to avoid blocking condition and starvation.
+We further carefully uses mutex to avoid blocking conditions and starvation.
 
 ## Platform Layer
 
