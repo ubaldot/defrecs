@@ -16,7 +16,7 @@ resembles as much as possible the so-called _model-based design_ which is the
 paradigm used for example by Simulink. Here, we wish that developer still
 thinks in terms of "connecting blocks" but instead of generating code from
 them, they directly C-code them. Note that within this framework advanced
-coding skills should not be required, especially in the application layer.
+coding skills should not be required.
 
 The proposed framework separates the application and the platform layers. The
 aim is to make the application as portable as possible and the platform as
@@ -61,6 +61,10 @@ _Optional_ tools that I personally use:
 
 If you write the platform for other boards feel free to open a PR and if you
 are eager to start, jump to the _How to use_ Section below.
+
+It is also required that users know basic concepts of operating systems such
+as what is a tasks, what are race-conditions, what are mutexes as well as some
+basics of micro-controllers such as what is an interrupt, etc.
 
 # Repository structure
 
