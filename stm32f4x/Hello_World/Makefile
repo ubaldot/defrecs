@@ -18,17 +18,26 @@ TARGET = Hello_World
 ######################################
 # Programmer and compiler paths
 ######################################
-ifeq ($(OS),Windows_NT)
+
+# OS switch
+ifeq '$(findstring ;,$(PATH))' ';'
+    UNAME := Windows
+else
+    UNAME := $(shell uname 2>/dev/null || echo Unknown)
+endif
+
+
+ifeq ($(UNAME),Windows)
 	SERIAL_PORT = COM3
 	ARM_NONE_EABI_PATH = C:/ST/STM32CubeCLT/GNU-tools-for-STM32
 	GCC_PATH = $(ARM_NONE_EABI_PATH)/bin
 	PROGRAMMER_PATH = C:/ST/STM32CubeCLT/STM32CubeProgrammer/bin
 	PROGRAMMER = $(PROGRAMMER_PATH)/STM32_Programmer_CLI
-else ifeq ($(OS),Linux)
+else ifeq ($(UNAME),Linux)
 	SERIAL_PORT = /dev/ttys3
 	ARM_NONE_EABI_PATH = /opt/st/stm32cubeclt/GNU-tools-for-STM32
 	GCC_PATH = $(ARM_NONE_EABI_PATH)/bin
-	PROGRAMMER_PATH = /opt/st/stm32cubeclt/stm32cubeprogrammer
+	PROGRAMMER_PATH = /opt/st/stm32cubeclt/STM32CubeProgrammer/bin
 	PROGRAMMER = $(PROGRAMMER_PATH)/STM32_Programmer_CLI
 else
 	SERIAL_PORT = /dev/cu.usbmodem103
