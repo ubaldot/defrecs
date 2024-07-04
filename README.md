@@ -21,9 +21,8 @@ coding skills should not be required.
 The proposed framework separates the application and the platform layers. The
 aim is to make the application as portable as possible and the platform as
 scalable as possible. For example, if you are working on a STM32 platform and
-you want to move on an Arduino platform, the only layer that must be changed
-is the platform layer, even if at the moment we develop it solely for STM32
-platform.
+you want to move on an ESP platform, the only layer that must be changed is
+the platform layer.
 
 ## Getting started
 
@@ -100,8 +99,7 @@ debugging framework used by the author.
 The structure of each example is always the same: you have an `application`
 folder that contains a selection of application components, and a `platform`
 folder that contains platform components. Among other things, the platform
-components are in charge of wrapping the HAL of a specific vendor, in this
-case STM32.
+components are in charge of wrapping the HAL of a specific vendor.
 
 The components in the `application` folder shall be platform independent. They
 shall never directly call HAL functions. At most, they call OS functions.
@@ -292,8 +290,8 @@ We have connected our components. The data flow is clear. Next, we have to
 schedule our components. In the `application_setup.c` file you do the
 following:
 
-1. Initalize the platform and the components,
-2. Define the periodic tasks (i.e. you set sampling period, allocated stack
+1. Initalize the platform and the application components,
+2. Define the periodic tasks (i.e. you set sampling periods, allocated stack
    memory, etc),
 3. For each periodic task you list the components that shall be executed.
 
