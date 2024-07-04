@@ -370,9 +370,10 @@ However, the difference relies in the following:
 > memory through the DMA. In the following code:
 
 ```
-# ...
- HAL_ADC_Start_DMA(&hadc1, analog_read, NUM_CHANNELS);
- ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
+// ...
+HAL_ADC_Start_DMA(&hadc1, analog_read, NUM_CHANNELS);
+ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
+// ..
 ```
 
 > the function `ulTaskNotifyTake()` locks the task `task_200ms` until it
