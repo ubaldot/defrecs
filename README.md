@@ -377,7 +377,7 @@ ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
 ```
 
 > the function `ulTaskNotifyTake()` locks the task `task_200ms` until it
-> receive a notification. Such a notification is send from the callback
+> receives a notification. Such a notification is sent from the callback
 > function invoked when the "DMA transfer completed" event happened.
 
 2. _Unpredictable_ events. In this case the callback wakes up a specific task
