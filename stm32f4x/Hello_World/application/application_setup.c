@@ -51,7 +51,7 @@ static void components_init() {
   debug_init();
 }
 
-void run_application() {
+void application_setup() {
   // Initialize all the components needed for this app.
   // Disable all interrupts during startup
   taskENTER_CRITICAL();

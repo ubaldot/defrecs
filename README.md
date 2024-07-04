@@ -297,6 +297,23 @@ following:
    memory, etc),
 3. For each periodic task you list the components that shall be executed.
 
+Then, in the `main()` function, you should have something like the following:
+
+```
+int main(void){
+   // Set the various registers of the peripherals if needed
+   init_hardware()
+
+   // This is defined in application_setup.c. It inizializes both platform and
+   // application components and define the tasks
+   application_setup()
+
+   // Start scheduler
+   vTaskStartScheduler()
+
+}
+```
+
 ## Operating System Layer
 
 The chosen operating system is FreeRTOS. In the examples, we use the one
