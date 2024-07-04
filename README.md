@@ -363,7 +363,7 @@ However, the difference relies in the following:
    callback notifies the locked periodic task waiting for that event to happen
    and nothing more.
 
-> ### EXAMPLE
+> **Example**
 >
 > Assume that `my_component` is scheduled in `task_200ms` and that
 > `my_component` reads data from ADC that transfer the converted data to
