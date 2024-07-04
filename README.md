@@ -35,6 +35,8 @@ examples is discussed in the reminder of this `README` file.
 
 # Requirements
 
+## STM32
+
 For running the examples "as-is" you need a STM32F446RE Nucleo board. Hence,
 you need the following software:
 
@@ -48,7 +50,13 @@ If you want, you can also install
 all in one. However, if you go for this solution you should add the include
 paths and the source code files to be compiled.
 
-_Optional_ tools that I personally use:
+## ESP32
+
+TBD.
+
+## Optionals
+
+There are other tools that I personally use:
 
 1.  [pyserial](https://github.com/pyserial/pyserial) for interacting with the
     serial port of your laptop,
@@ -352,8 +360,26 @@ However, the difference relies in the following:
 1. _Predictable_ events assume that a periodic task is already running and it
    gets blocked while waiting for an event that will happen soon (an ADC
    reading to be completed, a Timer that fires, etc.). In this case the
-   callback just release a semaphore to unlock the periodic task waiting for
-   that event to happen and nothing more.
+   callback notifies the locked periodic task waiting for that event to happen
+   and nothing more.
+
+> [!EXAMPLE]
+>
+> Assume that `my_component` is scheduled in `task_200ms` and that
+> `my_component` reads data from ADC that transfer the converted data directly
+> to memory through DMA. In the following code:
+
+```
+# ...
+ HAL_ADC_Start_DMA(&hadc1, analog_read, NUM_CHANNELS);
+ ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
+```
+
+> the function `ulTaskNotify` locks the task `task_200ms` until it receive a
+> notification. Such a notification is send from the callback function that is
+> called from the ISR called when the "DMA transfer completed" interrupt is
+> triggered.
+
 2. _Unpredictable_ events. In this case the callback wakes up a specific task
    that calls the components with a specific caller argument.
 
