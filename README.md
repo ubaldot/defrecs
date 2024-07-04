@@ -377,7 +377,7 @@ However, the difference relies in the following:
 
 > the function `ulTaskNotifyTake()` locks the task `task_200ms` until it
 > receive a notification. Such a notification is send from the callback
-> function that is called when the "DMA transfer completed" event happened.
+> function invoked when the "DMA transfer completed" event happened.
 
 2. _Unpredictable_ events. In this case the callback wakes up a specific task
    that calls the components with a specific caller argument.
