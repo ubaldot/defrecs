@@ -363,11 +363,11 @@ However, the difference relies in the following:
    callback notifies the locked periodic task waiting for that event to happen
    and nothing more.
 
-> [!EXAMPLE]
+> ### EXAMPLE
 >
 > Assume that `my_component` is scheduled in `task_200ms` and that
-> `my_component` reads data from ADC that transfer the converted data directly
-> to memory through DMA. In the following code:
+> `my_component` reads data from ADC that transfer the converted data to
+> memory through the DMA. In the following code:
 
 ```
 # ...
@@ -375,10 +375,9 @@ However, the difference relies in the following:
  ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
 ```
 
-> the function `ulTaskNotify` locks the task `task_200ms` until it receive a
-> notification. Such a notification is send from the callback function that is
-> called from the ISR called when the "DMA transfer completed" interrupt is
-> triggered.
+> the function `ulTaskNotifyTake()` locks the task `task_200ms` until it
+> receive a notification. Such a notification is send from the callback
+> function that is called when the "DMA transfer completed" event happened.
 
 2. _Unpredictable_ events. In this case the callback wakes up a specific task
    that calls the components with a specific caller argument.
