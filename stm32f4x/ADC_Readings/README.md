@@ -1,26 +1,8 @@
 # ADC reading
 
 In this example we add the utilization of the ADC converter and we require
-something slightly more complex to the system.
-
-<div align="center">
-  <img src="./PhotoVoltaic.JPG" alt="Image Alt Text" style="width: 70%;"/>
-</div>
-<div align="center">
-  <p><em>ADC reading example setup.  </em></p>
-</div>
-
-# Requirements:
-
-The "system" shall behave as it follows:
-
-1. The builtin led blinks every second,
-2. Two sensors are connected to the ADC1, but:
-   1. The values of the first sensor are sent periodically over the USART2,
-   2. The values of the second sensor are sent over the USART2 only when the
-      builtin button is pressed.
-3. User can type anything on its computer keyboard. Once `Enter` is pressed,
-   the message is sent through the USART2.
+something slightly more complex to the system. The overall system will do
+several things in parallel, in a multi-tasking fashion.
 
 We used two small photo-voltaic panels connected in series and the output of
 such a series connection is connected to a simple voltmeter which represents
@@ -28,6 +10,32 @@ our first sensor. Then, a LM335 temperature sensor is used as second sensor.
 Feel free to replace these sensors with whatever you want, but mind that you
 must have to create two new application components and adjust the
 publish/subscribe links, see picture below.
+
+<div align="center">
+  <img src="./ADC_Reading.png" alt="Image Alt Text" style="width: 70%;"/>
+</div>
+<div align="center">
+  <p><em>ADC reading example setup.  </em></p>
+</div>
+
+<div align="center">
+  <img src="./PhotoVoltaic.JPG" alt="Image Alt Text" style="width: 70%;"/>
+</div>
+<div align="center">
+  <p><em>ADC reading picture.  </em></p>
+</div>
+
+# Requirements:
+
+The system shall behave as it follows:
+
+1. The builtin led blinks every second,
+2. Two sensors are connected to the ADC1, but:
+   1. The values of the voltage sensor are sent periodically over the USART2,
+   2. The values of the temperature sensor are sent over the USART2 only when
+      the builtin button is pressed.
+3. User can type anything on its computer keyboard. Once `Enter` is pressed,
+   the message is sent through the USART2.
 
 # Implementation
 
