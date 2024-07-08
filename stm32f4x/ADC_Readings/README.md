@@ -61,7 +61,8 @@ state of a component is also defined as static?
 
 In the `application_setup.c` function you can see how the components are
 periodically scheduled. Feel free to play around at you wish. In
-`interrupts_to_tasks.c` you can see how interrupts are deferred to tasks.
+`./platform/interrupts_to_tasks.c` and in `./Src/stm32f4xx_it.c` you can see
+how interrupts are handled by deferral.
 
 <!-- ## Hardware -->
 
