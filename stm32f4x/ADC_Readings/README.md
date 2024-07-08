@@ -60,12 +60,13 @@ appear in the component `.h`file. Could you answer why? And why the internal
 state of a component is also defined as static?
 
 In the `application_setup.c` function you can see how the components are
-scheduled. Feel free to play around at you wish.
+periodically scheduled. Feel free to play around at you wish. In
+`interrupts_to_tasks.c` you can see how interrupts are deferred to tasks.
 
-## Hardware
+<!-- ## Hardware -->
 
-The first sensor is connected to `PC0` whereas the second is connected to
-`PC1`. The Nucleo board is connected to the PC.
+<!-- The first sensor is connected to `PC0` whereas the second is connected to -->
+<!-- `PC1`. The Nucleo board is connected to the PC. -->
 
 ## Software
 
