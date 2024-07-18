@@ -1,7 +1,12 @@
 #!/bin/bash
 
-openocd_path="/opt/homebrew/bin"
-openocd_scripts_path="/opt/homebrew/Cellar/open-ocd/0.12.0_1/share/openocd/scripts"
+# openocd_path="/opt/homebrew/bin"
+# openocd_scripts_path="/opt/homebrew/Cellar/open-ocd/0.12.0_1/share/openocd/scripts"
+
+# openocd_path="/usr/bin"
+# openocd_scripts_path="/usr/share/openocd/scripts"
+openocd_path="/Users/yt75534/AppData/Local/w64devkit/openocd_0_12_0/bin"
+openocd_scripts_path="/Users/yt75534/AppData/Local/w64devkit/openocd_0_12_0/share/openocd/scripts"
 
 probes_path=$openocd_scripts_path/interface
 probe="stlink.cfg"

@@ -1,3 +1,7 @@
 set confirm off
+set logging enabled on
+set logging file gdb_log
 target extended-remote localhost:3333
+set debug remote 1
 monitor reset
+monitor halt
