@@ -128,7 +128,7 @@ static void task_200ms(void *pVParameters) // This is a task.
   while (1) {
     adc1_sensors_step(PERIODIC_TASK);
     digital_out_step(PERIODIC_TASK);
-    /* serial_port_write_step(PERIODIC_TASK) */
+    serial_port_write_step(PERIODIC_TASK);
 
     // Task Schedule
     /* xMissedDeadline = */
