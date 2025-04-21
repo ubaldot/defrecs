@@ -153,7 +153,6 @@ static void BuiltinButtonDeferred(void *pVParameters) {
       just print out a message for each event). */
       while (ulEventsToProcess > 0) {
         hmi_step(IRQ_BUILTIN_BUTTON);
-        serial_port_write_step(IRQ_BUILTIN_BUTTON);
         ulEventsToProcess--;
       }
     } else {
