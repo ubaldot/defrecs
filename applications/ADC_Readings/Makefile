@@ -7,7 +7,7 @@
 ######################################
 PLATFORM ?= stm32f4x
 TARGET := ADC_Readings
-PLATFORM_PATH := ../../platforms/$(PLATFORM)
+PLATFORM_PATH := ../../bsp/$(PLATFORM)
 
 ######################################
 # Programmer and compiler paths

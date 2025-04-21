@@ -1,6 +1,6 @@
 //===---------------- application_setup.c ------------------------*- C -*-===//
 //  Here the application is defined.
-//    1. The peridic tasks are defined,
+//    1. Both periodic and event-based tasks are defined,
 //    2. The components are initialized,
 //    3. A list of components is associated to each task,
 //    4. The application is run.
@@ -10,14 +10,14 @@
 //===----------------------------------------------------------------------===//
 #include "application_setup.h"
 #include "FreeRTOS.h"
+#include "semphr.h"
 #include "adc1_sensors/adc1_sensors.h"
 #include "blink/blink.h"
 #include "debug/debug.h"
 #include "digital_out/digital_out.h"
-#include "interrupts_to_tasks.h"
 #include "photovoltaic/pv.h"
 #include "temperature_sensor/tempsens_LM335.h"
-#include "usart2/usart2.h"
+#include "hmi/hmi.h"
 #include <task.h>
 
 #define DEBUG 1
@@ -33,6 +33,7 @@ const char NAME_1000MS[] = "Task_1000ms";
 const size_t STACK_SIZE_1000MS = 128;
 const uint8_t PRIORITY_1000MS = 2;
 const struct TaskParams TASK_PARAMS_1000MS = {.PERIOD = 1000};
+static void task_200ms(void * /*pVParameters*/);
 
 // Task 200ms
 TaskHandle_t xTaskHandle_200ms;
@@ -40,11 +41,18 @@ const char NAME_200MS[] = "Task_200ms";
 const size_t STACK_SIZE_200MS = 128;
 const uint8_t PRIORITY_200MS = 2;
 const struct TaskParams TASK_PARAMS_200MS = {.PERIOD = 200};
+static void task_1000ms(void * /*pVParameters*/);
+
+// Async tasks
+// Builtin button pressed
+TaskHandle_t xTaskBuitinButtonDeferred;
+static void BuiltinButtonDeferred(void * /*pVParameters*/);
+// Received message over the serial port
+TaskHandle_t xTaskUsart2RxDeferred;
+static void Usart2RxDeferred(void * /*pVParameters*/);
 
 // Task function prototypes
 static void components_init(void);
-static void task_200ms(void * /*pVParameters*/);
-static void task_1000ms(void * /*pVParameters*/);
 
 static void components_init() {
   // List all the components used. Initializes queues, mutex, etc.
@@ -63,16 +71,24 @@ void application_setup() {
   // Disable all interrupts during startup
   taskENTER_CRITICAL();
   components_init();
-  interrupts_to_tasks_init();
   taskEXIT_CRITICAL();
 
-  // Create tasks
+  // Create period tasks
   xTaskCreate(task_1000ms, NAME_1000MS, STACK_SIZE_1000MS,
               (void *)&TASK_PARAMS_1000MS, PRIORITY_1000MS,
               &xTaskHandle_1000ms);
 
   xTaskCreate(task_200ms, NAME_200MS, STACK_SIZE_200MS,
               (void *)&TASK_PARAMS_200MS, PRIORITY_200MS, &xTaskHandle_200ms);
+
+  // Create event-based tasks
+  /* Transmit upon button press */
+  xTaskCreate(BuiltinButtonDeferred, "BuiltinButtonPressed", 128, NULL,
+              configMAX_PRIORITIES - 1, &xTaskBuitinButtonDeferred);
+
+  /* Receive data on usart2*/
+  xTaskCreate(Usart2RxDeferred, "Usart2Rx", 128, NULL, configMAX_PRIORITIES - 1,
+              &xTaskUsart2RxDeferred);
 }
 
 static void task_1000ms(void *pVParameters) // This is a task.
@@ -113,5 +129,49 @@ static void task_200ms(void *pVParameters) // This is a task.
     /* xMissedDeadline = */
     /*     xTaskDelayUntil(&xLastWakeTime, pdMS_TO_TICKS(params->PERIOD)); */
     vTaskDelayUntil(&xLastWakeTime, pdMS_TO_TICKS(params->PERIOD));
+  }
+}
+
+// Functions associated to tasks
+static void BuiltinButtonDeferred(void *pVParameters) {
+  (void)pVParameters;
+
+  uint32_t ulEventsToProcess;
+
+  for (;;) {
+    /* Wait to receive a notification sent directly to this task from the
+     interrupt service routine. */
+    ulEventsToProcess = ulTaskNotifyTake(pdTRUE, pdMS_TO_TICKS(10));
+    if (ulEventsToProcess != 0) {
+      /* To get here at least one event must have occurred. Loop here
+      until all the pending events have been processed (in this case,
+      just print out a message for each event). */
+      while (ulEventsToProcess > 0) {
+        usart2_step(IRQ_BUILTIN_BUTTON);
+        ulEventsToProcess--;
+      }
+    } else {
+      /* If this part of the function is reached then an interrupt did
+      not arrive within the expected time, and (in a real application)
+      it may be necessary to perform some error recovery operations. */
+    }
+  }
+}
+
+static void Usart2RxDeferred(void *pVParameters) {
+  (void)pVParameters;
+
+  uint32_t ulEventsToProcess;
+
+  for (;;) {
+    ulEventsToProcess = ulTaskNotifyTake(pdTRUE, pdMS_TO_TICKS(10));
+    if (ulEventsToProcess != 0) {
+      while (ulEventsToProcess > 0) {
+        usart2_step(IRQ_SERIAL_RX);
+        ulEventsToProcess--;
+      }
+    } else {
+      // Error handling
+    }
   }
 }
