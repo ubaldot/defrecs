@@ -12,6 +12,7 @@
 #include "hmi/hmi.h"
 #include "application_setup.h"
 #include "blink/blink.h"
+#include "serial_port/serial_port.h"
 #include "ftoa.h"
 #include "photovoltaic/pv.h"
 #include "tempsens_LM335/tempsens_LM335.h"
@@ -101,7 +102,7 @@ void hmi_step(enum WhoIsCalling caller) {
       } else {
         ii++;
       }
-      /* subscribe_serial_port_rx_msg(&rx_buffer[ii]); */
+      subscribe_serial_port_rx_msg(&rx_buffer[ii]);
       xSemaphoreGive(mutex_rx_buffer);
     }
     break;

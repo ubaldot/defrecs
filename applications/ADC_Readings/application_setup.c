@@ -10,14 +10,15 @@
 //===----------------------------------------------------------------------===//
 #include "application_setup.h"
 #include "FreeRTOS.h"
-#include "semphr.h"
 #include "adc1_sensors/adc1_sensors.h"
 #include "blink/blink.h"
 #include "debug/debug.h"
 #include "digital_out/digital_out.h"
-#include "photovoltaic/pv.h"
-#include "tempsens_LM335/tempsens_LM335.h"
 #include "hmi/hmi.h"
+#include "photovoltaic/pv.h"
+#include "semphr.h"
+#include "serial_port/serial_port.h"
+#include "tempsens_LM335/tempsens_LM335.h"
 #include <task.h>
 
 #define DEBUG 1
@@ -59,7 +60,7 @@ static void components_init() {
   // bsp
   adc1_sensors_init();
   digital_out_init();
-  /* serial_port_init(); */
+  serial_port_init();
   // interfaces
   pv_init();
   tempsens_init();
