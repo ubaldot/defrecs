@@ -1,0 +1,1880 @@
+../gdb_stuff/gdb_init_commands.txt:4: Error in sourced command file:
+localhost:3333: Operation timed out.
+Reading symbols from build/Hello_World.elf...
+startupdone
+../gdb_stuff/gdb_init_commands.txt:4: Error in sourced command file:
+localhost:3333: Operation timed out.
+Reading symbols from build/Hello_World.elf...
+startupdone
+Undefined command: "".  Try "help".
+Undefined command: "".  Try "help".
+../gdb_stuff/gdb_init_commands.txt:4: Error in sourced command file:
+localhost:3333: Operation timed out.
+Reading symbols from build/Hello_World.elf...
+startupdone
+../gdb_stuff/gdb_init_commands.txt:4: Error in sourced command file:
+localhost:3333: Operation timed out.
+Reading symbols from build/Hello_World.elf...
+startupdone
+../gdb_stuff/gdb_init_commands.txt:4: Error in sourced command file:
+localhost:3333: Operation timed out.
+Reading symbols from build/Hello_World.elf...
+startupdone
+../gdb_stuff/gdb_init_commands.txt:4: Error in sourced command file:
+localhost:3333: Operation timed out.
+Reading symbols from build/Hello_World.elf...
+startupdone
+warning: No executable has been specified and target does not support
+determining executable automatically.  Try using the "file" command.
+0x08002a64 in ?? ()
+[remote] Sending packet: $qRcmd,7265736574#37
+[remote] Packet received: O556e61626c6520746f206d61746368207265717565737465642073706565642032303030206b487a2c207573696e672031383030206b487a0a
+Unable to match requested speed 2000 kHz, using 1800 kHz
+[remote] Packet received: O556e61626c6520746f206d61746368207265717565737465642073706565642032303030206b487a2c207573696e672031383030206b487a0a
+Unable to match requested speed 2000 kHz, using 1800 kHz
+[remote] Packet received: OK
+[remote] Sending packet: $qRcmd,68616c74#fc
+[remote] Packet received: O5b73746d33326634782e6370755d2068616c7465642064756520746f2064656275672d726571756573742c2063757272656e74206d6f64653a20546872656164200a785053523a20307838313030303030302070633a2030783038303034383361206d73703a20307832303032303030300a
+[stm32f4x.cpu] halted due to debug-request, current mode: Thread 
+xPSR: 0x81000000 pc: 0x0800483a msp: 0x20020000
+[remote] Packet received: OK
+Reading symbols from build/Hello_World.elf...
+[remote] Sending packet: $qSymbol::#5b
+[remote] Packet received: OK
+[remote] packet_ok: Packet qSymbol (symbol-lookup) is supported
+[remote] Sending packet: $qSymbol::#5b
+[remote] Packet received: OK
+[remote] Sending packet: $g#67
+[remote] Packet received: 00000020100000202c1e0020000000002c4a00200000000000000000000000000000000000000000000000000000000000000000000002201d4800083a48000800000081
+startupdone
+New UI allocated
+[remote] Sending packet: $qRcmd,68616c74#fc
+[remote] Packet received: O5b73746d33326634782e6370755d2068616c7465642064756520746f2064656275672d726571756573742c2063757272656e74206d6f64653a20546872656164200a785053523a20307838313030303030302070633a2030783038303034383361206d73703a20307832303032303030300a
+[remote] Packet received: OK
+Quit
+Detaching from program: /Users/ubaldot/Documents/defrecs/stm32f4x/Hello_World/build/Hello_World.elf, Remote target
+[remote] Sending packet: $D#44
+[remote] Packet received: OK
+[Inferior 1 (Remote target) detached]
+warning: No executable has been specified and target does not support
+determining executable automatically.  Try using the "file" command.
+0x08002a76 in ?? ()
+[remote] Sending packet: $qRcmd,7265736574#37
+[remote] Packet received: O556e61626c6520746f206d61746368207265717565737465642073706565642032303030206b487a2c207573696e672031383030206b487a0a
+Unable to match requested speed 2000 kHz, using 1800 kHz
+[remote] Packet received: O556e61626c6520746f206d61746368207265717565737465642073706565642032303030206b487a2c207573696e672031383030206b487a0a
+Unable to match requested speed 2000 kHz, using 1800 kHz
+[remote] Packet received: OK
+[remote] Sending packet: $qRcmd,68616c74#fc
+[remote] Packet received: O5b73746d33326634782e6370755d2068616c7465642064756520746f2064656275672d726571756573742c2063757272656e74206d6f64653a20546872656164200a785053523a20307838313030303030302070633a2030783038303034383361206d73703a20307832303032303030300a
+[stm32f4x.cpu] halted due to debug-request, current mode: Thread 
+xPSR: 0x81000000 pc: 0x0800483a msp: 0x20020000
+[remote] Packet received: OK
+Reading symbols from build/Hello_World.elf...
+[remote] Sending packet: $qSymbol::#5b
+[remote] Packet received: OK
+[remote] packet_ok: Packet qSymbol (symbol-lookup) is supported
+[remote] Sending packet: $qSymbol::#5b
+[remote] Packet received: OK
+[remote] Sending packet: $g#67
+[remote] Packet received: 0000002010000020f43d0020000000002c4a00200000000000000000000000000000000000000000000000000000000000000000000002201d4800083a48000800000081
+startupdone
+New UI allocated
+Detaching from program: /Users/ubaldot/Documents/defrecs/stm32f4x/Hello_World/build/Hello_World.elf, Remote target
+[remote] Sending packet: $D#44
+[remote] Packet received: OK
+[Inferior 1 (Remote target) detached]
+warning: No executable has been specified and target does not support
+determining executable automatically.  Try using the "file" command.
+0x08004290 in ?? ()
+[remote] Sending packet: $qRcmd,7265736574#37
+[remote] Packet received: O556e61626c6520746f206d61746368207265717565737465642073706565642032303030206b487a2c207573696e672031383030206b487a0a
+Unable to match requested speed 2000 kHz, using 1800 kHz
+[remote] Packet received: O556e61626c6520746f206d61746368207265717565737465642073706565642032303030206b487a2c207573696e672031383030206b487a0a
+Unable to match requested speed 2000 kHz, using 1800 kHz
+[remote] Packet received: OK
+[remote] Sending packet: $qRcmd,68616c74#fc
+[remote] Packet received: O5b73746d33326634782e6370755d2068616c7465642064756520746f2064656275672d726571756573742c2063757272656e74206d6f64653a20546872656164200a785053523a20307838313030303030302070633a2030783038303034383361206d73703a20307832303032303030300a
+[stm32f4x.cpu] halted due to debug-request, current mode: Thread 
+xPSR: 0x81000000 pc: 0x0800483a msp: 0x20020000
+[remote] Packet received: OK
+Reading symbols from build/Hello_World.elf...
+[remote] Sending packet: $qSymbol::#5b
+[remote] Packet received: OK
+[remote] packet_ok: Packet qSymbol (symbol-lookup) is supported
+[remote] Sending packet: $qSymbol::#5b
+[remote] Packet received: OK
+[remote] Sending packet: $g#67
+[remote] Packet received: 0000002010000020743a0020000000002c4a00200000000000000000000000000000000000000000000000000000000000000000000002201d4800083a48000800000081
+startupdone
+New UI allocated
+[remote] wait: enter
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: T05
+  [remote] select_thread_for_ambiguous_stop_reply: enter
+    [remote] select_thread_for_ambiguous_stop_reply: process_wide_stop = 0
+    [remote] select_thread_for_ambiguous_stop_reply: first resumed thread is Remote target
+    [remote] select_thread_for_ambiguous_stop_reply: is this guess ambiguous? = 0
+  [remote] select_thread_for_ambiguous_stop_reply: exit
+[remote] wait: exit
+[remote] Sending packet: $g#67
+[remote] Packet received: 00000000a5a5a5a5a5a5a5a5f805002090490008a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5f0120020674300089042000800000041
+[remote] Sending packet: $qXfer:threads:read::0,1000#92
+[remote] Packet received: l<?xml version="1.0"?>\n<threads>\n</threads>\n
+[remote] Sending packet: $z1,8004290,2#9c
+[remote] Packet received: OK
+
+Breakpoint 1, blink_step (caller=caller@entry=PERIODIC_TASK) at application/blink/blink.c:59
+59	  led_state = blink_led_state ? 0 : 1;
+[remote] wait: enter
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: O68616c7465643a2050433a20307830383030343239320a
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: T05
+  [remote] select_thread_for_ambiguous_stop_reply: enter
+    [remote] select_thread_for_ambiguous_stop_reply: process_wide_stop = 0
+    [remote] select_thread_for_ambiguous_stop_reply: first resumed thread is Remote target
+    [remote] select_thread_for_ambiguous_stop_reply: is this guess ambiguous? = 0
+  [remote] select_thread_for_ambiguous_stop_reply: exit
+[remote] wait: exit
+[remote] Sending packet: $g#67
+[remote] Packet received: 00000000a5a5a5a5a5a5a5a5144a002090490008a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5f0120020674300089242000800000041
+[remote] Sending packet: $Z1,8004290,2#7c
+[remote] Packet received: OK
+[remote] Sending packet: $vCont;c#a8
+[remote] wait: enter
+  [remote] Packet received: O
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: O
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: T05
+  [remote] select_thread_for_ambiguous_stop_reply: enter
+    [remote] select_thread_for_ambiguous_stop_reply: process_wide_stop = 0
+    [remote] select_thread_for_ambiguous_stop_reply: first resumed thread is Remote target
+    [remote] select_thread_for_ambiguous_stop_reply: is this guess ambiguous? = 0
+  [remote] select_thread_for_ambiguous_stop_reply: exit
+[remote] wait: exit
+[remote] Sending packet: $g#67
+[remote] Packet received: 000000002413002000000010c0da000090490008a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5f0120020674300089042000800000061
+[remote] Sending packet: $qXfer:threads:read::0,1000#92
+[remote] Packet received: l<?xml version="1.0"?>\n<threads>\n</threads>\n
+[remote] Sending packet: $z1,8004290,2#9c
+[remote] Packet received: OK
+
+Breakpoint 1, blink_step (caller=caller@entry=PERIODIC_TASK) at application/blink/blink.c:59
+59	  led_state = blink_led_state ? 0 : 1;
+[remote] wait: enter
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: O68616c7465643a2050433a20307830383030343239320a
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: T05
+  [remote] select_thread_for_ambiguous_stop_reply: enter
+    [remote] select_thread_for_ambiguous_stop_reply: process_wide_stop = 0
+    [remote] select_thread_for_ambiguous_stop_reply: first resumed thread is Remote target
+    [remote] select_thread_for_ambiguous_stop_reply: is this guess ambiguous? = 0
+  [remote] select_thread_for_ambiguous_stop_reply: exit
+[remote] wait: exit
+[remote] Sending packet: $g#67
+[remote] Packet received: 000000002413002000000010144a002090490008a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5f0120020674300089242000800000061
+[remote] Sending packet: $Z1,8004290,2#7c
+[remote] Packet received: OK
+[remote] Sending packet: $vCont;c#a8
+[remote] wait: enter
+  [remote] Packet received: O
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: O
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: T05
+  [remote] select_thread_for_ambiguous_stop_reply: enter
+    [remote] select_thread_for_ambiguous_stop_reply: process_wide_stop = 0
+    [remote] select_thread_for_ambiguous_stop_reply: first resumed thread is Remote target
+    [remote] select_thread_for_ambiguous_stop_reply: is this guess ambiguous? = 0
+  [remote] select_thread_for_ambiguous_stop_reply: exit
+[remote] wait: exit
+[remote] Sending packet: $g#67
+[remote] Packet received: 000000002413002000000010c0da000090490008a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5f0120020674300089042000800000061
+[remote] Sending packet: $qXfer:threads:read::0,1000#92
+[remote] Packet received: l<?xml version="1.0"?>\n<threads>\n</threads>\n
+[remote] Sending packet: $z1,8004290,2#9c
+[remote] Packet received: OK
+
+Breakpoint 1, blink_step (caller=caller@entry=PERIODIC_TASK) at application/blink/blink.c:59
+59	  led_state = blink_led_state ? 0 : 1;
+[remote] wait: enter
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: O68616c7465643a2050433a20307830383030343239320a
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: T05
+  [remote] select_thread_for_ambiguous_stop_reply: enter
+    [remote] select_thread_for_ambiguous_stop_reply: process_wide_stop = 0
+    [remote] select_thread_for_ambiguous_stop_reply: first resumed thread is Remote target
+    [remote] select_thread_for_ambiguous_stop_reply: is this guess ambiguous? = 0
+  [remote] select_thread_for_ambiguous_stop_reply: exit
+[remote] wait: exit
+[remote] Sending packet: $g#67
+[remote] Packet received: 000000002413002000000010144a002090490008a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5f0120020674300089242000800000061
+[remote] Sending packet: $Z1,8004290,2#7c
+[remote] Packet received: OK
+[remote] Sending packet: $vCont;c#a8
+[remote] wait: enter
+  [remote] Packet received: O
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: O
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: T05
+  [remote] select_thread_for_ambiguous_stop_reply: enter
+    [remote] select_thread_for_ambiguous_stop_reply: process_wide_stop = 0
+    [remote] select_thread_for_ambiguous_stop_reply: first resumed thread is Remote target
+    [remote] select_thread_for_ambiguous_stop_reply: is this guess ambiguous? = 0
+  [remote] select_thread_for_ambiguous_stop_reply: exit
+[remote] wait: exit
+[remote] Sending packet: $g#67
+[remote] Packet received: 000000002413002000000010c0da000090490008a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5f0120020674300089042000800000061
+[remote] Sending packet: $qXfer:threads:read::0,1000#92
+[remote] Packet received: l<?xml version="1.0"?>\n<threads>\n</threads>\n
+[remote] Sending packet: $z1,8004290,2#9c
+[remote] Packet received: OK
+
+Breakpoint 1, blink_step (caller=caller@entry=PERIODIC_TASK) at application/blink/blink.c:59
+59	  led_state = blink_led_state ? 0 : 1;
+[remote] wait: enter
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: O68616c7465643a2050433a20307830383030343239320a
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: T05
+  [remote] select_thread_for_ambiguous_stop_reply: enter
+    [remote] select_thread_for_ambiguous_stop_reply: process_wide_stop = 0
+    [remote] select_thread_for_ambiguous_stop_reply: first resumed thread is Remote target
+    [remote] select_thread_for_ambiguous_stop_reply: is this guess ambiguous? = 0
+  [remote] select_thread_for_ambiguous_stop_reply: exit
+[remote] wait: exit
+[remote] Sending packet: $g#67
+[remote] Packet received: 000000002413002000000010144a002090490008a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5f0120020674300089242000800000061
+[remote] Sending packet: $Z1,8004290,2#7c
+[remote] Packet received: OK
+[remote] Sending packet: $vCont;c#a8
+[remote] wait: enter
+  [remote] Packet received: O
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: O
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: T05
+  [remote] select_thread_for_ambiguous_stop_reply: enter
+    [remote] select_thread_for_ambiguous_stop_reply: process_wide_stop = 0
+    [remote] select_thread_for_ambiguous_stop_reply: first resumed thread is Remote target
+    [remote] select_thread_for_ambiguous_stop_reply: is this guess ambiguous? = 0
+  [remote] select_thread_for_ambiguous_stop_reply: exit
+[remote] wait: exit
+[remote] Sending packet: $g#67
+[remote] Packet received: 000000002413002000000010c0da000090490008a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5f0120020674300089042000800000061
+[remote] Sending packet: $qXfer:threads:read::0,1000#92
+[remote] Packet received: l<?xml version="1.0"?>\n<threads>\n</threads>\n
+[remote] Sending packet: $z1,8004290,2#9c
+[remote] Packet received: OK
+
+Breakpoint 1, blink_step (caller=caller@entry=PERIODIC_TASK) at application/blink/blink.c:59
+59	  led_state = blink_led_state ? 0 : 1;
+[remote] wait: enter
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: T05
+  [remote] select_thread_for_ambiguous_stop_reply: enter
+    [remote] select_thread_for_ambiguous_stop_reply: process_wide_stop = 0
+    [remote] select_thread_for_ambiguous_stop_reply: first resumed thread is Remote target
+    [remote] select_thread_for_ambiguous_stop_reply: is this guess ambiguous? = 0
+  [remote] select_thread_for_ambiguous_stop_reply: exit
+[remote] wait: exit
+[remote] Sending packet: $g#67
+[remote] Packet received: 0000000024130020000000100100000090490008a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5f0120020674300089e42000800000001
+[remote] Sending packet: $qXfer:threads:read::0,1000#92
+[remote] Packet received: l<?xml version="1.0"?>\n<threads>\n</threads>\n
+[remote] Sending packet: $z1,800429e,2#d1
+[remote] Packet received: OK
+
+Breakpoint 2, blink_step (caller=caller@entry=PERIODIC_TASK) at application/blink/blink.c:62
+62	  publish_blink_led_state(&led_state);
+[remote] wait: enter
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: O68616c7465643a2050433a20307830383030343261320a
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: T05
+  [remote] select_thread_for_ambiguous_stop_reply: enter
+    [remote] select_thread_for_ambiguous_stop_reply: process_wide_stop = 0
+    [remote] select_thread_for_ambiguous_stop_reply: first resumed thread is Remote target
+    [remote] select_thread_for_ambiguous_stop_reply: is this guess ambiguous? = 0
+  [remote] select_thread_for_ambiguous_stop_reply: exit
+[remote] wait: exit
+[remote] Sending packet: $g#67
+[remote] Packet received: f712002024130020000000100100000090490008a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5f012002067430008a242000800000001
+[remote] Sending packet: $Z1,800429e,2#b1
+[remote] Packet received: OK
+[remote] Sending packet: $vCont;c#a8
+[remote] wait: enter
+  [remote] Packet received: O
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: T05
+  [remote] select_thread_for_ambiguous_stop_reply: enter
+    [remote] select_thread_for_ambiguous_stop_reply: process_wide_stop = 0
+    [remote] select_thread_for_ambiguous_stop_reply: first resumed thread is Remote target
+    [remote] select_thread_for_ambiguous_stop_reply: is this guess ambiguous? = 0
+  [remote] select_thread_for_ambiguous_stop_reply: exit
+[remote] wait: exit
+[remote] Sending packet: $g#67
+[remote] Packet received: 0000000024130020000000100000000090490008a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5f0120020674300089e42000800000061
+[remote] Sending packet: $qXfer:threads:read::0,1000#92
+[remote] Packet received: l<?xml version="1.0"?>\n<threads>\n</threads>\n
+[remote] Sending packet: $z1,800429e,2#d1
+[remote] Packet received: OK
+
+Breakpoint 2, blink_step (caller=caller@entry=PERIODIC_TASK) at application/blink/blink.c:62
+62	  publish_blink_led_state(&led_state);
+[remote] wait: enter
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: O68616c7465643a2050433a20307830383030343261320a
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: T05
+  [remote] select_thread_for_ambiguous_stop_reply: enter
+    [remote] select_thread_for_ambiguous_stop_reply: process_wide_stop = 0
+    [remote] select_thread_for_ambiguous_stop_reply: first resumed thread is Remote target
+    [remote] select_thread_for_ambiguous_stop_reply: is this guess ambiguous? = 0
+  [remote] select_thread_for_ambiguous_stop_reply: exit
+[remote] wait: exit
+[remote] Sending packet: $g#67
+[remote] Packet received: f712002024130020000000100000000090490008a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5f012002067430008a242000800000061
+[remote] Sending packet: $Z1,800429e,2#b1
+[remote] Packet received: OK
+[remote] Sending packet: $vCont;c#a8
+[remote] wait: enter
+  [remote] Packet received: O
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: O
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: T05
+  [remote] select_thread_for_ambiguous_stop_reply: enter
+    [remote] select_thread_for_ambiguous_stop_reply: process_wide_stop = 0
+    [remote] select_thread_for_ambiguous_stop_reply: first resumed thread is Remote target
+    [remote] select_thread_for_ambiguous_stop_reply: is this guess ambiguous? = 0
+  [remote] select_thread_for_ambiguous_stop_reply: exit
+[remote] wait: exit
+[remote] Sending packet: $g#67
+[remote] Packet received: 0000000024130020000000100100000090490008a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5f0120020674300089e42000800000001
+[remote] Sending packet: $qXfer:threads:read::0,1000#92
+[remote] Packet received: l<?xml version="1.0"?>\n<threads>\n</threads>\n
+[remote] Sending packet: $z1,800429e,2#d1
+[remote] Packet received: OK
+
+Breakpoint 2, blink_step (caller=caller@entry=PERIODIC_TASK) at application/blink/blink.c:62
+62	  publish_blink_led_state(&led_state);
+[remote] wait: enter
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: O68616c7465643a2050433a20307830383030343261320a
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: T05
+  [remote] select_thread_for_ambiguous_stop_reply: enter
+    [remote] select_thread_for_ambiguous_stop_reply: process_wide_stop = 0
+    [remote] select_thread_for_ambiguous_stop_reply: first resumed thread is Remote target
+    [remote] select_thread_for_ambiguous_stop_reply: is this guess ambiguous? = 0
+  [remote] select_thread_for_ambiguous_stop_reply: exit
+[remote] wait: exit
+[remote] Sending packet: $g#67
+[remote] Packet received: f712002024130020000000100100000090490008a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5f012002067430008a242000800000001
+[remote] Sending packet: $Z1,800429e,2#b1
+[remote] Packet received: OK
+[remote] Sending packet: $vCont;c#a8
+[remote] wait: enter
+  [remote] Packet received: O
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: T05
+  [remote] select_thread_for_ambiguous_stop_reply: enter
+    [remote] select_thread_for_ambiguous_stop_reply: process_wide_stop = 0
+    [remote] select_thread_for_ambiguous_stop_reply: first resumed thread is Remote target
+    [remote] select_thread_for_ambiguous_stop_reply: is this guess ambiguous? = 0
+  [remote] select_thread_for_ambiguous_stop_reply: exit
+[remote] wait: exit
+[remote] Sending packet: $g#67
+[remote] Packet received: 0000000024130020000000100000000090490008a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5f0120020674300089e42000800000061
+[remote] Sending packet: $qXfer:threads:read::0,1000#92
+[remote] Packet received: l<?xml version="1.0"?>\n<threads>\n</threads>\n
+[remote] Sending packet: $z1,800429e,2#d1
+[remote] Packet received: OK
+
+Breakpoint 2, blink_step (caller=caller@entry=PERIODIC_TASK) at application/blink/blink.c:62
+62	  publish_blink_led_state(&led_state);
+[remote] wait: enter
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: O68616c7465643a2050433a20307830383030343261320a
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: T05
+  [remote] select_thread_for_ambiguous_stop_reply: enter
+    [remote] select_thread_for_ambiguous_stop_reply: process_wide_stop = 0
+    [remote] select_thread_for_ambiguous_stop_reply: first resumed thread is Remote target
+    [remote] select_thread_for_ambiguous_stop_reply: is this guess ambiguous? = 0
+  [remote] select_thread_for_ambiguous_stop_reply: exit
+[remote] wait: exit
+[remote] Sending packet: $g#67
+[remote] Packet received: f712002024130020000000100000000090490008a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5f012002067430008a242000800000061
+[remote] Sending packet: $Z1,800429e,2#b1
+[remote] Packet received: OK
+[remote] Sending packet: $vCont;c#a8
+[remote] wait: enter
+  [remote] Packet received: O
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: T05
+  [remote] select_thread_for_ambiguous_stop_reply: enter
+    [remote] select_thread_for_ambiguous_stop_reply: process_wide_stop = 0
+    [remote] select_thread_for_ambiguous_stop_reply: first resumed thread is Remote target
+    [remote] select_thread_for_ambiguous_stop_reply: is this guess ambiguous? = 0
+  [remote] select_thread_for_ambiguous_stop_reply: exit
+[remote] wait: exit
+[remote] Sending packet: $g#67
+[remote] Packet received: 0000000024130020000000100100000090490008a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5f0120020674300089e42000800000001
+[remote] Sending packet: $qXfer:threads:read::0,1000#92
+[remote] Packet received: l<?xml version="1.0"?>\n<threads>\n</threads>\n
+[remote] Sending packet: $z1,800429e,2#d1
+[remote] Packet received: OK
+
+Breakpoint 2, blink_step (caller=caller@entry=PERIODIC_TASK) at application/blink/blink.c:62
+62	  publish_blink_led_state(&led_state);
+[remote] wait: enter
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: T05
+  [remote] select_thread_for_ambiguous_stop_reply: enter
+    [remote] select_thread_for_ambiguous_stop_reply: process_wide_stop = 0
+    [remote] select_thread_for_ambiguous_stop_reply: first resumed thread is Remote target
+    [remote] select_thread_for_ambiguous_stop_reply: is this guess ambiguous? = 0
+  [remote] select_thread_for_ambiguous_stop_reply: exit
+[remote] wait: exit
+[remote] Sending packet: $g#67
+[remote] Packet received: f712002024130020000000100100000090490008a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5f0120020a74200080842000800000001
+[remote] Sending packet: $qXfer:threads:read::0,1000#92
+[remote] Packet received: l<?xml version="1.0"?>\n<threads>\n</threads>\n
+[remote] Sending packet: $z1,8004208,2#9b
+[remote] Packet received: OK
+
+Breakpoint 3, publish_blink_led_state (pLedState=pLedState@entry=[remote] Sending packet: $m200012f7,8#93
+[remote] Packet received: 01a5a5a5a5674300
+0x200012f7 <ucHeap+1291> "\001\245\245\245\245g") at application/blink/blink.c:29
+29	static void publish_blink_led_state(const uint8_t *pLedState) {
+[remote] wait: enter
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: O68616c7465643a2050433a20307830383030343230610a
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: T05
+  [remote] select_thread_for_ambiguous_stop_reply: enter
+    [remote] select_thread_for_ambiguous_stop_reply: process_wide_stop = 0
+    [remote] select_thread_for_ambiguous_stop_reply: first resumed thread is Remote target
+    [remote] select_thread_for_ambiguous_stop_reply: is this guess ambiguous? = 0
+  [remote] select_thread_for_ambiguous_stop_reply: exit
+[remote] wait: exit
+[remote] Sending packet: $g#67
+[remote] Packet received: f712002024130020000000100100000090490008a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5e8120020a74200080a42000800000001
+[remote] Sending packet: $Z1,8004208,2#7b
+[remote] Packet received: OK
+[remote] Sending packet: $vCont;c#a8
+[remote] wait: enter
+  [remote] Packet received: O
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: T05
+  [remote] select_thread_for_ambiguous_stop_reply: enter
+    [remote] select_thread_for_ambiguous_stop_reply: process_wide_stop = 0
+    [remote] select_thread_for_ambiguous_stop_reply: first resumed thread is Remote target
+    [remote] select_thread_for_ambiguous_stop_reply: is this guess ambiguous? = 0
+  [remote] select_thread_for_ambiguous_stop_reply: exit
+[remote] wait: exit
+[remote] Sending packet: $g#67
+[remote] Packet received: f712002024130020000000100000000090490008a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5f0120020a74200080842000800000061
+[remote] Sending packet: $qXfer:threads:read::0,1000#92
+[remote] Packet received: l<?xml version="1.0"?>\n<threads>\n</threads>\n
+[remote] Sending packet: $z1,8004208,2#9b
+[remote] Packet received: OK
+
+Breakpoint 3, publish_blink_led_state (pLedState=pLedState@entry=[remote] Sending packet: $m200012f7,8#93
+[remote] Packet received: 00a5a5a5a5674300
+0x200012f7 <ucHeap+1291> "") at application/blink/blink.c:29
+29	static void publish_blink_led_state(const uint8_t *pLedState) {
+[remote] wait: enter
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: O68616c7465643a2050433a20307830383030343230610a
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: T05
+  [remote] select_thread_for_ambiguous_stop_reply: enter
+    [remote] select_thread_for_ambiguous_stop_reply: process_wide_stop = 0
+    [remote] select_thread_for_ambiguous_stop_reply: first resumed thread is Remote target
+    [remote] select_thread_for_ambiguous_stop_reply: is this guess ambiguous? = 0
+  [remote] select_thread_for_ambiguous_stop_reply: exit
+[remote] wait: exit
+[remote] Sending packet: $g#67
+[remote] Packet received: f712002024130020000000100000000090490008a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5e8120020a74200080a42000800000061
+[remote] Sending packet: $Z1,8004208,2#7b
+[remote] Packet received: OK
+[remote] Sending packet: $vCont;c#a8
+[remote] wait: enter
+  [remote] Packet received: O
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: T05
+  [remote] select_thread_for_ambiguous_stop_reply: enter
+    [remote] select_thread_for_ambiguous_stop_reply: process_wide_stop = 0
+    [remote] select_thread_for_ambiguous_stop_reply: first resumed thread is Remote target
+    [remote] select_thread_for_ambiguous_stop_reply: is this guess ambiguous? = 0
+  [remote] select_thread_for_ambiguous_stop_reply: exit
+[remote] wait: exit
+[remote] Sending packet: $g#67
+[remote] Packet received: f712002024130020000000100100000090490008a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5f0120020a74200080842000800000001
+[remote] Sending packet: $qXfer:threads:read::0,1000#92
+[remote] Packet received: l<?xml version="1.0"?>\n<threads>\n</threads>\n
+[remote] Sending packet: $z1,8004208,2#9b
+[remote] Packet received: OK
+
+Breakpoint 3, publish_blink_led_state (pLedState=pLedState@entry=[remote] Sending packet: $m200012f7,8#93
+[remote] Packet received: 01a5a5a5a5674300
+0x200012f7 <ucHeap+1291> "\001\245\245\245\245g") at application/blink/blink.c:29
+29	static void publish_blink_led_state(const uint8_t *pLedState) {
+Detaching from program: /Users/ubaldot/Documents/defrecs/stm32f4x/Hello_World/build/Hello_World.elf, Remote target
+[remote] Sending packet: $D#44
+[remote] Packet received: OK
+[Inferior 1 (Remote target) detached]
+warning: No executable has been specified and target does not support
+determining executable automatically.  Try using the "file" command.
+0x08004208 in ?? ()
+[remote] Sending packet: $qRcmd,7265736574#37
+[remote] Packet received: O556e61626c6520746f206d61746368207265717565737465642073706565642032303030206b487a2c207573696e672031383030206b487a0a
+Unable to match requested speed 2000 kHz, using 1800 kHz
+[remote] Packet received: O556e61626c6520746f206d61746368207265717565737465642073706565642032303030206b487a2c207573696e672031383030206b487a0a
+Unable to match requested speed 2000 kHz, using 1800 kHz
+[remote] Packet received: OK
+[remote] Sending packet: $qRcmd,68616c74#fc
+[remote] Packet received: O5b73746d33326634782e6370755d2068616c7465642064756520746f2064656275672d726571756573742c2063757272656e74206d6f64653a20546872656164200a785053523a20307838313030303030302070633a2030783038303034383363206d73703a20307832303032303030300a
+[stm32f4x.cpu] halted due to debug-request, current mode: Thread 
+xPSR: 0x81000000 pc: 0x0800483c msp: 0x20020000
+[remote] Packet received: OK
+Reading symbols from build/Hello_World.elf...
+[remote] Sending packet: $qSymbol::#5b
+[remote] Packet received: OK
+[remote] packet_ok: Packet qSymbol (symbol-lookup) is supported
+[remote] Sending packet: $qSymbol::#5b
+[remote] Packet received: OK
+[remote] Sending packet: $g#67
+[remote] Packet received: 0000002010000020a83e0020000000002c4a00200000000000000000000000000000000000000000000000000000000000000000000002201d4800083c48000800000081
+startupdone
+New UI allocated
+1: blink_led_state = [remote] Sending packet: $m20004a14,1#86
+[remote] Packet received: 01
+1 '\001'
+[remote] wait: enter
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: T05
+  [remote] select_thread_for_ambiguous_stop_reply: enter
+    [remote] select_thread_for_ambiguous_stop_reply: process_wide_stop = 0
+    [remote] select_thread_for_ambiguous_stop_reply: first resumed thread is Remote target
+    [remote] select_thread_for_ambiguous_stop_reply: is this guess ambiguous? = 0
+  [remote] select_thread_for_ambiguous_stop_reply: exit
+[remote] wait: exit
+[remote] Sending packet: $g#67
+[remote] Packet received: 00000000a5a5a5a5a5a5a5a50100000090490008a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5f0120020674300089e42000800000001
+[remote] Sending packet: $qXfer:threads:read::0,1000#92
+[remote] Packet received: l<?xml version="1.0"?>\n<threads>\n</threads>\n
+[remote] Sending packet: $z1,800429e,2#d1
+[remote] Packet received: OK
+
+Breakpoint 1, blink_step (caller=caller@entry=PERIODIC_TASK) at application/blink/blink.c:62
+62	  publish_blink_led_state(&led_state);
+1: blink_led_state = [remote] Sending packet: $m20004a14,1#86
+[remote] Packet received: 00
+0 '\000'
+[remote] wait: enter
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: O68616c7465643a2050433a20307830383030343261320a
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: T05
+  [remote] select_thread_for_ambiguous_stop_reply: enter
+    [remote] select_thread_for_ambiguous_stop_reply: process_wide_stop = 0
+    [remote] select_thread_for_ambiguous_stop_reply: first resumed thread is Remote target
+    [remote] select_thread_for_ambiguous_stop_reply: is this guess ambiguous? = 0
+  [remote] select_thread_for_ambiguous_stop_reply: exit
+[remote] wait: exit
+[remote] Sending packet: $g#67
+[remote] Packet received: f7120020a5a5a5a5a5a5a5a50100000090490008a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5f012002067430008a242000800000001
+[remote] Sending packet: $Z1,800429e,2#b1
+[remote] Packet received: OK
+[remote] Sending packet: $vCont;c#a8
+[remote] wait: enter
+  [remote] Packet received: O
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: O
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: T05
+  [remote] select_thread_for_ambiguous_stop_reply: enter
+    [remote] select_thread_for_ambiguous_stop_reply: process_wide_stop = 0
+    [remote] select_thread_for_ambiguous_stop_reply: first resumed thread is Remote target
+    [remote] select_thread_for_ambiguous_stop_reply: is this guess ambiguous? = 0
+  [remote] select_thread_for_ambiguous_stop_reply: exit
+[remote] wait: exit
+[remote] Sending packet: $g#67
+[remote] Packet received: 0000000024130020000000100000000090490008a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5f0120020674300089e42000800000061
+[remote] Sending packet: $qXfer:threads:read::0,1000#92
+[remote] Packet received: l<?xml version="1.0"?>\n<threads>\n</threads>\n
+[remote] Sending packet: $z1,800429e,2#d1
+[remote] Packet received: OK
+
+Breakpoint 1, blink_step (caller=caller@entry=PERIODIC_TASK) at application/blink/blink.c:62
+62	  publish_blink_led_state(&led_state);
+1: blink_led_state = [remote] Sending packet: $m20004a14,1#86
+[remote] Packet received: 01
+1 '\001'
+[remote] wait: enter
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: O68616c7465643a2050433a20307830383030343261320a
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: T05
+  [remote] select_thread_for_ambiguous_stop_reply: enter
+    [remote] select_thread_for_ambiguous_stop_reply: process_wide_stop = 0
+    [remote] select_thread_for_ambiguous_stop_reply: first resumed thread is Remote target
+    [remote] select_thread_for_ambiguous_stop_reply: is this guess ambiguous? = 0
+  [remote] select_thread_for_ambiguous_stop_reply: exit
+[remote] wait: exit
+[remote] Sending packet: $g#67
+[remote] Packet received: f712002024130020000000100000000090490008a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5f012002067430008a242000800000061
+[remote] Sending packet: $Z1,800429e,2#b1
+[remote] Packet received: OK
+[remote] Sending packet: $vCont;c#a8
+[remote] wait: enter
+  [remote] Packet received: O
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: O
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: T05
+  [remote] select_thread_for_ambiguous_stop_reply: enter
+    [remote] select_thread_for_ambiguous_stop_reply: process_wide_stop = 0
+    [remote] select_thread_for_ambiguous_stop_reply: first resumed thread is Remote target
+    [remote] select_thread_for_ambiguous_stop_reply: is this guess ambiguous? = 0
+  [remote] select_thread_for_ambiguous_stop_reply: exit
+[remote] wait: exit
+[remote] Sending packet: $g#67
+[remote] Packet received: 0000000024130020000000100100000090490008a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5f0120020674300089e42000800000001
+[remote] Sending packet: $qXfer:threads:read::0,1000#92
+[remote] Packet received: l<?xml version="1.0"?>\n<threads>\n</threads>\n
+[remote] Sending packet: $z1,800429e,2#d1
+[remote] Packet received: OK
+
+Breakpoint 1, blink_step (caller=caller@entry=PERIODIC_TASK) at application/blink/blink.c:62
+62	  publish_blink_led_state(&led_state);
+1: blink_led_state = [remote] Sending packet: $m20004a14,1#86
+[remote] Packet received: 00
+0 '\000'
+[remote] wait: enter
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: O68616c7465643a2050433a20307830383030343261320a
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: T05
+  [remote] select_thread_for_ambiguous_stop_reply: enter
+    [remote] select_thread_for_ambiguous_stop_reply: process_wide_stop = 0
+    [remote] select_thread_for_ambiguous_stop_reply: first resumed thread is Remote target
+    [remote] select_thread_for_ambiguous_stop_reply: is this guess ambiguous? = 0
+  [remote] select_thread_for_ambiguous_stop_reply: exit
+[remote] wait: exit
+[remote] Sending packet: $g#67
+[remote] Packet received: f712002024130020000000100100000090490008a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5f012002067430008a242000800000001
+[remote] Sending packet: $Z1,800429e,2#b1
+[remote] Packet received: OK
+[remote] Sending packet: $vCont;c#a8
+[remote] wait: enter
+  [remote] Packet received: O
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: O
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: T05
+  [remote] select_thread_for_ambiguous_stop_reply: enter
+    [remote] select_thread_for_ambiguous_stop_reply: process_wide_stop = 0
+    [remote] select_thread_for_ambiguous_stop_reply: first resumed thread is Remote target
+    [remote] select_thread_for_ambiguous_stop_reply: is this guess ambiguous? = 0
+  [remote] select_thread_for_ambiguous_stop_reply: exit
+[remote] wait: exit
+[remote] Sending packet: $g#67
+[remote] Packet received: 0000000024130020000000100000000090490008a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5f0120020674300089e42000800000061
+[remote] Sending packet: $qXfer:threads:read::0,1000#92
+[remote] Packet received: l<?xml version="1.0"?>\n<threads>\n</threads>\n
+[remote] Sending packet: $z1,800429e,2#d1
+[remote] Packet received: OK
+
+Breakpoint 1, blink_step (caller=caller@entry=PERIODIC_TASK) at application/blink/blink.c:62
+62	  publish_blink_led_state(&led_state);
+1: blink_led_state = [remote] Sending packet: $m20004a14,1#86
+[remote] Packet received: 01
+1 '\001'
+[remote] wait: enter
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: O68616c7465643a2050433a20307830383030343261320a
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: T05
+  [remote] select_thread_for_ambiguous_stop_reply: enter
+    [remote] select_thread_for_ambiguous_stop_reply: process_wide_stop = 0
+    [remote] select_thread_for_ambiguous_stop_reply: first resumed thread is Remote target
+    [remote] select_thread_for_ambiguous_stop_reply: is this guess ambiguous? = 0
+  [remote] select_thread_for_ambiguous_stop_reply: exit
+[remote] wait: exit
+[remote] Sending packet: $g#67
+[remote] Packet received: f712002024130020000000100000000090490008a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5f012002067430008a242000800000061
+[remote] Sending packet: $Z1,800429e,2#b1
+[remote] Packet received: OK
+[remote] Sending packet: $vCont;c#a8
+[remote] wait: enter
+  [remote] Packet received: O
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: O
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: T05
+  [remote] select_thread_for_ambiguous_stop_reply: enter
+    [remote] select_thread_for_ambiguous_stop_reply: process_wide_stop = 0
+    [remote] select_thread_for_ambiguous_stop_reply: first resumed thread is Remote target
+    [remote] select_thread_for_ambiguous_stop_reply: is this guess ambiguous? = 0
+  [remote] select_thread_for_ambiguous_stop_reply: exit
+[remote] wait: exit
+[remote] Sending packet: $g#67
+[remote] Packet received: 0000000024130020000000100100000090490008a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5f0120020674300089e42000800000001
+[remote] Sending packet: $qXfer:threads:read::0,1000#92
+[remote] Packet received: l<?xml version="1.0"?>\n<threads>\n</threads>\n
+[remote] Sending packet: $z1,800429e,2#d1
+[remote] Packet received: OK
+
+Breakpoint 1, blink_step (caller=caller@entry=PERIODIC_TASK) at application/blink/blink.c:62
+62	  publish_blink_led_state(&led_state);
+1: blink_led_state = [remote] Sending packet: $m20004a14,1#86
+[remote] Packet received: 00
+0 '\000'
+Auto-display expressions now in effect:
+Num Enb Expression
+1:   y  blink_led_state
+[remote] wait: enter
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: O68616c7465643a2050433a20307830383030343261320a
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: T05
+  [remote] select_thread_for_ambiguous_stop_reply: enter
+    [remote] select_thread_for_ambiguous_stop_reply: process_wide_stop = 0
+    [remote] select_thread_for_ambiguous_stop_reply: first resumed thread is Remote target
+    [remote] select_thread_for_ambiguous_stop_reply: is this guess ambiguous? = 0
+  [remote] select_thread_for_ambiguous_stop_reply: exit
+[remote] wait: exit
+[remote] Sending packet: $g#67
+[remote] Packet received: f712002024130020000000100100000090490008a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5f012002067430008a242000800000001
+[remote] Sending packet: $Z1,800429e,2#b1
+[remote] Packet received: OK
+[remote] Sending packet: $vCont;c#a8
+[remote] wait: enter
+  [remote] Packet received: O
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: O
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: T05
+  [remote] select_thread_for_ambiguous_stop_reply: enter
+    [remote] select_thread_for_ambiguous_stop_reply: process_wide_stop = 0
+    [remote] select_thread_for_ambiguous_stop_reply: first resumed thread is Remote target
+    [remote] select_thread_for_ambiguous_stop_reply: is this guess ambiguous? = 0
+  [remote] select_thread_for_ambiguous_stop_reply: exit
+[remote] wait: exit
+[remote] Sending packet: $g#67
+[remote] Packet received: 0000000024130020000000100000000090490008a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5f0120020674300089e42000800000061
+[remote] Sending packet: $qXfer:threads:read::0,1000#92
+[remote] Packet received: l<?xml version="1.0"?>\n<threads>\n</threads>\n
+[remote] Sending packet: $z1,800429e,2#d1
+[remote] Packet received: OK
+
+Breakpoint 1, blink_step (caller=caller@entry=PERIODIC_TASK) at application/blink/blink.c:62
+62	  publish_blink_led_state(&led_state);
+1: blink_led_state = [remote] Sending packet: $m20004a14,1#86
+[remote] Packet received: 01
+1 '\001'
+Auto-display expressions now in effect:
+Num Enb Expression
+1:   y  blink_led_state
+Auto-display expressions now in effect:
+Num Enb Expression
+1:   y  blink_led_state
+[remote] wait: enter
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: O68616c7465643a2050433a20307830383030343261320a
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: T05
+  [remote] select_thread_for_ambiguous_stop_reply: enter
+    [remote] select_thread_for_ambiguous_stop_reply: process_wide_stop = 0
+    [remote] select_thread_for_ambiguous_stop_reply: first resumed thread is Remote target
+    [remote] select_thread_for_ambiguous_stop_reply: is this guess ambiguous? = 0
+  [remote] select_thread_for_ambiguous_stop_reply: exit
+[remote] wait: exit
+[remote] Sending packet: $g#67
+[remote] Packet received: f712002024130020000000100000000090490008a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5f012002067430008a242000800000061
+[remote] Sending packet: $Z1,800429e,2#b1
+[remote] Packet received: OK
+[remote] Sending packet: $vCont;c#a8
+[remote] wait: enter
+  [remote] Packet received: O
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: O
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: T05
+  [remote] select_thread_for_ambiguous_stop_reply: enter
+    [remote] select_thread_for_ambiguous_stop_reply: process_wide_stop = 0
+    [remote] select_thread_for_ambiguous_stop_reply: first resumed thread is Remote target
+    [remote] select_thread_for_ambiguous_stop_reply: is this guess ambiguous? = 0
+  [remote] select_thread_for_ambiguous_stop_reply: exit
+[remote] wait: exit
+[remote] Sending packet: $g#67
+[remote] Packet received: 0000000024130020000000100100000090490008a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5f0120020674300089e42000800000001
+[remote] Sending packet: $qXfer:threads:read::0,1000#92
+[remote] Packet received: l<?xml version="1.0"?>\n<threads>\n</threads>\n
+[remote] Sending packet: $z1,800429e,2#d1
+[remote] Packet received: OK
+
+Breakpoint 1, blink_step (caller=caller@entry=PERIODIC_TASK) at application/blink/blink.c:62
+62	  publish_blink_led_state(&led_state);
+1: blink_led_state = [remote] Sending packet: $m20004a14,1#86
+[remote] Packet received: 00
+0 '\000'
+Auto-display expressions now in effect:
+Num Enb Expression
+1:   y  blink_led_state
+Auto-display expressions now in effect:
+Num Enb Expression
+1:   y  blink_led_state
+[remote] wait: enter
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: O68616c7465643a2050433a20307830383030343261320a
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: T05
+  [remote] select_thread_for_ambiguous_stop_reply: enter
+    [remote] select_thread_for_ambiguous_stop_reply: process_wide_stop = 0
+    [remote] select_thread_for_ambiguous_stop_reply: first resumed thread is Remote target
+    [remote] select_thread_for_ambiguous_stop_reply: is this guess ambiguous? = 0
+  [remote] select_thread_for_ambiguous_stop_reply: exit
+[remote] wait: exit
+[remote] Sending packet: $g#67
+[remote] Packet received: f712002024130020000000100100000090490008a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5f012002067430008a242000800000001
+[remote] Sending packet: $Z1,800429e,2#b1
+[remote] Packet received: OK
+[remote] Sending packet: $vCont;c#a8
+[remote] wait: enter
+  [remote] Packet received: O
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: O
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: T05
+  [remote] select_thread_for_ambiguous_stop_reply: enter
+    [remote] select_thread_for_ambiguous_stop_reply: process_wide_stop = 0
+    [remote] select_thread_for_ambiguous_stop_reply: first resumed thread is Remote target
+    [remote] select_thread_for_ambiguous_stop_reply: is this guess ambiguous? = 0
+  [remote] select_thread_for_ambiguous_stop_reply: exit
+[remote] wait: exit
+[remote] Sending packet: $g#67
+[remote] Packet received: 0000000024130020000000100000000090490008a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5f0120020674300089e42000800000061
+[remote] Sending packet: $qXfer:threads:read::0,1000#92
+[remote] Packet received: l<?xml version="1.0"?>\n<threads>\n</threads>\n
+[remote] Sending packet: $z1,800429e,2#d1
+[remote] Packet received: OK
+
+Breakpoint 1, blink_step (caller=caller@entry=PERIODIC_TASK) at application/blink/blink.c:62
+62	  publish_blink_led_state(&led_state);
+1: blink_led_state = [remote] Sending packet: $m20004a14,1#86
+[remote] Packet received: 01
+1 '\001'
+Auto-display expressions now in effect:
+Num Enb Expression
+1:   y  blink_led_state
+Undefined command: "".  Try "help".
+No symbol "printf" in current context.
+[remote] wait: enter
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: O68616c7465643a2050433a20307830383030343261320a
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: T05
+  [remote] select_thread_for_ambiguous_stop_reply: enter
+    [remote] select_thread_for_ambiguous_stop_reply: process_wide_stop = 0
+    [remote] select_thread_for_ambiguous_stop_reply: first resumed thread is Remote target
+    [remote] select_thread_for_ambiguous_stop_reply: is this guess ambiguous? = 0
+  [remote] select_thread_for_ambiguous_stop_reply: exit
+[remote] wait: exit
+[remote] Sending packet: $g#67
+[remote] Packet received: f712002024130020000000100000000090490008a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5f012002067430008a242000800000061
+[remote] Sending packet: $Z1,800429e,2#b1
+[remote] Packet received: OK
+[remote] Sending packet: $vCont;c#a8
+[remote] wait: enter
+  [remote] Packet received: O
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: O
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: T05
+  [remote] select_thread_for_ambiguous_stop_reply: enter
+    [remote] select_thread_for_ambiguous_stop_reply: process_wide_stop = 0
+    [remote] select_thread_for_ambiguous_stop_reply: first resumed thread is Remote target
+    [remote] select_thread_for_ambiguous_stop_reply: is this guess ambiguous? = 0
+  [remote] select_thread_for_ambiguous_stop_reply: exit
+[remote] wait: exit
+[remote] Sending packet: $g#67
+[remote] Packet received: 0000000024130020000000100100000090490008a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5f0120020674300089e42000800000001
+[remote] Sending packet: $qXfer:threads:read::0,1000#92
+[remote] Packet received: l<?xml version="1.0"?>\n<threads>\n</threads>\n
+[remote] Sending packet: $z1,800429e,2#d1
+[remote] Packet received: OK
+
+Breakpoint 1, blink_step (caller=caller@entry=PERIODIC_TASK) at application/blink/blink.c:62
+62	  publish_blink_led_state(&led_state);
+1: blink_led_state = [remote] Sending packet: $m20004a14,1#86
+[remote] Packet received: 00
+0 '\000'
+[remote] wait: enter
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: O68616c7465643a2050433a20307830383030343261320a
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: T05
+  [remote] select_thread_for_ambiguous_stop_reply: enter
+    [remote] select_thread_for_ambiguous_stop_reply: process_wide_stop = 0
+    [remote] select_thread_for_ambiguous_stop_reply: first resumed thread is Remote target
+    [remote] select_thread_for_ambiguous_stop_reply: is this guess ambiguous? = 0
+  [remote] select_thread_for_ambiguous_stop_reply: exit
+[remote] wait: exit
+[remote] Sending packet: $g#67
+[remote] Packet received: f712002024130020000000100100000090490008a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5f012002067430008a242000800000001
+[remote] Sending packet: $Z1,800429e,2#b1
+[remote] Packet received: OK
+[remote] Sending packet: $vCont;c#a8
+[remote] wait: enter
+  [remote] Packet received: O
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: T05
+  [remote] select_thread_for_ambiguous_stop_reply: enter
+    [remote] select_thread_for_ambiguous_stop_reply: process_wide_stop = 0
+    [remote] select_thread_for_ambiguous_stop_reply: first resumed thread is Remote target
+    [remote] select_thread_for_ambiguous_stop_reply: is this guess ambiguous? = 0
+  [remote] select_thread_for_ambiguous_stop_reply: exit
+[remote] wait: exit
+[remote] Sending packet: $g#67
+[remote] Packet received: 0000000024130020000000100000000090490008a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5f0120020674300089e42000800000061
+[remote] Sending packet: $qXfer:threads:read::0,1000#92
+[remote] Packet received: l<?xml version="1.0"?>\n<threads>\n</threads>\n
+[remote] Sending packet: $z1,800429e,2#d1
+[remote] Packet received: OK
+
+Breakpoint 1, blink_step (caller=caller@entry=PERIODIC_TASK) at application/blink/blink.c:62
+62	  publish_blink_led_state(&led_state);
+1: blink_led_state = [remote] Sending packet: $m20004a14,1#86
+[remote] Packet received: 01
+1 '\001'
+[remote] wait: enter
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: O68616c7465643a2050433a20307830383030343261320a
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: T05
+  [remote] select_thread_for_ambiguous_stop_reply: enter
+    [remote] select_thread_for_ambiguous_stop_reply: process_wide_stop = 0
+    [remote] select_thread_for_ambiguous_stop_reply: first resumed thread is Remote target
+    [remote] select_thread_for_ambiguous_stop_reply: is this guess ambiguous? = 0
+  [remote] select_thread_for_ambiguous_stop_reply: exit
+[remote] wait: exit
+[remote] Sending packet: $g#67
+[remote] Packet received: f712002024130020000000100000000090490008a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5f012002067430008a242000800000061
+[remote] Sending packet: $Z1,800429e,2#b1
+[remote] Packet received: OK
+[remote] Sending packet: $vCont;c#a8
+[remote] wait: enter
+  [remote] Packet received: O
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: O
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: T05
+  [remote] select_thread_for_ambiguous_stop_reply: enter
+    [remote] select_thread_for_ambiguous_stop_reply: process_wide_stop = 0
+    [remote] select_thread_for_ambiguous_stop_reply: first resumed thread is Remote target
+    [remote] select_thread_for_ambiguous_stop_reply: is this guess ambiguous? = 0
+  [remote] select_thread_for_ambiguous_stop_reply: exit
+[remote] wait: exit
+[remote] Sending packet: $g#67
+[remote] Packet received: 0000000024130020000000100100000090490008a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5f0120020674300089e42000800000001
+[remote] Sending packet: $qXfer:threads:read::0,1000#92
+[remote] Packet received: l<?xml version="1.0"?>\n<threads>\n</threads>\n
+[remote] Sending packet: $z1,800429e,2#d1
+[remote] Packet received: OK
+
+Breakpoint 1, blink_step (caller=caller@entry=PERIODIC_TASK) at application/blink/blink.c:62
+62	  publish_blink_led_state(&led_state);
+1: blink_led_state = [remote] Sending packet: $m20004a14,1#86
+[remote] Packet received: 00
+0 '\000'
+
+Breakpoint 1, blink_step (caller=caller@entry=PERIODIC_TASK) at application/blink/blink.c:62
+62	  publish_blink_led_state(&led_state);
+1: blink_led_state = 1 '\001'
+No symbol "printf" in current context.
+No symbol "printf" in current context.
+No symbol "printf" in current context.
+
+Breakpoint 1, blink_step (caller=caller@entry=PERIODIC_TASK) at application/blink/blink.c:62
+62	  publish_blink_led_state(&led_state);
+1: blink_led_state = 0 '\000'
+No symbol "printf" in current context.
+No symbol "printf" in current context.
+No symbol "printf" in current context.
+No symbol "printf" in current context.
+Undefined command: "".  Try "help".
+blink_led_state = 0
+
+Breakpoint 1, blink_step (caller=caller@entry=PERIODIC_TASK) at application/blink/blink.c:62
+62	  publish_blink_led_state(&led_state);
+1: blink_led_state = 1 '\001'
+blink_led_state = 1
+blink_led_state = 1
+
+Breakpoint 1, blink_step (caller=caller@entry=PERIODIC_TASK) at application/blink/blink.c:62
+62	  publish_blink_led_state(&led_state);
+1: blink_led_state = 0 '\000'
+
+Breakpoint 1, blink_step (caller=caller@entry=PERIODIC_TASK) at application/blink/blink.c:62
+62	  publish_blink_led_state(&led_state);
+1: blink_led_state = 1 '\001'
+
+Breakpoint 1, blink_step (caller=caller@entry=PERIODIC_TASK) at application/blink/blink.c:62
+62	  publish_blink_led_state(&led_state);
+1: blink_led_state = 0 '\000'
+blink_led_state = 0
+blink_led_state = 0
+
+No symbol "printf" in current context.
+Detaching from program: /Users/ubaldot/Documents/defrecs/stm32f4x/Hello_World/build/Hello_World.elf, Remote target
+[Inferior 1 (Remote target) detached]
+warning: No executable has been specified and target does not support
+determining executable automatically.  Try using the "file" command.
+0x0800429e in ?? ()
+[remote] Sending packet: $qRcmd,7265736574#37
+[remote] Packet received: O556e61626c6520746f206d61746368207265717565737465642073706565642032303030206b487a2c207573696e672031383030206b487a0a
+Unable to match requested speed 2000 kHz, using 1800 kHz
+[remote] Packet received: O556e61626c6520746f206d61746368207265717565737465642073706565642032303030206b487a2c207573696e672031383030206b487a0a
+Unable to match requested speed 2000 kHz, using 1800 kHz
+[remote] Packet received: OK
+[remote] Sending packet: $qRcmd,68616c74#fc
+[remote] Packet received: O5b73746d33326634782e6370755d2068616c7465642064756520746f2064656275672d726571756573742c2063757272656e74206d6f64653a20546872656164200a785053523a20307838313030303030302070633a2030783038303034383430206d73703a20307832303032303030300a
+[stm32f4x.cpu] halted due to debug-request, current mode: Thread 
+xPSR: 0x81000000 pc: 0x08004840 msp: 0x20020000
+[remote] Packet received: OK
+Reading symbols from build/Hello_World.elf...
+[remote] Sending packet: $qSymbol::#5b
+[remote] Packet received: OK
+[remote] packet_ok: Packet qSymbol (symbol-lookup) is supported
+[remote] Sending packet: $qSymbol::#5b
+[remote] Packet received: OK
+[remote] Sending packet: $g#67
+[remote] Packet received: 0000002010000020f03c0020000000002c4a00200000000000000000000000000000000000000000000000000000000000000000000002201d4800084048000800000081
+startupdone
+New UI allocated
+1: blink_led_state = 1 '\001'
+
+Breakpoint 1, blink_step (caller=caller@entry=PERIODIC_TASK) at application/blink/blink.c:62
+62	  publish_blink_led_state(&led_state);
+1: blink_led_state = 0 '\000'
+
+Breakpoint 1, blink_step (caller=caller@entry=PERIODIC_TASK) at application/blink/blink.c:62
+62	  publish_blink_led_state(&led_state);
+1: blink_led_state = 1 '\001'
+2: led_state = 0 '\000'
+
+Breakpoint 1, blink_step (caller=caller@entry=PERIODIC_TASK) at application/blink/blink.c:62
+62	  publish_blink_led_state(&led_state);
+1: blink_led_state = 0 '\000'
+2: led_state = 1 '\001'
+
+Breakpoint 1, blink_step (caller=caller@entry=PERIODIC_TASK) at application/blink/blink.c:62
+62	  publish_blink_led_state(&led_state);
+1: blink_led_state = 1 '\001'
+2: led_state = 0 '\000'
+
+Breakpoint 1, blink_step (caller=caller@entry=PERIODIC_TASK) at application/blink/blink.c:62
+62	  publish_blink_led_state(&led_state);
+1: blink_led_state = 0 '\000'
+2: led_state = 1 '\001'
+
+Breakpoint 1, blink_step (caller=caller@entry=PERIODIC_TASK) at application/blink/blink.c:62
+62	  publish_blink_led_state(&led_state);
+1: blink_led_state = 1 '\001'
+2: led_state = 0 '\000'
+
+Program received signal SIGINT, Interrupt.
+0x080042a2 in blink_step (caller=caller@entry=PERIODIC_TASK) at application/blink/blink.c:62
+62	  publish_blink_led_state(&led_state);
+1: blink_led_state = 1 '\001'
+2: led_state = 0 '\000'
+1: blink_led_state = <error: Cannot execute this command while the target is running.
+Use the "interrupt" command to stop the target
+and then try again.>
+
+Breakpoint 1, blink_step (caller=caller@entry=PERIODIC_TASK) at application/blink/blink.c:62
+62	  publish_blink_led_state(&led_state);
+1: blink_led_state = 0 '\000'
+2: led_state = 1 '\001'
+1: blink_led_state = <error: Cannot execute this command while the target is running.
+Use the "interrupt" command to stop the target
+and then try again.>
+
+Breakpoint 1, blink_step (caller=caller@entry=PERIODIC_TASK) at application/blink/blink.c:62
+62	  publish_blink_led_state(&led_state);
+1: blink_led_state = 1 '\001'
+2: led_state = 0 '\000'
+1: blink_led_state = <error: Cannot execute this command while the target is running.
+Use the "interrupt" command to stop the target
+and then try again.>
+
+Breakpoint 1, blink_step (caller=caller@entry=PERIODIC_TASK) at application/blink/blink.c:62
+62	  publish_blink_led_state(&led_state);
+1: blink_led_state = 0 '\000'
+2: led_state = 1 '\001'
+
+Breakpoint 1, blink_step (caller=caller@entry=PERIODIC_TASK) at application/blink/blink.c:62
+62	  publish_blink_led_state(&led_state);
+1: blink_led_state = 1 '\001'
+2: led_state = 0 '\000'
+
+Breakpoint 1, blink_step (caller=caller@entry=PERIODIC_TASK) at application/blink/blink.c:62
+62	  publish_blink_led_state(&led_state);
+1: blink_led_state = 0 '\000'
+2: led_state = 1 '\001'
+
+Breakpoint 1, blink_step (caller=caller@entry=PERIODIC_TASK) at application/blink/blink.c:62
+62	  publish_blink_led_state(&led_state);
+1: blink_led_state = 1 '\001'
+2: led_state = 0 '\000'
+1: blink_led_state = 1 '\001'
+2: led_state = 0 '\000'
+Auto-display expressions now in effect:
+Num Enb Expression
+1:   y  blink_led_state
+2:   y  led_state
+$1 = 1 '\001'
+$2 = 0 '\000'
+1: blink_led_state = 0 '\000'
+2: led_state = 0 '\000'
+
+Breakpoint 2, digital_out_step (caller=caller@entry=PERIODIC_TASK) at platform/digital_out/digital_out.c:11
+11	  HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, led_state);
+1: blink_led_state = 0 '\000'
+
+Breakpoint 1, blink_step (caller=caller@entry=PERIODIC_TASK) at application/blink/blink.c:62
+62	  publish_blink_led_state(&led_state);
+1: blink_led_state = 0 '\000'
+2: led_state = 1 '\001'
+
+Breakpoint 2, digital_out_step (caller=caller@entry=PERIODIC_TASK) at platform/digital_out/digital_out.c:11
+11	  HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, led_state);
+1: blink_led_state = 1 '\001'
+1: blink_led_state = 1 '\001'
+
+Breakpoint 1, blink_step (caller=caller@entry=PERIODIC_TASK) at application/blink/blink.c:62
+62	  publish_blink_led_state(&led_state);
+1: blink_led_state = 1 '\001'
+2: led_state = 0 '\000'
+
+Breakpoint 2, digital_out_step (caller=caller@entry=PERIODIC_TASK) at platform/digital_out/digital_out.c:11
+11	  HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, led_state);
+1: blink_led_state = 0 '\000'
+
+Breakpoint 1, blink_step (caller=caller@entry=PERIODIC_TASK) at application/blink/blink.c:62
+62	  publish_blink_led_state(&led_state);
+1: blink_led_state = 0 '\000'
+2: led_state = 1 '\001'
+
+Breakpoint 2, digital_out_step (caller=caller@entry=PERIODIC_TASK) at platform/digital_out/digital_out.c:11
+11	  HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, led_state);
+1: blink_led_state = 1 '\001'
+
+Breakpoint 1, blink_step (caller=caller@entry=PERIODIC_TASK) at application/blink/blink.c:62
+62	  publish_blink_led_state(&led_state);
+1: blink_led_state = 1 '\001'
+2: led_state = 0 '\000'
+
+Breakpoint 2, digital_out_step (caller=caller@entry=PERIODIC_TASK) at platform/digital_out/digital_out.c:11
+11	  HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, led_state);
+1: blink_led_state = 0 '\000'
+
+Breakpoint 1, blink_step (caller=caller@entry=PERIODIC_TASK) at application/blink/blink.c:62
+62	  publish_blink_led_state(&led_state);
+1: blink_led_state = 0 '\000'
+2: led_state = 1 '\001'
+
+Breakpoint 2, digital_out_step (caller=caller@entry=PERIODIC_TASK) at platform/digital_out/digital_out.c:11
+11	  HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, led_state);
+1: blink_led_state = 1 '\001'
+
+Breakpoint 1, blink_step (caller=caller@entry=PERIODIC_TASK) at application/blink/blink.c:62
+62	  publish_blink_led_state(&led_state);
+1: blink_led_state = 1 '\001'
+2: led_state = 0 '\000'
+
+Breakpoint 2, digital_out_step (caller=caller@entry=PERIODIC_TASK) at platform/digital_out/digital_out.c:11
+11	  HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, led_state);
+1: blink_led_state = 0 '\000'
+
+Breakpoint 1, blink_step (caller=caller@entry=PERIODIC_TASK) at application/blink/blink.c:62
+62	  publish_blink_led_state(&led_state);
+1: blink_led_state = 0 '\000'
+2: led_state = 1 '\001'
+Detaching from program: /Users/ubaldot/Documents/defrecs/stm32f4x/Hello_World/build/Hello_World.elf, Remote target
+[Inferior 1 (Remote target) detached]
+warning: No executable has been specified and target does not support
+determining executable automatically.  Try using the "file" command.
+0x0800429e in ?? ()
+Unable to match requested speed 2000 kHz, using 1800 kHz
+Unable to match requested speed 2000 kHz, using 1800 kHz
+[stm32f4x.cpu] halted due to debug-request, current mode: Thread 
+xPSR: 0x41000000 pc: 0x08001432 msp: 0x2001ff88
+Reading symbols from build/Hello_World.elf...
+startupdone
+New UI allocated
+1: blink_led_state = 0 '\000'
+
+Breakpoint 1, blink_step (caller=caller@entry=PERIODIC_TASK) at application/blink/blink.c:62
+62	  publish_blink_led_state(&led_state);
+1: blink_led_state = 0 '\000'
+2: led_state = 1 '\001'
+Continuing.
+
+Breakpoint 1, blink_step (caller=caller@entry=PERIODIC_TASK) at application/blink/blink.c:62
+62	  publish_blink_led_state(&led_state);
+1: blink_led_state = 1 '\001'
+2: led_state = 0 '\000'
+Continuing.
+
+Breakpoint 1, blink_step (caller=caller@entry=PERIODIC_TASK) at application/blink/blink.c:62
+62	  publish_blink_led_state(&led_state);
+1: blink_led_state = 0 '\000'
+2: led_state = 1 '\001'
+Continuing.
+
+Breakpoint 1, blink_step (caller=caller@entry=PERIODIC_TASK) at application/blink/blink.c:62
+62	  publish_blink_led_state(&led_state);
+1: blink_led_state = 1 '\001'
+2: led_state = 0 '\000'
+No symbol "printf" in current context.
+Continuing.
+
+Breakpoint 1, blink_step (caller=caller@entry=PERIODIC_TASK) at application/blink/blink.c:62
+62	  publish_blink_led_state(&led_state);
+1: blink_led_state = 0 '\000'
+2: led_state = 1 '\001'
+1: blink_led_state = 0 '\000'
+2: led_state = 1 '\001'
+1: blink_led_state = <error: Cannot execute this command while the target is running.
+Use the "interrupt" command to stop the target
+and then try again.>
+
+Breakpoint 2, publish_blink_led_state (pLedState=pLedState@entry=0x200012f7 <ucHeap+1291> "\001\245\245\245\245g") at application/blink/blink.c:29
+29	static void publish_blink_led_state(const uint8_t *pLedState) {
+1: blink_led_state = 0 '\000'
+1: blink_led_state = <error: Cannot execute this command while the target is running.
+Use the "interrupt" command to stop the target
+and then try again.>
+
+Breakpoint 1, blink_step (caller=caller@entry=PERIODIC_TASK) at application/blink/blink.c:62
+62	  publish_blink_led_state(&led_state);
+1: blink_led_state = 1 '\001'
+2: led_state = 0 '\000'
+1: blink_led_state = <error: Cannot execute this command while the target is running.
+Use the "interrupt" command to stop the target
+and then try again.>
+
+Breakpoint 2, publish_blink_led_state (pLedState=pLedState@entry=0x200012f7 <ucHeap+1291> "") at application/blink/blink.c:29
+29	static void publish_blink_led_state(const uint8_t *pLedState) {
+1: blink_led_state = 1 '\001'
+1: blink_led_state = <error: Cannot execute this command while the target is running.
+Use the "interrupt" command to stop the target
+and then try again.>
+
+Breakpoint 1, blink_step (caller=caller@entry=PERIODIC_TASK) at application/blink/blink.c:62
+62	  publish_blink_led_state(&led_state);
+1: blink_led_state = 0 '\000'
+2: led_state = 1 '\001'
+
+Breakpoint 2, publish_blink_led_state (pLedState=pLedState@entry=0x200012f7 <ucHeap+1291> "\001\245\245\245\245g") at application/blink/blink.c:29
+29	static void publish_blink_led_state(const uint8_t *pLedState) {
+1: blink_led_state = 0 '\000'
+
+Breakpoint 1, blink_step (caller=caller@entry=PERIODIC_TASK) at application/blink/blink.c:62
+62	  publish_blink_led_state(&led_state);
+1: blink_led_state = 1 '\001'
+2: led_state = 0 '\000'
+
+Breakpoint 2, publish_blink_led_state (pLedState=pLedState@entry=0x200012f7 <ucHeap+1291> "") at application/blink/blink.c:29
+29	static void publish_blink_led_state(const uint8_t *pLedState) {
+1: blink_led_state = 1 '\001'
+
+Breakpoint 1, blink_step (caller=caller@entry=PERIODIC_TASK) at application/blink/blink.c:62
+62	  publish_blink_led_state(&led_state);
+1: blink_led_state = 0 '\000'
+2: led_state = 1 '\001'
+
+Breakpoint 2, publish_blink_led_state (pLedState=pLedState@entry=0x200012f7 <ucHeap+1291> "\001\245\245\245\245g") at application/blink/blink.c:29
+29	static void publish_blink_led_state(const uint8_t *pLedState) {
+1: blink_led_state = 0 '\000'
+
+Breakpoint 1, blink_step (caller=caller@entry=PERIODIC_TASK) at application/blink/blink.c:62
+62	  publish_blink_led_state(&led_state);
+1: blink_led_state = 1 '\001'
+2: led_state = 0 '\000'
+
+Breakpoint 2, publish_blink_led_state (pLedState=pLedState@entry=0x200012f7 <ucHeap+1291> "") at application/blink/blink.c:29
+29	static void publish_blink_led_state(const uint8_t *pLedState) {
+1: blink_led_state = 1 '\001'
+1: blink_led_state = 1 '\001'
+No symbol "printf" in current context.
+Continuing.
+
+Breakpoint 1, blink_step (caller=caller@entry=PERIODIC_TASK) at application/blink/blink.c:62
+62	  publish_blink_led_state(&led_state);
+1: blink_led_state = 0 '\000'
+2: led_state = 1 '\001'
+Continuing.
+
+Breakpoint 2, publish_blink_led_state (pLedState=pLedState@entry=0x200012f7 <ucHeap+1291> "\001\245\245\245\245g") at application/blink/blink.c:29
+29	static void publish_blink_led_state(const uint8_t *pLedState) {
+1: blink_led_state = 0 '\000'
+Continuing.
+
+Breakpoint 1, blink_step (caller=caller@entry=PERIODIC_TASK) at application/blink/blink.c:62
+62	  publish_blink_led_state(&led_state);
+1: blink_led_state = 1 '\001'
+2: led_state = 0 '\000'
+1: blink_led_state = 1 '\001'
+2: led_state = 0 '\000'
+3: led_state = 0 '\000'
+4: blink_led_state = 1 '\001'
+
+Breakpoint 2, publish_blink_led_state (pLedState=pLedState@entry=0x200012f7 <ucHeap+1291> "") at application/blink/blink.c:29
+29	static void publish_blink_led_state(const uint8_t *pLedState) {
+1: blink_led_state = 1 '\001'
+4: blink_led_state = 1 '\001'
+
+Breakpoint 3, usart2_step (caller=caller@entry=PERIODIC_TASK) at platform/usart2/usart2.c:48
+48	  switch (caller) {
+1: blink_led_state = 0 '\000'
+4: blink_led_state = 0 '\000'
+
+Breakpoint 3, usart2_step (caller=caller@entry=PERIODIC_TASK) at platform/usart2/usart2.c:48
+48	  switch (caller) {
+1: blink_led_state = 0 '\000'
+4: blink_led_state = 0 '\000'
+
+Breakpoint 3, usart2_step (caller=caller@entry=PERIODIC_TASK) at platform/usart2/usart2.c:48
+48	  switch (caller) {
+1: blink_led_state = 0 '\000'
+4: blink_led_state = 0 '\000'
+
+Breakpoint 3, usart2_step (caller=caller@entry=PERIODIC_TASK) at platform/usart2/usart2.c:48
+48	  switch (caller) {
+1: blink_led_state = 0 '\000'
+4: blink_led_state = 0 '\000'
+
+Breakpoint 3, usart2_step (caller=caller@entry=PERIODIC_TASK) at platform/usart2/usart2.c:48
+48	  switch (caller) {
+1: blink_led_state = 0 '\000'
+4: blink_led_state = 0 '\000'
+
+Breakpoint 1, blink_step (caller=caller@entry=PERIODIC_TASK) at application/blink/blink.c:62
+62	  publish_blink_led_state(&led_state);
+1: blink_led_state = 0 '\000'
+2: led_state = 1 '\001'
+3: led_state = 1 '\001'
+4: blink_led_state = 0 '\000'
+
+Breakpoint 2, publish_blink_led_state (pLedState=pLedState@entry=0x200012f7 <ucHeap+1291> "\001\245\245\245\245g") at application/blink/blink.c:29
+29	static void publish_blink_led_state(const uint8_t *pLedState) {
+1: blink_led_state = 0 '\000'
+4: blink_led_state = 0 '\000'
+
+Breakpoint 3, usart2_step (caller=caller@entry=PERIODIC_TASK) at platform/usart2/usart2.c:48
+48	  switch (caller) {
+1: blink_led_state = 1 '\001'
+4: blink_led_state = 1 '\001'
+
+Breakpoint 3, usart2_step (caller=caller@entry=PERIODIC_TASK) at platform/usart2/usart2.c:48
+48	  switch (caller) {
+1: blink_led_state = 1 '\001'
+4: blink_led_state = 1 '\001'
+
+Breakpoint 3, usart2_step (caller=caller@entry=PERIODIC_TASK) at platform/usart2/usart2.c:48
+48	  switch (caller) {
+1: blink_led_state = 1 '\001'
+4: blink_led_state = 1 '\001'
+
+Breakpoint 3, usart2_step (caller=caller@entry=PERIODIC_TASK) at platform/usart2/usart2.c:48
+48	  switch (caller) {
+1: blink_led_state = 1 '\001'
+4: blink_led_state = 1 '\001'
+
+Breakpoint 3, usart2_step (caller=caller@entry=PERIODIC_TASK) at platform/usart2/usart2.c:48
+48	  switch (caller) {
+1: blink_led_state = 1 '\001'
+4: blink_led_state = 1 '\001'
+
+Breakpoint 1, blink_step (caller=caller@entry=PERIODIC_TASK) at application/blink/blink.c:62
+62	  publish_blink_led_state(&led_state);
+1: blink_led_state = 1 '\001'
+2: led_state = 0 '\000'
+3: led_state = 0 '\000'
+4: blink_led_state = 1 '\001'
+
+Breakpoint 2, publish_blink_led_state (pLedState=pLedState@entry=0x200012f7 <ucHeap+1291> "") at application/blink/blink.c:29
+29	static void publish_blink_led_state(const uint8_t *pLedState) {
+1: blink_led_state = 1 '\001'
+4: blink_led_state = 1 '\001'
+
+Breakpoint 3, usart2_step (caller=caller@entry=PERIODIC_TASK) at platform/usart2/usart2.c:48
+48	  switch (caller) {
+1: blink_led_state = 0 '\000'
+4: blink_led_state = 0 '\000'
+
+Breakpoint 3, usart2_step (caller=caller@entry=PERIODIC_TASK) at platform/usart2/usart2.c:48
+48	  switch (caller) {
+1: blink_led_state = 0 '\000'
+4: blink_led_state = 0 '\000'
+
+Breakpoint 3, usart2_step (caller=caller@entry=PERIODIC_TASK) at platform/usart2/usart2.c:48
+48	  switch (caller) {
+1: blink_led_state = 0 '\000'
+4: blink_led_state = 0 '\000'
+
+Breakpoint 3, usart2_step (caller=caller@entry=PERIODIC_TASK) at platform/usart2/usart2.c:48
+48	  switch (caller) {
+1: blink_led_state = 0 '\000'
+4: blink_led_state = 0 '\000'
+
+Breakpoint 3, usart2_step (caller=caller@entry=PERIODIC_TASK) at platform/usart2/usart2.c:48
+48	  switch (caller) {
+1: blink_led_state = 0 '\000'
+4: blink_led_state = 0 '\000'
+
+Breakpoint 1, blink_step (caller=caller@entry=PERIODIC_TASK) at application/blink/blink.c:62
+62	  publish_blink_led_state(&led_state);
+1: blink_led_state = 0 '\000'
+2: led_state = 1 '\001'
+3: led_state = 1 '\001'
+4: blink_led_state = 0 '\000'
+
+Breakpoint 2, publish_blink_led_state (pLedState=pLedState@entry=0x200012f7 <ucHeap+1291> "\001\245\245\245\245g") at application/blink/blink.c:29
+29	static void publish_blink_led_state(const uint8_t *pLedState) {
+1: blink_led_state = 0 '\000'
+4: blink_led_state = 0 '\000'
+
+Breakpoint 3, usart2_step (caller=caller@entry=PERIODIC_TASK) at platform/usart2/usart2.c:48
+48	  switch (caller) {
+1: blink_led_state = 1 '\001'
+4: blink_led_state = 1 '\001'
+
+Breakpoint 3, usart2_step (caller=caller@entry=PERIODIC_TASK) at platform/usart2/usart2.c:48
+48	  switch (caller) {
+1: blink_led_state = 1 '\001'
+4: blink_led_state = 1 '\001'
+
+Breakpoint 3, usart2_step (caller=caller@entry=PERIODIC_TASK) at platform/usart2/usart2.c:48
+48	  switch (caller) {
+1: blink_led_state = 1 '\001'
+4: blink_led_state = 1 '\001'
+
+Breakpoint 3, usart2_step (caller=caller@entry=PERIODIC_TASK) at platform/usart2/usart2.c:48
+48	  switch (caller) {
+1: blink_led_state = 1 '\001'
+4: blink_led_state = 1 '\001'
+
+Breakpoint 3, usart2_step (caller=caller@entry=PERIODIC_TASK) at platform/usart2/usart2.c:48
+48	  switch (caller) {
+1: blink_led_state = 1 '\001'
+4: blink_led_state = 1 '\001'
+
+Breakpoint 1, blink_step (caller=caller@entry=PERIODIC_TASK) at application/blink/blink.c:62
+62	  publish_blink_led_state(&led_state);
+1: blink_led_state = 1 '\001'
+2: led_state = 0 '\000'
+3: led_state = 0 '\000'
+4: blink_led_state = 1 '\001'
+
+Breakpoint 2, publish_blink_led_state (pLedState=pLedState@entry=0x200012f7 <ucHeap+1291> "") at application/blink/blink.c:29
+29	static void publish_blink_led_state(const uint8_t *pLedState) {
+1: blink_led_state = 1 '\001'
+4: blink_led_state = 1 '\001'
+
+Breakpoint 3, usart2_step (caller=caller@entry=PERIODIC_TASK) at platform/usart2/usart2.c:48
+48	  switch (caller) {
+1: blink_led_state = 0 '\000'
+4: blink_led_state = 0 '\000'
+
+Breakpoint 3, usart2_step (caller=caller@entry=PERIODIC_TASK) at platform/usart2/usart2.c:48
+48	  switch (caller) {
+1: blink_led_state = 0 '\000'
+4: blink_led_state = 0 '\000'
+
+Breakpoint 3, usart2_step (caller=caller@entry=PERIODIC_TASK) at platform/usart2/usart2.c:48
+48	  switch (caller) {
+1: blink_led_state = 0 '\000'
+4: blink_led_state = 0 '\000'
+
+Breakpoint 3, usart2_step (caller=caller@entry=PERIODIC_TASK) at platform/usart2/usart2.c:48
+48	  switch (caller) {
+1: blink_led_state = 0 '\000'
+4: blink_led_state = 0 '\000'
+
+Breakpoint 3, usart2_step (caller=caller@entry=PERIODIC_TASK) at platform/usart2/usart2.c:48
+48	  switch (caller) {
+1: blink_led_state = 0 '\000'
+4: blink_led_state = 0 '\000'
+
+Breakpoint 1, blink_step (caller=caller@entry=PERIODIC_TASK) at application/blink/blink.c:62
+62	  publish_blink_led_state(&led_state);
+1: blink_led_state = 0 '\000'
+2: led_state = 1 '\001'
+3: led_state = 1 '\001'
+4: blink_led_state = 0 '\000'
+
+Breakpoint 2, publish_blink_led_state (pLedState=pLedState@entry=0x200012f7 <ucHeap+1291> "\001\245\245\245\245g") at application/blink/blink.c:29
+29	static void publish_blink_led_state(const uint8_t *pLedState) {
+1: blink_led_state = 0 '\000'
+4: blink_led_state = 0 '\000'
+
+Breakpoint 3, usart2_step (caller=caller@entry=PERIODIC_TASK) at platform/usart2/usart2.c:48
+48	  switch (caller) {
+1: blink_led_state = 1 '\001'
+4: blink_led_state = 1 '\001'
+
+Breakpoint 3, usart2_step (caller=caller@entry=PERIODIC_TASK) at platform/usart2/usart2.c:48
+48	  switch (caller) {
+1: blink_led_state = 1 '\001'
+4: blink_led_state = 1 '\001'
+
+Breakpoint 3, usart2_step (caller=caller@entry=PERIODIC_TASK) at platform/usart2/usart2.c:48
+48	  switch (caller) {
+1: blink_led_state = 1 '\001'
+4: blink_led_state = 1 '\001'
+
+Breakpoint 3, usart2_step (caller=caller@entry=PERIODIC_TASK) at platform/usart2/usart2.c:48
+48	  switch (caller) {
+1: blink_led_state = 1 '\001'
+4: blink_led_state = 1 '\001'
+
+Breakpoint 3, usart2_step (caller=caller@entry=PERIODIC_TASK) at platform/usart2/usart2.c:48
+48	  switch (caller) {
+1: blink_led_state = 1 '\001'
+4: blink_led_state = 1 '\001'
+
+Breakpoint 1, blink_step (caller=caller@entry=PERIODIC_TASK) at application/blink/blink.c:62
+62	  publish_blink_led_state(&led_state);
+1: blink_led_state = 1 '\001'
+2: led_state = 0 '\000'
+3: led_state = 0 '\000'
+4: blink_led_state = 1 '\001'
+
+Breakpoint 2, publish_blink_led_state (pLedState=pLedState@entry=0x200012f7 <ucHeap+1291> "") at application/blink/blink.c:29
+29	static void publish_blink_led_state(const uint8_t *pLedState) {
+1: blink_led_state = 1 '\001'
+4: blink_led_state = 1 '\001'
+
+Breakpoint 3, usart2_step (caller=caller@entry=PERIODIC_TASK) at platform/usart2/usart2.c:48
+48	  switch (caller) {
+1: blink_led_state = 0 '\000'
+4: blink_led_state = 0 '\000'
+
+Breakpoint 3, usart2_step (caller=caller@entry=PERIODIC_TASK) at platform/usart2/usart2.c:48
+48	  switch (caller) {
+1: blink_led_state = 0 '\000'
+4: blink_led_state = 0 '\000'
+
+Breakpoint 3, usart2_step (caller=caller@entry=PERIODIC_TASK) at platform/usart2/usart2.c:48
+48	  switch (caller) {
+1: blink_led_state = 0 '\000'
+4: blink_led_state = 0 '\000'
+
+Breakpoint 3, usart2_step (caller=caller@entry=PERIODIC_TASK) at platform/usart2/usart2.c:48
+48	  switch (caller) {
+1: blink_led_state = 0 '\000'
+4: blink_led_state = 0 '\000'
+
+Breakpoint 3, usart2_step (caller=caller@entry=PERIODIC_TASK) at platform/usart2/usart2.c:48
+48	  switch (caller) {
+1: blink_led_state = 0 '\000'
+4: blink_led_state = 0 '\000'
+1: blink_led_state = 0 '\000'
+4: blink_led_state = 0 '\000'
+
+Breakpoint 1, blink_step (caller=caller@entry=PERIODIC_TASK) at application/blink/blink.c:62
+62	  publish_blink_led_state(&led_state);
+1: blink_led_state = 0 '\000'
+2: led_state = 1 '\001'
+3: led_state = 1 '\001'
+4: blink_led_state = 0 '\000'
+
+Breakpoint 2, publish_blink_led_state (pLedState=pLedState@entry=0x200012f7 <ucHeap+1291> "\001\245\245\245\245g") at application/blink/blink.c:29
+29	static void publish_blink_led_state(const uint8_t *pLedState) {
+1: blink_led_state = 0 '\000'
+4: blink_led_state = 0 '\000'
+
+Breakpoint 4, digital_out_step (caller=caller@entry=PERIODIC_TASK) at platform/digital_out/digital_out.c:10
+10	  subscribe_blink_led_state(&led_state);
+1: blink_led_state = 1 '\001'
+4: blink_led_state = 1 '\001'
+
+Breakpoint 3, usart2_step (caller=caller@entry=PERIODIC_TASK) at platform/usart2/usart2.c:48
+48	  switch (caller) {
+1: blink_led_state = 1 '\001'
+4: blink_led_state = 1 '\001'
+
+Breakpoint 3, usart2_step (caller=caller@entry=PERIODIC_TASK) at platform/usart2/usart2.c:48
+48	  switch (caller) {
+1: blink_led_state = 1 '\001'
+4: blink_led_state = 1 '\001'
+
+Breakpoint 3, usart2_step (caller=caller@entry=PERIODIC_TASK) at platform/usart2/usart2.c:48
+48	  switch (caller) {
+1: blink_led_state = 1 '\001'
+4: blink_led_state = 1 '\001'
+
+Breakpoint 3, usart2_step (caller=caller@entry=PERIODIC_TASK) at platform/usart2/usart2.c:48
+48	  switch (caller) {
+1: blink_led_state = 1 '\001'
+4: blink_led_state = 1 '\001'
+
+Breakpoint 3, usart2_step (caller=caller@entry=PERIODIC_TASK) at platform/usart2/usart2.c:48
+48	  switch (caller) {
+1: blink_led_state = 1 '\001'
+4: blink_led_state = 1 '\001'
+
+Breakpoint 1, blink_step (caller=caller@entry=PERIODIC_TASK) at application/blink/blink.c:62
+62	  publish_blink_led_state(&led_state);
+1: blink_led_state = 1 '\001'
+2: led_state = 0 '\000'
+3: led_state = 0 '\000'
+4: blink_led_state = 1 '\001'
+
+Breakpoint 2, publish_blink_led_state (pLedState=pLedState@entry=0x200012f7 <ucHeap+1291> "") at application/blink/blink.c:29
+29	static void publish_blink_led_state(const uint8_t *pLedState) {
+1: blink_led_state = 1 '\001'
+4: blink_led_state = 1 '\001'
+
+Breakpoint 4, digital_out_step (caller=caller@entry=PERIODIC_TASK) at platform/digital_out/digital_out.c:10
+10	  subscribe_blink_led_state(&led_state);
+1: blink_led_state = 0 '\000'
+4: blink_led_state = 0 '\000'
+
+Breakpoint 3, usart2_step (caller=caller@entry=PERIODIC_TASK) at platform/usart2/usart2.c:48
+48	  switch (caller) {
+1: blink_led_state = 0 '\000'
+4: blink_led_state = 0 '\000'
+
+Breakpoint 3, usart2_step (caller=caller@entry=PERIODIC_TASK) at platform/usart2/usart2.c:48
+48	  switch (caller) {
+1: blink_led_state = 0 '\000'
+4: blink_led_state = 0 '\000'
+
+Breakpoint 3, usart2_step (caller=caller@entry=PERIODIC_TASK) at platform/usart2/usart2.c:48
+48	  switch (caller) {
+1: blink_led_state = 0 '\000'
+4: blink_led_state = 0 '\000'
+
+Breakpoint 3, usart2_step (caller=caller@entry=PERIODIC_TASK) at platform/usart2/usart2.c:48
+48	  switch (caller) {
+1: blink_led_state = 0 '\000'
+4: blink_led_state = 0 '\000'
+
+Breakpoint 3, usart2_step (caller=caller@entry=PERIODIC_TASK) at platform/usart2/usart2.c:48
+48	  switch (caller) {
+1: blink_led_state = 0 '\000'
+4: blink_led_state = 0 '\000'
+
+Breakpoint 1, blink_step (caller=caller@entry=PERIODIC_TASK) at application/blink/blink.c:62
+62	  publish_blink_led_state(&led_state);
+1: blink_led_state = 0 '\000'
+2: led_state = 1 '\001'
+3: led_state = 1 '\001'
+4: blink_led_state = 0 '\000'
+
+Breakpoint 2, publish_blink_led_state (pLedState=pLedState@entry=0x200012f7 <ucHeap+1291> "\001\245\245\245\245g") at application/blink/blink.c:29
+29	static void publish_blink_led_state(const uint8_t *pLedState) {
+1: blink_led_state = 0 '\000'
+4: blink_led_state = 0 '\000'
+
+Breakpoint 4, digital_out_step (caller=caller@entry=PERIODIC_TASK) at platform/digital_out/digital_out.c:10
+10	  subscribe_blink_led_state(&led_state);
+1: blink_led_state = 1 '\001'
+4: blink_led_state = 1 '\001'
+
+Breakpoint 3, usart2_step (caller=caller@entry=PERIODIC_TASK) at platform/usart2/usart2.c:48
+48	  switch (caller) {
+1: blink_led_state = 1 '\001'
+4: blink_led_state = 1 '\001'
+
+Breakpoint 3, usart2_step (caller=caller@entry=PERIODIC_TASK) at platform/usart2/usart2.c:48
+48	  switch (caller) {
+1: blink_led_state = 1 '\001'
+4: blink_led_state = 1 '\001'
+1: blink_led_state = 1 '\001'
+4: blink_led_state = 1 '\001'
+Detaching from program: /Users/ubaldot/Documents/defrecs/stm32f4x/Hello_World/build/Hello_World.elf, Remote target
+[Inferior 1 (Remote target) detached]
+warning: No executable has been specified and target does not support
+determining executable automatically.  Try using the "file" command.
+0x08002a7c in ?? ()
+Unable to match requested speed 2000 kHz, using 1800 kHz
+Unable to match requested speed 2000 kHz, using 1800 kHz
+[stm32f4x.cpu] halted due to debug-request, current mode: Thread 
+xPSR: 0x81000000 pc: 0x08004840 msp: 0x20020000
+Reading symbols from build/Hello_World.elf...
+startupdone
+New UI allocated
+Continuing.
+
+Breakpoint 3, blink_step (caller=caller@entry=PERIODIC_TASK) at application/blink/blink.c:62
+62	  publish_blink_led_state(&led_state);
+Continuing.
+
+Breakpoint 3, blink_step (caller=caller@entry=PERIODIC_TASK) at application/blink/blink.c:62
+62	  publish_blink_led_state(&led_state);
+Continuing.
+
+Breakpoint 3, blink_step (caller=caller@entry=PERIODIC_TASK) at application/blink/blink.c:62
+62	  publish_blink_led_state(&led_state);
+Continuing.
+
+Breakpoint 3, blink_step (caller=caller@entry=PERIODIC_TASK) at application/blink/blink.c:62
+62	  publish_blink_led_state(&led_state);
+Continuing.
+
+Breakpoint 3, blink_step (caller=caller@entry=PERIODIC_TASK) at application/blink/blink.c:62
+62	  publish_blink_led_state(&led_state);
+Detaching from program: /Users/ubaldot/Documents/defrecs/stm32f4x/Hello_World/build/Hello_World.elf, Remote target
+[Inferior 1 (Remote target) detached]
+warning: No executable has been specified and target does not support
+determining executable automatically.  Try using the "file" command.
+0x08002a28 in ?? ()
+Unable to match requested speed 2000 kHz, using 1800 kHz
+Unable to match requested speed 2000 kHz, using 1800 kHz
+[stm32f4x.cpu] halted due to debug-request, current mode: Thread 
+xPSR: 0x81000000 pc: 0x0800483a msp: 0x20020000
+Reading symbols from build/Hello_World.elf...
+startupdone
+New UI allocated
+
+Program received signal SIGINT, Interrupt.
+Reset_Handler () at startup_stm32f446xx.s:90
+90	  str  r3, [r2]
+
+Breakpoint 1, blink_step (caller=caller@entry=PERIODIC_TASK) at application/blink/blink.c:62
+62	  publish_blink_led_state(&led_state);
+
+Breakpoint 1, blink_step (caller=caller@entry=PERIODIC_TASK) at application/blink/blink.c:62
+62	  publish_blink_led_state(&led_state);
+
+Breakpoint 1, blink_step (caller=caller@entry=PERIODIC_TASK) at application/blink/blink.c:62
+62	  publish_blink_led_state(&led_state);
+
+Breakpoint 1, blink_step (caller=caller@entry=PERIODIC_TASK) at application/blink/blink.c:62
+62	  publish_blink_led_state(&led_state);
+
+Breakpoint 1, blink_step (caller=caller@entry=PERIODIC_TASK) at application/blink/blink.c:62
+62	  publish_blink_led_state(&led_state);
+
+Breakpoint 1, blink_step (caller=caller@entry=PERIODIC_TASK) at application/blink/blink.c:62
+62	  publish_blink_led_state(&led_state);
+
+Breakpoint 1, blink_step (caller=caller@entry=PERIODIC_TASK) at application/blink/blink.c:62
+62	  publish_blink_led_state(&led_state);
+Detaching from program: /Users/ubaldot/Documents/defrecs/stm32f4x/Hello_World/build/Hello_World.elf, Remote target
+[Inferior 1 (Remote target) detached]
+warning: No executable has been specified and target does not support
+determining executable automatically.  Try using the "file" command.
+0x08002a64 in ?? ()
+Unable to match requested speed 2000 kHz, using 1800 kHz
+Unable to match requested speed 2000 kHz, using 1800 kHz
+[stm32f4x.cpu] halted due to debug-request, current mode: Thread 
+xPSR: 0x81000000 pc: 0x0800483a msp: 0x20020000
+Reading symbols from build/Hello_World.elf...
+startupdone
+New UI allocated
+
+Breakpoint 1, blink_step (caller=caller@entry=PERIODIC_TASK) at application/blink/blink.c:62
+62	  publish_blink_led_state(&led_state);
+
+Breakpoint 1, blink_step (caller=caller@entry=PERIODIC_TASK) at application/blink/blink.c:62
+62	  publish_blink_led_state(&led_state);
+
+Breakpoint 1, blink_step (caller=caller@entry=PERIODIC_TASK) at application/blink/blink.c:62
+62	  publish_blink_led_state(&led_state);
+Detaching from program: /Users/ubaldot/Documents/defrecs/stm32f4x/Hello_World/build/Hello_World.elf, Remote target
+[Inferior 1 (Remote target) detached]
