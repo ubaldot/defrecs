@@ -16,7 +16,7 @@
 #include "debug/debug.h"
 #include "digital_out/digital_out.h"
 #include "photovoltaic/pv.h"
-#include "temperature_sensor/tempsens_LM335.h"
+#include "tempsens_LM335/tempsens_LM335.h"
 #include "hmi/hmi.h"
 #include <task.h>
 
@@ -56,14 +56,17 @@ static void components_init(void);
 
 static void components_init() {
   // List all the components used. Initializes queues, mutex, etc.
+  // bsp
   adc1_sensors_init();
   digital_out_init();
-  usart2_init();
-
-  blink_init();
-  debug_init();
+  /* serial_port_init(); */
+  // interfaces
   pv_init();
   tempsens_init();
+  // application
+  hmi_init();
+  blink_init();
+  debug_init();
 }
 
 void application_setup() {
@@ -104,7 +107,7 @@ static void task_1000ms(void *pVParameters) // This is a task.
     blink_step(PERIODIC_TASK);
     debug_step(PERIODIC_TASK);
     pv_step(PERIODIC_TASK);
-    usart2_step(PERIODIC_TASK);
+    hmi_step(PERIODIC_TASK);
     tempsens_step(PERIODIC_TASK);
 
     // Task Schedule
@@ -124,6 +127,7 @@ static void task_200ms(void *pVParameters) // This is a task.
   while (1) {
     adc1_sensors_step(PERIODIC_TASK);
     digital_out_step(PERIODIC_TASK);
+    /* serial_port_write_step(PERIODIC_TASK) */
 
     // Task Schedule
     /* xMissedDeadline = */
@@ -147,7 +151,8 @@ static void BuiltinButtonDeferred(void *pVParameters) {
       until all the pending events have been processed (in this case,
       just print out a message for each event). */
       while (ulEventsToProcess > 0) {
-        usart2_step(IRQ_BUILTIN_BUTTON);
+        hmi_step(IRQ_BUILTIN_BUTTON);
+        /* serial_port_write_step(IRQ_BUILTIN_BUTTON) */
         ulEventsToProcess--;
       }
     } else {
@@ -167,7 +172,8 @@ static void Usart2RxDeferred(void *pVParameters) {
     ulEventsToProcess = ulTaskNotifyTake(pdTRUE, pdMS_TO_TICKS(10));
     if (ulEventsToProcess != 0) {
       while (ulEventsToProcess > 0) {
-        usart2_step(IRQ_SERIAL_RX);
+        /* serial_port_read_step(IRQ_SERIAL_RX) */
+        hmi_step(IRQ_SERIAL_RX);
         ulEventsToProcess--;
       }
     } else {

@@ -107,15 +107,15 @@ C_SOURCES := $(addprefix $(PLATFORM_PATH)/$(TARGET)/, $(C_SOURCES))
 
 # Ubaldo plaftorm components
 C_SOURCES += $(wildcard $(PLATFORM_PATH)/$(TARGET)/components/**/*.c)
+C_SOURCES += $(wildcard $(PLATFORM_PATH)/utils/*.c)
 
 # Ubaldo interfaces components
 C_SOURCES += ../../interfaces/photovoltaic/pv.c
-C_SOURCES += ../../interfaces/temperature_sensor/tempsens_LM335.c
+C_SOURCES += ../../interfaces/tempsens_LM335/tempsens_LM335.c
 
 # Ubaldo application components
 C_SOURCES += $(wildcard ./**/*.c)
 C_SOURCES += ./application_setup.c
-C_SOURCES += $(wildcard $(PLATFORM_PATH)/utils/*.c)
 
 #######################################
 # binaries

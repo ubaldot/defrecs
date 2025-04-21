@@ -1,11 +1,12 @@
-//===-------------------- usart2.c ------------------------*- C -*-===//
-// This component sends/receive messages from the UART.
+//===-------------------- hmi.c ------------------------*- C -*-===//
+// This component handle buttons, keyboard and read/write from the serial
+// port.
 //
-// The received messages are read byte by byte through interrupts. When a
-// terminator character is detected, then the content of rx_buffer shall be
-// published into some appropriate signal.
+// The received messages from the serial port are read byte by byte through
+// interrupts. When a // terminator character is detected, then the content
+// of rx_buffer shall be published into some appropriate signal.
 //
-// PREFIX: usart2_
+// PREFIX: hmi_
 // PUBLISHED SIGNALS: None.
 //===----------------------------------------------------------------------===//
 #include "hmi/hmi.h"
@@ -13,8 +14,8 @@
 #include "blink/blink.h"
 #include "ftoa.h"
 #include "photovoltaic/pv.h"
-#include "temperature_sensor/tempsens_LM335.h"
-#include "usart.h"
+#include "tempsens_LM335/tempsens_LM335.h"
+#include "hmi.h"
 #include <FreeRTOS.h>
 #include <semphr.h>
 #include <stddef.h>
@@ -22,24 +23,38 @@
 #include <string.h>
 #include <task.h>
 
-static void transmit(char *pMsg);
 
+static char tx_buffer[MSG_LENGTH_MAX];
 static char rx_buffer[MSG_LENGTH_MAX];
 static size_t ii; // For counting the number of bytes received
 
-static SemaphoreHandle_t mutex_tx_process;
+static SemaphoreHandle_t mutex_tx_buffer; // This also protect ii
 static SemaphoreHandle_t mutex_rx_buffer; // This also protect ii
 
-void usart2_init() {
-  mutex_tx_process = xSemaphoreCreateMutex();
-  mutex_rx_buffer = xSemaphoreCreateMutex();
-
-  ii = 0;
-  rx_buffer[ii] = '\0';
-  HAL_UART_Receive_IT(&huart2, (uint8_t *)&rx_buffer[ii], 1);
+// Publish
+static void publish_hmi_tx_msg(const char *pMsg) {
+  if (xSemaphoreTake(mutex_tx_buffer, 100 / portTICK_PERIOD_MS) ==
+      pdTRUE) {
+    memcpy(&tx_buffer, pMsg, strlen(pMsg));
+    xSemaphoreGive(mutex_tx_buffer);
+  }
 }
 
-void usart2_step(enum WhoIsCalling caller) {
+void subscribe_hmi_tx_msg(char *pMsg) {
+  if (xSemaphoreTake(mutex_tx_buffer, 100 / portTICK_PERIOD_MS) ==
+      pdTRUE) {
+    memcpy(pMsg, &tx_buffer, strlen(tx_buffer) + 1);
+    xSemaphoreGive(mutex_tx_buffer);
+  }
+}
+
+void hmi_init() {
+  mutex_tx_buffer = xSemaphoreCreateMutex();
+  mutex_rx_buffer = xSemaphoreCreateMutex();
+  ii = 0;
+}
+
+void hmi_step(enum WhoIsCalling caller) {
   // INPUTS
   uint8_t led_state;
   subscribe_blink_led_state(&led_state);
@@ -60,23 +75,25 @@ void usart2_step(enum WhoIsCalling caller) {
     (void)snprintf(msg, MSG_LENGTH_MAX,
                    "Photovoltaic reading: %s V\n Temperature: %s C\n",
                    pv_voltage_str, tempsens_C_str);
-
-    transmit(msg);
+    publish_hmi_tx_msg(msg);
     break;
     /* What starts with IRQ are callbacks! */
   case IRQ_BUILTIN_BUTTON:
 
     (void)snprintf(msg, MSG_LENGTH_MAX, "Button pressed!\n");
-
-    transmit(msg);
+    publish_hmi_tx_msg(msg);
     break;
+
   case IRQ_SERIAL_RX:
     if (xSemaphoreTake(mutex_rx_buffer, pdMS_TO_TICKS(5)) == pdTRUE) {
       if (rx_buffer[ii] == '\n' || ii > MSG_LENGTH_MAX) {
-        /* publish_usart2_rx_message(msg, strlen(msg)); */
+        /* publish_hmi_rx_message(msg, strlen(msg)); */
         memcpy(msg, rx_buffer, MSG_LENGTH_MAX - 1);
         msg[MSG_LENGTH_MAX - 1] = '\0';
-        transmit(msg);
+
+        publish_hmi_tx_msg(msg);
+        /* No needed because the serial port task is scheduled periodically anyway */
+        /* serial_port_write_step(IRQ_SERIAL_RX) */
 
         /* Reinitialize all the variables used */
         ii = 0;
@@ -84,7 +101,7 @@ void usart2_step(enum WhoIsCalling caller) {
       } else {
         ii++;
       }
-      HAL_UART_Receive_IT(&huart2, (uint8_t *)&rx_buffer[ii], 1);
+      /* subscribe_serial_port_rx_msg(&rx_buffer[ii]); */
       xSemaphoreGive(mutex_rx_buffer);
     }
     break;
@@ -92,12 +109,5 @@ void usart2_step(enum WhoIsCalling caller) {
     strncpy(msg, "Sto cazzo.\n", MSG_LENGTH_MAX - 1);
     msg[MSG_LENGTH_MAX - 1] = '\0';
     break;
-  }
-}
-
-void transmit(char *pMsg) {
-  if (xSemaphoreTake(mutex_tx_process, pdMS_TO_TICKS(5)) == pdTRUE) {
-    HAL_UART_Transmit(&huart2, (uint8_t *)pMsg, strlen(pMsg), portMAX_DELAY);
-    xSemaphoreGive(mutex_tx_process);
   }
 }
