@@ -153,7 +153,7 @@ static void BuiltinButtonDeferred(void *pVParameters) {
       just print out a message for each event). */
       while (ulEventsToProcess > 0) {
         hmi_step(IRQ_BUILTIN_BUTTON);
-        /* serial_port_write_step(IRQ_BUILTIN_BUTTON) */
+        serial_port_write_step(IRQ_BUILTIN_BUTTON);
         ulEventsToProcess--;
       }
     } else {
@@ -173,7 +173,6 @@ static void Usart2RxDeferred(void *pVParameters) {
     ulEventsToProcess = ulTaskNotifyTake(pdTRUE, pdMS_TO_TICKS(10));
     if (ulEventsToProcess != 0) {
       while (ulEventsToProcess > 0) {
-        /* serial_port_read_step(IRQ_SERIAL_RX) */
         hmi_step(IRQ_SERIAL_RX);
         ulEventsToProcess--;
       }

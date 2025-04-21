@@ -12,18 +12,17 @@
 #include "hmi/hmi.h"
 #include "application_setup.h"
 #include "blink/blink.h"
-#include "serial_port/serial_port.h"
 #include "ftoa.h"
-#include "photovoltaic/pv.h"
-#include "tempsens_LM335/tempsens_LM335.h"
 #include "hmi.h"
+#include "photovoltaic/pv.h"
+#include "serial_port/serial_port.h"
+#include "tempsens_LM335/tempsens_LM335.h"
 #include <FreeRTOS.h>
 #include <semphr.h>
 #include <stddef.h>
 #include <stdio.h>
 #include <string.h>
 #include <task.h>
-
 
 static char tx_buffer[MSG_LENGTH_MAX];
 static char rx_buffer[MSG_LENGTH_MAX];
@@ -34,16 +33,14 @@ static SemaphoreHandle_t mutex_rx_buffer; // This also protect ii
 
 // Publish
 static void publish_hmi_tx_msg(const char *pMsg) {
-  if (xSemaphoreTake(mutex_tx_buffer, 100 / portTICK_PERIOD_MS) ==
-      pdTRUE) {
+  if (xSemaphoreTake(mutex_tx_buffer, 100 / portTICK_PERIOD_MS) == pdTRUE) {
     memcpy(&tx_buffer, pMsg, strlen(pMsg));
     xSemaphoreGive(mutex_tx_buffer);
   }
 }
 
 void subscribe_hmi_tx_msg(char *pMsg) {
-  if (xSemaphoreTake(mutex_tx_buffer, 100 / portTICK_PERIOD_MS) ==
-      pdTRUE) {
+  if (xSemaphoreTake(mutex_tx_buffer, 100 / portTICK_PERIOD_MS) == pdTRUE) {
     memcpy(pMsg, &tx_buffer, strlen(tx_buffer) + 1);
     xSemaphoreGive(mutex_tx_buffer);
   }
@@ -83,6 +80,7 @@ void hmi_step(enum WhoIsCalling caller) {
 
     (void)snprintf(msg, MSG_LENGTH_MAX, "Button pressed!\n");
     publish_hmi_tx_msg(msg);
+    serial_port_write_step(IRQ_BUILTIN_BUTTON);
     break;
 
   case IRQ_SERIAL_RX:
@@ -93,11 +91,12 @@ void hmi_step(enum WhoIsCalling caller) {
         msg[MSG_LENGTH_MAX - 1] = '\0';
 
         publish_hmi_tx_msg(msg);
-        /* No needed because the serial port task is scheduled periodically anyway */
-        /* serial_port_write_step(IRQ_SERIAL_RX) */
+        /* No needed because the serial port task is scheduled periodically
+         * anyway */
+        serial_port_write_step(IRQ_SERIAL_RX);
 
-        /* Reinitialize all the variables used */
-        ii = 0;
+            /* Reinitialize all the variables used */
+            ii = 0;
         memset(rx_buffer, '\0', MSG_LENGTH_MAX);
       } else {
         ii++;
