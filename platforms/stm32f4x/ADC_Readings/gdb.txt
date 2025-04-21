@@ -1,0 +1,784 @@
+../gdb_stuff/gdb_init_commands.txt:4: Error in sourced command file:
+localhost:3333: Operation timed out.
+Reading symbols from build/ADC_Readings.elf...
+You can't do that when your target is `exec'
+startupdone
+New UI allocated
+../gdb_stuff/gdb_init_commands.txt:4: Error in sourced command file:
+localhost:3333: Operation timed out.
+Reading symbols from build/ADC_Readings.elf...
+You can't do that when your target is `exec'
+startupdone
+New UI allocated
+../gdb_stuff/gdb_init_commands.txt:4: Error in sourced command file:
+localhost:3333: Operation timed out.
+Reading symbols from build/ADC_Readings.elf...
+You can't do that when your target is `exec'
+startupdone
+New UI allocated
+../gdb_stuff/gdb_init_commands.txt:4: Error in sourced command file:
+localhost:3333: Operation timed out.
+Reading symbols from build/ADC_Readings.elf...
+You can't do that when your target is `exec'
+startupdone
+New UI allocated
+warning: No executable has been specified and target does not support
+determining executable automatically.  Try using the "file" command.
+0x08003f72 in ?? ()
+[remote] Sending packet: $qRcmd,7265736574#37
+[remote] Packet received: O556e61626c6520746f206d61746368207265717565737465642073706565642032303030206b487a2c207573696e672031383030206b487a0a
+Unable to match requested speed 2000 kHz, using 1800 kHz
+[remote] Packet received: O556e61626c6520746f206d61746368207265717565737465642073706565642032303030206b487a2c207573696e672031383030206b487a0a
+Unable to match requested speed 2000 kHz, using 1800 kHz
+[remote] Packet received: OK
+[remote] Sending packet: $qRcmd,68616c74#fc
+[remote] Packet received: O5b73746d33326634782e6370755d2068616c7465642064756520746f2064656275672d726571756573742c2063757272656e74206d6f64653a20546872656164200a785053523a20307838313030303030302070633a2030783038303036333061206d73703a20307832303032303030300a
+[stm32f4x.cpu] halted due to debug-request, current mode: Thread 
+xPSR: 0x81000000 pc: 0x0800630a msp: 0x20020000
+[remote] Packet received: OK
+Reading symbols from build/ADC_Readings.elf...
+[remote] Sending packet: $qSymbol::#5b
+[remote] Packet received: OK
+[remote] packet_ok: Packet qSymbol (symbol-lookup) is supported
+[remote] Sending packet: $qSymbol::#5b
+[remote] Packet received: OK
+[remote] Sending packet: $g#67
+[remote] Packet received: 0000002010000020341d002000000000684b0020000000000000000000000000000000000000000000000000000000000000000000000220ed6200080a63000800000081
+[remote] Sending packet: $vFlashErase:08000000,00008000#ca
+[remote] Packet received: OK
+Loading section .isr_vector, size 0x1c4 lma 0x8000000
+[remote] Sending packet: $vFlashWrite:8000000:\000\000\002 åb\000\bÝ\016\000\bß\016\000\bá\016\000\bã\016\000\bå\016\000\b\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\001T\000\bç\016\000\b\000\000\000\000¡T\000\b\233O\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\bé\016\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\bù\016\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b\t\017\000\b5c\000\b\031\017\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b%\017\000\b5c\000\b5c\000\b5c\000\b5c\000\b\000\000\000\000\000\000\000\0005c\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b\000\000\000\000\000\000\000\0005c\000\b\000\000\000\000\000\000\000\0005c\000\b\000\000\000\000\000\000\000\0005c\000\b\000\000\000\000\000\000\000\000\000\000\000\0005c\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b#02
+[remote] Packet received: OK
+Loading section .text, size 0x6218 lma 0x80001d0
+[remote] Sending packet: $vFlashWrite:80001d0:\020µ\005L}\003x3¹\004K\023±\004H¯ó\000\200\001}\003}\003p\020½\020\000\000 \000\000\000\000Ðc\000\b\bµ\003K\e±\003I\003H¯ó\000\200\b½\000\000\000\000\024\000\000 Ðc\000\b\003F\023ø\001+\000}\nûÑ\030\032\0018pGpµOðÿ\fLôàl\034ê\021T\035¿\034ê\023U\224ê\f\017\225ê\f\017\000ðÞø,D\201ê\003\006!êLQ}\003êLSPê\0015\030¿Rê\0035Aô\200\021Cô\200\0238Ð û\002ÎOð\000\005áû\002å\006ð\000Bàû\003åOð\000\006áû\003V\234ð\000\017\030¿Nð\001\016¤ñÿ\004¶õ\000\177dõ@t\004Ò_êN\016mAFë\006\006BêÆ!AêUQOêÅ @ê^POêÎ.´ñý\f\210¿¼õào\036Ø¾ñ\000O\b¿_êP\016Pñ\000\000Aë\004Qp½\006ð\000FFê\001\001@ê\002\000\201ê\003\001´ë\\\004Â¿Ôë\f\005Aê\004Qp½Aô\200\021Oð\000\016\001<\000ó«\200\024ñ6\017Þ¿\000 \001ð\000Ap½Äñ\000\004 <5Ú\f4\eÜ\004ñ\024\004Äñ \005\000ú\005ó ú\004ð\001ú\005ò@ê\002\000\001ð\000B!ð\000A\020ëÓp!ú\004öBë\006\001^êC\016\b¿ êÓpp½Äñ\f\004Äñ \005\000ú\004ó ú\005ð\001ú\004ò@ê\002\000\001ð\000A\020ëÓpAñ\000\001^êC\016\b¿ êÓpp½Äñ \005\000ú\005òNê\002\016 ú\004ó\001ú\005òCê\002\003!ú\004ð\001ð\000A!ú\004ò ê\002\000\000ëÓp^êC\016\b¿ [15862 bytes omitted]
+[remote] Packet received: OK
+[remote] Sending packet: $vFlashWrite:8004010:X\006\000 0µ\207°\013\234|±\f\235µ±\\%\004\225\004\235\\-\032ÐOðP\003\203ó\021\210¿óo\217¿óO\217þçOðP\003\203ó\021\210¿óo\217¿óO\217þçOðP\003\203ó\021\210¿óo\217¿óO\217þç\004\235\f\235,c\002}\004\205øY@\000}\004\003\224\002\225\005¬\001\224\n\234\000\224ÿ÷[þ\f\230ÿ÷Þþ\005\230\a°0½-éðC\205°\aF\210F\024F\036F\220\000\001ð¡ø\000³\201F\\ \001ð\234ø\005F°±Àø0\220å±\000}\003\205øY0\003\223\002\225\r\233\001\223\f\233\000\2233F"FAF8Fÿ÷2þ(Fÿ÷µþ\001 \005àHF\001ðþøæçOðÿ0\005°½èð\203Oðÿ0ùç\000\000øµÐ±\004F\035K\eh\203B-Ð\001ð\217ùei\032K\036h\032K\037h\001ðªùµB}\004Ð½B}\004Ð\027K\235B\016Ð\027K\235B Ð½±\001 \030àOðP\003\203ó\021\210¿óo\217¿óO\217þç£j\013±\002 \013à\224øX0Û²\001+\001Ð\003 \004à\002 \002à\004 \000à\000 ø½\002 üç\002 úç\004 øç\000¿¬\001\000 °\001\000 ´\001\000 |\006\000 \220\006\000 \020µ\210°\000}\004\005\224\006\224\aª\006©\005¨\000ð¨ÿ\005\233\002\223\006\233\001\223\000\224}\003F\a\232\030I\030Hÿ÷3ÿ\030K\030`@±\000ð4ý\001(\006Ð°ñÿ?\030Ð\b°\020½\000 öçOðP\003\203ó\021\210¿óo\217¿óO\217\016KOðÿ2\032`\rK\001"\032`\fK\000"\032`\001ð³ùæç [8836 bytes omitted]
+[remote] Packet received: OK
+Loading section .rodata, size 0x160 lma 0x80063e8
+[remote] Sending packet: $vFlashWrite:80063e8:\000\006\020\026\000\006\020\026\000\000\000\000\000\000\000\000\001\002\003\004\006\a\b\t\000\000\000\000\001\002\003\004defaultTask\000\bd\000\b\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\002\000\000\030\000\000\000\000\000\000\000\000\000\000\000IDLE\000\000\000\000TmrQ\000\000\000\000Tmr Svc\000Task_1000ms\000Task_200ms\000\000è\003\000\000È\000\000\000Photovoltaic reading: %s V\n Temperature: %s C\n\000\000Button pressed!\n\000\000\000\000Sto cazzo.\n\000BuiltinButtonPressed\000\000\000\000Usart2Rx\000\000\000\000\000\000\000\000\000\000\000\000\000\000à?\232\231\231\231\231\231©?{\024®Gázt?ü©ñÒMb@?-C\034ëâ6\n?ñhã\210µøÔ>\215íµ ÷Æ >H¯¼\232ò×j>:\2140â\216y5>\225Ö&è\013.\001>»½×Ùß|Ë=(null)\000\000#1a
+[remote] Packet received: OK
+Loading section .ARM, size 0x8 lma 0x8006548
+[remote] Sending packet: $vFlashWrite:8006548:t¤ÿ\177\001\000\000\000#e9
+[remote] Packet received: OK
+Loading section .init_array, size 0x4 lma 0x8006550
+[remote] Sending packet: $vFlashWrite:8006550:õ\001\000\b#49
+[remote] Packet received: OK
+Loading section .fini_array, size 0x4 lma 0x8006554
+[remote] Sending packet: $vFlashWrite:8006554:Ñ\001\000\b#29
+[remote] Packet received: OK
+Loading section .data, size 0x10 lma 0x8006558
+[remote] Sending packet: $vFlashWrite:8006558:\001\000\000\000\020\000\000\000\000}\004ô\000ªªªª#81
+[remote] Packet received: OK
+[remote] Sending packet: $vFlashDone#ea
+[remote] Packet received: OK
+Start address 0x080062e4, load size 25948
+[remote] Sending packet: $Pf=e4620008#bc
+[remote] Packet received: OK
+[remote] packet_ok: Packet P (set-register) is supported
+Transfer rate: 22 KB/sec, 3243 bytes/write.
+startupdone
+New UI allocated
+[remote] Sending packet: $qRcmd,7265736574#37
+[remote] Packet received: O556e61626c6520746f206d61746368207265717565737465642073706565642032303030206b487a2c207573696e672031383030206b487a0a
+[remote] Packet received: O556e61626c6520746f206d61746368207265717565737465642073706565642032303030206b487a2c207573696e672031383030206b487a0a
+[remote] Packet received: OK
+[remote] Sending packet: $qRcmd,68616c74#fc
+[remote] Packet received: O5b73746d33326634782e6370755d2068616c7465642064756520746f2064656275672d726571756573742c2063757272656e74206d6f64653a20546872656164200a785053523a20307836313030303030302070633a2030783038303033663234207073703a20307832303030303963380a
+[remote] Packet received: OK
+[remote] Sending packet: $qRcmd,726573756d65#d2
+[remote] Packet received: OK
+[remote] Sending packet: $qRcmd,68616c74#fc
+[remote] Packet received: O5b73746d33326634782e6370755d2068616c7465642064756520746f2064656275672d726571756573742c2063757272656e74206d6f64653a20546872656164200a785053523a20307836313030303030302070633a2030783038303033663630207073703a20307832303030303963380a
+[remote] Packet received: OK
+Continuing.
+[remote] Sending packet: $vCont?#49
+[remote] Packet received: vCont;c;C;s;S
+[remote] packet_ok: Packet vCont (verbose-resume) is supported
+[remote] Sending packet: $vCont;c#a8
+[remote] wait: enter
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: O
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: O
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: O
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: O
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: O
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: O
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: O
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: O
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: O
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: O
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: O
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: O
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: O
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: O
+[remote] wait: exit
+[remote] pass_ctrlc: enter
+  [remote] interrupt: enter
+  [remote] interrupt: exit
+[remote] pass_ctrlc: exit
+[remote] wait: enter
+  [remote] Packet received: T02
+  [remote] select_thread_for_ambiguous_stop_reply: enter
+    [remote] select_thread_for_ambiguous_stop_reply: process_wide_stop = 0
+    [remote] select_thread_for_ambiguous_stop_reply: first resumed thread is Remote target
+    [remote] select_thread_for_ambiguous_stop_reply: is this guess ambiguous? = 0
+  [remote] select_thread_for_ambiguous_stop_reply: exit
+[remote] wait: exit
+[remote] Sending packet: $g#67
+[remote] Packet received: 00000000a5a5a5a5a5a5a5a501000000a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5c8090020773f00087c3f000800000061
+[remote] Sending packet: $qXfer:threads:read::0,1000#92
+[remote] Packet received: l<?xml version="1.0"?>\n<threads>\n</threads>\n
+
+Program received signal SIGINT, Interrupt.
+0x08003f7c in prvIdleTask (pvParameters=<optimized out>) at Middlewares/Third_Party/FreeRTOS/Source/tasks.c:3432
+3432				if( listCURRENT_LIST_LENGTH( &( pxReadyTasksLists[ tskIDLE_PRIORITY ] ) ) > ( UBaseType_t ) 1 )
+Continuing.
+[remote] Sending packet: $vCont;c#a8
+[remote] wait: enter
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: O
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: O
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: O
+[remote] wait: exit
+[remote] wait: enter
+  [remote] Packet received: O
+[remote] wait: exit
+[remote] pass_ctrlc: enter
+  [remote] interrupt: enter
+  [remote] interrupt: exit
+[remote] pass_ctrlc: exit
+[remote] wait: enter
+  [remote] Packet received: T02
+  [remote] select_thread_for_ambiguous_stop_reply: enter
+    [remote] select_thread_for_ambiguous_stop_reply: process_wide_stop = 0
+    [remote] select_thread_for_ambiguous_stop_reply: first resumed thread is Remote target
+    [remote] select_thread_for_ambiguous_stop_reply: is this guess ambiguous? = 0
+  [remote] select_thread_for_ambiguous_stop_reply: exit
+[remote] wait: exit
+[remote] Sending packet: $g#67
+[remote] Packet received: 00000000a5a5a5a5a5a5a5a5b8010020a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5c8090020773f0008783f000800000061
+[remote] Sending packet: $qXfer:threads:read::0,1000#92
+[remote] Packet received: l<?xml version="1.0"?>\n<threads>\n</threads>\n
+
+Program received signal SIGINT, Interrupt.
+0x08003f78 in prvIdleTask (pvParameters=<optimized out>) at Middlewares/Third_Party/FreeRTOS/Source/tasks.c:3432
+3432				if( listCURRENT_LIST_LENGTH( &( pxReadyTasksLists[ tskIDLE_PRIORITY ] ) ) > ( UBaseType_t ) 1 )
+Undefined command: "monitorresume".  Try "help".
+[remote] Sending packet: $qRcmd,726573756d65#d2
+[remote] Packet received: OK
+[remote] Sending packet: $qRcmd,68616c74#fc
+[remote] Packet received: O5b73746d33326634782e6370755d2068616c7465642064756520746f2064656275672d726571756573742c2063757272656e74206d6f64653a20546872656164200a785053523a20307836313030303030302070633a2030783038303033663234207073703a20307832303030303963380a
+[remote] Packet received: OK
+Detaching from program: /Users/ubaldot/Documents/defrecs/stm32f4x/ADC_Readings/build/ADC_Readings.elf, Remote target
+[remote] Sending packet: $D#44
+[remote] Packet received: OK
+[Inferior 1 (Remote target) detached]
+=cmd-param-changed,param="logging enabled",value="on"
+=cmd-param-changed,param="logging file",value="gdb_log"
+=thread-group-started,id="i1",pid="42000"
+&"warning: No executable has been specified and target does not support\ndetermining executable automatically.  Try using the \"file\" command."
+&"\n"
+=thread-created,id="1",group-id="i1"
+~"0x08003f24 in ?? ()\n"
+*stopped,frame={addr="0x08003f24",func="??",args=[],arch="arm"},thread-id="1",stopped-threads="all"
+=cmd-param-changed,param="debug remote",value="on"
+&"[remote] Sending packet: $qRcmd,7265736574#37\n"
+&"[remote] Packet received: O556e61626c6520746f206d61746368207265717565737465642073706565642032303030206b487a2c207573696e672031383030206b487a0a\n"
+@"Unable to match requested speed 2000 kHz, using 1800 kHz\n"
+&"[remote] Packet received: O556e61626c6520746f206d61746368207265717565737465642073706565642032303030206b487a2c207573696e672031383030206b487a0a\n"
+@"Unable to match requested speed 2000 kHz, using 1800 kHz\n"
+&"[remote] Packet received: OK\n"
+&"[remote] Sending packet: $qRcmd,68616c74#fc\n"
+&"[remote] Packet received: O5b73746d33326634782e6370755d2068616c7465642064756520746f2064656275672d726571756573742c2063757272656e74206d6f64653a20546872656164200a785053523a20307838313030303030302070633a2030783038303036333061206d73703a20307832303032303030300a\n"
+@"[stm32f4x.cpu] halted due to debug-request, current mode: Thread \n"
+@"xPSR: 0x81000000 pc: 0x0800630a msp: 0x20020000\n"
+&"[remote] Packet received: OK\n"
+~"Reading symbols from build/ADC_Readings.elf...\n"
+&"[remote] Sending packet: $qSymbol::#5b\n"
+&"[remote] Packet received: OK\n"
+&"[remote] packet_ok: Packet qSymbol (symbol-lookup) is supported\n"
+&"[remote] Sending packet: $qSymbol::#5b\n"
+&"[remote] Packet received: OK\n"
+&"[remote] Sending packet: $g#67\n"
+&"[remote] Packet received: 0000002010000020f043002000000000684b0020000000000000000000000000000000000000000000000000000000000000000000000220ed6200080a63000800000081\n"
+&"[remote] Sending packet: $vFlashErase:08000000,00008000#ca\n"
+&"[remote] Packet received: OK\n"
+&"[remote] Sending packet: $vFlashWrite:8000000:\\000\\000\\002 åb\\000\\bÝ\\016\\000\\bß\\016\\000\\bá\\016\\000\\bã\\016\\000\\bå\\016\\000\\b\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\001T\\000\\bç\\016\\000\\b\\000\\000\\000\\000¡T\\000\\b\\233O\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\bé\\016\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\bù\\016\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b\\t\\017\\000\\b5c\\000\\b\\031\\017\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b%\\017\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b\\000\\000\\000\\000\\000\\000\\000\\0005c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b\\000\\000\\000\\000\\000\\000\\000\\0005c\\000\\b\\000\\000\\000\\000\\000\\000\\000\\0005c\\000\\b\\000\\000\\000\\000\\000\\000\\000\\0005c\\000\\b\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\0005c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b#02\n"
+&"[remote] Packet received: OK\n"
++download,{section=".isr_vector",section-size="452",total-size="552052"}
++download,{section=".isr_vector",section-sent="452",section-size="452",total-sent="452",total-size="552052"}
+&"[remote] Sending packet: $vFlashWrite:80001d0:\\020µ\\005L}\\003x3¹\\004K\\023±\\004H¯ó\\000\\200\\001}\\003}\\003p\\020½\\020\\000\\000 \\000\\000\\000\\000Ðc\\000\\b\\bµ\\003K\\e±\\003I\\003H¯ó\\000\\200\\b½\\000\\000\\000\\000\\024\\000\\000 Ðc\\000\\b\\003F\\023ø\\001+\\000}\\nûÑ\\030\\032\\0018pGpµOðÿ\\fLôàl\\034ê\\021T\\035¿\\034ê\\023U\\224ê\\f\\017\\225ê\\f\\017\\000ðÞø,D\\201ê\\003\\006!êLQ}\\003êLSPê\\0015\\030¿Rê\\0035Aô\\200\\021Cô\\200\\0238Ð û\\002ÎOð\\000\\005áû\\002å\\006ð\\000Bàû\\003åOð\\000\\006áû\\003V\\234ð\\000\\017\\030¿Nð\\001\\016¤ñÿ\\004¶õ\\000\\177dõ@t\\004Ò_êN\\016mAFë\\006\\006BêÆ!AêUQOêÅ @ê^POêÎ.´ñý\\f\\210¿¼õào\\036Ø¾ñ\\000O\\b¿_êP\\016Pñ\\000\\000Aë\\004Qp½\\006ð\\000FFê\\001\\001@ê\\002\\000\\201ê\\003\\001´ë\\\\\\004Â¿Ôë\\f\\005Aê\\004Qp½Aô\\200\\021Oð\\000\\016\\001<\\000ó«\\200\\024ñ6\\017Þ¿\\000 \\001ð\\000Ap½Äñ\\000\\004 <5Ú\\f4\\eÜ\\004ñ\\024\\004Äñ \\005\\000ú\\005ó ú\\004ð\\001ú\\005ò@ê\\002\\000\\001ð\\000B!ð\\000A\\020ëÓp!ú\\004öBë\\006\\001^êC\\016\\b¿ êÓpp½Äñ\\f\\004Äñ \\005\\000ú\\004ó ú\\005ð\\001ú\\004ò@ê\\002\\000\\001ð\\000A\\020ëÓpAñ\\000\\001^êC\\016\\b¿ êÓpp½Äñ \\005\\000ú\\005òNê\\002\\016 ú\\004ó\\001ú\\005òCê\\002\\003!ú\\004ð\\001ð\\000A!ú\\004ò ê\\002\\000\\000ëÓp^êC\\016\\b¿ [15862 bytes omitted]\n"
+&"[remote] Packet received: OK\n"
++download,{section=".text",section-size="25112",total-size="552052"}
+&"[remote] Sending packet: $vFlashWrite:8004010:X\\006\\000 0µ\\207°\\013\\234|±\\f\\235µ±\\\\%\\004\\225\\004\\235\\\\-\\032ÐOðP\\003\\203ó\\021\\210¿óo\\217¿óO\\217þçOðP\\003\\203ó\\021\\210¿óo\\217¿óO\\217þçOðP\\003\\203ó\\021\\210¿óo\\217¿óO\\217þç\\004\\235\\f\\235,c\\002}\\004\\205øY@\\000}\\004\\003\\224\\002\\225\\005¬\\001\\224\\n\\234\\000\\224ÿ÷[þ\\f\\230ÿ÷Þþ\\005\\230\\a°0½-éðC\\205°\\aF\\210F\\024F\\036F\\220\\000\\001ð¡ø\\000³\\201F\\\\ \\001ð\\234ø\\005F°±Àø0\\220å±\\000}\\003\\205øY0\\003\\223\\002\\225\\r\\233\\001\\223\\f\\233\\000\\2233F\"FAF8Fÿ÷2þ(Fÿ÷µþ\\001 \\005àHF\\001ðþøæçOðÿ0\\005°½èð\\203Oðÿ0ùç\\000\\000øµÐ±\\004F\\035K\\eh\\203B-Ð\\001ð\\217ùei\\032K\\036h\\032K\\037h\\001ðªùµB}\\004Ð½B}\\004Ð\\027K\\235B\\016Ð\\027K\\235B Ð½±\\001 \\030àOðP\\003\\203ó\\021\\210¿óo\\217¿óO\\217þç£j\\013±\\002 \\013à\\224øX0Û²\\001+\\001Ð\\003 \\004à\\002 \\002à\\004 \\000à\\000 ø½\\002 üç\\002 úç\\004 øç\\000¿¬\\001\\000 °\\001\\000 ´\\001\\000 |\\006\\000 \\220\\006\\000 \\020µ\\210°\\000}\\004\\005\\224\\006\\224\\aª\\006©\\005¨\\000ð¨ÿ\\005\\233\\002\\223\\006\\233\\001\\223\\000\\224}\\003F\\a\\232\\030I\\030Hÿ÷3ÿ\\030K\\030`@±\\000ð4ý\\001(\\006Ð°ñÿ?\\030Ð\\b°\\020½\\000 öçOðP\\003\\203ó\\021\\210¿óo\\217¿óO\\217\\016KOðÿ2\\032`\\rK\\001\"\\032`\\fK\\000\"\\032`\\001ð³ùæç [8836 bytes omitted]\n"
+&"[remote] Packet received: OK\n"
+&"[remote] Sending packet: $vFlashWrite:80063e8:\\000\\006\\020\\026\\000\\006\\020\\026\\000\\000\\000\\000\\000\\000\\000\\000\\001\\002\\003\\004\\006\\a\\b\\t\\000\\000\\000\\000\\001\\002\\003\\004defaultTask\\000\\bd\\000\\b\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\002\\000\\000\\030\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000IDLE\\000\\000\\000\\000TmrQ\\000\\000\\000\\000Tmr Svc\\000Task_1000ms\\000Task_200ms\\000\\000è\\003\\000\\000È\\000\\000\\000Photovoltaic reading: %s V\\n Temperature: %s C\\n\\000\\000Button pressed!\\n\\000\\000\\000\\000Sto cazzo.\\n\\000BuiltinButtonPressed\\000\\000\\000\\000Usart2Rx\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000à?\\232\\231\\231\\231\\231\\231©?{\\024®Gázt?ü©ñÒMb@?-C\\034ëâ6\\n?ñhã\\210µøÔ>\\215íµ ÷Æ >H¯¼\\232ò×j>:\\2140â\\216y5>\\225Ö&è\\013.\\001>»½×Ùß|Ë=(null)\\000\\000#1a\n"
+&"[remote] Packet received: OK\n"
++download,{section=".rodata",section-size="352",total-size="552052"}
+&"[remote] Sending packet: $vFlashWrite:8006548:t¤ÿ\\177\\001\\000\\000\\000#e9\n"
+&"[remote] Packet received: OK\n"
++download,{section=".ARM",section-size="8",total-size="552052"}
+&"[remote] Sending packet: $vFlashWrite:8006550:õ\\001\\000\\b#49\n"
+&"[remote] Packet received: OK\n"
++download,{section=".init_array",section-size="4",total-size="552052"}
+&"[remote] Sending packet: $vFlashWrite:8006554:Ñ\\001\\000\\b#29\n"
+&"[remote] Packet received: OK\n"
++download,{section=".fini_array",section-size="4",total-size="552052"}
+&"[remote] Sending packet: $vFlashWrite:8006558:\\001\\000\\000\\000\\020\\000\\000\\000\\000}\\004ô\\000ªªªª#81\n"
+&"[remote] Packet received: OK\n"
++download,{section=".data",section-size="16",total-size="552052"}
+&"[remote] Sending packet: $vFlashDone#ea\n"
+&"[remote] Packet received: OK\n"
+&"[remote] Sending packet: $Pf=e4620008#bc\n"
+&"[remote] Packet received: OK\n"
+&"[remote] packet_ok: Packet P (set-register) is supported\n"
+(gdb) 
+&"tty /dev/ttys003\n"
+=cmd-param-changed,param="inferior-tty",value="/dev/ttys003"
+^done,address="0x080062e4",load-size="25948",transfer-rate="200752",write-rate="3243"
+(gdb) 
+&"set env TERM = xterm-color\n"
+^done
+(gdb) 
+&"set env ROWS = 13\n"
+^done
+(gdb) 
+&"set env LINES = 13\n"
+^done
+(gdb) 
+&"set env COLUMNS = 196\n"
+^done
+(gdb) 
+&"set env COLORS = 16777216\n"
+^done
+(gdb) 
+&"set env VIM_TERMINAL = 901\n"
+^done
+(gdb) 
+&"set print pretty on\n"
+=cmd-param-changed,param="print pretty",value="on"
+^done
+(gdb) 
+&"set breakpoint pending on\n"
+=cmd-param-changed,param="breakpoint pending",value="on"
+^done
+(gdb) 
+&"\n"
+^done
+(gdb) 
+&"exit\n"
+~"Detaching from program: /Users/ubaldot/Documents/defrecs/stm32f4x/ADC_Readings/build/ADC_Readings.elf, Remote target\n"
+&"[remote] Sending packet: $D#44\n"
+&"[remote] Packet received: OK\n"
+=thread-exited,id="1",group-id="i1"
+=thread-group-exited,id="i1"
+~"[Inferior 1 (Remote target) detached]\n"
+warning: No executable has been specified and target does not support
+determining executable automatically.  Try using the "file" command.
+0x080062e4 in ?? ()
+[remote] Sending packet: $qRcmd,7265736574#37
+[remote] Packet received: O556e61626c6520746f206d61746368207265717565737465642073706565642032303030206b487a2c207573696e672031383030206b487a0a
+Unable to match requested speed 2000 kHz, using 1800 kHz
+[remote] Packet received: O556e61626c6520746f206d61746368207265717565737465642073706565642032303030206b487a2c207573696e672031383030206b487a0a
+Unable to match requested speed 2000 kHz, using 1800 kHz
+[remote] Packet received: OK
+[remote] Sending packet: $qRcmd,68616c74#fc
+[remote] Packet received: O5b73746d33326634782e6370755d2068616c7465642064756520746f2064656275672d726571756573742c2063757272656e74206d6f64653a20546872656164200a785053523a20307838313030303030302070633a2030783038303036333130206d73703a20307832303032303030300a
+[stm32f4x.cpu] halted due to debug-request, current mode: Thread 
+xPSR: 0x81000000 pc: 0x08006310 msp: 0x20020000
+[remote] Packet received: OK
+Reading symbols from build/ADC_Readings.elf...
+[remote] Sending packet: $qSymbol::#5b
+[remote] Packet received: OK
+[remote] packet_ok: Packet qSymbol (symbol-lookup) is supported
+[remote] Sending packet: $qSymbol::#5b
+[remote] Packet received: OK
+[remote] Sending packet: $g#67
+[remote] Packet received: 0000002010000020f01c002000000000684b0020000000000000000000000000000000000000000000000000000000000000000000000220ed6200081063000800000081
+[remote] Sending packet: $vFlashErase:08000000,00008000#ca
+[remote] Packet received: OK
+Loading section .isr_vector, size 0x1c4 lma 0x8000000
+[remote] Sending packet: $vFlashWrite:8000000:\000\000\002 åb\000\bÝ\016\000\bß\016\000\bá\016\000\bã\016\000\bå\016\000\b\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\001T\000\bç\016\000\b\000\000\000\000¡T\000\b\233O\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\bé\016\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\bù\016\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b\t\017\000\b5c\000\b\031\017\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b%\017\000\b5c\000\b5c\000\b5c\000\b5c\000\b\000\000\000\000\000\000\000\0005c\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b\000\000\000\000\000\000\000\0005c\000\b\000\000\000\000\000\000\000\0005c\000\b\000\000\000\000\000\000\000\0005c\000\b\000\000\000\000\000\000\000\000\000\000\000\0005c\000\b5c\000\b5c\000\b5c\000\b5c\000\b5c\000\b#02
+[remote] Packet received: OK
+Loading section .text, size 0x6218 lma 0x80001d0
+[remote] Sending packet: $vFlashWrite:80001d0:\020µ\005L}\003x3¹\004K\023±\004H¯ó\000\200\001}\003}\003p\020½\020\000\000 \000\000\000\000Ðc\000\b\bµ\003K\e±\003I\003H¯ó\000\200\b½\000\000\000\000\024\000\000 Ðc\000\b\003F\023ø\001+\000}\nûÑ\030\032\0018pGpµOðÿ\fLôàl\034ê\021T\035¿\034ê\023U\224ê\f\017\225ê\f\017\000ðÞø,D\201ê\003\006!êLQ}\003êLSPê\0015\030¿Rê\0035Aô\200\021Cô\200\0238Ð û\002ÎOð\000\005áû\002å\006ð\000Bàû\003åOð\000\006áû\003V\234ð\000\017\030¿Nð\001\016¤ñÿ\004¶õ\000\177dõ@t\004Ò_êN\016mAFë\006\006BêÆ!AêUQOêÅ @ê^POêÎ.´ñý\f\210¿¼õào\036Ø¾ñ\000O\b¿_êP\016Pñ\000\000Aë\004Qp½\006ð\000FFê\001\001@ê\002\000\201ê\003\001´ë\\\004Â¿Ôë\f\005Aê\004Qp½Aô\200\021Oð\000\016\001<\000ó«\200\024ñ6\017Þ¿\000 \001ð\000Ap½Äñ\000\004 <5Ú\f4\eÜ\004ñ\024\004Äñ \005\000ú\005ó ú\004ð\001ú\005ò@ê\002\000\001ð\000B!ð\000A\020ëÓp!ú\004öBë\006\001^êC\016\b¿ êÓpp½Äñ\f\004Äñ \005\000ú\004ó ú\005ð\001ú\004ò@ê\002\000\001ð\000A\020ëÓpAñ\000\001^êC\016\b¿ êÓpp½Äñ \005\000ú\005òNê\002\016 ú\004ó\001ú\005òCê\002\003!ú\004ð\001ð\000A!ú\004ò ê\002\000\000ëÓp^êC\016\b¿ [15862 bytes omitted]
+[remote] Packet received: OK
+[remote] Sending packet: $vFlashWrite:8004010:X\006\000 0µ\207°\013\234|±\f\235µ±\\%\004\225\004\235\\-\032ÐOðP\003\203ó\021\210¿óo\217¿óO\217þçOðP\003\203ó\021\210¿óo\217¿óO\217þçOðP\003\203ó\021\210¿óo\217¿óO\217þç\004\235\f\235,c\002}\004\205øY@\000}\004\003\224\002\225\005¬\001\224\n\234\000\224ÿ÷[þ\f\230ÿ÷Þþ\005\230\a°0½-éðC\205°\aF\210F\024F\036F\220\000\001ð¡ø\000³\201F\\ \001ð\234ø\005F°±Àø0\220å±\000}\003\205øY0\003\223\002\225\r\233\001\223\f\233\000\2233F"FAF8Fÿ÷2þ(Fÿ÷µþ\001 \005àHF\001ðþøæçOðÿ0\005°½èð\203Oðÿ0ùç\000\000øµÐ±\004F\035K\eh\203B-Ð\001ð\217ùei\032K\036h\032K\037h\001ðªùµB}\004Ð½B}\004Ð\027K\235B\016Ð\027K\235B Ð½±\001 \030àOðP\003\203ó\021\210¿óo\217¿óO\217þç£j\013±\002 \013à\224øX0Û²\001+\001Ð\003 \004à\002 \002à\004 \000à\000 ø½\002 üç\002 úç\004 øç\000¿¬\001\000 °\001\000 ´\001\000 |\006\000 \220\006\000 \020µ\210°\000}\004\005\224\006\224\aª\006©\005¨\000ð¨ÿ\005\233\002\223\006\233\001\223\000\224}\003F\a\232\030I\030Hÿ÷3ÿ\030K\030`@±\000ð4ý\001(\006Ð°ñÿ?\030Ð\b°\020½\000 öçOðP\003\203ó\021\210¿óo\217¿óO\217\016KOðÿ2\032`\rK\001"\032`\fK\000"\032`\001ð³ùæç [8836 bytes omitted]
+[remote] Packet received: OK
+Loading section .rodata, size 0x160 lma 0x80063e8
+[remote] Sending packet: $vFlashWrite:80063e8:\000\006\020\026\000\006\020\026\000\000\000\000\000\000\000\000\001\002\003\004\006\a\b\t\000\000\000\000\001\002\003\004defaultTask\000\bd\000\b\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\002\000\000\030\000\000\000\000\000\000\000\000\000\000\000IDLE\000\000\000\000TmrQ\000\000\000\000Tmr Svc\000Task_1000ms\000Task_200ms\000\000è\003\000\000È\000\000\000Photovoltaic reading: %s V\n Temperature: %s C\n\000\000Button pressed!\n\000\000\000\000Sto cazzo.\n\000BuiltinButtonPressed\000\000\000\000Usart2Rx\000\000\000\000\000\000\000\000\000\000\000\000\000\000à?\232\231\231\231\231\231©?{\024®Gázt?ü©ñÒMb@?-C\034ëâ6\n?ñhã\210µøÔ>\215íµ ÷Æ >H¯¼\232ò×j>:\2140â\216y5>\225Ö&è\013.\001>»½×Ùß|Ë=(null)\000\000#1a
+[remote] Packet received: OK
+Loading section .ARM, size 0x8 lma 0x8006548
+[remote] Sending packet: $vFlashWrite:8006548:t¤ÿ\177\001\000\000\000#e9
+[remote] Packet received: OK
+Loading section .init_array, size 0x4 lma 0x8006550
+[remote] Sending packet: $vFlashWrite:8006550:õ\001\000\b#49
+[remote] Packet received: OK
+Loading section .fini_array, size 0x4 lma 0x8006554
+[remote] Sending packet: $vFlashWrite:8006554:Ñ\001\000\b#29
+[remote] Packet received: OK
+Loading section .data, size 0x10 lma 0x8006558
+[remote] Sending packet: $vFlashWrite:8006558:\001\000\000\000\020\000\000\000\000}\004ô\000ªªªª#81
+[remote] Packet received: OK
+[remote] Sending packet: $vFlashDone#ea
+[remote] Packet received: OK
+Start address 0x080062e4, load size 25948
+[remote] Sending packet: $Pf=e4620008#bc
+[remote] Packet received: OK
+[remote] packet_ok: Packet P (set-register) is supported
+Transfer rate: 23 KB/sec, 3243 bytes/write.
+startupdone
+New UI allocated
+Detaching from program: /Users/ubaldot/Documents/defrecs/stm32f4x/ADC_Readings/build/ADC_Readings.elf, Remote target
+[remote] Sending packet: $D#44
+[remote] Packet received: OK
+[Inferior 1 (Remote target) detached]
+=cmd-param-changed,param="logging enabled",value="on"
+=cmd-param-changed,param="logging file",value="gdb_log"
+=thread-group-started,id="i1",pid="42000"
+&"warning: No executable has been specified and target does not support\ndetermining executable automatically.  Try using the \"file\" command."
+&"\n"
+=thread-created,id="1",group-id="i1"
+~"0x080062e4 in ?? ()\n"
+*stopped,frame={addr="0x080062e4",func="??",args=[],arch="arm"},thread-id="1",stopped-threads="all"
+=cmd-param-changed,param="debug remote",value="on"
+&"[remote] Sending packet: $qRcmd,7265736574#37\n"
+&"[remote] Packet received: O556e61626c6520746f206d61746368207265717565737465642073706565642032303030206b487a2c207573696e672031383030206b487a0a\n"
+@"Unable to match requested speed 2000 kHz, using 1800 kHz\n"
+&"[remote] Packet received: O556e61626c6520746f206d61746368207265717565737465642073706565642032303030206b487a2c207573696e672031383030206b487a0a\n"
+@"Unable to match requested speed 2000 kHz, using 1800 kHz\n"
+&"[remote] Packet received: OK\n"
+&"[remote] Sending packet: $qRcmd,68616c74#fc\n"
+&"[remote] Packet received: O5b73746d33326634782e6370755d2068616c7465642064756520746f2064656275672d726571756573742c2063757272656e74206d6f64653a20546872656164200a785053523a20307838313030303030302070633a2030783038303036333063206d73703a20307832303032303030300a\n"
+@"[stm32f4x.cpu] halted due to debug-request, current mode: Thread \n"
+@"xPSR: 0x81000000 pc: 0x0800630c msp: 0x20020000\n"
+&"[remote] Packet received: OK\n"
+~"Reading symbols from build/ADC_Readings.elf...\n"
+&"[remote] Sending packet: $qSymbol::#5b\n"
+&"[remote] Packet received: OK\n"
+&"[remote] packet_ok: Packet qSymbol (symbol-lookup) is supported\n"
+&"[remote] Sending packet: $qSymbol::#5b\n"
+&"[remote] Packet received: OK\n"
+&"[remote] Sending packet: $g#67\n"
+&"[remote] Packet received: 0000002010000020d41e002000000000684b0020000000000000000000000000000000000000000000000000000000000000000000000220ed6200080c63000800000081\n"
+&"[remote] Sending packet: $vFlashErase:08000000,00008000#ca\n"
+&"[remote] Packet received: OK\n"
+&"[remote] Sending packet: $vFlashWrite:8000000:\\000\\000\\002 åb\\000\\bÝ\\016\\000\\bß\\016\\000\\bá\\016\\000\\bã\\016\\000\\bå\\016\\000\\b\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\001T\\000\\bç\\016\\000\\b\\000\\000\\000\\000¡T\\000\\b\\233O\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\bé\\016\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\bù\\016\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b\\t\\017\\000\\b5c\\000\\b\\031\\017\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b%\\017\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b\\000\\000\\000\\000\\000\\000\\000\\0005c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b\\000\\000\\000\\000\\000\\000\\000\\0005c\\000\\b\\000\\000\\000\\000\\000\\000\\000\\0005c\\000\\b\\000\\000\\000\\000\\000\\000\\000\\0005c\\000\\b\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\0005c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b#02\n"
+&"[remote] Packet received: OK\n"
++download,{section=".isr_vector",section-size="452",total-size="552052"}
++download,{section=".isr_vector",section-sent="452",section-size="452",total-sent="452",total-size="552052"}
+&"[remote] Sending packet: $vFlashWrite:80001d0:\\020µ\\005L}\\003x3¹\\004K\\023±\\004H¯ó\\000\\200\\001}\\003}\\003p\\020½\\020\\000\\000 \\000\\000\\000\\000Ðc\\000\\b\\bµ\\003K\\e±\\003I\\003H¯ó\\000\\200\\b½\\000\\000\\000\\000\\024\\000\\000 Ðc\\000\\b\\003F\\023ø\\001+\\000}\\nûÑ\\030\\032\\0018pGpµOðÿ\\fLôàl\\034ê\\021T\\035¿\\034ê\\023U\\224ê\\f\\017\\225ê\\f\\017\\000ðÞø,D\\201ê\\003\\006!êLQ}\\003êLSPê\\0015\\030¿Rê\\0035Aô\\200\\021Cô\\200\\0238Ð û\\002ÎOð\\000\\005áû\\002å\\006ð\\000Bàû\\003åOð\\000\\006áû\\003V\\234ð\\000\\017\\030¿Nð\\001\\016¤ñÿ\\004¶õ\\000\\177dõ@t\\004Ò_êN\\016mAFë\\006\\006BêÆ!AêUQOêÅ @ê^POêÎ.´ñý\\f\\210¿¼õào\\036Ø¾ñ\\000O\\b¿_êP\\016Pñ\\000\\000Aë\\004Qp½\\006ð\\000FFê\\001\\001@ê\\002\\000\\201ê\\003\\001´ë\\\\\\004Â¿Ôë\\f\\005Aê\\004Qp½Aô\\200\\021Oð\\000\\016\\001<\\000ó«\\200\\024ñ6\\017Þ¿\\000 \\001ð\\000Ap½Äñ\\000\\004 <5Ú\\f4\\eÜ\\004ñ\\024\\004Äñ \\005\\000ú\\005ó ú\\004ð\\001ú\\005ò@ê\\002\\000\\001ð\\000B!ð\\000A\\020ëÓp!ú\\004öBë\\006\\001^êC\\016\\b¿ êÓpp½Äñ\\f\\004Äñ \\005\\000ú\\004ó ú\\005ð\\001ú\\004ò@ê\\002\\000\\001ð\\000A\\020ëÓpAñ\\000\\001^êC\\016\\b¿ êÓpp½Äñ \\005\\000ú\\005òNê\\002\\016 ú\\004ó\\001ú\\005òCê\\002\\003!ú\\004ð\\001ð\\000A!ú\\004ò ê\\002\\000\\000ëÓp^êC\\016\\b¿ [15862 bytes omitted]\n"
+&"[remote] Packet received: OK\n"
++download,{section=".text",section-size="25112",total-size="552052"}
+&"[remote] Sending packet: $vFlashWrite:8004010:X\\006\\000 0µ\\207°\\013\\234|±\\f\\235µ±\\\\%\\004\\225\\004\\235\\\\-\\032ÐOðP\\003\\203ó\\021\\210¿óo\\217¿óO\\217þçOðP\\003\\203ó\\021\\210¿óo\\217¿óO\\217þçOðP\\003\\203ó\\021\\210¿óo\\217¿óO\\217þç\\004\\235\\f\\235,c\\002}\\004\\205øY@\\000}\\004\\003\\224\\002\\225\\005¬\\001\\224\\n\\234\\000\\224ÿ÷[þ\\f\\230ÿ÷Þþ\\005\\230\\a°0½-éðC\\205°\\aF\\210F\\024F\\036F\\220\\000\\001ð¡ø\\000³\\201F\\\\ \\001ð\\234ø\\005F°±Àø0\\220å±\\000}\\003\\205øY0\\003\\223\\002\\225\\r\\233\\001\\223\\f\\233\\000\\2233F\"FAF8Fÿ÷2þ(Fÿ÷µþ\\001 \\005àHF\\001ðþøæçOðÿ0\\005°½èð\\203Oðÿ0ùç\\000\\000øµÐ±\\004F\\035K\\eh\\203B-Ð\\001ð\\217ùei\\032K\\036h\\032K\\037h\\001ðªùµB}\\004Ð½B}\\004Ð\\027K\\235B\\016Ð\\027K\\235B Ð½±\\001 \\030àOðP\\003\\203ó\\021\\210¿óo\\217¿óO\\217þç£j\\013±\\002 \\013à\\224øX0Û²\\001+\\001Ð\\003 \\004à\\002 \\002à\\004 \\000à\\000 ø½\\002 üç\\002 úç\\004 øç\\000¿¬\\001\\000 °\\001\\000 ´\\001\\000 |\\006\\000 \\220\\006\\000 \\020µ\\210°\\000}\\004\\005\\224\\006\\224\\aª\\006©\\005¨\\000ð¨ÿ\\005\\233\\002\\223\\006\\233\\001\\223\\000\\224}\\003F\\a\\232\\030I\\030Hÿ÷3ÿ\\030K\\030`@±\\000ð4ý\\001(\\006Ð°ñÿ?\\030Ð\\b°\\020½\\000 öçOðP\\003\\203ó\\021\\210¿óo\\217¿óO\\217\\016KOðÿ2\\032`\\rK\\001\"\\032`\\fK\\000\"\\032`\\001ð³ùæç [8836 bytes omitted]\n"
+&"[remote] Packet received: OK\n"
+&"[remote] Sending packet: $vFlashWrite:80063e8:\\000\\006\\020\\026\\000\\006\\020\\026\\000\\000\\000\\000\\000\\000\\000\\000\\001\\002\\003\\004\\006\\a\\b\\t\\000\\000\\000\\000\\001\\002\\003\\004defaultTask\\000\\bd\\000\\b\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\002\\000\\000\\030\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000IDLE\\000\\000\\000\\000TmrQ\\000\\000\\000\\000Tmr Svc\\000Task_1000ms\\000Task_200ms\\000\\000è\\003\\000\\000È\\000\\000\\000Photovoltaic reading: %s V\\n Temperature: %s C\\n\\000\\000Button pressed!\\n\\000\\000\\000\\000Sto cazzo.\\n\\000BuiltinButtonPressed\\000\\000\\000\\000Usart2Rx\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000à?\\232\\231\\231\\231\\231\\231©?{\\024®Gázt?ü©ñÒMb@?-C\\034ëâ6\\n?ñhã\\210µøÔ>\\215íµ ÷Æ >H¯¼\\232ò×j>:\\2140â\\216y5>\\225Ö&è\\013.\\001>»½×Ùß|Ë=(null)\\000\\000#1a\n"
+&"[remote] Packet received: OK\n"
++download,{section=".rodata",section-size="352",total-size="552052"}
+&"[remote] Sending packet: $vFlashWrite:8006548:t¤ÿ\\177\\001\\000\\000\\000#e9\n"
+&"[remote] Packet received: OK\n"
++download,{section=".ARM",section-size="8",total-size="552052"}
+&"[remote] Sending packet: $vFlashWrite:8006550:õ\\001\\000\\b#49\n"
+&"[remote] Packet received: OK\n"
++download,{section=".init_array",section-size="4",total-size="552052"}
+&"[remote] Sending packet: $vFlashWrite:8006554:Ñ\\001\\000\\b#29\n"
+&"[remote] Packet received: OK\n"
++download,{section=".fini_array",section-size="4",total-size="552052"}
+&"[remote] Sending packet: $vFlashWrite:8006558:\\001\\000\\000\\000\\020\\000\\000\\000\\000}\\004ô\\000ªªªª#81\n"
+&"[remote] Packet received: OK\n"
++download,{section=".data",section-size="16",total-size="552052"}
+&"[remote] Sending packet: $vFlashDone#ea\n"
+&"[remote] Packet received: OK\n"
+&"[remote] Sending packet: $Pf=e4620008#bc\n"
+&"[remote] Packet received: OK\n"
+&"[remote] packet_ok: Packet P (set-register) is supported\n"
+(gdb) 
+&"tty /dev/ttys006\n"
+=cmd-param-changed,param="inferior-tty",value="/dev/ttys006"
+^done,address="0x080062e4",load-size="25948",transfer-rate="200560",write-rate="3243"
+(gdb) 
+&"set env TERM = xterm-color\n"
+^done
+(gdb) 
+&"set env ROWS = 13\n"
+^done
+(gdb) 
+&"set env LINES = 13\n"
+^done
+(gdb) 
+&"set env COLUMNS = 196\n"
+^done
+(gdb) 
+&"set env COLORS = 16777216\n"
+^done
+(gdb) 
+&"set env VIM_TERMINAL = 901\n"
+^done
+(gdb) 
+&"set print pretty on\n"
+=cmd-param-changed,param="print pretty",value="on"
+^done
+(gdb) 
+&"set breakpoint pending on\n"
+=cmd-param-changed,param="breakpoint pending",value="on"
+^done
+(gdb) 
+&"exit\n"
+~"Detaching from program: /Users/ubaldot/Documents/defrecs/stm32f4x/ADC_Readings/build/ADC_Readings.elf, Remote target\n"
+&"[remote] Sending packet: $D#44\n"
+&"[remote] Packet received: OK\n"
+=thread-exited,id="1",group-id="i1"
+=thread-group-exited,id="i1"
+~"[Inferior 1 (Remote target) detached]\n"
+=cmd-param-changed,param="logging enabled",value="on"
+=cmd-param-changed,param="logging file",value="gdb_log"
+=thread-group-started,id="i1",pid="42000"
+&"warning: No executable has been specified and target does not support\ndetermining executable automatically.  Try using the \"file\" command."
+&"\n"
+=thread-created,id="1",group-id="i1"
+~"0x080062e4 in ?? ()\n"
+*stopped,frame={addr="0x080062e4",func="??",args=[],arch="arm"},thread-id="1",stopped-threads="all"
+=cmd-param-changed,param="debug remote",value="on"
+&"[remote] Sending packet: $qRcmd,7265736574#37\n"
+&"[remote] Packet received: O556e61626c6520746f206d61746368207265717565737465642073706565642032303030206b487a2c207573696e672031383030206b487a0a\n"
+@"Unable to match requested speed 2000 kHz, using 1800 kHz\n"
+&"[remote] Packet received: O556e61626c6520746f2073657420616461707465722073706565640a\n"
+@"Unable to set adapter speed\n"
+&"[remote] Packet received: O556e61626c6520746f206d61746368207265717565737465642073706565642032303030206b487a2c207573696e672031383030206b487a0a\n"
+@"Unable to match requested speed 2000 kHz, using 1800 kHz\n"
+&"[remote] Packet received: O726561645f6d656d6f72793a2072656164206174203078653030343230303420776974682077696474683d333220616e6420636f756e743d31206661696c65640a\n"
+@"read_memory: read at 0xe0042004 with width=32 and count=1 failed\n"
+&"[remote] Packet received: O4572726f7220657865637574696e67206576656e74206578616d696e652d656e64206f6e207461726765742073746d33326634782e6370753a0a2f6f70742f686f6d65627265772f43656c6c61722f6f70656e2d6f63642f302e31322e305f312f62696e2f2e2e2f73686172652f6f70656e6f63642f736372697074732f6d656d5f68656c7065722e74636c3a373a204572726f723a20726561645f6d656d6f72793a206661696c656420746f2072656164206d656d6f72790a696e2070726f63656475726520276f63645f70726f636573735f726573657427200a696e2070726f63656475726520276f63645f70726f636573735f72657365745f696e6e6 [815 bytes omitted]\n"
+@"Error executing event examine-end on target stm32f4x.cpu:\n"
+@"/opt/homebrew/Cellar/open-ocd/0.12.0_1/bin/../share/openocd/scripts/mem_helper.tcl:7: Error: read_memory: failed to read memory\n"
+@"in procedure 'ocd_process_reset' \n"
+@"in procedure 'ocd_process_reset_inner' called at file \"embedded:startup.tcl\", line 1193\n"
+@"in procedure 'mmw' called at file \"/opt/homebrew/Cellar/open-ocd/0.12.0_1/share/openocd/scripts/target/stm32f4x.cfg\", line 87\n"
+@"in procedure 'mrw' called at file \"/opt/homebrew/Cellar/open-ocd/0.12.0_1/bin/../share/openocd/scripts/mem_helper.tcl\", line 32\n"
+@"at file \"/opt/homebrew/Cellar/open-ocd/0.12.0_1/bin/../share/openocd/scripts/mem_helper.tcl\", line 7\n"
+&"[remote] Packet received: O0a\n"
+@"\n"
+&"[remote] Packet received: EFC\n"
+&"[remote] Sending packet: $qRcmd,68616c74#fc\n"
+&"[remote] Packet received: EFC\n"
+~"Reading symbols from build/ADC_Readings.elf...\n"
+&"[remote] Sending packet: $qSymbol::#5b\n"
+&"[remote] Packet received: OK\n"
+&"[remote] packet_ok: Packet qSymbol (symbol-lookup) is supported\n"
+&"[remote] Sending packet: $qSymbol::#5b\n"
+&"[remote] Packet received: OK\n"
+&"[remote] Sending packet: $g#67\n"
+&"[remote] Packet received: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000220ffffffffe462000800000001\n"
+&"[remote] Sending packet: $vFlashErase:08000000,00008000#ca\n"
+&"[remote] Packet received: E05\n"
+&"Error erasing flash with vFlashErase packet\n"
+(gdb) 
+&"tty /dev/ttys003\n"
+=cmd-param-changed,param="inferior-tty",value="/dev/ttys003"
+^done
+(gdb) 
+&"set env TERM = xterm-color\n"
+^done
+(gdb) 
+&"set env ROWS = 13\n"
+^done
+(gdb) 
+&"set env LINES = 13\n"
+^done
+(gdb) 
+&"set env COLUMNS = 196\n"
+^done
+(gdb) 
+&"set env COLORS = 16777216\n"
+^done
+(gdb) 
+&"set env VIM_TERMINAL = 901\n"
+^done
+(gdb) 
+&"set print pretty on\n"
+=cmd-param-changed,param="print pretty",value="on"
+^done
+(gdb) 
+&"set breakpoint pending on\n"
+=cmd-param-changed,param="breakpoint pending",value="on"
+^done
+(gdb) 
+&"exit\n"
+~"Detaching from program: /Users/ubaldot/Documents/defrecs/stm32f4x/ADC_Readings/build/ADC_Readings.elf, Remote target\n"
+&"[remote] Sending packet: $D#44\n"
+&"[remote] Packet received: OK\n"
+=thread-exited,id="1",group-id="i1"
+=thread-group-exited,id="i1"
+~"[Inferior 1 (Remote target) detached]\n"
+warning: No executable has been specified and target does not support
+determining executable automatically.  Try using the "file" command.
+0x080062e4 in ?? ()
+[remote] Sending packet: $qRcmd,7265736574#37
+[remote] Packet received: O556e61626c6520746f206d61746368207265717565737465642073706565642032303030206b487a2c207573696e672031383030206b487a0a
+Unable to match requested speed 2000 kHz, using 1800 kHz
+[remote] Packet received: O556e61626c6520746f2073657420616461707465722073706565640a
+Unable to set adapter speed
+[remote] Packet received: O556e61626c6520746f206d61746368207265717565737465642073706565642032303030206b487a2c207573696e672031383030206b487a0a
+Unable to match requested speed 2000 kHz, using 1800 kHz
+[remote] Packet received: O726561645f6d656d6f72793a2072656164206174203078653030343230303420776974682077696474683d333220616e6420636f756e743d31206661696c65640a
+read_memory: read at 0xe0042004 with width=32 and count=1 failed
+[remote] Packet received: O4572726f7220657865637574696e67206576656e74206578616d696e652d656e64206f6e207461726765742073746d33326634782e6370753a0a2f6f70742f686f6d65627265772f43656c6c61722f6f70656e2d6f63642f302e31322e305f312f62696e2f2e2e2f73686172652f6f70656e6f63642f736372697074732f6d656d5f68656c7065722e74636c3a373a204572726f723a20726561645f6d656d6f72793a206661696c656420746f2072656164206d656d6f72790a696e2070726f63656475726520276f63645f70726f636573735f726573657427200a696e2070726f63656475726520276f63645f70726f636573735f72657365745f696e6e6 [815 bytes omitted]
+Error executing event examine-end on target stm32f4x.cpu:
+/opt/homebrew/Cellar/open-ocd/0.12.0_1/bin/../share/openocd/scripts/mem_helper.tcl:7: Error: read_memory: failed to read memory
+in procedure 'ocd_process_reset' 
+in procedure 'ocd_process_reset_inner' called at file "embedded:startup.tcl", line 1193
+in procedure 'mmw' called at file "/opt/homebrew/Cellar/open-ocd/0.12.0_1/share/openocd/scripts/target/stm32f4x.cfg", line 87
+in procedure 'mrw' called at file "/opt/homebrew/Cellar/open-ocd/0.12.0_1/bin/../share/openocd/scripts/mem_helper.tcl", line 32
+at file "/opt/homebrew/Cellar/open-ocd/0.12.0_1/bin/../share/openocd/scripts/mem_helper.tcl", line 7
+[remote] Packet received: O0a
+
+[remote] Packet received: EFC
+ï[remote] Sending packet: $qRcmd,68616c74#fc
+[remote] Packet received: O50726576696f7573207374617465207175657279206661696c65642c20747279696e6720746f207265636f6e6e6563740a
+Previous state query failed, trying to reconnect
+[remote] Packet received: O6a7461672073746174757320636f6e7461696e7320696e76616c6964206d6f64652076616c7565202d20636f6d6d756e69636174696f6e206661696c7572650a
+jtag status contains invalid mode value - communication failure
+[remote] Packet received: O506f6c6c696e67207461726765742073746d33326634782e637075206661696c65642c20747279696e6720746f2072656578616d696e650a
+Polling target stm32f4x.cpu failed, trying to reexamine
+[remote] Packet received: O4578616d696e6174696f6e206661696c65642c204744422077696c6c2062652068616c7465642e20506f6c6c696e6720616761696e20696e20363330306d730a
+Examination failed, GDB will be halted. Polling again in 6300ms
+[remote] Packet received: EFC
+ïReading symbols from build/ADC_Readings.elf...
+[remote] Sending packet: $qSymbol::#5b
+[remote] Packet received: OK
+[remote] packet_ok: Packet qSymbol (symbol-lookup) is supported
+[remote] Sending packet: $qSymbol::#5b
+[remote] Packet received: OK
+[remote] Sending packet: $g#67
+[remote] Packet received: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000220ffffffffe462000800000001
+[remote] Sending packet: $vFlashErase:08000000,00008000#ca
+[remote] Packet received: E05
+Error erasing flash with vFlashErase packet
+startupdone
+New UI allocated
+Detaching from program: /Users/ubaldot/Documents/defrecs/stm32f4x/ADC_Readings/build/ADC_Readings.elf, Remote target
+[remote] Sending packet: $D#44
+[remote] Packet received: OK
+[Inferior 1 (Remote target) detached]
+=cmd-param-changed,param="logging enabled",value="on"
+=cmd-param-changed,param="logging file",value="gdb_log"
+=thread-group-started,id="i1",pid="42000"
+&"warning: No executable has been specified and target does not support\ndetermining executable automatically.  Try using the \"file\" command."
+&"\n"
+=thread-created,id="1",group-id="i1"
+~"0x08003f24 in ?? ()\n"
+*stopped,frame={addr="0x08003f24",func="??",args=[],arch="arm"},thread-id="1",stopped-threads="all"
+=cmd-param-changed,param="debug remote",value="on"
+&"[remote] Sending packet: $qRcmd,7265736574#37\n"
+&"[remote] Packet received: O556e61626c6520746f206d61746368207265717565737465642073706565642032303030206b487a2c207573696e672031383030206b487a0a\n"
+@"Unable to match requested speed 2000 kHz, using 1800 kHz\n"
+&"[remote] Packet received: O556e61626c6520746f206d61746368207265717565737465642073706565642032303030206b487a2c207573696e672031383030206b487a0a\n"
+@"Unable to match requested speed 2000 kHz, using 1800 kHz\n"
+&"[remote] Packet received: OK\n"
+&"[remote] Sending packet: $qRcmd,68616c74#fc\n"
+&"[remote] Packet received: O5b73746d33326634782e6370755d2068616c7465642064756520746f2064656275672d726571756573742c2063757272656e74206d6f64653a20546872656164200a785053523a20307838313030303030302070633a2030783038303036333061206d73703a20307832303032303030300a\n"
+@"[stm32f4x.cpu] halted due to debug-request, current mode: Thread \n"
+@"xPSR: 0x81000000 pc: 0x0800630a msp: 0x20020000\n"
+&"[remote] Packet received: OK\n"
+~"Reading symbols from build/ADC_Readings.elf...\n"
+&"[remote] Sending packet: $qSymbol::#5b\n"
+&"[remote] Packet received: OK\n"
+&"[remote] packet_ok: Packet qSymbol (symbol-lookup) is supported\n"
+&"[remote] Sending packet: $qSymbol::#5b\n"
+&"[remote] Packet received: OK\n"
+&"[remote] Sending packet: $g#67\n"
+&"[remote] Packet received: 00000020100000208c1f002000000000684b0020000000000000000000000000000000000000000000000000000000000000000000000220ed6200080a63000800000081\n"
+&"[remote] Sending packet: $vFlashErase:08000000,00008000#ca\n"
+&"[remote] Packet received: OK\n"
+&"[remote] Sending packet: $vFlashWrite:8000000:\\000\\000\\002 åb\\000\\bÝ\\016\\000\\bß\\016\\000\\bá\\016\\000\\bã\\016\\000\\bå\\016\\000\\b\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\001T\\000\\bç\\016\\000\\b\\000\\000\\000\\000¡T\\000\\b\\233O\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\bé\\016\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\bù\\016\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b\\t\\017\\000\\b5c\\000\\b\\031\\017\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b%\\017\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b\\000\\000\\000\\000\\000\\000\\000\\0005c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b\\000\\000\\000\\000\\000\\000\\000\\0005c\\000\\b\\000\\000\\000\\000\\000\\000\\000\\0005c\\000\\b\\000\\000\\000\\000\\000\\000\\000\\0005c\\000\\b\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\0005c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b5c\\000\\b#02\n"
+&"[remote] Packet received: OK\n"
++download,{section=".isr_vector",section-size="452",total-size="552052"}
++download,{section=".isr_vector",section-sent="452",section-size="452",total-sent="452",total-size="552052"}
+&"[remote] Sending packet: $vFlashWrite:80001d0:\\020µ\\005L}\\003x3¹\\004K\\023±\\004H¯ó\\000\\200\\001}\\003}\\003p\\020½\\020\\000\\000 \\000\\000\\000\\000Ðc\\000\\b\\bµ\\003K\\e±\\003I\\003H¯ó\\000\\200\\b½\\000\\000\\000\\000\\024\\000\\000 Ðc\\000\\b\\003F\\023ø\\001+\\000}\\nûÑ\\030\\032\\0018pGpµOðÿ\\fLôàl\\034ê\\021T\\035¿\\034ê\\023U\\224ê\\f\\017\\225ê\\f\\017\\000ðÞø,D\\201ê\\003\\006!êLQ}\\003êLSPê\\0015\\030¿Rê\\0035Aô\\200\\021Cô\\200\\0238Ð û\\002ÎOð\\000\\005áû\\002å\\006ð\\000Bàû\\003åOð\\000\\006áû\\003V\\234ð\\000\\017\\030¿Nð\\001\\016¤ñÿ\\004¶õ\\000\\177dõ@t\\004Ò_êN\\016mAFë\\006\\006BêÆ!AêUQOêÅ @ê^POêÎ.´ñý\\f\\210¿¼õào\\036Ø¾ñ\\000O\\b¿_êP\\016Pñ\\000\\000Aë\\004Qp½\\006ð\\000FFê\\001\\001@ê\\002\\000\\201ê\\003\\001´ë\\\\\\004Â¿Ôë\\f\\005Aê\\004Qp½Aô\\200\\021Oð\\000\\016\\001<\\000ó«\\200\\024ñ6\\017Þ¿\\000 \\001ð\\000Ap½Äñ\\000\\004 <5Ú\\f4\\eÜ\\004ñ\\024\\004Äñ \\005\\000ú\\005ó ú\\004ð\\001ú\\005ò@ê\\002\\000\\001ð\\000B!ð\\000A\\020ëÓp!ú\\004öBë\\006\\001^êC\\016\\b¿ êÓpp½Äñ\\f\\004Äñ \\005\\000ú\\004ó ú\\005ð\\001ú\\004ò@ê\\002\\000\\001ð\\000A\\020ëÓpAñ\\000\\001^êC\\016\\b¿ êÓpp½Äñ \\005\\000ú\\005òNê\\002\\016 ú\\004ó\\001ú\\005òCê\\002\\003!ú\\004ð\\001ð\\000A!ú\\004ò ê\\002\\000\\000ëÓp^êC\\016\\b¿ [15862 bytes omitted]\n"
+&"[remote] Packet received: OK\n"
++download,{section=".text",section-size="25112",total-size="552052"}
+&"[remote] Sending packet: $vFlashWrite:8004010:X\\006\\000 0µ\\207°\\013\\234|±\\f\\235µ±\\\\%\\004\\225\\004\\235\\\\-\\032ÐOðP\\003\\203ó\\021\\210¿óo\\217¿óO\\217þçOðP\\003\\203ó\\021\\210¿óo\\217¿óO\\217þçOðP\\003\\203ó\\021\\210¿óo\\217¿óO\\217þç\\004\\235\\f\\235,c\\002}\\004\\205øY@\\000}\\004\\003\\224\\002\\225\\005¬\\001\\224\\n\\234\\000\\224ÿ÷[þ\\f\\230ÿ÷Þþ\\005\\230\\a°0½-éðC\\205°\\aF\\210F\\024F\\036F\\220\\000\\001ð¡ø\\000³\\201F\\\\ \\001ð\\234ø\\005F°±Àø0\\220å±\\000}\\003\\205øY0\\003\\223\\002\\225\\r\\233\\001\\223\\f\\233\\000\\2233F\"FAF8Fÿ÷2þ(Fÿ÷µþ\\001 \\005àHF\\001ðþøæçOðÿ0\\005°½èð\\203Oðÿ0ùç\\000\\000øµÐ±\\004F\\035K\\eh\\203B-Ð\\001ð\\217ùei\\032K\\036h\\032K\\037h\\001ðªùµB}\\004Ð½B}\\004Ð\\027K\\235B\\016Ð\\027K\\235B Ð½±\\001 \\030àOðP\\003\\203ó\\021\\210¿óo\\217¿óO\\217þç£j\\013±\\002 \\013à\\224øX0Û²\\001+\\001Ð\\003 \\004à\\002 \\002à\\004 \\000à\\000 ø½\\002 üç\\002 úç\\004 øç\\000¿¬\\001\\000 °\\001\\000 ´\\001\\000 |\\006\\000 \\220\\006\\000 \\020µ\\210°\\000}\\004\\005\\224\\006\\224\\aª\\006©\\005¨\\000ð¨ÿ\\005\\233\\002\\223\\006\\233\\001\\223\\000\\224}\\003F\\a\\232\\030I\\030Hÿ÷3ÿ\\030K\\030`@±\\000ð4ý\\001(\\006Ð°ñÿ?\\030Ð\\b°\\020½\\000 öçOðP\\003\\203ó\\021\\210¿óo\\217¿óO\\217\\016KOðÿ2\\032`\\rK\\001\"\\032`\\fK\\000\"\\032`\\001ð³ùæç [8836 bytes omitted]\n"
+&"[remote] Packet received: OK\n"
+&"[remote] Sending packet: $vFlashWrite:80063e8:\\000\\006\\020\\026\\000\\006\\020\\026\\000\\000\\000\\000\\000\\000\\000\\000\\001\\002\\003\\004\\006\\a\\b\\t\\000\\000\\000\\000\\001\\002\\003\\004defaultTask\\000\\bd\\000\\b\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\002\\000\\000\\030\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000IDLE\\000\\000\\000\\000TmrQ\\000\\000\\000\\000Tmr Svc\\000Task_1000ms\\000Task_200ms\\000\\000è\\003\\000\\000È\\000\\000\\000Photovoltaic reading: %s V\\n Temperature: %s C\\n\\000\\000Button pressed!\\n\\000\\000\\000\\000Sto cazzo.\\n\\000BuiltinButtonPressed\\000\\000\\000\\000Usart2Rx\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000à?\\232\\231\\231\\231\\231\\231©?{\\024®Gázt?ü©ñÒMb@?-C\\034ëâ6\\n?ñhã\\210µøÔ>\\215íµ ÷Æ >H¯¼\\232ò×j>:\\2140â\\216y5>\\225Ö&è\\013.\\001>»½×Ùß|Ë=(null)\\000\\000#1a\n"
+&"[remote] Packet received: OK\n"
++download,{section=".rodata",section-size="352",total-size="552052"}
+&"[remote] Sending packet: $vFlashWrite:8006548:t¤ÿ\\177\\001\\000\\000\\000#e9\n"
+&"[remote] Packet received: OK\n"
++download,{section=".ARM",section-size="8",total-size="552052"}
+&"[remote] Sending packet: $vFlashWrite:8006550:õ\\001\\000\\b#49\n"
+&"[remote] Packet received: OK\n"
++download,{section=".init_array",section-size="4",total-size="552052"}
+&"[remote] Sending packet: $vFlashWrite:8006554:Ñ\\001\\000\\b#29\n"
+&"[remote] Packet received: OK\n"
++download,{section=".fini_array",section-size="4",total-size="552052"}
+&"[remote] Sending packet: $vFlashWrite:8006558:\\001\\000\\000\\000\\020\\000\\000\\000\\000}\\004ô\\000ªªªª#81\n"
+&"[remote] Packet received: OK\n"
++download,{section=".data",section-size="16",total-size="552052"}
+&"[remote] Sending packet: $vFlashDone#ea\n"
+&"[remote] Packet received: OK\n"
+&"[remote] Sending packet: $Pf=e4620008#bc\n"
+&"[remote] Packet received: OK\n"
+&"[remote] packet_ok: Packet P (set-register) is supported\n"
+(gdb) 
+&"tty /dev/ttys003\n"
+=cmd-param-changed,param="inferior-tty",value="/dev/ttys003"
+^done,address="0x080062e4",load-size="25948",transfer-rate="196760",write-rate="3243"
+(gdb) 
+&"set env TERM = xterm-color\n"
+^done
+(gdb) 
+&"set env ROWS = 13\n"
+^done
+(gdb) 
+&"set env LINES = 13\n"
+^done
+(gdb) 
+&"set env COLUMNS = 196\n"
+^done
+(gdb) 
+&"set env COLORS = 16777216\n"
+^done
+(gdb) 
+&"set env VIM_TERMINAL = 901\n"
+^done
+(gdb) 
+&"set print pretty on\n"
+=cmd-param-changed,param="print pretty",value="on"
+^done
+(gdb) 
+&"set breakpoint pending on\n"
+=cmd-param-changed,param="breakpoint pending",value="on"
+^done
+(gdb) 
+&"\n"
+^done
+(gdb) 
+&"monitor resume\n"
+&"[remote] Sending packet: $qRcmd,726573756d65#d2\n"
+&"[remote] Packet received: OK\n"
+^done
+(gdb) 
+&"monitor halt\n"
+&"[remote] Sending packet: $qRcmd,68616c74#fc\n"
+&"[remote] Packet received: O5b73746d33326634782e6370755d2068616c7465642064756520746f2064656275672d726571756573742c2063757272656e74206d6f64653a20546872656164200a785053523a20307836313030303030302070633a2030783038303033663236207073703a20307832303030303963380a\n"
+@"[stm32f4x.cpu] halted due to debug-request, current mode: Thread \n"
+@"xPSR: 0x61000000 pc: 0x08003f26 psp: 0x200009c8\n"
+&"[remote] Packet received: OK\n"
+^done
+(gdb) 
+&"monitor resume\n"
+&"[remote] Sending packet: $qRcmd,726573756d65#d2\n"
+&"[remote] Packet received: OK\n"
+^done
+(gdb) 
+&"monitor halt\n"
+&"[remote] Sending packet: $qRcmd,68616c74#fc\n"
+&"[remote] Packet received: O5b73746d33326634782e6370755d2068616c7465642064756520746f2064656275672d726571756573742c2063757272656e74206d6f64653a20546872656164200a785053523a20307836313030303030302070633a2030783038303033663630207073703a20307832303030303963380a\n"
+@"[stm32f4x.cpu] halted due to debug-request, current mode: Thread \n"
+@"xPSR: 0x61000000 pc: 0x08003f60 psp: 0x200009c8\n"
+&"[remote] Packet received: OK\n"
+^done
+(gdb) 
+&"c\n"
+~"Continuing.\n"
+^running
+*running,thread-id="all"
+(gdb) 
+&"[remote] Sending packet: $vCont?#49\n"
+&"[remote] Packet received: vCont;c;C;s;S\n"
+&"[remote] packet_ok: Packet vCont (verbose-resume) is supported\n"
+&"[remote] Sending packet: $vCont;c#a8\n"
+&"[remote] wait: enter\n"
+&"[remote] wait: exit\n"
+&"[remote] wait: enter\n"
+&"  [remote] Packet received: O\n"
+&"[remote] wait: exit\n"
+&"[remote] wait: enter\n"
+&"  [remote] Packet received: O\n"
+&"[remote] wait: exit\n"
+&"[remote] wait: enter\n"
+&"  [remote] Packet received: O\n"
+&"[remote] wait: exit\n"
+&"[remote] wait: enter\n"
+&"  [remote] Packet received: O\n"
+&"[remote] wait: exit\n"
+&"[remote] wait: enter\n"
+&"  [remote] Packet received: O\n"
+&"[remote] wait: exit\n"
+&"[remote] wait: enter\n"
+&"  [remote] Packet received: O\n"
+&"[remote] wait: exit\n"
+&"[remote] wait: enter\n"
+&"  [remote] Packet received: O\n"
+&"[remote] wait: exit\n"
+&"[remote] wait: enter\n"
+&"  [remote] Packet received: O\n"
+&"[remote] wait: exit\n"
+&"[remote] wait: enter\n"
+&"  [remote] Packet received: O\n"
+&"[remote] wait: exit\n"
+&"[remote] wait: enter\n"
+&"  [remote] Packet received: O\n"
+&"[remote] wait: exit\n"
+&"[remote] pass_ctrlc: enter\n"
+&"  [remote] interrupt: enter\n"
+&"  [remote] interrupt: exit\n"
+&"[remote] pass_ctrlc: exit\n"
+&"[remote] wait: enter\n"
+&"  [remote] Packet received: T02\n"
+&"  [remote] select_thread_for_ambiguous_stop_reply: enter\n"
+&"    [remote] select_thread_for_ambiguous_stop_reply: process_wide_stop = 0\n"
+&"    [remote] select_thread_for_ambiguous_stop_reply: first resumed thread is Remote target\n"
+&"    [remote] select_thread_for_ambiguous_stop_reply: is this guess ambiguous? = 0\n"
+&"  [remote] select_thread_for_ambiguous_stop_reply: exit\n"
+&"[remote] wait: exit\n"
+&"[remote] Sending packet: $g#67\n"
+&"[remote] Packet received: 00000000a5a5a5a5a5a5a5a500000000a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5c8090020773f0008283f000800000061\n"
+&"[remote] Sending packet: $qXfer:threads:read::0,1000#92\n"
+&"[remote] Packet received: l<?xml version=\"1.0\"?>\\n<threads>\\n</threads>\\n\n"
+~"\nProgram"
+~" received signal SIGINT, Interrupt.\n"
+&"[remote] Sending packet: $m8003f28,4#68\n"
+&"[remote] Packet received: d3b110b5\n"
+~"0x08003f28 in prvCheckTasksWaitingTermination () at Middlewares/Third_Party/FreeRTOS/Source/tasks.c:3650\n"
+~"3650\t\t\twhile( uxDeletedTasksWaitingCleanUp > ( UBaseType_t ) 0U )\n"
+*stopped,reason="signal-received",signal-name="SIGINT",signal-meaning="Interrupt",frame={addr="0x08003f28",func="prvCheckTasksWaitingTermination",args=[],file="Middlewares/Third_Party/FreeRTOS/Source/tasks.c",fullname="/Users/ubaldot/Documents/defrecs/stm32f4x/ADC_Readings/Middlewares/Third_Party/FreeRTOS/Source/tasks.c",line="3650",arch="armv7e-m"},thread-id="1",stopped-threads="all"
+&"exit\n"
+~"Detaching from program: /Users/ubaldot/Documents/defrecs/stm32f4x/ADC_Readings/build/ADC_Readings.elf, Remote target\n"
+&"[remote] Sending packet: $D#44\n"
+&"[remote] Packet received: OK\n"
+=thread-exited,id="1",group-id="i1"
+=thread-group-exited,id="i1"
+~"[Inferior 1 (Remote target) detached]\n"
