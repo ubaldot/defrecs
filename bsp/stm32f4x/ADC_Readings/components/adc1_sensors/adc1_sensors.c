@@ -8,8 +8,8 @@
 //
 // PREFIX: adc1_
 // PUBLISHED SIGNALS:
-//   - adc1_ch0_pin_voltage
-//   - adc1_ch1_pin_voltage
+//   - tempsens_pin_voltage
+//   - photovoltaic_pin_voltage
 //===----------------------------------------------------------------------===//
 
 #include "FreeRTOS.h"
@@ -25,44 +25,44 @@ const float ADC1_PINS_VOLTAGE = 3300.0F;
 float ADC1_RESOLUTION;
 
 // Signals
-static float adc1_ch0_pin_voltage;
-static SemaphoreHandle_t mutex_adc1_ch0_pin_voltage;
+static float tempsens_pin_voltage;
+static SemaphoreHandle_t mutex_tempsens_pin_voltage;
 
-static float adc1_ch1_pin_voltage;
-static SemaphoreHandle_t mutex_adc1_ch1_pin_voltage;
+static float photovoltaic_pin_voltage;
+static SemaphoreHandle_t mutex_photovoltaic_pin_voltage;
 
 // Publish
-static void publish_adc1_ch0_pin_voltage(const float *pVoltage) {
-  if (xSemaphoreTake(mutex_adc1_ch0_pin_voltage, 100 / portTICK_PERIOD_MS) ==
+static void publish_tempsens_pin_voltage(const float *pVoltage) {
+  if (xSemaphoreTake(mutex_tempsens_pin_voltage, 100 / portTICK_PERIOD_MS) ==
       pdTRUE) {
-    memcpy(&adc1_ch0_pin_voltage, pVoltage, sizeof(*pVoltage));
-    xSemaphoreGive(mutex_adc1_ch0_pin_voltage);
+    memcpy(&tempsens_pin_voltage, pVoltage, sizeof(*pVoltage));
+    xSemaphoreGive(mutex_tempsens_pin_voltage);
   }
 }
 
-static void publish_adc1_ch1_pin_voltage(const float *pVoltage) {
-  if (xSemaphoreTake(mutex_adc1_ch1_pin_voltage,
+static void publish_photovoltaic_pin_voltage(const float *pVoltage) {
+  if (xSemaphoreTake(mutex_photovoltaic_pin_voltage,
                      100 / portTICK_PERIOD_MS) == pdTRUE) {
-    memcpy(&adc1_ch1_pin_voltage, pVoltage, sizeof(*pVoltage));
-    xSemaphoreGive(mutex_adc1_ch1_pin_voltage);
+    memcpy(&photovoltaic_pin_voltage, pVoltage, sizeof(*pVoltage));
+    xSemaphoreGive(mutex_photovoltaic_pin_voltage);
   }
 }
 
 // subscribe
-void subscribe_adc1_ch0_pin_voltage(float *pVoltage) {
-  if (xSemaphoreTake(mutex_adc1_ch0_pin_voltage, 100 / portTICK_PERIOD_MS) ==
+void subscribe_tempsens_pin_voltage(float *pVoltage) {
+  if (xSemaphoreTake(mutex_tempsens_pin_voltage, 100 / portTICK_PERIOD_MS) ==
       pdTRUE) {
-    memcpy(pVoltage, &adc1_ch0_pin_voltage, sizeof(*pVoltage));
-    xSemaphoreGive(mutex_adc1_ch0_pin_voltage);
+    memcpy(pVoltage, &tempsens_pin_voltage, sizeof(*pVoltage));
+    xSemaphoreGive(mutex_tempsens_pin_voltage);
   }
 }
 
-void subscribe_adc1_ch1_pin_voltage(float *pVoltage) {
+void subscribe_photovoltaic_pin_voltage(float *pVoltage) {
   // Returns a copy of the output
-  if (xSemaphoreTake(mutex_adc1_ch1_pin_voltage,
+  if (xSemaphoreTake(mutex_photovoltaic_pin_voltage,
                      100 / portTICK_PERIOD_MS) == pdTRUE) {
-    memcpy(pVoltage, &adc1_ch1_pin_voltage, sizeof(*pVoltage));
-    xSemaphoreGive(mutex_adc1_ch1_pin_voltage);
+    memcpy(pVoltage, &photovoltaic_pin_voltage, sizeof(*pVoltage));
+    xSemaphoreGive(mutex_photovoltaic_pin_voltage);
   }
 }
 
@@ -71,11 +71,11 @@ void adc1_sensors_init() {
       ADC1_PINS_VOLTAGE / (float)(1 << ADC1_RESOLUTION_BITS); // [mV]
 
   // Dummy init value, useful for debugging
-  adc1_ch0_pin_voltage = 99.9F;
+  tempsens_pin_voltage = 99.9F;
 
   // Mutex for protecting variables
-  mutex_adc1_ch0_pin_voltage = xSemaphoreCreateMutex();
-  mutex_adc1_ch1_pin_voltage = xSemaphoreCreateMutex();
+  mutex_tempsens_pin_voltage = xSemaphoreCreateMutex();
+  mutex_photovoltaic_pin_voltage = xSemaphoreCreateMutex();
 }
 
 void adc1_sensors_step(enum WhoIsCalling caller) {
@@ -91,8 +91,8 @@ void adc1_sensors_step(enum WhoIsCalling caller) {
   // Process and publish
   float tmp;
   tmp = ADC1_RESOLUTION * (float)analog_read[0] / 1000.0F;
-  publish_adc1_ch0_pin_voltage(&tmp);
+  publish_tempsens_pin_voltage(&tmp);
 
   tmp = ADC1_RESOLUTION * (float)analog_read[1] / 1000.0F;
-  publish_adc1_ch1_pin_voltage(&tmp);
+  publish_photovoltaic_pin_voltage(&tmp);
 }

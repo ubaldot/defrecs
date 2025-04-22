@@ -11,7 +11,6 @@
 //===----------------------------------------------------------------------===//
 #include "hmi/hmi.h"
 #include "application_setup.h"
-#include "blink/blink.h"
 #include "ftoa.h"
 #include "hmi.h"
 #include "photovoltaic/pv.h"
@@ -29,6 +28,7 @@ static char rx_buffer[MSG_LENGTH_MAX];
 static size_t ii; // For counting the number of bytes received
 
 static SemaphoreHandle_t mutex_tx_buffer; // This also protect ii
+static SemaphoreHandle_t mutex_tx_process;
 static SemaphoreHandle_t mutex_rx_buffer; // This also protect ii
 
 // Publish
@@ -48,16 +48,18 @@ void subscribe_hmi_tx_msg(char *pMsg) {
 
 void hmi_init() {
   mutex_tx_buffer = xSemaphoreCreateMutex();
+  mutex_tx_process = xSemaphoreCreateMutex();
   mutex_rx_buffer = xSemaphoreCreateMutex();
   ii = 0;
 }
 
 void hmi_step(enum WhoIsCalling caller) {
   // INPUTS
-  uint8_t led_state;
-  subscribe_blink_led_state(&led_state);
   float pv_voltage;
+  char pv_voltage_str[5];
+
   float tempsens_C;
+  char tempsens_C_str[5];
 
   char msg[MSG_LENGTH_MAX];
 
@@ -66,8 +68,6 @@ void hmi_step(enum WhoIsCalling caller) {
     subscribe_pv_voltage(&pv_voltage);
     subscribe_tempsens_value(&tempsens_C);
 
-    char pv_voltage_str[5];
-    char tempsens_C_str[5];
     (void)ftoa(pv_voltage, pv_voltage_str, 2);
     (void)ftoa(tempsens_C, tempsens_C_str, 2);
     (void)snprintf(msg, MSG_LENGTH_MAX,
@@ -93,10 +93,10 @@ void hmi_step(enum WhoIsCalling caller) {
         publish_hmi_tx_msg(msg);
         /* No needed because the serial port task is scheduled periodically
          * anyway */
-        serial_port_write_step(IRQ_SERIAL_RX);
+        /* serial_port_write_step(IRQ_SERIAL_RX); */
 
-            /* Reinitialize all the variables used */
-            ii = 0;
+        /* Reinitialize all the variables used */
+        ii = 0;
         memset(rx_buffer, '\0', MSG_LENGTH_MAX);
       } else {
         ii++;

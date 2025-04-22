@@ -44,9 +44,9 @@ void serial_port_init(void) {
 
 void serial_port_write_step(enum WhoIsCalling caller) {
   (void)caller;
-  uint8_t tx_buffer[MSG_LENGTH_MAX];
-  subscribe_hmi_tx_msg(tx_buffer);
   if (xSemaphoreTake(mutex_tx_process, pdMS_TO_TICKS(5)) == pdTRUE) {
+    uint8_t tx_buffer[MSG_LENGTH_MAX];
+    subscribe_hmi_tx_msg(tx_buffer);
     HAL_UART_Transmit(&huart2, (uint8_t *)tx_buffer, strlen(tx_buffer),
         portMAX_DELAY);
     xSemaphoreGive(mutex_tx_process);

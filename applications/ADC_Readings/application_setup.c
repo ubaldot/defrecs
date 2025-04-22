@@ -110,6 +110,7 @@ static void task_1000ms(void *pVParameters) // This is a task.
     pv_step(PERIODIC_TASK);
     hmi_step(PERIODIC_TASK);
     tempsens_step(PERIODIC_TASK);
+    serial_port_write_step(PERIODIC_TASK);
 
     // Task Schedule
     // TODO: Use xTaskDelayUntil, available from new FreeRTOS.
@@ -128,7 +129,6 @@ static void task_200ms(void *pVParameters) // This is a task.
   while (1) {
     adc1_sensors_step(PERIODIC_TASK);
     digital_out_step(PERIODIC_TASK);
-    serial_port_write_step(PERIODIC_TASK);
 
     // Task Schedule
     /* xMissedDeadline = */
@@ -172,6 +172,7 @@ static void Usart2RxDeferred(void *pVParameters) {
     ulEventsToProcess = ulTaskNotifyTake(pdTRUE, pdMS_TO_TICKS(10));
     if (ulEventsToProcess != 0) {
       while (ulEventsToProcess > 0) {
+        serial_port_read_step(IRQ_SERIAL_RX);
         hmi_step(IRQ_SERIAL_RX);
         ulEventsToProcess--;
       }

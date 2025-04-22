@@ -50,7 +50,7 @@ void tempsens_step(enum WhoIsCalling caller) {
   (void)caller;
   // Get a copy of the output
   float pin_voltage = 99.9F;
-  subscribe_adc1_ch0_pin_voltage(&pin_voltage);
+  subscribe_tempsens_pin_voltage(&pin_voltage);
 
   // V -> Celsius, [0 5] -> [0 50] linearly.
   float temperature_measured;

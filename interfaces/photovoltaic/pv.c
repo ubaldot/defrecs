@@ -53,7 +53,7 @@ void pv_step(enum WhoIsCalling caller) {
   // INPUT
   // Read pin voltage [V]
   float pin_voltage;
-  subscribe_adc1_ch1_pin_voltage(&pin_voltage);
+  subscribe_photovoltaic_pin_voltage(&pin_voltage);
 
   // Map V -> V,[0,5] linearly to [0,25]
   // This voltage meter maps [0,5] linearly to [0,25] and convert mV to V.
