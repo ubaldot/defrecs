@@ -28,7 +28,6 @@ static char rx_buffer[MSG_LENGTH_MAX];
 static size_t ii; // For counting the number of bytes received
 
 static SemaphoreHandle_t mutex_tx_buffer; // This also protect ii
-static SemaphoreHandle_t mutex_tx_process;
 static SemaphoreHandle_t mutex_rx_buffer; // This also protect ii
 
 // Publish
@@ -48,7 +47,6 @@ void subscribe_hmi_tx_msg(char *pMsg) {
 
 void hmi_init() {
   mutex_tx_buffer = xSemaphoreCreateMutex();
-  mutex_tx_process = xSemaphoreCreateMutex();
   mutex_rx_buffer = xSemaphoreCreateMutex();
   ii = 0;
 }

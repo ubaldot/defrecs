@@ -1,7 +1,7 @@
-//===-------------------- digital_out.c ------------------------*- C -*-===//
-// Set the digital pins out to a certain value
+//===-------------------- serial_port.c ------------------------*- C -*-===//
+// Handle the serial port.
 //
-// PREFIX: digital_out_
+// PREFIX: serial_port_
 // PUBLISHED SIGNALS: None.
 //===----------------------------------------------------------------------===//
 #include "serial_port.h"
