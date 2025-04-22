@@ -17,27 +17,27 @@
 static char rx_char;
 
 static SemaphoreHandle_t mutex_tx_process;
-static SemaphoreHandle_t mutex_rx_process;
+static SemaphoreHandle_t mutex_rx_char;
 
 // Publish
 static void publish_serial_port_rx_msg(const uint8_t *pMsg) {
-  if (xSemaphoreTake(mutex_rx_process, 100 / portTICK_PERIOD_MS) == pdTRUE) {
+  if (xSemaphoreTake(mutex_rx_char, 100 / portTICK_PERIOD_MS) == pdTRUE) {
 
     memcpy(&rx_char, pMsg, 1);
-    xSemaphoreGive(mutex_rx_process);
+    xSemaphoreGive(mutex_rx_char);
   }
 }
 
 void subscribe_serial_port_rx_msg(char *pMsg) {
-  if (xSemaphoreTake(mutex_rx_process, 100 / portTICK_PERIOD_MS) == pdTRUE) {
+  if (xSemaphoreTake(mutex_rx_char, 100 / portTICK_PERIOD_MS) == pdTRUE) {
     memcpy(pMsg, &rx_char, 1);
-    xSemaphoreGive(mutex_rx_process);
+    xSemaphoreGive(mutex_rx_char);
   }
 }
 
 void serial_port_init(void) {
   mutex_tx_process = xSemaphoreCreateMutex();
-  mutex_rx_process = xSemaphoreCreateMutex();
+  mutex_rx_char = xSemaphoreCreateMutex();
   uint8_t rx_buffer = '\0';
   HAL_UART_Receive_IT(&huart2, (uint8_t *)&rx_buffer, 1);
 }

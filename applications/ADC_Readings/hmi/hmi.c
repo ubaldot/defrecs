@@ -28,7 +28,6 @@ static char rx_buffer[MSG_LENGTH_MAX];
 static size_t ii; // For counting the number of bytes received
 
 static SemaphoreHandle_t mutex_tx_buffer; // This also protect ii
-static SemaphoreHandle_t mutex_rx_buffer; // This also protect ii
 
 // Publish
 static void publish_hmi_tx_msg(const char *pMsg) {
@@ -47,7 +46,6 @@ void subscribe_hmi_tx_msg(char *pMsg) {
 
 void hmi_init() {
   mutex_tx_buffer = xSemaphoreCreateMutex();
-  mutex_rx_buffer = xSemaphoreCreateMutex();
   ii = 0;
 }
 
@@ -82,26 +80,23 @@ void hmi_step(enum WhoIsCalling caller) {
     break;
 
   case IRQ_SERIAL_RX:
-    if (xSemaphoreTake(mutex_rx_buffer, pdMS_TO_TICKS(5)) == pdTRUE) {
-      if (rx_buffer[ii] == '\n' || ii > MSG_LENGTH_MAX) {
-        /* publish_hmi_rx_message(msg, strlen(msg)); */
-        memcpy(msg, rx_buffer, MSG_LENGTH_MAX - 1);
-        msg[MSG_LENGTH_MAX - 1] = '\0';
+    if (rx_buffer[ii] == '\n' || ii > MSG_LENGTH_MAX) {
+      /* publish_hmi_rx_message(msg, strlen(msg)); */
+      memcpy(msg, rx_buffer, MSG_LENGTH_MAX - 1);
+      msg[MSG_LENGTH_MAX - 1] = '\0';
 
-        publish_hmi_tx_msg(msg);
-        /* No needed because the serial port task is scheduled periodically
-         * anyway */
-        /* serial_port_write_step(IRQ_SERIAL_RX); */
+      publish_hmi_tx_msg(msg);
+      /* No needed because the serial port task is scheduled periodically
+       * anyway */
+      /* serial_port_write_step(IRQ_SERIAL_RX); */
 
-        /* Reinitialize all the variables used */
-        ii = 0;
-        memset(rx_buffer, '\0', MSG_LENGTH_MAX);
-      } else {
-        ii++;
-      }
-      subscribe_serial_port_rx_msg(&rx_buffer[ii]);
-      xSemaphoreGive(mutex_rx_buffer);
+      /* Reinitialize all the variables used */
+      ii = 0;
+      memset(rx_buffer, '\0', MSG_LENGTH_MAX);
+    } else {
+      ii++;
     }
+    subscribe_serial_port_rx_msg(&rx_buffer[ii]);
     break;
   default:
     strncpy(msg, "Sto cazzo.\n", MSG_LENGTH_MAX - 1);
